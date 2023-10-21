@@ -8,24 +8,36 @@ import DetailForm from "./DetailForm";
 
 const MainPage = () => {
   const [register, setRegister] = useState(false);
+  const [submitted, setSubmitted] = useState(false)
   const [timedata, setTimedata] = useState({})
+
   const registerHandler = () => {
     setRegister(true);
   };
   const submitHandler = () => {
     setRegister(false);
+    setSubmitted(true)
   };
 
   const sendDataHandler = (data) =>{
     console.log(data)
-    // setTimedata(data)
+    setTimedata(data)
   }
+
+  const backPageHandler = () => {
+    setRegister(false);
+  }
+
+  const homePageHandler = () => {
+    setSubmitted(false)
+  }
+  
   return (
     <CardWrapper>
       <h1> Coral Academy </h1>
       <h4> Demo Classes</h4>
 
-      {!register && (
+      {(!register && !submitted) && (
         <div className="card1">
           <p>
             Coral Academy is your partner in K-12 EdTech. We carefully select
@@ -58,7 +70,12 @@ const MainPage = () => {
           </Button>
         </div>
       )}
-      {register && <DetailForm onSubmit={submitHandler} timedata = {timedata}/>}
+      {(register && !submitted) && <DetailForm onSubmit={submitHandler} onBack = {backPageHandler} timedata = {timedata}/>}
+      {(!register && submitted) && <div><p> Thanks for submitting!</p>
+      <button onClick={homePageHandler}>Add More Learner!</button>
+      </div>
+      }
+      
     </CardWrapper>
   );
 };
