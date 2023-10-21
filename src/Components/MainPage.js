@@ -5,10 +5,11 @@ import CardWrapper from "./Card/CardWrapper";
 import "./MainPage.css";
 import ClassDetail from "./ClassDetail";
 import DetailForm from "./DetailForm";
-
+import Coral_Academy from "../assets/Coral_Academy.png";
+import About_us from "../assets/About_us.png";
 const MainPage = () => {
   const [register, setRegister] = useState(false);
-  const [timedata, setTimedata] = useState({})
+  const [timedata, setTimedata] = useState({});
   const registerHandler = () => {
     setRegister(true);
   };
@@ -16,23 +17,29 @@ const MainPage = () => {
     setRegister(false);
   };
 
-  const sendDataHandler = (data) =>{
-    console.log(data)
+  const sendDataHandler = (data) => {
+    console.log(data);
     // setTimedata(data)
-  }
+  };
   return (
     <CardWrapper>
-      <h1> Coral Academy </h1>
-      <h4> Demo Classes</h4>
+      {/* <h1> Coral Academy </h1>
+      <h4> Demo Classes</h4> */}
+      <img className="title" src={Coral_Academy} alt="Title" />
 
       {!register && (
         <div className="card1">
-          <p>
-            Coral Academy is your partner in K-12 EdTech. We carefully select
-            top educators to ensure impactful and engaging learning experiences.
-            Explore our platform preview
-          </p>
-          <h4> About Us!</h4>
+          <div className="about">
+            <img src={About_us} alt="About_US" />
+            <div>
+              <h1> About Us!</h1>
+              <p>
+                Coral Academy is your partner in K-12 EdTech. We carefully
+                select top educators to ensure impactful and engaging learning
+                experiences. Explore our platform preview
+              </p>
+            </div>
+          </div>
           <p>
             Coral Academy is a new online service that aims to provide fun,
             exciting, supplemental education to children aged six through
@@ -58,7 +65,7 @@ const MainPage = () => {
           </Button>
         </div>
       )}
-      {register && <DetailForm onSubmit={submitHandler} timedata = {timedata}/>}
+      {register && <DetailForm onSubmit={submitHandler} timedata={timedata} />}
     </CardWrapper>
   );
 };
