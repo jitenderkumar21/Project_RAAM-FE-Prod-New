@@ -17,7 +17,10 @@ const ClassDetail = (props) => {
       expand: false,
       tutor: "Ram Kumar",
       timeslots: [
-        "9:00 AM to 10:00 AM" , "11:00 AM to 12:00 AM" ,"2:00 PM to 3:00 PM" , "6:00 PM to 7:00 PM" 
+        "9:00 AM to 10:00 AM",
+        "11:00 AM to 12:00 AM",
+        "2:00 PM to 3:00 PM",
+        "6:00 PM to 7:00 PM",
       ],
     },
     {
@@ -32,7 +35,10 @@ const ClassDetail = (props) => {
       duration: "50 minutes",
       tutor: "Ram Kumar",
       timeslots: [
-        "9:00 AM to 10:00 AM" , "11:00 AM to 12:00 AM" ,"2:00 PM to 3:00 PM" , "6:00 PM to 7:00 PM" 
+        "9:00 AM to 10:00 AM",
+        "11:00 AM to 12:00 AM",
+        "2:00 PM to 3:00 PM",
+        "6:00 PM to 7:00 PM",
       ],
     },
     {
@@ -47,18 +53,16 @@ const ClassDetail = (props) => {
       duration: "50 minutes",
       tutor: "Ram Kumar",
       timeslots: [
-        "9:00 AM to 10:00 AM" , "11:00 AM to 12:00 AM" ,"2:00 PM to 3:00 PM" , "6:00 PM to 7:00 PM" 
+        "9:00 AM to 10:00 AM",
+        "11:00 AM to 12:00 AM",
+        "2:00 PM to 3:00 PM",
+        "6:00 PM to 7:00 PM",
       ],
     },
   ];
 
   const transformedClasses = data.reduce((result, classItem) => {
-    result[classItem.id] = '';
-    return result;
-  }, {});
-
-  const expandClasses = data.reduce((result, classItem) => {
-    result[classItem.id] = false;
+    result[classItem.id] = "";
     return result;
   }, {});
 
@@ -77,20 +81,30 @@ const ClassDetail = (props) => {
 
   const handleTimeslotSelection = (classid, timeslotname) => {
     setSelectedTimeslots((prevSelectedTimeSlots) => {
-      const updatedSelection = {...prevSelectedTimeSlots};
-      if (updatedSelection[classid] === timeslotname){
+      const updatedSelection = { ...prevSelectedTimeSlots };
+      if (updatedSelection[classid] === timeslotname) {
         delete updatedSelection[classid];
       } else {
-        updatedSelection[classid] = timeslotname
+        updatedSelection[classid] = timeslotname;
       }
       return updatedSelection;
-    })
+    });
   };
 
-  useEffect(()=> {
-    props.onSendData(selectedTimeslots)
-  }, [selectedTimeslots])
-  
+  useEffect(() => {
+    const finalInfoArray = Object.keys(selectedTimeslots).map((classid) => {
+      const timeslot = selectedTimeslots[classid]
+      const classInfo = data.find((classInfo) => classInfo.id === parseInt(classid));
+      const className = classInfo ? classInfo.title : "";
+      return {
+        classid,
+        className,
+        timeslot: timeslot || "",
+      };
+    })
+    props.onSendData(finalInfoArray);
+  }, [selectedTimeslots]);
+
   return (
     <div className="sub-cards-grid">
       {data.map((classes) => (
@@ -118,15 +132,12 @@ const ClassDetail = (props) => {
             </button>
             <p></p>
 
-
             {classes.timeslots.map((timeslot) => (
               <Timeslot
-                
                 name={classes.title}
                 classid={classes.id}
                 timeslot={timeslot}
                 isSelected={selectedTimeslots[classes.id] == timeslot}
-                
                 onSelect={handleTimeslotSelection}
               />
             ))}

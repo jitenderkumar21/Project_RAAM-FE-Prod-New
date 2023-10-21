@@ -8,11 +8,10 @@ const DetailForm = (props) => {
     email: "",
     phoneNumber: "",
     childAge: "",
-    classDetails:"",
+    classDetails: "",
   });
 
   const YOUR_GOOGLE_APPS_SCRIPT_URL = "https://backend-z29v.onrender.com/save/";
-  const data = { name: "Sumit", email: "sumitku1256@gmail.com", message: "HI" };
 
   const submitForm = async (data) => {
     const options = {
@@ -45,13 +44,15 @@ const DetailForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const new_data = {...formData, "classDetails" : props.timedata}
-    console.log(new_data)
+    const new_data = { ...formData, classDetails: props.timedata };
+    console.log(new_data);
     submitForm(new_data);
     props.onSubmit();
   };
 
-
+  const backHandler = () => {
+    props.onBack();
+  };
 
   return (
     <React.Fragment>
@@ -83,7 +84,7 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor="email">Email *</label>
           <input
@@ -102,7 +103,7 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-        
+        <button onClick={backHandler}> Back</button>
         <button type="submit">Submit</button>
       </form>
     </React.Fragment>
