@@ -7,6 +7,7 @@ import ClassDetail from "./ClassDetail";
 import DetailForm from "./DetailForm";
 import Coral_Academy from "../assets/Coral_Academy.png";
 import About_us from "../assets/About_us.png";
+import Demo from "../assets/Demo.png";
 const MainPage = () => {
   const [register, setRegister] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -42,26 +43,29 @@ const MainPage = () => {
       {!register && !submitted && (
         <div className="card1">
           <div className="about">
-            <img src={About_us} alt="About_US" />
-            <div>
+            <img className="about_img" src={About_us} alt="About_US" />
+            <div className="about_content">
               <h1> About Us!</h1>
-              <p>
+              <p className="p1">
                 Coral Academy is your partner in K-12 EdTech. We carefully
                 select top educators to ensure impactful and engaging learning
-                experiences. Explore our platform preview
+                experiences. Explore our platform preview{" "}
+                <a href="https://staging.mycoralacademy.com/">here</a>
               </p>
             </div>
           </div>
-          <p>
-            Coral Academy is a new online service that aims to provide fun,
-            exciting, supplemental education to children aged six through
-            thirteen. We have knowledgeable and passionate teachers who are
-            dedicated to teaching interesting, current material in a fun,
-            impactful way.
-          </p>
-          <a href="https://staging.mycoralacademy.com/">
-            Click here to know more about us
-          </a>
+          <div className="about">
+            <div className="about_content">
+              <h1> Demo Classes</h1>
+              <p className="p1">
+                We're offering free, fun, and engaging demo classes with amazing
+                teachers from various backgrounds. They'll be teaching a variety
+                of interesting topics for the next two months.
+              </p>
+            </div>
+            <img className="about_img" src={Demo} alt="Demo Classes" />
+          </div>
+
           <div>
             <ClassDetail onSendData={sendDataHandler} />
           </div>
