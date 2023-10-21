@@ -8,13 +8,13 @@ const Timeslot = ({ timeslot, classid, isSelected, onSelect }) => {
             <input
               type="checkbox"
               checked={isSelected}
-              onChange={() => onSelect(timeslot.slotid, classid)}
+              onChange={() => onSelect( classid, timeslot)}
             />
-            {timeslot.value}
+            {timeslot}
             <span class="checkmark"></span>
           </label>
        
       );
 }
 
-export default Timeslot
+export default Timeslot;

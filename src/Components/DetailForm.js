@@ -3,15 +3,15 @@ import "./DetailForm.css";
 
 const DetailForm = (props) => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    parentName: "",
+    childName: "",
     email: "",
     phoneNumber: "",
-    city: "",
+    childAge: "",
+    classDetails:"",
   });
 
-  const YOUR_GOOGLE_APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbyWojQ5eQFyPboi_mkZywNU7mjf8mHs3SmKmE5i4M0UUC49uTgxWaqBadL2cajFiU7cPA/exec";
+  const YOUR_GOOGLE_APPS_SCRIPT_URL = "https://backend-z29v.onrender.com/save/";
   const data = { name: "Sumit", email: "sumitku1256@gmail.com", message: "HI" };
 
   const submitForm = async (data) => {
@@ -34,6 +34,7 @@ const DetailForm = (props) => {
       console.error("Error:", error);
     }
   };
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -44,33 +45,47 @@ const DetailForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
-    submitForm(data);
+    const new_data = {...formData, "classDetails" : props.timedata}
+    console.log(new_data)
+    submitForm(new_data);
     props.onSubmit();
   };
+
+
+
   return (
     <React.Fragment>
       <form onSubmit={handleSubmit} className="my-form">
         <div className="form-group">
-          <label htmlFor="firstName">First Name:</label>
+          <label htmlFor="parentName"> Parent Name *</label>
           <input
             type="text"
-            id="firstName"
-            name="firstName"
+            id="parentName"
+            name="parentName"
             onChange={handleInputChange}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="lastName">Last Name:</label>
+          <label htmlFor="childName"> Child Name *</label>
           <input
             type="text"
-            id="lastName"
-            name="lastName"
+            id="childName"
+            name="childName"
             onChange={handleInputChange}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="childAge"> Child Age *</label>
+          <input
+            type="number"
+            id="childAge"
+            name="childAge"
+            onChange={handleInputChange}
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="email">Email *</label>
           <input
             type="email"
             id="email"
@@ -79,7 +94,7 @@ const DetailForm = (props) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="phoneNumber">Phone Number:</label>
+          <label htmlFor="phoneNumber">Phone </label>
           <input
             type="tel"
             id="phoneNumber"
@@ -87,15 +102,7 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="city">City:</label>
-          <input
-            type="text"
-            id="city"
-            name="city"
-            onChange={handleInputChange}
-          />
-        </div>
+        
         <button type="submit">Submit</button>
       </form>
     </React.Fragment>
