@@ -43,7 +43,9 @@ const MainPage = () => {
       {!register && !submitted && (
         <div className="card1">
           <div className="about">
-            <img className="about_img" src={About_us} alt="About_US" />
+            <div className="about_img">
+              <img src={About_us} alt="About_US" />
+            </div>
             <div className="about_content">
               <h1> About Us!</h1>
               <p className="p1">
@@ -55,7 +57,7 @@ const MainPage = () => {
             </div>
           </div>
           <div className="about">
-            <div className="about_content">
+            <div className="demo_content">
               <h1> Demo Classes</h1>
               <p className="p1">
                 We're offering free, fun, and engaging demo classes with amazing
@@ -63,9 +65,10 @@ const MainPage = () => {
                 of interesting topics for the next two months.
               </p>
             </div>
-            <img className="about_img" src={Demo} alt="Demo Classes" />
+            <div className="about_img">
+              <img src={Demo} alt="Demo Classes" />
+            </div>
           </div>
-
           <div>
             <ClassDetail onSendData={sendDataHandler} />
           </div>
@@ -90,7 +93,10 @@ const MainPage = () => {
       )}
       {!register && submitted && (
         <div className="submitpage">
-          <p> Thanks for <br></br>submitting!</p>
+          <p>
+            {" "}
+            Thanks for <br></br>submitting!
+          </p>
           <button onClick={homePageHandler}>Add More Learner!</button>
         </div>
       )}

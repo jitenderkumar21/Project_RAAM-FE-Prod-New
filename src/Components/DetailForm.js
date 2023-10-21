@@ -12,6 +12,7 @@ const DetailForm = (props) => {
   });
 
   const YOUR_GOOGLE_APPS_SCRIPT_URL = "https://backend-z29v.onrender.com/save/";
+  const data = { name: "Sumit", email: "sumitku1256@gmail.com", message: "HI" };
 
   const submitForm = async (data) => {
     const options = {
@@ -48,10 +49,6 @@ const DetailForm = (props) => {
     console.log(new_data);
     submitForm(new_data);
     props.onSubmit();
-  };
-
-  const backHandler = () => {
-    props.onBack();
   };
 
   return (
@@ -103,7 +100,7 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-        <button onClick={backHandler}> Back</button>
+
         <button type="submit">Submit</button>
       </form>
     </React.Fragment>

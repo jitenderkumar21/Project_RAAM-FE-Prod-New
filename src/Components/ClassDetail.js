@@ -15,6 +15,7 @@ const ClassDetail = (props) => {
       age_group: "8-13 yeaars old",
       duration: "50 minutes",
       expand: false,
+      link: "https://static.wixstatic.com/media/27d523f50e781626c04fc109dd313241.jpg/v1/crop/x_101,y_0,w_406,h_306/fill/w_214,h_161,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Geography%20Lesson.jpg",
       tutor: "Ram Kumar",
       timeslots: [
         "9:00 AM to 10:00 AM",
@@ -33,6 +34,7 @@ const ClassDetail = (props) => {
       expand: false,
       age_group: "8-13 yeaars old",
       duration: "50 minutes",
+      link: "https://static.wixstatic.com/media/11062b_54cb26d9ed2049d9a1a6259e29ef373d~mv2_d_5251_3501_s_4_2.jpg/v1/crop/x_314,y_0,w_4623,h_3501/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Playing%20with%20Toy%20Vehicles.jpg",
       tutor: "Ram Kumar",
       timeslots: [
         "9:00 AM to 10:00 AM",
@@ -51,6 +53,7 @@ const ClassDetail = (props) => {
       age_group: "8-13 yeaars old",
       expand: false,
       duration: "50 minutes",
+      link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
       tutor: "Ram Kumar",
       timeslots: [
         "9:00 AM to 10:00 AM",
@@ -63,6 +66,11 @@ const ClassDetail = (props) => {
 
   const transformedClasses = data.reduce((result, classItem) => {
     result[classItem.id] = "";
+    return result;
+  }, {});
+
+  const expandClasses = data.reduce((result, classItem) => {
+    result[classItem.id] = false;
     return result;
   }, {});
 
@@ -92,38 +100,51 @@ const ClassDetail = (props) => {
   };
 
   useEffect(() => {
-    const finalInfoArray = Object.keys(selectedTimeslots).map((classid) => {
-      const timeslot = selectedTimeslots[classid]
-      const classInfo = data.find((classInfo) => classInfo.id === parseInt(classid));
-      const className = classInfo ? classInfo.title : "";
-      return {
-        classid,
-        className,
-        timeslot: timeslot || "",
-      };
-    })
-    props.onSendData(finalInfoArray);
+    props.onSendData(selectedTimeslots);
   }, [selectedTimeslots]);
 
   return (
     <div className="sub-cards-grid">
+      <h1>Happy Exploring!</h1>
       {data.map((classes) => (
         <>
           <div className="sub-card">
-            <h3>{classes.title}</h3>
-            <p>Age Group : {classes.age_group}</p>
-            <p>Duration : {classes.duration}</p>
+            <div className="class_card">
+              <div className="class_card1">
+                <img src={classes.link}></img>
+              </div>
+              <div className="class_card2">
+                <h3>{classes.title}</h3>
+                <p>Age Group : {classes.age_group}</p>
+                <p>Duration : {classes.duration}</p>
+                <p>Teacher :{classes.tutor}</p>
+              </div>
+              <div className="class_card3">
+                <h3>Select Time Slot</h3>
+                {classes.timeslots.map((timeslot) => (
+                  <Timeslot
+                    name={classes.title}
+                    classid={classes.id}
+                    timeslot={timeslot}
+                    isSelected={selectedTimeslots[classes.id] == timeslot}
+                    onSelect={handleTimeslotSelection}
+                  />
+                ))}
+              </div>
+            </div>
             <h3> ABOUT THE CLASS</h3>
 
             {classes.id !== expandedClassId && (
-              <p>{classes.description.substring(0, 100)} ....</p>
+              <p className="description">
+                {classes.description.substring(0, 100)} ....
+              </p>
             )}
 
             {classes.id === expandedClassId && (
               <>
-                <p>{classes.description}</p>
+                <p className="description">{classes.description}</p>
                 <h3>ABOUT THE TEACHER</h3>
-                <p>{classes.about_teacher}</p>
+                <p className="description">{classes.about_teacher}</p>
               </>
             )}
             <p></p>
@@ -131,16 +152,6 @@ const ClassDetail = (props) => {
               {expandedClassId === classes.id ? "Read Less.." : "Read More"}
             </button>
             <p></p>
-
-            {classes.timeslots.map((timeslot) => (
-              <Timeslot
-                name={classes.title}
-                classid={classes.id}
-                timeslot={timeslot}
-                isSelected={selectedTimeslots[classes.id] == timeslot}
-                onSelect={handleTimeslotSelection}
-              />
-            ))}
           </div>
         </>
       ))}
