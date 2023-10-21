@@ -57,3 +57,29 @@ p {
   color: black;
   font-size: 20px;
 }
+
+.submitpage {
+    display: flex; 
+    gap: 275px; 
+    justify-content: center;
+    align-items: center; 
+}
+
+.submitpage button{
+  height: 58px;
+  width: 272px;
+  font-size: 18px;
+  background-color: #0896C2;
+  color: white
+}
+
+.submitpage button:hover {
+  font-size: 22px; /* Font size on hover */
+  color: white;     /* Text color on hover */
+  background-color: #DE7247; /* Background color on hover */
+}
+
+.submitpage p{
+  font-size: 70px;
+  color: #DE7247;
+}
