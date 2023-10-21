@@ -89,8 +89,8 @@ const MainPage = () => {
         />
       )}
       {!register && submitted && (
-        <div>
-          <p> Thanks for submitting!</p>
+        <div className="submitpage">
+          <p> Thanks for <br></br>submitting!</p>
           <button onClick={homePageHandler}>Add More Learner!</button>
         </div>
       )}
