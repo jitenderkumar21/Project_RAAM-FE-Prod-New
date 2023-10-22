@@ -100,7 +100,20 @@ const ClassDetail = (props) => {
   };
 
   useEffect(() => {
-    props.onSendData(selectedTimeslots);
+    const resultArray = Object.keys(selectedTimeslots).map((classid) => {
+      const timeslot = selectedTimeslots[classid];
+      const classInfo = data.find(
+        (classInfo) => classInfo.id === parseInt(classid)
+      );
+      const className = classInfo ? classInfo.title : "";
+
+      return {
+        classid,
+        className,
+        timeslot: timeslot || "",
+      };
+    });
+    props.onSendData(resultArray);
   }, [selectedTimeslots]);
 
   return (
@@ -117,7 +130,7 @@ const ClassDetail = (props) => {
                 <h3>{classes.title}</h3>
                 <p>Age Group : {classes.age_group}</p>
                 <p>Duration : {classes.duration}</p>
-                <p>Teacher :{classes.tutor}</p>
+                <p>Teacher : {classes.tutor}</p>
               </div>
               <div className="class_card3">
                 <h3>Select Time Slot</h3>
@@ -149,7 +162,7 @@ const ClassDetail = (props) => {
             )}
             <p></p>
             <button onClick={() => toggleDescription(classes.id)}>
-              {expandedClassId === classes.id ? "Read Less.." : "Read More"}
+              {expandedClassId === classes.id ? "Read Less" : "Read More"}
             </button>
             <p></p>
           </div>

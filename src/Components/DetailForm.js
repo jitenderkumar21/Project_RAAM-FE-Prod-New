@@ -12,7 +12,6 @@ const DetailForm = (props) => {
   });
 
   const YOUR_GOOGLE_APPS_SCRIPT_URL = "https://backend-z29v.onrender.com/save/";
-  const data = { name: "Sumit", email: "sumitku1256@gmail.com", message: "HI" };
 
   const submitForm = async (data) => {
     const options = {
@@ -53,6 +52,7 @@ const DetailForm = (props) => {
 
   return (
     <React.Fragment>
+      <div className="form_meta"> Add Contact Details!</div>
       <form onSubmit={handleSubmit} className="my-form">
         <div className="form-group">
           <label htmlFor="parentName"> Parent Name *</label>
@@ -60,43 +60,48 @@ const DetailForm = (props) => {
             type="text"
             id="parentName"
             name="parentName"
+            required
             onChange={handleInputChange}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="childName"> Child Name *</label>
-          <input
-            type="text"
-            id="childName"
-            name="childName"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="childAge"> Child Age *</label>
-          <input
-            type="number"
-            id="childAge"
-            name="childAge"
-            onChange={handleInputChange}
-          />
-        </div>
-
         <div className="form-group">
           <label htmlFor="email">Email *</label>
           <input
             type="email"
             id="email"
             name="email"
+            required
             onChange={handleInputChange}
           />
         </div>
+        <div className="form-group">
+          <label htmlFor="childName"> Learner's Name *</label>
+          <input
+            type="text"
+            id="childName"
+            name="childName"
+            required
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="childAge"> Learner's Age *</label>
+          <input
+            type="number"
+            id="childAge"
+            name="childAge"
+            required
+            onChange={handleInputChange}
+          />
+        </div>
+
         <div className="form-group">
           <label htmlFor="phoneNumber">Phone </label>
           <input
             type="tel"
             id="phoneNumber"
             name="phoneNumber"
+            placeholder="Optional"
             onChange={handleInputChange}
           />
         </div>

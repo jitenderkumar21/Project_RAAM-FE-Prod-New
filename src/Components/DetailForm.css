@@ -1,56 +1,64 @@
 /* Form.css */
 .my-form {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f7f7f7;
-  }
-  
-  .form-group {
-    margin-bottom: 10px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  input[type="number"] {
-    width: 100%;
-    padding: 5px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .submitted-data {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #4caf50;
-    border-radius: 5px;
-    background-color: #e9f6e9;
-  }
-  
-  .submitted-data h2 {
-    font-size: 1.2em;
-    color: #4caf50;
-  }
-  
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #de7247;
+  text-align: left;
+  font-size: 18px;
+  margin-left: 3px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 35px;
+  font-size: 16px;
+  padding-left: 2.5%;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.submitted-data {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  background-color: #e9f6e9;
+}
+
+.submitted-data h2 {
+  font-size: 1.2em;
+  color: #4caf50;
+}
+
+.form_meta {
+  font-size: 35px;
+  color: #0896c2;
+}
