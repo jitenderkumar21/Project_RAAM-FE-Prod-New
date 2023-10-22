@@ -95,6 +95,11 @@
   height: min-content;
   margin-left: 14%;
   margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.sub-card:hover {
+  transform: scale(1.03);
 }
 
 .sub-card h3 {
