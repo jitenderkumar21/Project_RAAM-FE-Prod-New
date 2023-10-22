@@ -5,8 +5,31 @@
   padding: 20px;
 }
 
+.buttondisplay button {
+  height: 40px;
+  width: 120px;
+  font-size: 18px;
+  background-color: #0896c2;
+  color: white;
+  border-radius: 4px;
+  /* margin: 30px; */
+}
+
+.buttondisplay button:hover {
+  font-size: 18px; /* Font size on hover */
+  color: white; /* Text color on hover */
+  background-color: #de7247; /* Background color on hover */
+}
+
 .form-group {
   margin-bottom: 15px;
+}
+
+.buttondisplay {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 
 label {

@@ -8,6 +8,7 @@ import DetailForm from "./DetailForm";
 import Coral_Academy from "../assets/Coral_Academy.png";
 import About_us from "../assets/About_us.png";
 import Demo from "../assets/Demo.png";
+import footer from "../assets/footer.png";
 const MainPage = () => {
   const [register, setRegister] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -65,23 +66,23 @@ const MainPage = () => {
                 of interesting topics for the next two months.
               </p>
             </div>
-            <div className="about_img">
+            <div className="about_img1">
               <img src={Demo} alt="Demo Classes" />
             </div>
           </div>
           <div>
             <ClassDetail onSendData={sendDataHandler} />
           </div>
-          <p></p>
-
-          <Button
-            variant="contained"
-            color="primary"
-            className="button"
-            onClick={registerHandler}
-          >
-            Register Here
-          </Button>
+          <div className="register_button">
+            <Button
+              variant="contained"
+              color="primary"
+              className="button"
+              onClick={registerHandler}
+            >
+              Register Here
+            </Button>
+          </div>
         </div>
       )}
       {register && !submitted && (
@@ -94,12 +95,20 @@ const MainPage = () => {
       {!register && submitted && (
         <div className="submitpage">
           <p>
-            {" "}
             Thanks for <br></br>submitting!
           </p>
           <button onClick={homePageHandler}>Add More Learner!</button>
         </div>
       )}
+      <div className="footer">
+        <div className="footer_content">
+          <p> Contact us at:</p>
+          <a href="mailto:support@coralacademy.com">support@coralacademy.com</a>
+        </div>
+        <div>
+          <img src={footer}></img>
+        </div>
+      </div>
     </CardWrapper>
   );
 };

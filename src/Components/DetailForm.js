@@ -50,6 +50,10 @@ const DetailForm = (props) => {
     props.onSubmit();
   };
 
+  const backHandler = () => {
+    props.onBack();
+  };
+
   return (
     <React.Fragment>
       <div className="form_meta"> Add Contact Details!</div>
@@ -94,7 +98,6 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-
         <div className="form-group">
           <label htmlFor="phoneNumber">Phone </label>
           <input
@@ -105,8 +108,10 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-
-        <button type="submit">Submit</button>
+        <div className="buttondisplay">
+          <button onClick={backHandler}> Back</button>
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </React.Fragment>
   );
