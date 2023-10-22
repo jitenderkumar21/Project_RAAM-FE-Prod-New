@@ -1,0 +1,26 @@
+.spinner-header {
+  margin-left: 105px;
+  position: absolute;
+}
+
+.spinner-svg {
+  animation: rotate 2s linear infinite;
+  height: 25px;
+  margin-right: 4px;
+  width: 25px;
+}
+
+.svg-spinner-background {
+  fill: none;
+  stroke: #c0c0c0;
+  stroke-linecap: round;
+  stroke-width: 3px;
+}
+
+.svg-spinner-spin {
+  animation: dash 1.7s ease-in-out infinite;
+  fill: none;
+  stroke: #008553;
+  stroke-linecap: round;
+  stroke-width: 3px;
+}

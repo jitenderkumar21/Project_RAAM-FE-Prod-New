@@ -160,7 +160,11 @@ const ClassDetail = (props) => {
                     name={classes.title}
                     classid={classes.id}
                     timeslot={timeslot}
-                    full={newfulldata[classes.id].includes(timeslot)}
+                    full={
+                      newfulldata[classes.id]
+                        ? newfulldata[classes.id].includes(timeslot)
+                        : false
+                    }
                     isSelected={selectedTimeslots[classes.id] == timeslot}
                     onSelect={handleTimeslotSelection}
                   />

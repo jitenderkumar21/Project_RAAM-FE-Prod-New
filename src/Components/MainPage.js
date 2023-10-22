@@ -9,6 +9,8 @@ import Coral_Academy from "../assets/Coral_Academy.png";
 import About_us from "../assets/About_us.png";
 import Demo from "../assets/Demo.png";
 import footer from "../assets/footer.png";
+import Loader from "./Loader/Loader";
+
 const MainPage = () => {
   const [register, setRegister] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -69,6 +71,9 @@ const MainPage = () => {
     <CardWrapper>
       {/* <h1> Coral Academy </h1>
       <h4> Demo Classes</h4> */}
+      {/* <div>
+        <Loader />
+      </div> */}
       <img className="title" src={Coral_Academy} alt="Title" />
 
       {!register && !submitted && (
