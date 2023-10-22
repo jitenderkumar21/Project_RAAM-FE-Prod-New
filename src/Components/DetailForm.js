@@ -48,6 +48,7 @@ const DetailForm = (props) => {
     console.log(new_data);
     submitForm(new_data);
     props.onSubmit();
+    localStorage.clear();
   };
 
   const backHandler = () => {

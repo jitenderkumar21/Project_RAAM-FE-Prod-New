@@ -69,13 +69,22 @@ const ClassDetail = (props) => {
     return result;
   }, {});
 
-  const expandClasses = data.reduce((result, classItem) => {
-    result[classItem.id] = false;
-    return result;
-  }, {});
+  const storedSelections = localStorage.getItem("selectedTimeSlots");
+  let initial_state = {};
+  if (storedSelections) {
+    initial_state = JSON.parse(storedSelections);
+  } else {
+    initial_state = transformedClasses;
+  }
 
-  const [selectedTimeslots, setSelectedTimeslots] =
-    useState(transformedClasses);
+  const [selectedTimeslots, setSelectedTimeslots] = useState(initial_state);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "selectedTimeSlots",
+      JSON.stringify(selectedTimeslots)
+    );
+  }, [selectedTimeslots]);
 
   const [expandedClassId, setExpandedClassId] = useState(null);
 

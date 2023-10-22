@@ -13,7 +13,7 @@
 }
 .register_button button {
   height: 40px;
-  width: 190px;
+  width: 150px;
   font-size: 18px;
   background-color: #0896c2;
   color: white;
@@ -190,7 +190,7 @@ h4 {
 }
 
 .sub-card button {
-  font-size: 12px;
+  font-size: 14px;
   background-color: #0896c2;
   color: white;
 }

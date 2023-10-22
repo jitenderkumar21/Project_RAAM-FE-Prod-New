@@ -80,7 +80,7 @@ const MainPage = () => {
               className="button"
               onClick={registerHandler}
             >
-              Register Here
+              Continue
             </Button>
           </div>
         </div>
