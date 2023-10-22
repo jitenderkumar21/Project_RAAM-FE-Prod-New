@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import "./DetailForm.css";
 
 const DetailForm = (props) => {
-  const [formData, setFormData] = useState({
-    parentName: "",
-    childName: "",
-    email: "",
-    phoneNumber: "",
-    childAge: "",
-    classDetails: "",
-  });
+  const storedSelectedForm = localStorage.getItem("selectedform");
+  let initial_state = {};
+  if (storedSelectedForm) {
+    initial_state = JSON.parse(storedSelectedForm);
+  } else {
+    initial_state = {
+      parentName: "",
+      childName: "",
+      email: "",
+      phoneNumber: "",
+      childAge: "",
+      classDetails: "",
+    };
+  }
+  const [formData, setFormData] = useState(initial_state);
 
   const YOUR_GOOGLE_APPS_SCRIPT_URL = "https://backend-z29v.onrender.com/save/";
 
@@ -52,6 +59,7 @@ const DetailForm = (props) => {
   };
 
   const backHandler = () => {
+    localStorage.setItem("selectedform", JSON.stringify(formData));
     props.onBack();
   };
 
@@ -66,6 +74,7 @@ const DetailForm = (props) => {
             id="parentName"
             name="parentName"
             required
+            value={formData.parentName}
             onChange={handleInputChange}
           />
         </div>
@@ -76,6 +85,7 @@ const DetailForm = (props) => {
             id="email"
             name="email"
             required
+            value={formData.email}
             onChange={handleInputChange}
           />
         </div>
@@ -86,6 +96,7 @@ const DetailForm = (props) => {
             id="childName"
             name="childName"
             required
+            value={formData.childName}
             onChange={handleInputChange}
           />
         </div>
@@ -96,6 +107,7 @@ const DetailForm = (props) => {
             id="childAge"
             name="childAge"
             required
+            value={formData.childAge}
             onChange={handleInputChange}
           />
         </div>
@@ -106,6 +118,7 @@ const DetailForm = (props) => {
             id="phoneNumber"
             name="phoneNumber"
             placeholder="Optional"
+            value={formData.phoneNumber}
             onChange={handleInputChange}
           />
         </div>

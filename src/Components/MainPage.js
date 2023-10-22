@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import { Card, FormControl, FormLabel, TextField } from "@mui/material";
 import CardWrapper from "./Card/CardWrapper";
@@ -13,6 +13,7 @@ const MainPage = () => {
   const [register, setRegister] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [timedata, setTimedata] = useState({});
+  const [fulldata, setFullData] = useState([]);
 
   const registerHandler = () => {
     setRegister(true);
@@ -34,6 +35,35 @@ const MainPage = () => {
   const homePageHandler = () => {
     setSubmitted(false);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log("shd");
+      try {
+        const response = await fetch(
+          "https://backend-z29v.onrender.com/classes/"
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const jsonData = await response.json();
+        setFullData(jsonData);
+      } catch (err) {
+        console.log("Error");
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  let fullclasses = fulldata.reduce((acc, item) => {
+    if (item.slots.some((slot) => slot.isFull)) {
+      acc[item.class_id] = item.slots
+        .filter((slot) => slot.isFull)
+        .map((slot) => slot.slot);
+    }
+    return acc;
+  }, {});
 
   return (
     <CardWrapper>
@@ -71,7 +101,7 @@ const MainPage = () => {
             </div>
           </div>
           <div>
-            <ClassDetail onSendData={sendDataHandler} />
+            <ClassDetail onSendData={sendDataHandler} fullclass={fullclasses} />
           </div>
           <div className="register_button">
             <Button

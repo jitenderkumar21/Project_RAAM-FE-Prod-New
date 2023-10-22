@@ -21,7 +21,7 @@ const ClassDetail = (props) => {
         "9:00 AM to 10:00 AM",
         "11:00 AM to 12:00 AM",
         "2:00 PM to 3:00 PM",
-        "6:00 PM to 7:00 PM",
+        "Want another slot",
       ],
     },
     {
@@ -40,7 +40,7 @@ const ClassDetail = (props) => {
         "9:00 AM to 10:00 AM",
         "11:00 AM to 12:00 AM",
         "2:00 PM to 3:00 PM",
-        "6:00 PM to 7:00 PM",
+        "Want another slot",
       ],
     },
     {
@@ -59,15 +59,28 @@ const ClassDetail = (props) => {
         "9:00 AM to 10:00 AM",
         "11:00 AM to 12:00 AM",
         "2:00 PM to 3:00 PM",
-        "6:00 PM to 7:00 PM",
+        "Want another slot",
       ],
     },
   ];
-
+  console.log(props.fullclass, "props data");
   const transformedClasses = data.reduce((result, classItem) => {
     result[classItem.id] = "";
     return result;
   }, {});
+
+  const transformedfullClasses = data.reduce((result, classItem) => {
+    result[classItem.id] = [];
+    return result;
+  }, {});
+
+  const [newfulldata, setNewFullData] = useState(transformedfullClasses);
+
+  useEffect(() => {
+    if (Object.keys(props.fullclass).length > 0) {
+      setNewFullData(props.fullclass);
+    }
+  }, [props.fullclass]);
 
   const storedSelections = localStorage.getItem("selectedTimeSlots");
   let initial_state = {};
@@ -77,6 +90,7 @@ const ClassDetail = (props) => {
     initial_state = transformedClasses;
   }
 
+  const [expandedClassId, setExpandedClassId] = useState(null);
   const [selectedTimeslots, setSelectedTimeslots] = useState(initial_state);
 
   useEffect(() => {
@@ -85,8 +99,6 @@ const ClassDetail = (props) => {
       JSON.stringify(selectedTimeslots)
     );
   }, [selectedTimeslots]);
-
-  const [expandedClassId, setExpandedClassId] = useState(null);
 
   const toggleDescription = (classId) => {
     if (expandedClassId === classId) {
@@ -148,6 +160,7 @@ const ClassDetail = (props) => {
                     name={classes.title}
                     classid={classes.id}
                     timeslot={timeslot}
+                    full={newfulldata[classes.id].includes(timeslot)}
                     isSelected={selectedTimeslots[classes.id] == timeslot}
                     onSelect={handleTimeslotSelection}
                   />
