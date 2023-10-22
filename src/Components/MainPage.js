@@ -16,7 +16,7 @@ const MainPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [timedata, setTimedata] = useState({});
   const [fulldata, setFullData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const registerHandler = () => {
     setRegister(true);
@@ -41,7 +41,7 @@ const MainPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
+      // setLoading(true);
       console.log("shd");
       try {
         const response = await fetch(
@@ -52,10 +52,10 @@ const MainPage = () => {
         }
         const jsonData = await response.json();
         setFullData(jsonData);
-        setLoading(false);
+        // setLoading(false);
       } catch (err) {
         console.log("Error");
-        setLoading(false);
+        // setLoading(false);
       }
     };
 
@@ -75,11 +75,11 @@ const MainPage = () => {
     <CardWrapper>
       {/* <h1> Coral Academy </h1>
       <h4> Demo Classes</h4> */}
-      {loading && (
+      {/* {loading && (
         <div className="loaderClass">
           <Loader />
         </div>
-      )}
+      )} */}
       <img className="title" src={Coral_Academy} alt="Title" />
 
       {!register && !submitted && (
