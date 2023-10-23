@@ -6,17 +6,26 @@ import age from "../assets/age.png";
 import duration from "../assets/duration.png";
 import teacher from "../assets/teacher.png";
 import dropIcon from "../assets/dropdown.png";
+import instructor from "../assets/instructor.png";
 import closeDropDown from "../assets/closeDropdown.png";
 const ClassDetail = (props) => {
   const data = [
     {
       id: 1,
       title: "Travel the World with Mr. Clark",
-      description:
-        "This ongoing class is dedicated to English speaking skills. 1:1 lessons with a highly experienced online English teacher. Learners will be guided through a conversation about topics they LOVE! (Dance, Sports, Crafts, Animals and MORE). During the 11 lesson the teacher will help learners speak in complete sentences while correcting grammar and pronunciation. They will also be introduced to new vocabulary and practice spelling!",
+      class_details:
+        "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
+      prerequisite:
+        "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
+      learning_outcomes:
+        "To improve our understanding of different cultures around the world, including their history and geography and everything!",
+
       about_teacher:
-        "Hi! My name is Teacher Sarah and I live in upstate New York! I graduated from Southern Utah University with a Bachelors Degree in Dance Performance. I have been teaching children for over 20 years and love to make learning fun! I have been a ballet dancer since I was very young but also enjoy tap and jazz dance as well.",
-      age_group: "8-13 yeaars old",
+        "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
+      teaching_philosophy:
+        "To improve our understanding of different cultures around the world, including their histories.",
+      teacher_pic: instructor,
+      age_group: "8-13 years old",
       duration: "50 minutes",
       expand: false,
       link: "https://static.wixstatic.com/media/27d523f50e781626c04fc109dd313241.jpg/v1/crop/x_101,y_0,w_406,h_306/fill/w_214,h_161,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Geography%20Lesson.jpg",
@@ -30,12 +39,20 @@ const ClassDetail = (props) => {
     {
       id: 2,
       title: "Mind Gym: Working out With Logic Puzzles",
-      description:
-        "This ongoing class is dedicated to English speaking skills. 1:1 lessons with a highly experienced online English teacher. Learners will be guided through a conversation about topics they LOVE! (Dance, Sports, Crafts, Animals and MORE). During the 11 lesson the teacher will help learners speak in complete sentences while correcting grammar and pronunciation. They will also be introduced to new vocabulary and practice spelling!",
+      class_details:
+        "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
+      prerequisite:
+        "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
+      learning_outcomes:
+        "To improve our understanding of different cultures around the world, including their history and geography and everything!",
+
       about_teacher:
-        "Hi! My name is Teacher Sarah and I live in upstate New York! I graduated from Southern Utah University with a Bachelors Degree in Dance Performance. I have been teaching children for over 20 years and love to make learning fun! I have been a ballet dancer since I was very young but also enjoy tap and jazz dance as well.",
+        "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
+      teaching_philosophy:
+        "To improve our understanding of different cultures around the world, including their histories.",
       expand: false,
-      age_group: "8-13 yeaars old",
+      teacher_pic: instructor,
+      age_group: "8-13 years old",
       duration: "50 minutes",
       link: "https://static.wixstatic.com/media/11062b_54cb26d9ed2049d9a1a6259e29ef373d~mv2_d_5251_3501_s_4_2.jpg/v1/crop/x_314,y_0,w_4623,h_3501/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Playing%20with%20Toy%20Vehicles.jpg",
       tutor: "Vyshali",
@@ -48,11 +65,19 @@ const ClassDetail = (props) => {
     {
       id: 3,
       title: "Electoral College",
-      description:
-        "This ongoing class is dedicated to English speaking skills. 1:1 lessons with a highly experienced online English teacher. Learners will be guided through a conversation about topics they LOVE! (Dance, Sports, Crafts, Animals and MORE). During the 11 lesson the teacher will help learners speak in complete sentences while correcting grammar and pronunciation. They will also be introduced to new vocabulary and practice spelling!",
+      class_details:
+        "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
+      prerequisite:
+        "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
+      learning_outcomes:
+        "To improve our understanding of different cultures around the world, including their history and geography and everything!",
+
       about_teacher:
-        "Hi! My name is Teacher Sarah and I live in upstate New York! I graduated from Southern Utah University with a Bachelors Degree in Dance Performance. I have been teaching children for over 20 years and love to make learning fun! I have been a ballet dancer since I was very young but also enjoy tap and jazz dance as well.",
-      age_group: "8-13 yeaars old",
+        "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
+      teaching_philosophy:
+        "To improve our understanding of different cultures around the world, including their histories.",
+      teacher_pic: instructor,
+      age_group: "8-13 years old",
       expand: false,
       duration: "50 minutes",
       link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
@@ -66,11 +91,19 @@ const ClassDetail = (props) => {
     {
       id: 4,
       title: "Electoral College",
-      description:
-        "This ongoing class is dedicated to English speaking skills. 1:1 lessons with a highly experienced online English teacher. Learners will be guided through a conversation about topics they LOVE! (Dance, Sports, Crafts, Animals and MORE). During the 11 lesson the teacher will help learners speak in complete sentences while correcting grammar and pronunciation. They will also be introduced to new vocabulary and practice spelling!",
+      class_details:
+        "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
+      prerequisite:
+        "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
+      learning_outcomes:
+        "To improve our understanding of different cultures around the world, including their history and geography and everything!",
+
       about_teacher:
-        "Hi! My name is Teacher Sarah and I live in upstate New York! I graduated from Southern Utah University with a Bachelors Degree in Dance Performance. I have been teaching children for over 20 years and love to make learning fun! I have been a ballet dancer since I was very young but also enjoy tap and jazz dance as well.",
+        "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
+      teaching_philosophy:
+        "To improve our understanding of different cultures around the world, including their histories.",
       age_group: "8-13 yeaars old",
+      teacher_pic: instructor,
       expand: false,
       duration: "50 minutes",
       link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
@@ -84,11 +117,19 @@ const ClassDetail = (props) => {
     {
       id: 5,
       title: "Electoral College",
-      description:
-        "This ongoing class is dedicated to English speaking skills. 1:1 lessons with a highly experienced online English teacher. Learners will be guided through a conversation about topics they LOVE! (Dance, Sports, Crafts, Animals and MORE). During the 11 lesson the teacher will help learners speak in complete sentences while correcting grammar and pronunciation. They will also be introduced to new vocabulary and practice spelling!",
+      class_details:
+        "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
+      prerequisite:
+        "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
+      learning_outcomes:
+        "To improve our understanding of different cultures around the world, including their history and geography and everything!",
+
       about_teacher:
-        "Hi! My name is Teacher Sarah and I live in upstate New York! I graduated from Southern Utah University with a Bachelors Degree in Dance Performance. I have been teaching children for over 20 years and love to make learning fun! I have been a ballet dancer since I was very young but also enjoy tap and jazz dance as well.",
-      age_group: "8-13 yeaars old",
+        "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
+      teaching_philosophy:
+        "To improve our understanding of different cultures around the world, including their histories.",
+      age_group: "8-13 years old",
+      teacher_pic: instructor,
       expand: false,
       duration: "50 minutes",
       link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
@@ -191,16 +232,16 @@ const ClassDetail = (props) => {
                 <div className="class_card2">
                   <h3>{classes.title}</h3>
                   <p>
-                    <img src={age} alt="ageIcon" className="icon" /> Age Group :
-                    {classes.age_group}
+                    <img src={age} alt="ageIcon" className="icon" />
+                    Age Group : {classes.age_group}
                   </p>
                   <p>
                     <img src={duration} alt="durationIcon" className="icon" />
-                    Duration :{classes.duration}
+                    Duration : {classes.duration}
                   </p>
                   <p>
                     <img src={teacher} alt="teacherIcon" className="icon" />
-                    Teacher :{classes.tutor}
+                    Teacher : {classes.tutor}
                   </p>
                 </div>
                 <div class="separator"></div>
@@ -236,9 +277,25 @@ const ClassDetail = (props) => {
                 {classes.id === expandedClassId && (
                   <>
                     <h3>ABOUT THE CLASS</h3>
-                    <p className="description">{classes.description}</p>
-                    <h3>ABOUT THE TEACHER</h3>
-                    <p className="description">{classes.about_teacher}</p>
+
+                    <h5>Class Details</h5>
+                    <p className="description">{classes.class_details}</p>
+                    <h5>Prerequisite</h5>
+                    <p className="description">{classes.prerequisite}</p>
+                    <h5>Learning Outcomes</h5>
+                    <p className="description">{classes.learning_outcomes}</p>
+
+                    <h3>MEET YOUR TEACHER</h3>
+                    <div className="about_teacher">
+                      <img src={classes.teacher_pic}></img>
+                      <div>
+                        <p className="description">{classes.about_teacher}</p>
+                        <h5>Teaching Philosophy</h5>
+                        <p className="description">
+                          {classes.teaching_philosophy}
+                        </p>
+                      </div>
+                    </div>
                   </>
                 )}
               </div>
