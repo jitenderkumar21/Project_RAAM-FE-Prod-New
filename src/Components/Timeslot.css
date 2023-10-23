@@ -2,31 +2,33 @@
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color: #0c0c0c;
+  font-weight: lighter;
 }
 #full {
-  color: #e6aa93;
+  color: #928e8e;
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-#custom_tooltip {
-  border-radius: 2px;
-  font-size: 16px;
+.light_text {
+  font-weight: 500; 
+  font-family: helvetica;
 }
 
 .input2 {

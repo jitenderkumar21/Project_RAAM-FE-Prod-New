@@ -3,11 +3,10 @@ import "./Timeslot.css";
 import { Tooltip } from "@mui/material";
 
 const Timeslot = ({ timeslot, classid, isSelected, onSelect, full }) => {
-  // console.log(full, classid, timeslot);
   return (
     <>
       {full && (
-        <Tooltip id="custom_tooltip" title="Classes Full" hover placement="top">
+        <Tooltip id="custom_tooltip" title="Classes Full" hover arrow placement="top-end">
           <label className="container" id="full">
             <input
               type="checkbox"
@@ -15,7 +14,7 @@ const Timeslot = ({ timeslot, classid, isSelected, onSelect, full }) => {
               disabled
               onChange={() => onSelect(classid, timeslot)}
             />
-            {timeslot}
+            <span className="light_text">{timeslot}</span>
             <span class="checkmark"></span>
           </label>
         </Tooltip>
@@ -28,7 +27,7 @@ const Timeslot = ({ timeslot, classid, isSelected, onSelect, full }) => {
             checked={isSelected}
             onChange={() => onSelect(classid, timeslot)}
           />
-          {timeslot}
+          <span className="light_text">{timeslot}</span>
           <span class="checkmark"></span>
         </label>
       )}
