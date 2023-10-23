@@ -6,7 +6,7 @@ import age from "../assets/age.png";
 import duration from "../assets/duration.png";
 import teacher from "../assets/teacher.png";
 import dropIcon from "../assets/dropdown.png";
-
+import closeDropDown from "../assets/closeDropdown.png";
 const ClassDetail = (props) => {
   const data = [
     {
@@ -178,10 +178,10 @@ const ClassDetail = (props) => {
     <div className="sub-cards-grid">
       <h1>Happy Exploring!</h1>
       <div className="scrollClass" id="scrollClass1">
-        {data.map((classes) => (
+        {data.map((classes, index) => (
           <>
             <div
-              className="sub-card"
+              className={index % 2 == 0 ? "sub-card" : "sub-card1"}
               onClick={() => toggleDescription(classes.id)}
             >
               <div className="class_card">
@@ -225,7 +225,12 @@ const ClassDetail = (props) => {
               <div className="class_footer">
                 <p>
                   Description
-                  <img src={dropIcon} alt="dropDown" className="icon" />
+                  {!expandedClassId && (
+                    <img src={dropIcon} alt="dropDown" className="icon" />
+                  )}
+                  {expandedClassId && (
+                    <img src={closeDropDown} alt="dropDown" className="icon" />
+                  )}
                 </p>
 
                 {classes.id === expandedClassId && (

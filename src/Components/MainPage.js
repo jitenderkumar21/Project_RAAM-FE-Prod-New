@@ -9,10 +9,10 @@ import Coral_Academy from "../assets/Coral_Academy.png";
 import About_us from "../assets/About_us.png";
 import Demo from "../assets/Demo.png";
 import footer from "../assets/footer.png";
-import icon1 from "../assets/icon1.png"
-import icon2 from "../assets/icon2.png"
-import icon3 from "../assets/icon3.png"
-import icon4 from "../assets/icon4.png"
+import icon1 from "../assets/icon1.png";
+import icon2 from "../assets/icon2.png";
+import icon3 from "../assets/icon3.png";
+import icon4 from "../assets/icon4.png";
 import Loader from "./Loader/Loader";
 
 const MainPage = () => {
@@ -115,19 +115,32 @@ const MainPage = () => {
               <img src={Demo} alt="Demo Classes" />
             </div>
           </div>
-          <h2>How To Enroll?</h2>
-          <div className="thick_line"></div>
-          <div className="guidance">
-            <img src={icon1}></img>
-            <p> Find<br/> Classes</p>
-            <img src={icon2}></img>
-            <img src={icon3}></img>
-            <p> Select Time <br/> Slots</p>
-            <img src={icon2}></img>
-            <img src={icon4}></img>
-            <p> Fill <br/> Details!</p>
+          <div className="enrollAnimation">
+            <h2>How To Enroll?</h2>
+            <div className="thick_line"></div>
+            <div className="guidance">
+              <img src={icon1}></img>
+              <p>
+                {" "}
+                Find
+                <br /> Classes
+              </p>
+              <img src={icon2}></img>
+              <img src={icon3}></img>
+              <p>
+                {" "}
+                Select Time <br /> Slots
+              </p>
+              <img src={icon2}></img>
+              <img src={icon4}></img>
+              <p>
+                {" "}
+                Fill <br /> Details!
+              </p>
+            </div>
+            <div className="thin_line"></div>
           </div>
-          <div className="thin_line"></div>
+
           <div>
             <ClassDetail onSendData={sendDataHandler} fullclass={fullclasses} />
           </div>
