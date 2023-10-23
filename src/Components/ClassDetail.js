@@ -266,10 +266,10 @@ const ClassDetail = (props) => {
               <div className="class_footer">
                 <p>
                   Description
-                  {!expandedClassId && (
+                  {expandedClassId != classes.id && (
                     <img src={dropIcon} alt="dropDown" className="icon" />
                   )}
-                  {expandedClassId && (
+                  {expandedClassId == classes.id && (
                     <img src={closeDropDown} alt="dropDown" className="icon" />
                   )}
                 </p>

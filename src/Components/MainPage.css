@@ -56,9 +56,13 @@
   height: 300px;
   text-align: left;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: bold;
   text-decoration: none solid rgb(222, 114, 71);
 }
+
+.about_content p {
+  font-weight: 100;
+}
+
 
 .demo_content {
   width: 50%;
@@ -168,6 +172,7 @@ h1 {
   font-size: 18px;
   width: 70%;
   font-weight: 500;
+  font-family: helvetica;
 }
 
 h4 {
