@@ -224,7 +224,7 @@ const ClassDetail = (props) => {
               </div>
               <div className="class_footer">
                 <p>
-                  Description{" "}
+                  Description
                   <img src={dropIcon} alt="dropDown" className="icon" />
                 </p>
 
