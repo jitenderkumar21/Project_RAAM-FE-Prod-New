@@ -55,7 +55,6 @@
   width: 50%;
   height: 300px;
   text-align: left;
-  font-family: "Franklin Gothic Medium";
   font-weight: bold;
   text-decoration: none solid rgb(222, 114, 71);
 }
@@ -66,7 +65,6 @@
   text-align: left;
   margin-left: 20%;
   font-weight: bold;
-  font-family: "Franklin Gothic Medium";
   text-decoration: none solid rgb(222, 114, 71);
 }
 
@@ -246,7 +244,7 @@ h4 {
 }
 .scrollClass {
   width: 90%;
-  max-height: 753.8px; /*1215.6px*/
+  max-height: 642.8px; /*638.2px if we wanted to show 2 class + initial part of 3rd class */
   overflow-y: auto;
   align-items: center;
 }
@@ -301,8 +299,15 @@ h4 {
 }
 
 .class_footer p {
-  font-size: 14px;
+  font-size: 18px;
   font-family: helvetica;
   color: black;
   text-align: left;
+  margin-left: 2.5%;
+}
+.icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+  margin-bottom: -5px;
 }

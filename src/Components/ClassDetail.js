@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./MainPage.css";
 import Timeslot from "./Timeslot";
 import "./ClassDetail.css";
+import age from "../assets/age.png";
+import duration from "../assets/duration.png";
+import teacher from "../assets/teacher.png";
+import dropIcon from "../assets/dropdown.png";
 
 const ClassDetail = (props) => {
   const data = [
@@ -191,9 +195,18 @@ const ClassDetail = (props) => {
                 </div>
                 <div className="class_card2">
                   <h3>{classes.title}</h3>
-                  <p>Age Group : {classes.age_group}</p>
-                  <p>Duration : {classes.duration}</p>
-                  <p>Teacher : {classes.tutor}</p>
+                  <p>
+                    <img src={age} alt="ageIcon" className="icon" /> Age Group :
+                    {classes.age_group}
+                  </p>
+                  <p>
+                    <img src={duration} alt="durationIcon" className="icon" />
+                    Duration :{classes.duration}
+                  </p>
+                  <p>
+                    <img src={teacher} alt="teacherIcon" className="icon" />
+                    Teacher :{classes.tutor}
+                  </p>
                 </div>
                 <div class="separator"></div>
                 <div className="class_card3">
@@ -215,7 +228,10 @@ const ClassDetail = (props) => {
                 </div>
               </div>
               <div className="class_footer">
-                <p> Description </p>
+                <p>
+                  Description{" "}
+                  <img src={dropIcon} alt="dropDown" className="icon" />
+                </p>
 
                 {classes.id === expandedClassId && (
                   <>
