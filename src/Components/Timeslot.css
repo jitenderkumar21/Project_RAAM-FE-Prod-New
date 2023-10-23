@@ -11,7 +11,7 @@
   user-select: none;
 }
 #full {
-  text-decoration: line-through;
+  color: #e6aa93;
   display: block;
   position: relative;
   padding-left: 35px;

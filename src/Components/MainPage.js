@@ -111,6 +111,7 @@ const MainPage = () => {
               <img src={Demo} alt="Demo Classes" />
             </div>
           </div>
+          <h2>How To Enroll?</h2>
           <div>
             <ClassDetail onSendData={sendDataHandler} fullclass={fullclasses} />
           </div>
