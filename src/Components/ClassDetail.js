@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./MainPage.css";
 import Timeslot from "./Timeslot";
 import "./ClassDetail.css";
+import "./MobileView.css";
 import age from "../assets/age.png";
 import duration from "../assets/duration.png";
 import teacher from "../assets/teacher.png";
@@ -223,7 +224,7 @@ const ClassDetail = (props) => {
           <>
             <div
               className={index % 2 == 0 ? "sub-card" : "sub-card1"}
-              id= {props.scroll > 800 ? "animation" : ""}
+              id={props.scroll > 800 ? "animation" : ""}
               onClick={() => toggleDescription(classes.id)}
             >
               <div className="class_card">
