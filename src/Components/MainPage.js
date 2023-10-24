@@ -20,7 +20,7 @@ const MainPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [timedata, setTimedata] = useState({});
   const [fulldata, setFullData] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const registerHandler = () => {
     setRegister(true);
@@ -37,11 +37,16 @@ const MainPage = () => {
 
   const backPageHandler = () => {
     setRegister(false);
+    setScrollPosition(1090)
   };
 
   const homePageHandler = () => {
     setSubmitted(false);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, scrollPosition);
+  }, [scrollPosition]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,6 +70,23 @@ const MainPage = () => {
 
     fetchData();
   }, [submitted]);
+
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
+  console.log(scrollPosition)
 
   let fullclasses = fulldata.reduce((acc, item) => {
     if (item.slots.some((slot) => slot.isFull)) {
@@ -115,26 +137,23 @@ const MainPage = () => {
               <img src={Demo} alt="Demo Classes" />
             </div>
           </div>
-          <div className="enrollAnimation">
+          <div className={scrollPosition >400 ? "enrollAnimation" : ""}>
             <h2>How To Enroll?</h2>
             <div className="thick_line"></div>
             <div className="guidance">
               <img src={icon1}></img>
               <p>
-                {" "}
                 Find
                 <br /> Classes
               </p>
               <img src={icon2}></img>
               <img src={icon3}></img>
               <p>
-                {" "}
                 Select Time <br /> Slots
               </p>
               <img src={icon2}></img>
               <img src={icon4}></img>
               <p>
-                {" "}
                 Fill <br /> Details!
               </p>
             </div>
@@ -142,7 +161,7 @@ const MainPage = () => {
           </div>
 
           <div>
-            <ClassDetail onSendData={sendDataHandler} fullclass={fullclasses} />
+            <ClassDetail onSendData={sendDataHandler} fullclass={fullclasses} scroll = {scrollPosition} />
           </div>
           <div className="register_button">
             <Button

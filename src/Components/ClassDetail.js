@@ -26,13 +26,13 @@ const ClassDetail = (props) => {
         "To improve our understanding of different cultures around the world, including their histories.",
       teacher_pic: instructor,
       age_group: "8-13 years old",
-      duration: "50 minutes",
+      duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
       expand: false,
       link: "https://static.wixstatic.com/media/27d523f50e781626c04fc109dd313241.jpg/v1/crop/x_101,y_0,w_406,h_306/fill/w_214,h_161,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Geography%20Lesson.jpg",
       tutor: "Misses Dee",
       timeslots: [
-        "1 Nov, 6 PM - 7 PM (PST)",
-        "2 Nov, 6 PM - 7 PM (PST)",
+        "1 Nov Wednesday, 6PM - 7PM (PST)",
+        "2 Nov Thursday, 6PM - 7PM (PST)",
         "Want another slot",
       ],
     },
@@ -53,12 +53,12 @@ const ClassDetail = (props) => {
       expand: false,
       teacher_pic: instructor,
       age_group: "8-13 years old",
-      duration: "50 minutes",
+      duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
       link: "https://static.wixstatic.com/media/11062b_54cb26d9ed2049d9a1a6259e29ef373d~mv2_d_5251_3501_s_4_2.jpg/v1/crop/x_314,y_0,w_4623,h_3501/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Playing%20with%20Toy%20Vehicles.jpg",
       tutor: "Vyshali",
       timeslots: [
-        "1 Nov, 6 PM - 7 PM (PST)",
-        "2 Nov, 6 PM - 7 PM (PST)",
+        "1 Nov Wednesday, 6PM - 7PM (PST)",
+        "2 Nov Thursday, 6PM - 7PM (PST)",
         "Want another slot",
       ],
     },
@@ -79,12 +79,12 @@ const ClassDetail = (props) => {
       teacher_pic: instructor,
       age_group: "8-13 years old",
       expand: false,
-      duration: "50 minutes",
+      duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
       link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
       tutor: "Shagun",
       timeslots: [
-        "1 Nov, 6 PM - 7 PM (PST)",
-        "2 Nov, 6 PM - 7 PM (PST)",
+        "1 Nov Wednesday, 6PM - 7PM (PST)",
+        "2 Nov Thursday, 6PM - 7PM (PST)",
         "Want another slot",
       ],
     },
@@ -105,12 +105,12 @@ const ClassDetail = (props) => {
       age_group: "8-13 yeaars old",
       teacher_pic: instructor,
       expand: false,
-      duration: "50 minutes",
+      duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
       link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
       tutor: "Ram Kumar",
       timeslots: [
-        "1 Nov, 6 PM - 7 PM (PST)",
-        "2 Nov, 6 PM - 7 PM (PST)",
+        "1 Nov Wednesday, 6PM - 7PM (PST)",
+        "2 Nov Thursday, 6PM - 7PM (PST)",
         "Want another slot",
       ],
     },
@@ -131,12 +131,12 @@ const ClassDetail = (props) => {
       age_group: "8-13 years old",
       teacher_pic: instructor,
       expand: false,
-      duration: "50 minutes",
+      duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
       link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
       tutor: "Ram Kumar",
       timeslots: [
-        "1 Nov, 6 PM - 7 PM (PST)",
-        "2 Nov, 6 PM - 7 PM (PST)",
+        "1 Nov Wednesday, 6PM - 7PM (PST)",
+        "2 Nov Thursday, 6PM - 7PM (PST)",
         "Want another slot",
       ],
     },
@@ -223,6 +223,7 @@ const ClassDetail = (props) => {
           <>
             <div
               className={index % 2 == 0 ? "sub-card" : "sub-card1"}
+              id= {props.scroll > 800 ? "animation" : ""}
               onClick={() => toggleDescription(classes.id)}
             >
               <div className="class_card">

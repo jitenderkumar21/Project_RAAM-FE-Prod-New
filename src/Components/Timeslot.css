@@ -1,10 +1,10 @@
 .container {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 20px;
+  padding-left: 30px;
+  margin-bottom: 12px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14.5px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -16,10 +16,10 @@
   color: #928e8e;
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 20px;
+  padding-left: 30px;
+  margin-bottom: 12px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14.5px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -47,8 +47,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   background-color: #eee;
 }
@@ -57,8 +57,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   background-color: #eee;
 }
@@ -87,8 +87,8 @@
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
+  left: 7px;
+  top: 3px;
   width: 5px;
   height: 10px;
   border: solid white;
