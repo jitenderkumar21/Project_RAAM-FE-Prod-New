@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
-import { Card, FormControl, FormLabel, TextField } from "@mui/material";
 import CardWrapper from "./Card/CardWrapper";
 import "./MainPage.css";
+import "./MobileView.css";
 import ClassDetail from "./ClassDetail";
 import DetailForm from "./DetailForm";
 import Coral_Academy from "../assets/Coral_Academy.png";
@@ -13,7 +13,6 @@ import icon1 from "../assets/icon1.png";
 import icon2 from "../assets/icon2.png";
 import icon3 from "../assets/icon3.png";
 import icon4 from "../assets/icon4.png";
-import Loader from "./Loader/Loader";
 
 const MainPage = () => {
   const [register, setRegister] = useState(false);
@@ -71,8 +70,6 @@ const MainPage = () => {
     fetchData();
   }, [submitted]);
 
-
-
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
@@ -84,9 +81,6 @@ const MainPage = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-
-  console.log(scrollPosition)
 
   let fullclasses = fulldata.reduce((acc, item) => {
     if (item.slots.some((slot) => slot.isFull)) {
@@ -124,7 +118,7 @@ const MainPage = () => {
               </p>
             </div>
           </div>
-          <div className="about">
+          <div className="demo">
             <div className="demo_content">
               <h1> Demo Classes</h1>
               <p className="p1">
@@ -141,18 +135,18 @@ const MainPage = () => {
             <h2>How To Enroll?</h2>
             <div className="thick_line"></div>
             <div className="guidance">
-              <img src={icon1}></img>
+              <img src={icon1} alt="search"></img>
               <p>
                 Find
                 <br /> Classes
               </p>
-              <img src={icon2}></img>
-              <img src={icon3}></img>
+              <img src={icon2} alt="next"></img>
+              <img src={icon3} alt="select"></img>
               <p>
                 Select Time <br /> Slots
               </p>
-              <img src={icon2}></img>
-              <img src={icon4}></img>
+              <img src={icon2} alt="next"></img>
+              <img src={icon4} alt="details"></img>
               <p>
                 Fill <br /> Details!
               </p>
@@ -196,7 +190,7 @@ const MainPage = () => {
           <a href="mailto:support@coralacademy.com">support@coralacademy.com</a>
         </div>
         <div>
-          <img src={footer}></img>
+          <img src={footer} alt="footer"></img>
         </div>
       </div>
     </CardWrapper>

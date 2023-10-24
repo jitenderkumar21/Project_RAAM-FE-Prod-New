@@ -1,0 +1,495 @@
+@media (max-width: 599px){
+.card1 {
+    background-color: #fff;
+    padding: 0px;
+    border: 2px;
+    border-radius: 5px;
+    margin: 0px;
+  }
+  
+  .register_button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  .register_button button {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    background-color: #0896c2;
+    color: white;
+  }
+  
+  .register_button button:hover {
+    font-size: 18px; /* Font size on hover */
+    color: white; /* Text color on hover */
+    background-color: #de7247; /* Background color on hover */
+  }
+  
+  .title {
+    width: 100%;
+  }
+
+  .about {
+    display: block;
+    height: 390px;
+  }
+
+  .about_img {
+    width: 50%;
+    height: 50%;
+  }
+
+  .about_img img {
+    width: 90%;
+    margin-left: 55%;
+    margin-top: 4%;
+  }
+  .about_img1 {
+    width: 40%;
+    height: 50%;
+    margin: 0 auto;
+  }
+  
+  .about_img1 img {
+    width: 110%;
+    margin: auto;
+    
+  }
+  .about_content {
+    width: 100%;
+    text-align: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-decoration: none solid rgb(222, 114, 71);
+  }
+  .about_content h1{
+    font-size: 38px;
+  }
+  
+  .about_content p {
+    text-align: center;
+    font-weight: 100;
+    width: 80%;
+    margin: auto;
+  }
+
+  .p1 {
+    color: black;
+    font-size: 15px;
+    width: 80%;
+    font-weight: 500;
+    font-family: helvetica;
+    line-height: 1.8;
+  }
+  
+  .demo {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 400px;
+  }
+  
+  .demo_content {
+    width: 100%;
+    height: 270px;
+    margin: auto;
+    text-align: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none solid rgb(222, 114, 71);
+  }
+  .demo_content p{
+    line-height: 1.8;
+    margin: auto;
+  }
+  
+  .demo_content h1{
+    font-size: 38px;
+  }
+  .sub-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 5px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    background-color: rgb(110, 191, 215);
+  }
+  .sub-cards-grid h1 {
+    color: #fff;
+    font-family: "Franklin Gothic Medium";
+    font-size: 40px;
+    margin-bottom: 0px;
+  }
+  
+  .sub-card {
+    background-color: #fff;
+    border: 3px solid rgb(222, 114, 71);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    height: min-content;
+    margin-left: 10%;
+    margin-bottom: 15px;
+    margin-top: 7px;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+  #animation{
+    animation: classCardAnimation 1.5s ease-in-out;
+  }
+  
+  .sub-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .sub-card h3 {
+    font-size: 25px;
+    color: rgb(222, 114, 71);
+    margin-top: 0px;
+    text-align: left;
+    /* margin-bottom: 5px; */
+  }
+  .sub-card p {
+    font-size: 18px;
+    color: rgb(110, 191, 215);
+    margin-top: 0px;
+  }
+  
+  .sub-card1 {
+    background-color: #fff;
+    border: 3px solid rgb(222, 114, 71);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    height: min-content;
+    margin-left: 10%;
+    margin-bottom: 15px;
+    margin-top: 7px;
+    transition: transform 0.3s;
+   
+    cursor: pointer;
+  }
+  
+  .sub-card1:hover {
+    transform: scale(1.03);
+  }
+  
+  .sub-card1 h3 {
+    font-size: 25px;
+    color: rgb(222, 114, 71);
+    margin-top: 0px;
+    text-align: left;
+    /* margin-bottom: 5px; */
+  }
+  .sub-card1 p {
+    font-size: 18px;
+    color: rgb(110, 191, 215);
+    margin-top: 0px;
+  }
+  
+  .button {
+    border: #333;
+  }
+  
+  h1 {
+    color: rgb(222, 114, 71);
+    font-weight: 900;
+    font-size: 50px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    /* margin-top: 5px; */
+  }
+ 
+  h4 {
+    color: rgb(222, 114, 71);
+    font-weight: 500;
+    font-size: 50px;
+  }
+  
+  .submitpage {
+    display: flex;
+    gap: 275px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .submitpage button {
+    height: 58px;
+    width: 272px;
+    font-size: 18px;
+    background-color: #0896c2;
+    color: white;
+  }
+  
+  .submitpage button:hover {
+    font-size: 22px; /* Font size on hover */
+    color: white; /* Text color on hover */
+    background-color: #de7247; /* Background color on hover */
+  }
+  
+  .submitpage p {
+    font-size: 70px;
+    color: #de7247;
+    font-family: helvetica;
+  }
+  
+  .subcard .description {
+    color: black;
+    font-size: 15px;
+  }
+  
+  .class_card {
+    display: flex;
+    height: min-content;
+  }
+  .class_card1 {
+    width: 18%;
+    margin: 0px 20px;
+    padding-top: 40px;
+  }
+  .class_card1 img {
+    border-radius: 10px;
+  }
+  .class_card2 {
+    text-align: left;
+    width: 55%;
+    margin: 20px 20px;
+    font-weight: 600;
+  }
+  .class_card2 h3 {
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+  .class_card3 {
+    width: 28%;
+    margin: auto 20px auto 10px;
+    color: black;
+    font-weight: 500;
+  }
+  
+  .class_card3 h3 {
+    font-size: 18px;
+  }
+  
+  .sub-card button {
+    font-size: 14px;
+    background-color: #0896c2;
+    color: white;
+  }
+  
+  .sub-card button:hover {
+    font-size: 12px; /* Font size on hover */
+    color: white; /* Text color on hover */
+    background-color: #de7247; /* Background color on hover */
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .footer img {
+    width: 90%;
+  }
+  
+  .footer_content {
+    text-align: left;
+    font-size: 18px;
+  }
+  
+  .footer_content a {
+    color: #0896c2;
+  }
+  
+  .footer_content p {
+    margin-bottom: 3px;
+  }
+  
+  .loaderClass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  .scrollClass {
+    width: 90%;
+    max-height: 600px; /*595.8px if we wanted to show 2 class s */
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: center;
+  }
+  
+  #scrollClass1::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Track */
+  #scrollClass1::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  
+  /* Handle */
+  #scrollClass1::-webkit-scrollbar-thumb {
+    background: rgb(239, 148, 111);
+  }
+  
+  /* Handle on hover */
+  #scrollClass1::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #0896c2;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4d4b4b;
+  }
+  
+  .separator {
+    flex: 0 0 1px;
+    width: 8px; /* Width of the vertical line */
+    background-color: #4b4949; /* Line color */
+    min-height: 8%;
+    margin: 3% 1px 3% 1px;
+  }
+  
+  .class_footer h3 {
+    font-size: 18px;
+    color: black;
+    margin: 20px 0 10px 2.5%;
+  }
+  
+  .class_footer h5 {
+    font-size: 16px;
+    color: rgb(74, 72, 72);
+    margin: 5px 0 0 2.5%;
+    text-align: left;
+    font-weight: bold;
+    font-stretch:wider;
+  }
+  
+  .class_footer p {
+    font-size: 16px;
+    color: rgb(80, 76, 76);
+    text-align: left;
+    margin: 0px 0 5px 2.5%;
+  }
+  .icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+    margin-left: 5px;
+    margin-bottom: -5px;
+  }
+  
+  .guidance {
+    display: flex;
+    justify-content: space-evenly;
+    height: min-content;
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  .guidance p {
+    font-size: 22px;
+    font-weight: 600;
+    margin-right: 60px;
+  }
+  
+  .guidance img {
+    width: 4%;
+    height: 4%;
+    margin: auto;
+  }
+  
+  .thick_line {
+    border-top: 5px solid rgb(239, 119, 72);
+    width: 60%;
+    margin: 0 auto -5px auto;
+  }
+  
+  .thin_line {
+    border-top: 2px solid rgb(239, 119, 72);
+    width: 60%;
+    margin: -5px auto 50px auto;
+  }
+  
+  h2 {
+    font-size: 22px;
+    color: #0297c4;
+    margin-bottom: 15px;
+  }
+  
+  .about_teacher {
+    display: flex;
+  }
+  
+  .about_teacher img {
+    width: 14%;
+    height: auto;
+    border-radius: 5px;
+    margin-left: 2.5%;
+  }
+  .enrollAnimation {
+    margin-top: 35px;
+    /* transform: scale(1.1); */
+    animation: translateFromNegative 1.5s ease-in-out;
+  }
+  
+  @keyframes translateFromNegative {
+    0% {
+      transform: translateX(-100px);
+    }
+    50% {
+      transform: translateX(100px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes classCardAnimation {
+    0% {
+      transform: translateX(-100px);
+    }
+    50% {
+      transform: translateX(35px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes classCardAnimation1 {
+    0% {
+      transform: translateX(100px);
+    }
+    50% {
+      transform: translateX(-35px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+}
+  
