@@ -482,7 +482,7 @@
   .enrollAnimation {
     margin-top: 15px;
     /* transform: scale(1.1); */
-    animation: translateFromNegative 0s ease-in-out;
+    animation: translateFromNegative 1.5s ease-in-out;
   }
   
   @keyframes classCardAnimation {
