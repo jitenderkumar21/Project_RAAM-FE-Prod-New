@@ -144,7 +144,7 @@ const MainPage = () => {
               <img src={icon2} id = "next" alt="next"></img>
               <img src={icon3} alt="select"></img>
               <p>
-                Select Time <br /> Slots
+                Select Time <br /> Slots*
               </p>
               <img src={icon2} id = "next" alt="next"></img>
               <img src={icon4} alt="details"></img>
