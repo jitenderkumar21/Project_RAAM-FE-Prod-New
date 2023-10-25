@@ -153,6 +153,7 @@ const MainPage = () => {
               </p>
             </div>
             <div className="thin_line"></div>
+            <span className="message"> *After you select a time slot for a class, find more classes or scroll down to continue to next step</span>
           </div>
 
           <div>

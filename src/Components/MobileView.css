@@ -459,7 +459,12 @@
   .thin_line {
     border-top: 2px solid rgb(239, 119, 72);
     width: 80%;
-    margin: -5px auto 50px auto;
+    margin: -5px auto 20px auto;
+  }
+
+  .message {
+    color: red;
+    font-size: 14px;
   }
 
   h2 {
@@ -480,7 +485,9 @@
     margin-left: 15px;
   }
   .enrollAnimation {
-    margin-top: 15px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 0 15px 0 15px;
     /* transform: scale(1.1); */
     animation: translateFromNegative 1.5s ease-in-out;
   }
