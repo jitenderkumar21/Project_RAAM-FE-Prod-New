@@ -265,7 +265,7 @@ const ClassDetail = (props) => {
                 </div>
               </div>
               <div className="class_footer">
-                <p>
+                <p className="description">
                   Description
                   {expandedClassId != classes.id && (
                     <img src={dropIcon} alt="dropDown" className="icon" />

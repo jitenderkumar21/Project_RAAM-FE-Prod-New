@@ -113,14 +113,15 @@
     align-items: center;
     margin-top: 20px;
     margin-left: 5px;
-    padding-bottom: 50px;
+    margin-right: 5px;
+    padding-bottom: 20px;
     border-radius: 10px;
     background-color: rgb(110, 191, 215);
   }
   .sub-cards-grid h1 {
     color: #fff;
     font-family: "Franklin Gothic Medium";
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 0px;
   }
   
@@ -130,11 +131,9 @@
     border-radius: 20px;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 85%;
+    width: 90%;
     height: min-content;
-    margin-left: 10%;
-    margin-bottom: 15px;
-    margin-top: 7px;
+    margin: 10px auto;
     transition: transform 0.3s;
     cursor: pointer;
   }
@@ -166,13 +165,10 @@
     border-radius: 20px;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 85%;
+    width: 90%;
     height: min-content;
-    margin-left: 10%;
-    margin-bottom: 15px;
-    margin-top: 7px;
+    margin: 10px auto;
     transition: transform 0.3s;
-   
     cursor: pointer;
   }
   
@@ -245,29 +241,41 @@
   
   .class_card {
     display: flex;
+    flex-direction: column;
     height: min-content;
   }
   .class_card1 {
-    width: 18%;
-    margin: 0px 20px;
+    width: 90%;
+    margin: 0px auto;
     padding-top: 40px;
   }
   .class_card1 img {
     border-radius: 10px;
+    width: 80%;
   }
   .class_card2 {
     text-align: left;
-    width: 55%;
-    margin: 20px 20px;
+    width: 100%;
+    margin: 20px auto 0 auto;
     font-weight: 600;
   }
   .class_card2 h3 {
-    margin-bottom: 30px;
-    font-size: 24px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .class_card2 p {
+    font-size: 14px;
+    display: flex;
+    margin-left: 20px;
+  }
+
+  .duration {
+    display: flex;
   }
   .class_card3 {
-    width: 28%;
-    margin: auto 20px auto 10px;
+    width: 100%;
+    margin: 0px 20px auto 10px;
     color: black;
     font-weight: 500;
   }
@@ -321,9 +329,9 @@
     z-index: 999;
   }
   .scrollClass {
-    width: 90%;
+    width: 96%;
     max-height: 600px; /*595.8px if we wanted to show 2 class s */
-    overflow-y: auto;
+    overflow-y: auto hidden;
     overflow-x: hidden;
     align-items: center;
   }
@@ -368,10 +376,10 @@
   
   .separator {
     flex: 0 0 1px;
-    width: 8px; /* Width of the vertical line */
+    width: 0px; /* Width of the vertical line */
     background-color: #4b4949; /* Line color */
     min-height: 8%;
-    margin: 3% 1px 3% 1px;
+    
   }
   
   .class_footer h3 {
@@ -393,45 +401,59 @@
     font-size: 16px;
     color: rgb(80, 76, 76);
     text-align: left;
-    margin: 0px 0 5px 2.5%;
+    margin: 10px 0 5px 4%;
+  }
+
+  .description {
+    display: flex;
+  }
+  
+  .description img {
+    width : 18px;
+    height : 18px;
   }
   .icon {
     width: 25px;
     height: 25px;
     margin-right: 8px;
     margin-left: 5px;
-    margin-bottom: -5px;
+    margin-bottom: -50px;
   }
   
   .guidance {
     display: flex;
     justify-content: space-evenly;
     height: min-content;
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
   }
   
   .guidance p {
-    font-size: 22px;
+    font-size: 14px;
     font-weight: 600;
-    margin-right: 60px;
+    margin-right: 10px;
   }
   
   .guidance img {
-    width: 4%;
-    height: 4%;
+    width: 0%;
+    height: 0%;
     margin: auto;
+  }
+
+  #next {
+    width: 4%;
+    height: 4%
   }
   
   .thick_line {
     border-top: 5px solid rgb(239, 119, 72);
-    width: 60%;
+    width: 80%;
     margin: 0 auto -5px auto;
   }
   
   .thin_line {
     border-top: 2px solid rgb(239, 119, 72);
-    width: 60%;
+    width: 80%;
     margin: -5px auto 50px auto;
   }
   
@@ -443,31 +465,21 @@
   
   .about_teacher {
     display: flex;
+    flex-direction: column;
   }
   
   .about_teacher img {
-    width: 14%;
+    width: 45%;
     height: auto;
     border-radius: 5px;
-    margin-left: 2.5%;
+    margin-left: 15px;
   }
   .enrollAnimation {
-    margin-top: 35px;
+    margin-top: 15px;
     /* transform: scale(1.1); */
-    animation: translateFromNegative 1.5s ease-in-out;
+    animation: translateFromNegative 0s ease-in-out;
   }
   
-  @keyframes translateFromNegative {
-    0% {
-      transform: translateX(-100px);
-    }
-    50% {
-      transform: translateX(100px);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
   @keyframes classCardAnimation {
     0% {
       transform: translateX(-100px);
