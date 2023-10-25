@@ -242,6 +242,8 @@ h4 {
 }
 .class_card1 img {
   border-radius: 10px;
+  width: 100%;
+  margin: auto 0 auto 0;
 }
 .class_card2 {
   text-align: left;
