@@ -359,7 +359,8 @@
   }
 
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 0px;
+    display: none;
   }
 
   /* Track */
@@ -369,6 +370,7 @@
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
+    
     background: #0896c2;
   }
 
