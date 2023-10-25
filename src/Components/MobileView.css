@@ -1,12 +1,12 @@
-@media (max-width: 599px){
-.card1 {
+@media (max-width: 599px) {
+  .card1 {
     background-color: #fff;
     padding: 0px;
     border: 2px;
     border-radius: 5px;
     margin: 0px;
   }
-  
+
   .register_button {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -19,13 +19,13 @@
     background-color: #0896c2;
     color: white;
   }
-  
+
   .register_button button:hover {
     font-size: 18px; /* Font size on hover */
     color: white; /* Text color on hover */
     background-color: #de7247; /* Background color on hover */
   }
-  
+
   .title {
     width: 100%;
   }
@@ -50,11 +50,10 @@
     height: 50%;
     margin: 0 auto;
   }
-  
+
   .about_img1 img {
     width: 110%;
     margin: auto;
-    
   }
   .about_content {
     width: 100%;
@@ -62,10 +61,10 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-decoration: none solid rgb(222, 114, 71);
   }
-  .about_content h1{
+  .about_content h1 {
     font-size: 38px;
   }
-  
+
   .about_content p {
     text-align: center;
     font-weight: 100;
@@ -81,14 +80,14 @@
     font-family: helvetica;
     line-height: 1.8;
   }
-  
+
   .demo {
     margin-top: 0px;
     display: flex;
     flex-direction: column-reverse;
     height: 400px;
   }
-  
+
   .demo_content {
     width: 100%;
     height: 270px;
@@ -98,12 +97,12 @@
     font-weight: bold;
     text-decoration: none solid rgb(222, 114, 71);
   }
-  .demo_content p{
+  .demo_content p {
     line-height: 1.8;
     margin: auto;
   }
-  
-  .demo_content h1{
+
+  .demo_content h1 {
     font-size: 38px;
   }
   .sub-cards-grid {
@@ -124,7 +123,7 @@
     font-size: 30px;
     margin-bottom: 0px;
   }
-  
+
   .sub-card {
     background-color: #fff;
     border: 3px solid rgb(222, 114, 71);
@@ -137,15 +136,15 @@
     transition: transform 0.3s;
     cursor: pointer;
   }
-  
-  #animation{
+
+  #animation {
     animation: classCardAnimation 1.5s ease-in-out;
   }
-  
+
   .sub-card:hover {
     transform: scale(1.03);
   }
-  
+
   .sub-card h3 {
     font-size: 25px;
     color: rgb(222, 114, 71);
@@ -158,7 +157,7 @@
     color: rgb(110, 191, 215);
     margin-top: 0px;
   }
-  
+
   .sub-card1 {
     background-color: #fff;
     border: 3px solid rgb(222, 114, 71);
@@ -169,13 +168,14 @@
     height: min-content;
     margin: 10px auto;
     transition: transform 0.3s;
+
     cursor: pointer;
   }
-  
+
   .sub-card1:hover {
     transform: scale(1.03);
   }
-  
+
   .sub-card1 h3 {
     font-size: 25px;
     color: rgb(222, 114, 71);
@@ -188,11 +188,11 @@
     color: rgb(110, 191, 215);
     margin-top: 0px;
   }
-  
+
   .button {
     border: #333;
   }
-  
+
   h1 {
     color: rgb(222, 114, 71);
     font-weight: 900;
@@ -200,20 +200,20 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     /* margin-top: 5px; */
   }
- 
+
   h4 {
     color: rgb(222, 114, 71);
     font-weight: 500;
     font-size: 50px;
   }
-  
+
   .submitpage {
-    display: flex;
+    display: block;
     gap: 275px;
     justify-content: center;
     align-items: center;
   }
-  
+
   .submitpage button {
     height: 58px;
     width: 272px;
@@ -221,24 +221,24 @@
     background-color: #0896c2;
     color: white;
   }
-  
+
   .submitpage button:hover {
     font-size: 22px; /* Font size on hover */
     color: white; /* Text color on hover */
     background-color: #de7247; /* Background color on hover */
   }
-  
+
   .submitpage p {
-    font-size: 70px;
+    font-size: 50px;
     color: #de7247;
     font-family: helvetica;
   }
-  
+
   .subcard .description {
     color: black;
     font-size: 15px;
   }
-  
+
   .class_card {
     display: flex;
     flex-direction: column;
@@ -279,46 +279,48 @@
     color: black;
     font-weight: 500;
   }
-  
+
   .class_card3 h3 {
     font-size: 18px;
   }
-  
+
   .sub-card button {
     font-size: 14px;
     background-color: #0896c2;
     color: white;
   }
-  
+
   .sub-card button:hover {
     font-size: 12px; /* Font size on hover */
     color: white; /* Text color on hover */
     background-color: #de7247; /* Background color on hover */
   }
-  
+
   .footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-left: 4%;
+    margin-top: 15%;
   }
-  
+
   .footer img {
     width: 90%;
   }
-  
+
   .footer_content {
     text-align: left;
     font-size: 18px;
   }
-  
+
   .footer_content a {
     color: #0896c2;
   }
-  
+
   .footer_content p {
     margin-bottom: 3px;
   }
-  
+
   .loaderClass {
     position: fixed;
     top: 0;
@@ -335,45 +337,45 @@
     overflow-x: hidden;
     align-items: center;
   }
-  
+
   #scrollClass1::-webkit-scrollbar {
     width: 2px;
   }
-  
+
   /* Track */
   #scrollClass1::-webkit-scrollbar-track {
     background: #fff;
   }
-  
+
   /* Handle */
   #scrollClass1::-webkit-scrollbar-thumb {
     background: rgb(239, 148, 111);
   }
-  
+
   /* Handle on hover */
   #scrollClass1::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
-  
+
   ::-webkit-scrollbar {
     width: 5px;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
     background: #fff;
   }
-  
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #0896c2;
   }
-  
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #4d4b4b;
   }
-  
+
   .separator {
     flex: 0 0 1px;
     width: 0px; /* Width of the vertical line */
@@ -381,22 +383,22 @@
     min-height: 8%;
     
   }
-  
+
   .class_footer h3 {
     font-size: 18px;
     color: black;
     margin: 20px 0 10px 2.5%;
   }
-  
+
   .class_footer h5 {
     font-size: 16px;
     color: rgb(74, 72, 72);
     margin: 5px 0 0 2.5%;
     text-align: left;
     font-weight: bold;
-    font-stretch:wider;
+    font-stretch: wider;
   }
-  
+
   .class_footer p {
     font-size: 16px;
     color: rgb(80, 76, 76);
@@ -419,7 +421,7 @@
     margin-left: 5px;
     margin-bottom: -50px;
   }
-  
+
   .guidance {
     display: flex;
     justify-content: space-evenly;
@@ -427,13 +429,13 @@
     width: 80%;
     margin: 0 auto;
   }
-  
+
   .guidance p {
     font-size: 14px;
     font-weight: 600;
     margin-right: 10px;
   }
-  
+
   .guidance img {
     width: 0%;
     height: 0%;
@@ -450,24 +452,24 @@
     width: 80%;
     margin: 0 auto -5px auto;
   }
-  
+
   .thin_line {
     border-top: 2px solid rgb(239, 119, 72);
     width: 80%;
     margin: -5px auto 50px auto;
   }
-  
+
   h2 {
     font-size: 22px;
     color: #0297c4;
     margin-bottom: 15px;
   }
-  
+
   .about_teacher {
     display: flex;
     flex-direction: column;
   }
-  
+
   .about_teacher img {
     width: 45%;
     height: auto;
@@ -502,6 +504,95 @@
       transform: translateX(0);
     }
   }
-
 }
-  
+
+@media (max-width: 599px) {
+  .my-form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .buttondisplay button {
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    background-color: #0896c2;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  .buttondisplay button:hover {
+    font-size: 18px; /* Font size on hover */
+    color: white; /* Text color on hover */
+    background-color: #de7247; /* Background color on hover */
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .buttondisplay {
+    display: block;
+    flex-direction: row-reverse;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    color: #de7247;
+    text-align: left;
+    font-size: 18px;
+    margin-left: 3px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 35px;
+    font-size: 16px;
+    padding-left: 2.5%;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .submitted-data {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    background-color: #e9f6e9;
+  }
+
+  .submitted-data h2 {
+    font-size: 1.2em;
+    color: #4caf50;
+  }
+
+  .form_meta {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0896c2;
+  }
+}
