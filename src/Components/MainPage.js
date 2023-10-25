@@ -23,6 +23,7 @@ const MainPage = () => {
 
   const registerHandler = () => {
     setRegister(true);
+    setScrollPosition(0)
   };
   const submitHandler = () => {
     setRegister(false);

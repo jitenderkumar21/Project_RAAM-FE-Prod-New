@@ -85,6 +85,10 @@
   text-decoration: none solid rgb(222, 114, 71);
 }
 
+.demo_content p {
+  font-weight: 100;
+}
+
 .sub-cards-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -316,10 +320,11 @@ h4 {
   overflow-y: auto;
   overflow-x: hidden;
   align-items: center;
+  margin: auto;
 }
 
 #scrollClass1::-webkit-scrollbar {
-  width: 2px;
+  width: 0px;
 }
 
 /* Track */

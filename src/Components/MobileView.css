@@ -132,13 +132,13 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 90%;
     height: min-content;
-    margin: 10px auto;
+    margin: 25px auto;
     transition: transform 0.3s;
     cursor: pointer;
   }
 
   #animation {
-    animation: classCardAnimation 1.5s ease-in-out;
+    animation: classCardAnimation 0s ease-in-out;
   }
 
   .sub-card:hover {
@@ -331,15 +331,16 @@
     z-index: 999;
   }
   .scrollClass {
-    width: 96%;
+    width: 99%;
     max-height: 600px; /*595.8px if we wanted to show 2 class s */
-    overflow-y: auto hidden;
+    overflow-y: auto;
     overflow-x: hidden;
     align-items: center;
+    margin: auto;
   }
 
   #scrollClass1::-webkit-scrollbar {
-    width: 2px;
+    width: 0px;
   }
 
   /* Track */
