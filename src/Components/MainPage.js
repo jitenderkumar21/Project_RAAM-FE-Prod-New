@@ -23,7 +23,7 @@ const MainPage = () => {
 
   const registerHandler = () => {
     setRegister(true);
-    setScrollPosition(0)
+    setScrollPosition(0);
   };
   const submitHandler = () => {
     setRegister(false);
@@ -37,7 +37,7 @@ const MainPage = () => {
 
   const backPageHandler = () => {
     setRegister(false);
-    setScrollPosition(1090)
+    setScrollPosition(1090);
   };
 
   const homePageHandler = () => {
@@ -76,10 +76,10 @@ const MainPage = () => {
       setScrollPosition(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -92,7 +92,7 @@ const MainPage = () => {
     return acc;
   }, {});
 
-    return (
+  return (
     <CardWrapper>
       {/* <h1> Coral Academy </h1>
       <h4> Demo Classes</h4> */}
@@ -105,40 +105,12 @@ const MainPage = () => {
 
       {!register && !submitted && (
         <div className="card1">
-          
-          <h1 style={{"marginBottom": '50px', "marginTop":"20px"}}> Welcome to Demo Classes!</h1>
+          <h1 style={{ marginBottom: "50px", marginTop: "20px", fontFamily: "urbanist" }}>
+            {" "}
+            Welcome to Demo Classes!
+          </h1>
 
-          {/* <div className="about">
-            <div className="about_img">
-              <img src={About_us} alt="About_US" />
-            </div>
-            <div className="about_content">
-              <h1> About Us!</h1>
-              <p className="p1">
-                Coral Academy is your partner in K-12 EdTech. We carefully
-                select top educators to ensure impactful and engaging learning
-                experiences. Explore our platform preview{" "}
-                <a href="https://staging.mycoralacademy.com/">here</a>
-              </p>
-            </div>
-          </div>
-          <div className="demo">
-            <div className="demo_content">
-              <h1> Demo Classes</h1>
-              <p className="p1">
-                We're offering free, fun, and engaging demo classes with amazing
-                teachers from various backgrounds. They'll be teaching a variety
-                of interesting topics for the next two months.
-              </p>
-            </div>
-            <div className="about_img1">
-              <img src={Demo} alt="Demo Classes" />
-            </div>
-          </div> */}
-
-
-
-          <div className={scrollPosition >=0 ? "enrollAnimation" : ""}>
+          <div className={scrollPosition >= 0 ? "enrollAnimation" : ""}>
             <h2>How To Enroll?</h2>
             <div className="thick_line"></div>
             <div className="guidance">
@@ -147,23 +119,31 @@ const MainPage = () => {
                 Find
                 <br /> Classes
               </p>
-              <img src={icon2} id = "next" alt="next"></img>
+              <img src={icon2} id="next" alt="next"></img>
               <img src={icon3} alt="select"></img>
               <p>
                 Select Time <br /> Slots*
               </p>
-              <img src={icon2} id = "next" alt="next"></img>
+              <img src={icon2} id="next" alt="next"></img>
               <img src={icon4} alt="details"></img>
               <p>
                 Fill <br /> Details!
               </p>
             </div>
             <div className="thin_line"></div>
-            <span className="message"> *After you select a time slot for a class, Select more classes or scroll down to continue to the next step</span>
+            <span className="message">
+              {" "}
+              *After you select a time slot for a class, Select more classes or
+              scroll down to continue to the next step
+            </span>
           </div>
 
           <div>
-            <ClassDetail onSendData={sendDataHandler} fullclass={fullclasses} scroll = {scrollPosition} />
+            <ClassDetail
+              onSendData={sendDataHandler}
+              fullclass={fullclasses}
+              scroll={scrollPosition}
+            />
           </div>
           <div className="register_button">
             <Button
@@ -192,14 +172,48 @@ const MainPage = () => {
           <button onClick={homePageHandler}>Add More Learner!</button>
         </div>
       )}
+
+      <div className="about">
+        
+        <div className="about_content">
+          <h1> About Us!</h1>
+          <p className="p1">
+            Coral Academy is your partner in K-12 EdTech. We carefully select
+            top educators to ensure impactful and engaging learning experiences.
+            Explore our platform preview{" "}
+            <a href="https://staging.mycoralacademy.com/">here</a>
+          </p>
+        </div>
+        <div className="about_img">
+          <img src={About_us} alt="About_US" />
+        </div>
+      </div>
+
+
+
+      {/* <div className="demo">
+        <div className="demo_content">
+          <h1> Demo Classes</h1>
+          <p className="p1">
+            We're offering free, fun, and engaging demo classes with amazing
+            teachers from various backgrounds. They'll be teaching a variety of
+            interesting topics for the next two months.
+          </p>
+        </div>
+        <div className="about_img1">
+          <img src={Demo} alt="Demo Classes" />
+        </div>
+      </div> */}
+
+
       <div className="footer">
         <div className="footer_content">
           <p> Contact us at:</p>
           <a href="mailto:support@coralacademy.com">support@coralacademy.com</a>
         </div>
-        <div>
+        {/* <div>
           <img src={footer} alt="footer"></img>
-        </div>
+        </div> */}
       </div>
     </CardWrapper>
   );

@@ -32,7 +32,7 @@
 
   .about {
     display: block;
-    height: 390px;
+    height: min-content;
   }
 
   .about_img {
@@ -63,6 +63,7 @@
   }
   .about_content h1 {
     font-size: 38px;
+    margin: 50px auto 30px auto;
   }
 
   .about_content p {
@@ -298,10 +299,9 @@
 
   .footer {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    padding-left: 4%;
-    margin-top: 15%;
+    padding-bottom: 5%;
+    margin-top: 0 auto;
   }
 
   .footer img {
@@ -309,8 +309,10 @@
   }
 
   .footer_content {
-    text-align: left;
+    text-align: center;
     font-size: 18px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .footer_content a {
