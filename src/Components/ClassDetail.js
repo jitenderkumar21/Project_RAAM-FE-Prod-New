@@ -307,19 +307,44 @@ const ClassDetail = (props) => {
                         </p>
                       ))}
                     <h5>Prerequisite</h5>
-                    <p className="description">{classes.prerequisite}</p>
+                    {/* <p className="description">{classes.prerequisite}</p> */}
+                    {classes.prerequisite
+                      .split("\n")
+                      .map((paragraph, index) => (
+                        <p key={index} className="description">
+                          {paragraph}
+                        </p>
+                      ))}
                     <h5>Learning Outcomes</h5>
-                    <p className="description">{classes.learning_outcomes}</p>
-
+                    {/* <p className="description">{classes.learning_outcomes}</p> */}
+                    {classes.learning_outcomes
+                      .split("\n")
+                      .map((paragraph, index) => (
+                        <p key={index} className="description">
+                          {paragraph}
+                        </p>
+                      ))}
                     <h3>MEET YOUR TEACHER</h3>
                     <div className="about_teacher">
                       <img src={classes.teacher_pic} alt="teacher_pic"></img>
                       <div>
-                        <p className="description">{classes.about_teacher}</p>
+                        {/* <p className="description">{classes.about_teacher}</p> */}
+                        {classes.about_teacher
+                          .split("\n")
+                          .map((paragraph, index) => (
+                            <p key={index} className="description">
+                              {paragraph}
+                            </p>
+                          ))}
                         <h5>Teaching Philosophy</h5>
-                        <p className="description">
-                          {classes.teaching_philosophy}
-                        </p>
+                        {/* <p className="description">{classes.teaching_philosophy}</p> */}
+                        {classes.teaching_philosophy
+                          .split("\n")
+                          .map((paragraph, index) => (
+                            <p key={index} className="description">
+                              {paragraph}
+                            </p>
+                          ))}
                       </div>
                     </div>
                   </>
