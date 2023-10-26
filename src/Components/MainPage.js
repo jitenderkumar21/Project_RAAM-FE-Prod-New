@@ -21,6 +21,7 @@ const MainPage = () => {
   const [timedata, setTimedata] = useState({});
   const [fulldata, setFullData] = useState([]);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isSelected, setIsSelected] = useState(0);
 
   const registerHandler = () => {
     setRegister(true);
@@ -43,6 +44,14 @@ const MainPage = () => {
 
   const homePageHandler = () => {
     setSubmitted(false);
+  };
+
+  const continueButtonHandler = (len) => {
+    if (len === 0) {
+      setIsSelected(0);
+    } else {
+      setIsSelected(len);
+    }
   };
 
   useEffect(() => {
@@ -155,19 +164,32 @@ const MainPage = () => {
           <div>
             <ClassDetail
               onSendData={sendDataHandler}
+              onSelectTimeSlot={continueButtonHandler}
               fullclass={fullclasses}
               scroll={scrollPosition}
             />
           </div>
           <div className="register_button">
-            <Button
-              variant="contained"
-              color="primary"
-              className="button"
-              onClick={registerHandler}
-            >
-              Continue
-            </Button>
+            {isSelected ? (
+              <Button
+                variant="contained"
+                color="primary"
+                className="button"
+                onClick={registerHandler}
+              >
+                Continue
+              </Button>
+            ) : (
+              <Button
+                variant="contained"
+                color="primary"
+                className="button"
+                disabled
+                onClick={registerHandler}
+              >
+                Continue
+              </Button>
+            )}
           </div>
         </div>
       )}
