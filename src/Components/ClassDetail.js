@@ -10,6 +10,7 @@ import dropIcon from "../assets/dropdown.png";
 import closeDropDown from "../assets/closeDropdown.png";
 const ClassDetail = (props) => {
   const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
   // const data = [
   //   {
   //     id: 1,
@@ -143,10 +144,12 @@ const ClassDetail = (props) => {
   //   },
   // ];
 
+
   useEffect(() => {
     const fetchClassData = async () => {
       console.log("classes api call");
       try {
+        const response = await fetch("https://backend-z29v.onrender.com/info/");
         const response = await fetch("https://backend-z29v.onrender.com/info/");
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -160,6 +163,7 @@ const ClassDetail = (props) => {
 
     fetchClassData();
   }, []);
+
 
   const transformedClasses = data.reduce((result, classItem) => {
     result[classItem.id] = "";
@@ -278,6 +282,7 @@ const ClassDetail = (props) => {
     <div className="sub-cards-grid">
       <h1>Happy Exploring!</h1>
       <div>
+      <div>
         {data.map((classes, index) => (
           <>
             <div
@@ -340,21 +345,52 @@ const ClassDetail = (props) => {
                     <h3>ABOUT THE CLASS</h3>
 
                     <h5>Class Details</h5>
-                    <p className="description">{classes.class_details}</p>
+                    {classes.class_details
+                      .split("\n")
+                      .map((paragraph, index) => (
+                        <p key={index} className="description">
+                          {paragraph}
+                        </p>
+                      ))}
                     <h5>Prerequisite</h5>
-                    <p className="description">{classes.prerequisite}</p>
+                    {/* <p className="description">{classes.prerequisite}</p> */}
+                    {classes.prerequisite
+                      .split("\n")
+                      .map((paragraph, index) => (
+                        <p key={index} className="description">
+                          {paragraph}
+                        </p>
+                      ))}
                     <h5>Learning Outcomes</h5>
-                    <p className="description">{classes.learning_outcomes}</p>
-
+                    {/* <p className="description">{classes.learning_outcomes}</p> */}
+                    {classes.learning_outcomes
+                      .split("\n")
+                      .map((paragraph, index) => (
+                        <p key={index} className="description">
+                          {paragraph}
+                        </p>
+                      ))}
                     <h3>MEET YOUR TEACHER</h3>
                     <div className="about_teacher">
                       <img src={classes.teacher_pic} alt="teacher_pic"></img>
                       <div>
-                        <p className="description">{classes.about_teacher}</p>
+                        {/* <p className="description">{classes.about_teacher}</p> */}
+                        {classes.about_teacher
+                          .split("\n")
+                          .map((paragraph, index) => (
+                            <p key={index} className="description">
+                              {paragraph}
+                            </p>
+                          ))}
                         <h5>Teaching Philosophy</h5>
-                        <p className="description">
-                          {classes.teaching_philosophy}
-                        </p>
+                        {/* <p className="description">{classes.teaching_philosophy}</p> */}
+                        {classes.teaching_philosophy
+                          .split("\n")
+                          .map((paragraph, index) => (
+                            <p key={index} className="description">
+                              {paragraph}
+                            </p>
+                          ))}
                       </div>
                     </div>
                   </>
@@ -364,6 +400,7 @@ const ClassDetail = (props) => {
           </>
         ))}
       </div>
+    </div>
     </div>
   );
 };
