@@ -13,6 +13,7 @@ import icon1 from "../assets/icon1.png";
 import icon2 from "../assets/icon2.png";
 import icon3 from "../assets/icon3.png";
 import icon4 from "../assets/icon4.png";
+import click from "../assets/click.png";
 
 const MainPage = () => {
   const [register, setRegister] = useState(false);
@@ -105,7 +106,13 @@ const MainPage = () => {
 
       {!register && !submitted && (
         <div className="card1">
-          <h1 style={{ marginBottom: "50px", marginTop: "20px", fontFamily: "urbanist" }}>
+          <h1
+            style={{
+              marginBottom: "50px",
+              marginTop: "20px",
+              fontFamily: "urbanist",
+            }}
+          >
             {" "}
             Welcome to Demo Classes!
           </h1>
@@ -116,13 +123,20 @@ const MainPage = () => {
             <div className="guidance">
               <img src={icon1} alt="search"></img>
               <p>
-                Find
+                Explore
                 <br /> Classes
               </p>
               <img src={icon2} id="next" alt="next"></img>
               <img src={icon3} alt="select"></img>
               <p>
                 Select Time <br /> Slots*
+              </p>
+              <img src={icon2} id="next" alt="next"></img>
+              <img src={click} alt="Click Continue" />
+              <p>
+                Click
+                <br />
+                Continue
               </p>
               <img src={icon2} id="next" alt="next"></img>
               <img src={icon4} alt="details"></img>
@@ -174,7 +188,6 @@ const MainPage = () => {
       )}
 
       <div className="about">
-        
         <div className="about_content">
           <h1> About Us!</h1>
           <p className="p1">
@@ -189,8 +202,6 @@ const MainPage = () => {
         </div>
       </div>
 
-
-
       {/* <div className="demo">
         <div className="demo_content">
           <h1> Demo Classes</h1>
@@ -204,7 +215,6 @@ const MainPage = () => {
           <img src={Demo} alt="Demo Classes" />
         </div>
       </div> */}
-
 
       <div className="footer">
         <div className="footer_content">

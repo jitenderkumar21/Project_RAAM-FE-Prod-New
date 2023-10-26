@@ -46,8 +46,7 @@
 .about_img img {
   width: 30%;
   margin: 10% auto;
-  margin-bottom: 0px;;
-  
+  margin-bottom: 0px;
 }
 .about_img1 {
   width: 40%;
@@ -411,7 +410,7 @@ h4 {
 .guidance p {
   font-size: 22px;
   font-weight: 600;
-  margin-right: 60px;
+  /* margin-right: 60px; */
 }
 
 .guidance img {
