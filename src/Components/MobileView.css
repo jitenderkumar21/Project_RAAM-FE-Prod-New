@@ -332,7 +332,6 @@
   }
   .scrollClass {
     width: 99%;
-    max-height: 600px; /*595.8px if we wanted to show 2 class s */
     overflow-y: auto;
     overflow-x: hidden;
     align-items: center;
@@ -490,6 +489,10 @@
     padding: 0 15px 0 15px;
     /* transform: scale(1.1); */
     animation: translateFromNegative 1.5s ease-in-out;
+  }
+
+  .card1 h1{
+    font-size: 26px;
   }
   
   @keyframes classCardAnimation {

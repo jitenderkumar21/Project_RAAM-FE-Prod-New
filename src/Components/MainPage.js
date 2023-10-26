@@ -92,7 +92,7 @@ const MainPage = () => {
     return acc;
   }, {});
 
-  return (
+    return (
     <CardWrapper>
       {/* <h1> Coral Academy </h1>
       <h4> Demo Classes</h4> */}
@@ -105,7 +105,10 @@ const MainPage = () => {
 
       {!register && !submitted && (
         <div className="card1">
-          <div className="about">
+          
+          <h1 style={{"marginBottom": '50px', "marginTop":"20px"}}> Welcome to Demo Classes!</h1>
+
+          {/* <div className="about">
             <div className="about_img">
               <img src={About_us} alt="About_US" />
             </div>
@@ -131,8 +134,11 @@ const MainPage = () => {
             <div className="about_img1">
               <img src={Demo} alt="Demo Classes" />
             </div>
-          </div>
-          <div className={scrollPosition >400 ? "enrollAnimation" : ""}>
+          </div> */}
+
+
+
+          <div className={scrollPosition >=0 ? "enrollAnimation" : ""}>
             <h2>How To Enroll?</h2>
             <div className="thick_line"></div>
             <div className="guidance">
@@ -153,7 +159,7 @@ const MainPage = () => {
               </p>
             </div>
             <div className="thin_line"></div>
-            <span className="message"> *After you select a time slot for a class, find more classes or scroll down to continue to next step</span>
+            <span className="message"> *After you select a time slot for a class, Select more classes or scroll down to continue to the next step</span>
           </div>
 
           <div>

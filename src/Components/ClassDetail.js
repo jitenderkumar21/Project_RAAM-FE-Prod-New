@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import "./MainPage.css";
 import Timeslot from "./Timeslot";
 import "./ClassDetail.css";
@@ -7,142 +7,164 @@ import age from "../assets/age.png";
 import duration from "../assets/duration.png";
 import teacher from "../assets/teacher.png";
 import dropIcon from "../assets/dropdown.png";
-import instructor from "../assets/instructor.png";
 import closeDropDown from "../assets/closeDropdown.png";
 const ClassDetail = (props) => {
-  const data = [
-    {
-      id: 1,
-      title: "Travel the World with Mr. Clark",
-      class_details:
-        "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
-      prerequisite:
-        "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
-      learning_outcomes:
-        "To improve our understanding of different cultures around the world, including their history and geography and everything!",
 
-      about_teacher:
-        "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
-      teaching_philosophy:
-        "To improve our understanding of different cultures around the world, including their histories.",
-      teacher_pic: instructor,
-      age_group: "8-13 years old",
-      duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
-      expand: false,
-      link: "https://static.wixstatic.com/media/27d523f50e781626c04fc109dd313241.jpg/v1/crop/x_101,y_0,w_406,h_306/fill/w_214,h_161,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Geography%20Lesson.jpg",
-      tutor: "Misses Dee",
-      timeslots: [
-        "1 Nov, Wednesday, 6PM - 7PM (PST)",
-        "2 Nov,, Thursday, 6PM - 7PM (PST)",
-        "Want another slot",
-      ],
-    },
-    {
-      id: 2,
-      title: "Mind Gym: Working out With Logic Puzzles",
-      class_details:
-        "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
-      prerequisite:
-        "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
-      learning_outcomes:
-        "To improve our understanding of different cultures around the world, including their history and geography and everything!",
+  const [data, setData] = useState([])
+  // const data = [
+  //   {
+  //     id: 1,
+  //     title: "Travel the World with Mr. Clark",
+  //     class_details:
+  //       "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
+  //     prerequisite:
+  //       "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
+  //     learning_outcomes:
+  //       "To improve our understanding of different cultures around the world, including their history and geography and everything!",
 
-      about_teacher:
-        "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
-      teaching_philosophy:
-        "To improve our understanding of different cultures around the world, including their histories.",
-      expand: false,
-      teacher_pic: instructor,
-      age_group: "8-13 years old",
-      duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
-      link: "https://static.wixstatic.com/media/11062b_54cb26d9ed2049d9a1a6259e29ef373d~mv2_d_5251_3501_s_4_2.jpg/v1/crop/x_314,y_0,w_4623,h_3501/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Playing%20with%20Toy%20Vehicles.jpg",
-      tutor: "Vyshali",
-      timeslots: [
-        "1 Nov, Wednesday, 6PM - 7PM (PST)",
-        "2 Nov, Thursday, 6PM - 7PM (PST)",
-        "Want another slot",
-      ],
-    },
-    {
-      id: 3,
-      title: "Electoral College",
-      class_details:
-        "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
-      prerequisite:
-        "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
-      learning_outcomes:
-        "To improve our understanding of different cultures around the world, including their history and geography and everything!",
+  //     about_teacher:
+  //       "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
+  //     teaching_philosophy:
+  //       "To improve our understanding of different cultures around the world, including their histories.",
+  //     teacher_pic: instructor,
+  //     age_group: "8-13 years old",
+  //     duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
+  //     expand: false,
+  //     link: "https://static.wixstatic.com/media/27d523f50e781626c04fc109dd313241.jpg/v1/crop/x_101,y_0,w_406,h_306/fill/w_214,h_161,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Geography%20Lesson.jpg",
+  //     tutor: "Misses Dee",
+  //     timeslots: [
+  //       "1 Nov, Wednesday, 6PM - 7PM (PST)",
+  //       "2 Nov,, Thursday, 6PM - 7PM (PST)",
+  //       "Want another slot",
+  //     ],
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Mind Gym: Working out With Logic Puzzles",
+  //     class_details:
+  //       "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
+  //     prerequisite:
+  //       "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
+  //     learning_outcomes:
+  //       "To improve our understanding of different cultures around the world, including their history and geography and everything!",
 
-      about_teacher:
-        "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
-      teaching_philosophy:
-        "To improve our understanding of different cultures around the world, including their histories.",
-      teacher_pic: instructor,
-      age_group: "8-13 years old",
-      expand: false,
-      duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
-      link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
-      tutor: "Shagun",
-      timeslots: [
-        "1 Nov, Wednesday, 6PM - 7PM (PST)",
-        "2 Nov, Thursday, 6PM - 7PM (PST)",
-        "Want another slot",
-      ],
-    },
-    {
-      id: 4,
-      title: "Electoral College",
-      class_details:
-        "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
-      prerequisite:
-        "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
-      learning_outcomes:
-        "To improve our understanding of different cultures around the world, including their history and geography and everything!",
+  //     about_teacher:
+  //       "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
+  //     teaching_philosophy:
+  //       "To improve our understanding of different cultures around the world, including their histories.",
+  //     expand: false,
+  //     teacher_pic: instructor,
+  //     age_group: "8-13 years old",
+  //     duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
+  //     link: "https://static.wixstatic.com/media/11062b_54cb26d9ed2049d9a1a6259e29ef373d~mv2_d_5251_3501_s_4_2.jpg/v1/crop/x_314,y_0,w_4623,h_3501/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Playing%20with%20Toy%20Vehicles.jpg",
+  //     tutor: "Vyshali",
+  //     timeslots: [
+  //       "1 Nov, Wednesday, 6PM - 7PM (PST)",
+  //       "2 Nov, Thursday, 6PM - 7PM (PST)",
+  //       "Want another slot",
+  //     ],
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Electoral College",
+  //     class_details:
+  //       "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
+  //     prerequisite:
+  //       "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
+  //     learning_outcomes:
+  //       "To improve our understanding of different cultures around the world, including their history and geography and everything!",
 
-      about_teacher:
-        "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
-      teaching_philosophy:
-        "To improve our understanding of different cultures around the world, including their histories.",
-      age_group: "8-13 yeaars old",
-      teacher_pic: instructor,
-      expand: false,
-      duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
-      link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
-      tutor: "Ram Kumar",
-      timeslots: [
-        "1 Nov, Wednesday, 6PM - 7PM (PST)",
-        "2 Nov, Thursday, 6PM - 7PM (PST)",
-        "Want another slot",
-      ],
-    },
-    {
-      id: 5,
-      title: "Electoral College",
-      class_details:
-        "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
-      prerequisite:
-        "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
-      learning_outcomes:
-        "To improve our understanding of different cultures around the world, including their history and geography and everything!",
+  //     about_teacher:
+  //       "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
+  //     teaching_philosophy:
+  //       "To improve our understanding of different cultures around the world, including their histories.",
+  //     teacher_pic: instructor,
+  //     age_group: "8-13 years old",
+  //     expand: false,
+  //     duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
+  //     link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
+  //     tutor: "Shagun",
+  //     timeslots: [
+  //       "1 Nov, Wednesday, 6PM - 7PM (PST)",
+  //       "2 Nov, Thursday, 6PM - 7PM (PST)",
+  //       "Want another slot",
+  //     ],
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Electoral College",
+  //     class_details:
+  //       "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
+  //     prerequisite:
+  //       "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
+  //     learning_outcomes:
+  //       "To improve our understanding of different cultures around the world, including their history and geography and everything!",
 
-      about_teacher:
-        "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
-      teaching_philosophy:
-        "To improve our understanding of different cultures around the world, including their histories.",
-      age_group: "8-13 years old",
-      teacher_pic: instructor,
-      expand: false,
-      duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
-      link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
-      tutor: "Ram Kumar",
-      timeslots: [
-        "1 Nov, Wednesday, 6PM - 7PM (PST)",
-        "2 Nov, Thursday, 6PM - 7PM (PST)",
-        "Want another slot",
-      ],
-    },
-  ];
-  console.log(props.fullclass, "props data");
+  //     about_teacher:
+  //       "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
+  //     teaching_philosophy:
+  //       "To improve our understanding of different cultures around the world, including their histories.",
+  //     age_group: "8-13 yeaars old",
+  //     teacher_pic: instructor,
+  //     expand: false,
+  //     duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
+  //     link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
+  //     tutor: "Ram Kumar",
+  //     timeslots: [
+  //       "1 Nov, Wednesday, 6PM - 7PM (PST)",
+  //       "2 Nov, Thursday, 6PM - 7PM (PST)",
+  //       "Want another slot",
+  //     ],
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Electoral College",
+  //     class_details:
+  //       "To improve our understanding of different cultures around the world, including their histories, geography, culinary culture, music and dance. To learn and comprehend the life lessons the stories contain, and to improve vocabulary",
+  //     prerequisite:
+  //       "There are no materials needed, however, you may choose to download and print the blank letter of the day sheet to decor",
+  //     learning_outcomes:
+  //       "To improve our understanding of different cultures around the world, including their history and geography and everything!",
+
+  //     about_teacher:
+  //       "Hello! I'm Sorrel. I'm deeply passionate about the intricate tapestry of Myths, Legends, Philosophy, and the intricacies of the human psyche. With a Master's in Psychology and a Bachelor's in Philosophy and History, I've always approached teaching with a twist. My aim? To kindle curiosity and hone the analytical prowess of young minds.",
+  //     teaching_philosophy:
+  //       "To improve our understanding of different cultures around the world, including their histories.",
+  //     age_group: "8-13 years old",
+  //     teacher_pic: instructor,
+  //     expand: false,
+  //     duration: "1 Hour (50 mins - Class, 10 mins - Feedback)",
+  //     link: "https://static.wixstatic.com/media/11062b_fb6986eb84c14649b94d523c1f2eac5b~mv2.jpg/v1/crop/x_237,y_0,w_3526,h_2670/fill/w_216,h_164,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/College%20Campus.jpg",
+  //     tutor: "Ram Kumar",
+  //     timeslots: [
+  //       "1 Nov, Wednesday, 6PM - 7PM (PST)",
+  //       "2 Nov, Thursday, 6PM - 7PM (PST)",
+  //       "Want another slot",
+  //     ],
+  //   },
+  // ];
+  
+  useEffect(() => {
+    const fetchClassData = async () => {
+      console.log("classes api call");
+      try {
+        const response = await fetch(
+          "https://backend-z29v.onrender.com/info/"
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (err) {
+        console.log("Error");
+      }
+    };
+
+    fetchClassData();
+  }, []);
+  
+  
   const transformedClasses = data.reduce((result, classItem) => {
     result[classItem.id] = "";
     return result;
@@ -215,11 +237,11 @@ const ClassDetail = (props) => {
     });
     props.onSendData(resultArray);
   }, [selectedTimeslots]);
-
+  console.log(data, "the class data")
   return (
     <div className="sub-cards-grid">
       <h1>Happy Exploring!</h1>
-      <div className="scrollClass" id="scrollClass1">
+            <div>
         {data.map((classes, index) => (
           <>
             <div
@@ -267,7 +289,7 @@ const ClassDetail = (props) => {
               </div>
               <div className="class_footer">
                 <p className="description">
-                  Description
+                  More Details
                   {expandedClassId != classes.id && (
                     <img src={dropIcon} alt="dropDown" className="icon" />
                   )}
@@ -289,7 +311,7 @@ const ClassDetail = (props) => {
 
                     <h3>MEET YOUR TEACHER</h3>
                     <div className="about_teacher">
-                      <img src={classes.teacher_pic}></img>
+                      <img src={classes.teacher_pic} alt="teacher_pic"></img>
                       <div>
                         <p className="description">{classes.about_teacher}</p>
                         <h5>Teaching Philosophy</h5>
@@ -305,7 +327,7 @@ const ClassDetail = (props) => {
           </>
         ))}
       </div>
-    </div>
+          </div>
   );
 };
 
