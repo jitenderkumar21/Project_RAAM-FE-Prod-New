@@ -73,7 +73,6 @@
   margin-top: 0px;
 }
 
-
 .demo_content {
   line-height: 10px;
   width: 50%;
@@ -122,7 +121,6 @@
   cursor: pointer;
 }
 
-
 .sub-card:hover {
   transform: scale(1.03);
 }
@@ -138,7 +136,7 @@
   font-size: 18px;
   color: rgb(110, 191, 215);
   margin-top: 0px;
-  }
+}
 
 .sub-card1 {
   background-color: #fff;
@@ -152,7 +150,7 @@
   margin-bottom: 15px;
   margin-top: 7px;
   transition: transform 0.3s;
- 
+
   cursor: pointer;
 }
 
@@ -171,7 +169,7 @@
   font-size: 18px;
   color: rgb(110, 191, 215);
   margin-top: 0px;
-  }
+}
 
 .button {
   border: #333;
@@ -373,18 +371,18 @@ h4 {
 
 .class_footer h5 {
   font-size: 16px;
-  color: rgb(74, 72, 72);
-  margin: 10px 0 0 2.5%;
+  color: rgb(59, 59, 59);
+  margin: 10px 0 10px 2.5%;
   text-align: left;
   font-weight: bold;
-  font-stretch:wider;
+  font-stretch: wider;
 }
 
 .class_footer p {
   font-size: 16px;
   color: rgb(80, 76, 76);
   text-align: left;
-  margin: 0px 0 5px 2.5%;
+  margin: 0px 0 2.5px 2.5%;
 }
 .icon {
   width: 25px;

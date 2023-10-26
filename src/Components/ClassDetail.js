@@ -9,8 +9,7 @@ import teacher from "../assets/teacher.png";
 import dropIcon from "../assets/dropdown.png";
 import closeDropDown from "../assets/closeDropdown.png";
 const ClassDetail = (props) => {
-
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   // const data = [
   //   {
   //     id: 1,
@@ -143,14 +142,12 @@ const ClassDetail = (props) => {
   //     ],
   //   },
   // ];
-  
+
   useEffect(() => {
     const fetchClassData = async () => {
       console.log("classes api call");
       try {
-        const response = await fetch(
-          "https://backend-z29v.onrender.com/info/"
-        );
+        const response = await fetch("https://backend-z29v.onrender.com/info/");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -163,8 +160,7 @@ const ClassDetail = (props) => {
 
     fetchClassData();
   }, []);
-  
-  
+
   const transformedClasses = data.reduce((result, classItem) => {
     result[classItem.id] = "";
     return result;
@@ -237,11 +233,11 @@ const ClassDetail = (props) => {
     });
     props.onSendData(resultArray);
   }, [selectedTimeslots]);
-  console.log(data, "the class data")
+  console.log(data, "the class data");
   return (
     <div className="sub-cards-grid">
       <h1>Happy Exploring!</h1>
-            <div>
+      <div>
         {data.map((classes, index) => (
           <>
             <div
@@ -303,7 +299,13 @@ const ClassDetail = (props) => {
                     <h3>ABOUT THE CLASS</h3>
 
                     <h5>Class Details</h5>
-                    <p className="description">{classes.class_details}</p>
+                    {classes.class_details
+                      .split("\n")
+                      .map((paragraph, index) => (
+                        <p key={index} className="description">
+                          {paragraph}
+                        </p>
+                      ))}
                     <h5>Prerequisite</h5>
                     <p className="description">{classes.prerequisite}</p>
                     <h5>Learning Outcomes</h5>
@@ -327,7 +329,7 @@ const ClassDetail = (props) => {
           </>
         ))}
       </div>
-          </div>
+    </div>
   );
 };
 
