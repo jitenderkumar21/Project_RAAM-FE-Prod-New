@@ -9,8 +9,7 @@ import teacher from "../assets/teacher.png";
 import dropIcon from "../assets/dropdown.png";
 import closeDropDown from "../assets/closeDropdown.png";
 const ClassDetail = (props) => {
-
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   // const data = [
   //   {
   //     id: 1,
@@ -143,14 +142,12 @@ const ClassDetail = (props) => {
   //     ],
   //   },
   // ];
-  
+
   useEffect(() => {
     const fetchClassData = async () => {
       console.log("classes api call");
       try {
-        const response = await fetch(
-          "https://backend-z29v.onrender.com/info/"
-        );
+        const response = await fetch("https://backend-z29v.onrender.com/info/");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -163,8 +160,7 @@ const ClassDetail = (props) => {
 
     fetchClassData();
   }, []);
-  
-  
+
   const transformedClasses = data.reduce((result, classItem) => {
     result[classItem.id] = "";
     return result;
@@ -191,8 +187,15 @@ const ClassDetail = (props) => {
     initial_state = transformedClasses;
   }
 
+  const storedmoreSelections = localStorage.getItem("moreSlots");
+  let more_select_state = {};
+  if (storedmoreSelections) {
+    more_select_state = JSON.parse(storedmoreSelections);
+  }
+
   const [expandedClassId, setExpandedClassId] = useState(null);
   const [selectedTimeslots, setSelectedTimeslots] = useState(initial_state);
+  const [moreslots, setMoreSlots] = useState(more_select_state);
 
   useEffect(() => {
     localStorage.setItem(
@@ -200,6 +203,10 @@ const ClassDetail = (props) => {
       JSON.stringify(selectedTimeslots)
     );
   }, [selectedTimeslots]);
+
+  useEffect(() => {
+    localStorage.setItem("moreSlots", JSON.stringify(moreslots));
+  }, [moreslots]);
 
   const toggleDescription = (classId) => {
     if (expandedClassId === classId) {
@@ -210,6 +217,8 @@ const ClassDetail = (props) => {
   };
 
   const handleTimeslotSelection = (classid, timeslotname) => {
+
+
     setSelectedTimeslots((prevSelectedTimeSlots) => {
       const updatedSelection = { ...prevSelectedTimeSlots };
       if (updatedSelection[classid] === timeslotname) {
@@ -219,7 +228,32 @@ const ClassDetail = (props) => {
       }
       return updatedSelection;
     });
+    
+    if (timeslotname != "Want another slot"){
+      setMoreSlots((moreslots) => {
+        const updatedSelection = { ...moreslots };
+        if (classid in updatedSelection) {
+          delete updatedSelection[classid];
+        } 
+
+        return updatedSelection;
+      })
+    }
+
+    if (timeslotname == "Want another slot") {
+      setMoreSlots((moreslots) => {
+        const updatedSelection = { ...moreslots };
+        if (classid in updatedSelection) {
+          delete updatedSelection[classid];
+        } else {
+          updatedSelection[classid] = "";
+        }
+        return updatedSelection;
+      });
+    }
   };
+
+  console.log(moreslots);
 
   useEffect(() => {
     const resultArray = Object.keys(selectedTimeslots).map((classid) => {
@@ -236,12 +270,14 @@ const ClassDetail = (props) => {
       };
     });
     props.onSendData(resultArray);
+    props.onSelectTimeSlot(Object.keys(selectedTimeslots).length);
   }, [selectedTimeslots]);
-  console.log(data, "the class data")
+  console.log(selectedTimeslots, "selcted");
+
   return (
     <div className="sub-cards-grid">
       <h1>Happy Exploring!</h1>
-            <div>
+      <div>
         {data.map((classes, index) => (
           <>
             <div
@@ -285,6 +321,7 @@ const ClassDetail = (props) => {
                       onSelect={handleTimeslotSelection}
                     />
                   ))}
+                  {classes.id in moreslots && <input></input>}
                 </div>
               </div>
               <div className="class_footer">
@@ -327,7 +364,7 @@ const ClassDetail = (props) => {
           </>
         ))}
       </div>
-          </div>
+    </div>
   );
 };
 

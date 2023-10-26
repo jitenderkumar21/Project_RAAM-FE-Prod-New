@@ -20,6 +20,7 @@ const MainPage = () => {
   const [timedata, setTimedata] = useState({});
   const [fulldata, setFullData] = useState([]);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isSelected, setIsSelected] = useState(0);
 
   const registerHandler = () => {
     setRegister(true);
@@ -42,6 +43,14 @@ const MainPage = () => {
 
   const homePageHandler = () => {
     setSubmitted(false);
+  };
+
+  const continueButtonHandler = (len) => {
+    if (len === 0) {
+      setIsSelected(0);
+    } else {
+      setIsSelected(len);
+    }
   };
 
   useEffect(() => {
@@ -105,7 +114,13 @@ const MainPage = () => {
 
       {!register && !submitted && (
         <div className="card1">
-          <h1 style={{ marginBottom: "50px", marginTop: "20px", fontFamily: "urbanist" }}>
+          <h1
+            style={{
+              marginBottom: "50px",
+              marginTop: "20px",
+              fontFamily: "urbanist",
+            }}
+          >
             {" "}
             Welcome to Demo Classes!
           </h1>
@@ -141,19 +156,32 @@ const MainPage = () => {
           <div>
             <ClassDetail
               onSendData={sendDataHandler}
+              onSelectTimeSlot={continueButtonHandler}
               fullclass={fullclasses}
               scroll={scrollPosition}
             />
           </div>
           <div className="register_button">
-            <Button
-              variant="contained"
-              color="primary"
-              className="button"
-              onClick={registerHandler}
-            >
-              Continue
-            </Button>
+            {isSelected ? (
+              <Button
+                variant="contained"
+                color="primary"
+                className="button"
+                onClick={registerHandler}
+              >
+                Continue
+              </Button>
+            ) : (
+              <Button
+                variant="contained"
+                color="primary"
+                className="button"
+                disabled
+                onClick={registerHandler}
+              >
+                Continue
+              </Button>
+            )}
           </div>
         </div>
       )}
@@ -174,7 +202,6 @@ const MainPage = () => {
       )}
 
       <div className="about">
-        
         <div className="about_content">
           <h1> About Us!</h1>
           <p className="p1">
@@ -189,8 +216,6 @@ const MainPage = () => {
         </div>
       </div>
 
-
-
       {/* <div className="demo">
         <div className="demo_content">
           <h1> Demo Classes</h1>
@@ -204,7 +229,6 @@ const MainPage = () => {
           <img src={Demo} alt="Demo Classes" />
         </div>
       </div> */}
-
 
       <div className="footer">
         <div className="footer_content">

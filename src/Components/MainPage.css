@@ -11,6 +11,7 @@
   margin-bottom: 10px;
   padding: 5px;
 }
+
 .register_button button {
   height: 40px;
   width: 150px;
@@ -23,6 +24,12 @@
   font-size: 18px; /* Font size on hover */
   color: white; /* Text color on hover */
   background-color: #de7247; /* Background color on hover */
+}
+
+.register_button button:disabled {
+  background-color: #ccc; /* Change to a grayish color */
+  color: #888; /* Change the text color to a lighter shade */
+  cursor: not-allowed; /* Change the cursor to not-allowed */
 }
 
 .title {

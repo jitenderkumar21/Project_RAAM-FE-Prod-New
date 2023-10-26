@@ -3,7 +3,7 @@ import "./Timeslot.css";
 import { Tooltip } from "@mui/material";
 
 const Timeslot = ({ timeslot, classid, isSelected, onSelect, full }) => {
-  return (
+    return (
     <>
       {full && (
         <Tooltip id="custom_tooltip" title="Classes Full" hover arrow placement="top-end">
