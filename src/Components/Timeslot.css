@@ -49,6 +49,7 @@
   left: 0;
   height: 20px;
   width: 20px;
+  border: 1px solid black;
   border-radius: 0%;
   background-color: #eee;
 }
@@ -61,6 +62,7 @@
   width: 20px;
   border-radius: 0%;
   background-color: #eee;
+  border: 1px solid black;
 }
 
 /* On mouse-over, add a grey background color */

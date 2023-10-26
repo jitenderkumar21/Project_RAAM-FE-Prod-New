@@ -45,8 +45,9 @@
 
 .about_img img {
   width: 30%;
-  margin-left: 20%;
-  margin-top: 4%;
+  margin: 10% auto;
+  margin-bottom: 0px;;
+  
 }
 .about_img1 {
   width: 40%;
@@ -60,8 +61,9 @@
 }
 .about_content {
   line-height: 10px;
+  margin: 0 auto;
   width: 50%;
-  height: 300px;
+  height: min-content;
   text-align: left;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-decoration: none solid rgb(222, 114, 71);
@@ -69,8 +71,14 @@
 
 .about_content p {
   font-weight: 100;
-  width: 60%;
-  margin-top: 0px;
+  width: 70%;
+  margin-left: 25%;
+}
+
+.about_content h1 {
+  margin-top: 15%;
+  width: 70%;
+  margin-left: 25%;
 }
 
 .demo_content {
@@ -278,7 +286,6 @@ h4 {
 
 .footer {
   display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 
@@ -289,6 +296,7 @@ h4 {
 .footer_content {
   text-align: left;
   font-size: 18px;
+  margin: 0 0 5% 12.5%;
 }
 
 .footer_content a {
