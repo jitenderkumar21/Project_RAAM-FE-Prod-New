@@ -10,7 +10,7 @@ import dropIcon from "../assets/dropdown.png";
 import closeDropDown from "../assets/closeDropdown.png";
 const ClassDetail = (props) => {
   const [data, setData] = useState([]);
-  const [data, setData] = useState([]);
+
   // const data = [
   //   {
   //     id: 1,
@@ -149,7 +149,6 @@ const ClassDetail = (props) => {
     const fetchClassData = async () => {
       console.log("classes api call");
       try {
-        const response = await fetch("https://backend-z29v.onrender.com/info/");
         const response = await fetch("https://backend-z29v.onrender.com/info/");
         if (!response.ok) {
           throw new Error("Network response was not ok");
