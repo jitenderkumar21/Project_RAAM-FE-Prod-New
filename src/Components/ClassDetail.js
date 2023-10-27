@@ -356,7 +356,7 @@ const ClassDetail = (props) => {
                           onChange={(event) =>
                             requiredTimeslotHandler(classes.id, event)
                           }
-                          placeholder="E.g.- 20 Nov,5-6PM PST or Sunday Post 6PM PST"
+                          placeholder="E.g.- 20 Nov,5-6PM PST"
                         ></input>
                       </div>
                     )}

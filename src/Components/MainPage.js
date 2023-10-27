@@ -215,8 +215,7 @@ const MainPage = () => {
           <p className="p1">
             Coral Academy is your partner in K-12 EdTech. We carefully select
             top educators to ensure impactful and engaging learning experiences.
-            Explore our platform preview{" "}
-            <a href="https://staging.mycoralacademy.com/">here</a>
+            
           </p>
         </div>
         <div className="about_img">
