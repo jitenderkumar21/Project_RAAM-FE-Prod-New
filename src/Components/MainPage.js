@@ -23,6 +23,19 @@ const MainPage = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isSelected, setIsSelected] = useState(0);
 
+  useEffect(() => {
+    const clearLocalStorageOnReload = () => {
+      localStorage.clear();
+    };
+
+    window.addEventListener('beforeunload', clearLocalStorageOnReload);
+
+    return () => {
+      // Clean up the event listener when the component unmounts
+      window.removeEventListener('beforeunload', clearLocalStorageOnReload);
+    };
+  }, []);
+
   const registerHandler = () => {
     setRegister(true);
     setScrollPosition(0);
