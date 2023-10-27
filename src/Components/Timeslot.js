@@ -3,6 +3,7 @@ import "./Timeslot.css";
 import { Tooltip } from "@mui/material";
 
 const Timeslot = ({ timeslot, classid, isSelected, onSelect, full, registrationClosed }) => {
+  // console.log(registrationClosed, "registration")
     return (
     <>
       {(full || registrationClosed) && (

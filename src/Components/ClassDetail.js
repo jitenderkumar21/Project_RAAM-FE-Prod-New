@@ -299,13 +299,12 @@ const ClassDetail = (props) => {
               <div
                 className={index % 2 == 0 ? "sub-card" : "sub-card1"}
                 id={props.scroll > 800 ? "animation" : ""}
-                onClick={() => toggleDescription(classes.id)}
               >
                 <div className="class_card">
-                  <div className="class_card1">
+                  <div className="class_card1" onClick={() => toggleDescription(classes.id)}>
                     <img src={classes.link}></img>
                   </div>
-                  <div className="class_card2">
+                  <div className="class_card2" onClick={() => toggleDescription(classes.id)}>
                     <h3>{classes.title}</h3>
                     <p>
                       <img src={age} alt="ageIcon" className="icon" />
@@ -352,7 +351,7 @@ const ClassDetail = (props) => {
                     )}
                   </div>
                 </div>
-                <div className="class_footer">
+                <div className="class_footer" onClick={() => toggleDescription(classes.id)}>
                   <p className="description">
                     More Details
                     {expandedClassId != classes.id && (
@@ -377,6 +376,7 @@ const ClassDetail = (props) => {
                         .map((paragraph, index) => (
                           <p key={index} className="description">
                             {paragraph}
+                            <br />
                           </p>
                         ))}
                       <h5>Prerequisite</h5>
@@ -386,6 +386,7 @@ const ClassDetail = (props) => {
                         .map((paragraph, index) => (
                           <p key={index} className="description">
                             {paragraph}
+                            <br />
                           </p>
                         ))}
                       <h5>Learning Outcomes</h5>
@@ -395,6 +396,7 @@ const ClassDetail = (props) => {
                         .map((paragraph, index) => (
                           <p key={index} className="description">
                             {paragraph}
+                            <br />
                           </p>
                         ))}
                       <h3>MEET YOUR TEACHER</h3>
@@ -407,6 +409,7 @@ const ClassDetail = (props) => {
                             .map((paragraph, index) => (
                               <p key={index} className="description">
                                 {paragraph}
+                                <br />
                               </p>
                             ))}
                           <h5>Teaching Philosophy</h5>
@@ -416,6 +419,7 @@ const ClassDetail = (props) => {
                             .map((paragraph, index) => (
                               <p key={index} className="description">
                                 {paragraph}
+                                <br />
                               </p>
                             ))}
                         </div>

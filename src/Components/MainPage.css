@@ -461,15 +461,16 @@ h2 {
   margin-bottom: 30px;
 
   /* transform: scale(1.1); */
-  animation: translateFromNegative 1.5s ease-in-out;
+  animation: translateFromNegative 0.9s ease-in-out;
 }
 
 @keyframes translateFromNegative {
   0% {
-    transform: translateX(-100px);
+    transform: translateX(-300px);
   }
-  50% {
-    transform: translateX(100px);
+
+  80% {
+    transform: translate(10px);
   }
   100% {
     transform: translateX(0);
