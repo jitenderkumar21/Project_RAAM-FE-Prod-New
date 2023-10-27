@@ -338,16 +338,21 @@ const ClassDetail = (props) => {
                       />
                     ))}
                     {classes.id in moreslots && (
-                      <input
-                        value={
-                          moreslots[classes.id]
-                            ? moreslots[classes.id].slice(18)
-                            : ""
-                        }
-                        onChange={(event) =>
-                          requiredTimeslotHandler(classes.id, event)
-                        }
-                      ></input>
+                      <div className="text1">
+                        <p id="prefer">Enter Preffered Timing</p>
+                        <input
+                          className="textInput"
+                          value={
+                            moreslots[classes.id]
+                              ? moreslots[classes.id].slice(18)
+                              : ""
+                          }
+                          onChange={(event) =>
+                            requiredTimeslotHandler(classes.id, event)
+                          }
+                          placeholder="E.g.- 20 Nov,5-6PM PST or Sunday Post 6PM PST"
+                        ></input>
+                      </div>
                     )}
                   </div>
                 </div>
