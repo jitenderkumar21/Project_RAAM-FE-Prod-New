@@ -380,7 +380,13 @@ const ClassDetail = (props) => {
                         .split("\n")
                         .map((paragraph, index) => (
                           <p key={index} className="description">
-                            {paragraph}
+                            {paragraph.split('*').map((text, index) => {
+                                if (index % 2 === 0) {
+                                   return <span key={index}>{text}</span>;
+                                } else {
+                                  return <strong style={{"textDecoration" : "underline"}} key={index}>{text}</strong>;
+                                }
+                              })}
                             <br />
                           </p>
                         ))}
