@@ -28,7 +28,8 @@
 
 .buttondisplay {
   display: flex;
-  justify-content: space-around;
+  gap: 200px;
+  margin-left: 35%;
   margin-top: 20px;
   padding-top: 20px;
 }

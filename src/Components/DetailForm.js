@@ -59,6 +59,7 @@ const DetailForm = (props) => {
   };
 
   const backHandler = () => {
+    console.log("in the back function")
     localStorage.setItem("selectedform", JSON.stringify(formData));
     props.onBack();
   };
@@ -66,7 +67,7 @@ const DetailForm = (props) => {
   return (
     <React.Fragment>
       <div className="form_meta"> Add Contact Details!</div>
-      <form onSubmit={handleSubmit} className="my-form">
+      <form className="my-form">
         <div className="form-group">
           <label htmlFor="parentName"> Parent Name *</label>
           <input
@@ -122,11 +123,13 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-        <div className="buttondisplay">
-          <button onClick={backHandler}> Back</button>
-          <button type="submit">Submit</button>
-        </div>
+       
       </form>
+      <div className="buttondisplay">
+          <button onClick={backHandler}> Back</button>
+          <button onClick={handleSubmit} type="submit">Submit</button>
+          
+        </div>
     </React.Fragment>
   );
 };
