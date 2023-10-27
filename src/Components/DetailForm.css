@@ -9,7 +9,7 @@
   height: 40px;
   width: 120px;
   font-size: 18px;
-  background-color: #0896c2;
+  background-color: #07779A;
   color: white;
   border-radius: 4px;
   /* margin: 30px; */
@@ -38,7 +38,7 @@
   height: 40px;
   width: 120px;
   font-size: 18px;
-  background-color: #0896c2;
+  background-color: #07779A;
   color: white;
   border-radius: 4px;
 }
@@ -74,7 +74,7 @@ input[type="number"] {
 }
 
 button {
-  background-color: #007bff;
+  background-color: #07779A;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -83,7 +83,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #07779A;
 }
 
 .submitted-data {
@@ -101,6 +101,6 @@ button:hover {
 
 .form_meta {
   font-size: 35px;
-  color: #0896c2;
+  color: #07779A;;
   font-weight: 600;
 }

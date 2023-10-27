@@ -162,6 +162,8 @@ const ClassDetail = (props) => {
     fetchClassData();
   }, []);
 
+  // console.log(data,"after api call")
+
   const transformedClasses = data.reduce((result, classItem) => {
     result[classItem.id] = "";
     return result;
@@ -188,6 +190,7 @@ const ClassDetail = (props) => {
     initial_state = transformedClasses;
   }
 
+
   const storedmoreSelections = localStorage.getItem("moreSlots");
   let more_select_state = {};
   if (storedmoreSelections) {
@@ -204,6 +207,14 @@ const ClassDetail = (props) => {
       JSON.stringify(selectedTimeslots)
     );
   }, [selectedTimeslots]);
+
+  useEffect(() => {
+    if (data.length !=0) {
+    localStorage.setItem(
+      "data",
+      JSON.stringify(data)
+    );}
+  }, [data]);
 
   useEffect(() => {
     localStorage.setItem("moreSlots", JSON.stringify(moreslots));
@@ -245,7 +256,7 @@ const ClassDetail = (props) => {
         if (classid in updatedSelection) {
           delete updatedSelection[classid];
         } else {
-          updatedSelection[classid] = "";
+          updatedSelection[classid] = "Want another slot:";
         }
         return updatedSelection;
       });
@@ -254,13 +265,23 @@ const ClassDetail = (props) => {
 
   useEffect(() => {
     const resultArray = Object.keys(selectedTimeslots).map((classid) => {
+      console.log(selectedTimeslots, "in the send data funtuon")
       let timeslot = selectedTimeslots[classid];
       if (timeslot === "Want another slot") {
         timeslot = moreslots[classid];
       }
-      console.log(classid, "classid");
-      const classInfo = data.find((classInfo) => classInfo.id === classid);
-      const className = classInfo ? classInfo.title : "";
+      
+      let classInfo = data.find((classInfo) => classInfo.id === classid);
+      let final_data =[]
+
+      if (!classInfo) {
+        const new_data = localStorage.getItem('data')
+        final_data = JSON.parse(new_data)
+        classInfo = final_data.find((classInfo) => classInfo.id === classid);
+      }
+      
+      const className = classInfo ? classInfo.title : "xyz";
+      console.log(className, "classname")
 
       return {
         classid,
@@ -268,15 +289,20 @@ const ClassDetail = (props) => {
         timeslot: timeslot || "",
       };
     });
+
+    // const newArray = resultArray.map((obj) => obj[className] = data.find[cla])
+
     props.onSendData(resultArray);
     console.log(resultArray, "selcted");
     props.onSelectTimeSlot(Object.keys(selectedTimeslots).length);
   }, [selectedTimeslots, moreslots]);
 
+
+
   const requiredTimeslotHandler = (classid, event) => {
     setMoreSlots((moreslot) => {
       const newslot = { ...moreslot };
-      newslot[classid] = "Want another slot" + ":" + event.target.value;
+      newslot[classid] =  "Want another Slot:" + event.target.value;
       return newslot;
     });
 
