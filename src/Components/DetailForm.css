@@ -34,6 +34,22 @@
   padding-top: 20px;
 }
 
+.buttondisplay1 button{
+  height: 40px;
+  width: 120px;
+  font-size: 18px;
+  background-color: #0896c2;
+  color: white;
+  border-radius: 4px;
+}
+
+.buttondisplay1 button:hover {
+  font-size: 18px; /* Font size on hover */
+  color: white; /* Text color on hover */
+  background-color: #de7247; /* Background color on hover */
+}
+
+
 label {
   display: block;
   font-weight: 600;

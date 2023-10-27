@@ -123,13 +123,14 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-       
+        <div className="buttondisplay">
+         
+          <button onSubmit={handleSubmit} type="submit">Submit</button>
+      </div>
       </form>
-      <div className="buttondisplay">
-          <button onClick={backHandler}> Back</button>
-          <button onClick={handleSubmit} type="submit">Submit</button>
-          
-        </div>
+      <div className="buttondisplay1">
+        <button onClick={backHandler}> Back</button>
+      </div>
     </React.Fragment>
   );
 };

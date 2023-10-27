@@ -155,9 +155,7 @@ const MainPage = () => {
             </div>
             <div className="thin_line"></div>
             <span className="message">
-              *you need to enroll separately for each learner,
-              <br /> multiple classes can be selected at the same time for each
-              learner
+             *Register for each Learner separately. Multiple Classes can be selected under one registration.
             </span>
           </div>
 

@@ -536,6 +536,24 @@
     background-color: #de7247; /* Background color on hover */
   }
 
+
+  .buttondisplay1 button {
+    height: 40px;
+    width: 40%;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 4%;
+  }
+
+  .buttondisplay1 button:hover {
+    font-size: 18px; /* Font size on hover */
+    color: white; /* Text color on hover */
+    background-color: #de7247; /* Background color on hover */
+  }
+
+
   .form-group {
     margin-bottom: 15px;
     font-family: "Manrope";
