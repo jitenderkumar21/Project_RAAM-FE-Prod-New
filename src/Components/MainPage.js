@@ -39,7 +39,7 @@ const MainPage = () => {
 
   const backPageHandler = () => {
     setRegister(false);
-    setScrollPosition(1090);
+    setScrollPosition(1000);
   };
 
   const homePageHandler = () => {
@@ -155,7 +155,6 @@ const MainPage = () => {
             </div>
             <div className="thin_line"></div>
             <span className="message">
-              {" "}
               *you need to enroll separately for each learner,
               <br /> multiple classes can be selected at the same time for each
               learner

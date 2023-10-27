@@ -2,17 +2,11 @@ import React from "react";
 import "./Timeslot.css";
 import { Tooltip } from "@mui/material";
 
-const Timeslot = ({ timeslot, classid, isSelected, onSelect, full }) => {
-  return (
+const Timeslot = ({ timeslot, classid, isSelected, onSelect, full, registrationClosed }) => {
+    return (
     <>
-      {full && (
-        <Tooltip
-          id="custom_tooltip"
-          title="Classes Full"
-          hover
-          arrow
-          placement="top-end"
-        >
+      {(full || registrationClosed) && (
+        <Tooltip id="custom_tooltip" title="Classes Full" hover arrow placement="top-end">
           <label className="container" id="full">
             <input
               type="checkbox"
@@ -26,7 +20,7 @@ const Timeslot = ({ timeslot, classid, isSelected, onSelect, full }) => {
         </Tooltip>
       )}
 
-      {!full && (
+      {(!full && !registrationClosed) && (
         <label className="container">
           <input
             type="checkbox"
