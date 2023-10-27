@@ -43,6 +43,9 @@ const DetailForm = (props) => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+    // if (name === 'childAge' && parseFloat(value) < 0) {
+    //   alert("Age must be a positive integer")
+    // }
     setFormData({
       ...formData,
       [name]: value,
@@ -64,10 +67,16 @@ const DetailForm = (props) => {
     props.onBack();
   };
 
+  const handleEnterKey = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Prevent the default form submission
+    }
+  };
+
   return (
     <React.Fragment>
       <div className="form_meta"> Add Contact Details!</div>
-      <form className="my-form">
+      <form onSubmit={handleSubmit} className="my-form">
         <div className="form-group">
           <label htmlFor="parentName"> Parent Name *</label>
           <input
@@ -107,9 +116,11 @@ const DetailForm = (props) => {
             type="number"
             id="childAge"
             name="childAge"
+            min = "1"
             required
             value={formData.childAge}
             onChange={handleInputChange}
+            onKeyDown={handleEnterKey}
           />
         </div>
         <div className="form-group">
@@ -125,7 +136,7 @@ const DetailForm = (props) => {
         </div>
         <div className="buttondisplay">
          
-          <button onSubmit={handleSubmit} type="submit">Submit</button>
+          <button type="submit">Submit</button>
       </div>
       </form>
       <div className="buttondisplay1">
