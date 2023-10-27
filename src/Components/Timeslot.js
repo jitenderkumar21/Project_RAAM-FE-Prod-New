@@ -1,5 +1,6 @@
 import React from "react";
 import "./Timeslot.css";
+import "./MobileView.css"
 import { Tooltip } from "@mui/material";
 
 const Timeslot = ({ timeslot, classid, isSelected, onSelect, full, registrationClosed }) => {
@@ -7,7 +8,7 @@ const Timeslot = ({ timeslot, classid, isSelected, onSelect, full, registrationC
     return (
     <>
       {(full || registrationClosed) && (
-        <Tooltip id="custom_tooltip" title="Classes Full" hover arrow placement="top-end">
+        <Tooltip id="custom_tooltip" title="Classes Full" hover arrow placement="top">
           <label className="container" id="full">
             <input
               type="checkbox"
@@ -16,8 +17,10 @@ const Timeslot = ({ timeslot, classid, isSelected, onSelect, full, registrationC
               onChange={() => onSelect(classid, timeslot)}
             />
             <span className="light_text">{timeslot}</span>
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
+            <span className="Hack" id="hack_ultra_pro_max">Class Full</span>
           </label>
+          
         </Tooltip>
       )}
 

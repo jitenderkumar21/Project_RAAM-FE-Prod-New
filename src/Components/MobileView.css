@@ -600,4 +600,9 @@
     font-size: 30px;
     font-weight: 600;
   }
+  #hack_ultra_pro_max{
+    color:red;
+    margin-left:4px;
+    text-decoration:line-through;
+  }
 }
