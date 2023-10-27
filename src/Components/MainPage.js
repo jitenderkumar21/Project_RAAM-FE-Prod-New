@@ -156,8 +156,9 @@ const MainPage = () => {
             <div className="thin_line"></div>
             <span className="message">
               {" "}
-              *After you select a time slot for a class, Select more classes or
-              scroll down to continue to the next step
+              *you need to enroll separately for each learner,
+              <br /> multiple classes can be selected at the same time for each
+              learner
             </span>
           </div>
 

@@ -255,8 +255,8 @@ const ClassDetail = (props) => {
   useEffect(() => {
     const resultArray = Object.keys(selectedTimeslots).map((classid) => {
       let timeslot = selectedTimeslots[classid];
-      if (timeslot === "Want another slot"){
-        timeslot = moreslots[classid]
+      if (timeslot === "Want another slot") {
+        timeslot = moreslots[classid];
       }
       console.log(classid,"classid")
       const classInfo = data.find(
@@ -275,9 +275,6 @@ const ClassDetail = (props) => {
     props.onSelectTimeSlot(Object.keys(selectedTimeslots).length);
   }, [selectedTimeslots, moreslots]);
 
-
- 
-
   const requiredTimeslotHandler = (classid, event) => {
     setMoreSlots((moreslot) => {
       const newslot = { ...moreslot };
@@ -291,8 +288,6 @@ const ClassDetail = (props) => {
     //   return newtimeslot;
     // });
   };
-
-
 
   return (
     <div className="sub-cards-grid">
@@ -345,7 +340,11 @@ const ClassDetail = (props) => {
                     ))}
                     {classes.id in moreslots && (
                       <input
-                        value={moreslots[classes.id] ? moreslots[classes.id].slice(18) : ""}
+                        value={
+                          moreslots[classes.id]
+                            ? moreslots[classes.id].slice(18)
+                            : ""
+                        }
                         onChange={(event) =>
                           requiredTimeslotHandler(classes.id, event)
                         }
