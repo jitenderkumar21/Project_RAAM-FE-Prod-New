@@ -520,9 +520,10 @@
     padding: 20px;
   }
 
+
   .buttondisplay button {
     height: 40px;
-    width: 100%;
+    width: 50%;
     font-size: 18px;
     color: white;
     border-radius: 10px;
@@ -541,11 +542,14 @@
   }
 
   .buttondisplay {
-    display: block;
-    flex-direction: row-reverse;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: 0px;
+    margin-left: 28%;
+    padding-top: 0px;
+    gap: 0px;
+    
   }
 
   label {
