@@ -38,6 +38,7 @@
 .about {
   display: flex;
   justify-items: flex-start;
+  margin-top: 0px;
 }
 
 .demo {
@@ -108,7 +109,7 @@
   gap: 20px;
   align-items: center;
   margin-top: 20px;
-  margin-left: 5px;
+  margin-left: 0px;
   padding-bottom: 50px;
   border-radius: 10px;
   background-color: rgb(110, 191, 215);
@@ -128,9 +129,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 90%;
   height: min-content;
-  margin-left: 3%;
-  margin-bottom: 15px;
-  margin-top: 7px;
+  margin: 7px auto 15px auto;
   transition: transform 0.3s;
   cursor: pointer;
 }
@@ -160,11 +159,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 90%;
   height: min-content;
-  margin-left: 3%;
-  margin-bottom: 15px;
-  margin-top: 7px;
+  margin: 7px auto 15px auto;
   transition: transform 0.3s;
-
   cursor: pointer;
 }
 

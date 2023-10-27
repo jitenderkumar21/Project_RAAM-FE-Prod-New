@@ -144,7 +144,6 @@ const ClassDetail = (props) => {
   //   },
   // ];
 
-
   useEffect(() => {
     const fetchClassData = async () => {
       console.log("classes api call");
@@ -162,7 +161,6 @@ const ClassDetail = (props) => {
 
     fetchClassData();
   }, []);
-
 
   const transformedClasses = data.reduce((result, classItem) => {
     result[classItem.id] = "";
@@ -220,8 +218,6 @@ const ClassDetail = (props) => {
   };
 
   const handleTimeslotSelection = (classid, timeslotname) => {
-
-
     setSelectedTimeslots((prevSelectedTimeSlots) => {
       const updatedSelection = { ...prevSelectedTimeSlots };
       if (updatedSelection[classid] === timeslotname) {
@@ -231,16 +227,16 @@ const ClassDetail = (props) => {
       }
       return updatedSelection;
     });
-    
-    if (timeslotname != "Want another slot"){
+
+    if (timeslotname != "Want another slot") {
       setMoreSlots((moreslots) => {
         const updatedSelection = { ...moreslots };
         if (classid in updatedSelection) {
           delete updatedSelection[classid];
-        } 
+        }
 
         return updatedSelection;
-      })
+      });
     }
 
     if (timeslotname == "Want another slot") {
@@ -281,125 +277,129 @@ const ClassDetail = (props) => {
     <div className="sub-cards-grid">
       <h1>Happy Exploring!</h1>
       <div>
-      <div>
-        {data.map((classes, index) => (
-          <>
-            <div
-              className={index % 2 == 0 ? "sub-card" : "sub-card1"}
-              id={props.scroll > 800 ? "animation" : ""}
-              onClick={() => toggleDescription(classes.id)}
-            >
-              <div className="class_card">
-                <div className="class_card1">
-                  <img src={classes.link}></img>
+        <div>
+          {data.map((classes, index) => (
+            <>
+              <div
+                className={index % 2 == 0 ? "sub-card" : "sub-card1"}
+                id={props.scroll > 800 ? "animation" : ""}
+                onClick={() => toggleDescription(classes.id)}
+              >
+                <div className="class_card">
+                  <div className="class_card1">
+                    <img src={classes.link}></img>
+                  </div>
+                  <div className="class_card2">
+                    <h3>{classes.title}</h3>
+                    <p>
+                      <img src={age} alt="ageIcon" className="icon" />
+                      Age Group : {classes.age_group}
+                    </p>
+                    <p>
+                      <img src={duration} alt="durationIcon" className="icon" />
+                      Duration : {classes.duration}
+                    </p>
+                    <p>
+                      <img src={teacher} alt="teacherIcon" className="icon" />
+                      Teacher : {classes.tutor}
+                    </p>
+                  </div>
+                  <div class="separator"></div>
+                  <div className="class_card3">
+                    <h3>Select Time Slots</h3>
+                    {classes.timeslots.map((timeslot) => (
+                      <Timeslot
+                        name={classes.title}
+                        classid={classes.id}
+                        timeslot={timeslot}
+                        full={
+                          newfulldata[classes.id]
+                            ? newfulldata[classes.id].includes(timeslot)
+                            : false
+                        }
+                        isSelected={selectedTimeslots[classes.id] == timeslot}
+                        onSelect={handleTimeslotSelection}
+                      />
+                    ))}
+                    {classes.id in moreslots && <input></input>}
+                  </div>
                 </div>
-                <div className="class_card2">
-                  <h3>{classes.title}</h3>
-                  <p>
-                    <img src={age} alt="ageIcon" className="icon" />
-                    Age Group : {classes.age_group}
+                <div className="class_footer">
+                  <p className="description">
+                    More Details
+                    {expandedClassId != classes.id && (
+                      <img src={dropIcon} alt="dropDown" className="icon" />
+                    )}
+                    {expandedClassId == classes.id && (
+                      <img
+                        src={closeDropDown}
+                        alt="dropDown"
+                        className="icon"
+                      />
+                    )}
                   </p>
-                  <p>
-                    <img src={duration} alt="durationIcon" className="icon" />
-                    Duration : {classes.duration}
-                  </p>
-                  <p>
-                    <img src={teacher} alt="teacherIcon" className="icon" />
-                    Teacher : {classes.tutor}
-                  </p>
-                </div>
-                <div class="separator"></div>
-                <div className="class_card3">
-                  <h3>Select Time Slots</h3>
-                  {classes.timeslots.map((timeslot) => (
-                    <Timeslot
-                      name={classes.title}
-                      classid={classes.id}
-                      timeslot={timeslot}
-                      full={
-                        newfulldata[classes.id]
-                          ? newfulldata[classes.id].includes(timeslot)
-                          : false
-                      }
-                      isSelected={selectedTimeslots[classes.id] == timeslot}
-                      onSelect={handleTimeslotSelection}
-                    />
-                  ))}
-                  {classes.id in moreslots && <input></input>}
-                </div>
-              </div>
-              <div className="class_footer">
-                <p className="description">
-                  More Details
-                  {expandedClassId != classes.id && (
-                    <img src={dropIcon} alt="dropDown" className="icon" />
-                  )}
-                  {expandedClassId == classes.id && (
-                    <img src={closeDropDown} alt="dropDown" className="icon" />
-                  )}
-                </p>
 
-                {classes.id === expandedClassId && (
-                  <>
-                    <h3>ABOUT THE CLASS</h3>
+                  {classes.id === expandedClassId && (
+                    <>
+                      <h3>ABOUT THE CLASS</h3>
 
-                    <h5>Class Details</h5>
-                    {classes.class_details
-                      .split("\n")
-                      .map((paragraph, index) => (
-                        <p key={index} className="description">
-                          {paragraph}
-                        </p>
-                      ))}
-                    <h5>Prerequisite</h5>
-                    {/* <p className="description">{classes.prerequisite}</p> */}
-                    {classes.prerequisite
-                      .split("\n")
-                      .map((paragraph, index) => (
-                        <p key={index} className="description">
-                          {paragraph}
-                        </p>
-                      ))}
-                    <h5>Learning Outcomes</h5>
-                    {/* <p className="description">{classes.learning_outcomes}</p> */}
-                    {classes.learning_outcomes
-                      .split("\n")
-                      .map((paragraph, index) => (
-                        <p key={index} className="description">
-                          {paragraph}
-                        </p>
-                      ))}
-                    <h3>MEET YOUR TEACHER</h3>
-                    <div className="about_teacher">
-                      <img src={classes.teacher_pic} alt="teacher_pic"></img>
-                      <div>
-                        {/* <p className="description">{classes.about_teacher}</p> */}
-                        {classes.about_teacher
-                          .split("\n")
-                          .map((paragraph, index) => (
-                            <p key={index} className="description">
-                              {paragraph}
-                            </p>
-                          ))}
-                        <h5>Teaching Philosophy</h5>
-                        {/* <p className="description">{classes.teaching_philosophy}</p> */}
-                        {classes.teaching_philosophy
-                          .split("\n")
-                          .map((paragraph, index) => (
-                            <p key={index} className="description">
-                              {paragraph}
-                            </p>
-                          ))}
+                      <h5>Class Details</h5>
+                      {classes.class_details
+                        .split("\n")
+                        .map((paragraph, index) => (
+                          <p key={index} className="description">
+                            {paragraph}
+                          </p>
+                        ))}
+                      <h5>Prerequisite</h5>
+                      {/* <p className="description">{classes.prerequisite}</p> */}
+                      {classes.prerequisite
+                        .split("\n")
+                        .map((paragraph, index) => (
+                          <p key={index} className="description">
+                            {paragraph}
+                          </p>
+                        ))}
+                      <h5>Learning Outcomes</h5>
+                      {/* <p className="description">{classes.learning_outcomes}</p> */}
+                      {classes.learning_outcomes
+                        .split("\n")
+                        .map((paragraph, index) => (
+                          <p key={index} className="description">
+                            {paragraph}
+                          </p>
+                        ))}
+                      <h3>MEET YOUR TEACHER</h3>
+                      <div className="about_teacher">
+                        <img src={classes.teacher_pic} alt="teacher_pic"></img>
+                        <div>
+                          {/* <p className="description">{classes.about_teacher}</p> */}
+                          {classes.about_teacher
+                            .split("\n")
+                            .map((paragraph, index) => (
+                              <p key={index} className="description">
+                                {paragraph}
+                              </p>
+                            ))}
+                          <h5>Teaching Philosophy</h5>
+                          {/* <p className="description">{classes.teaching_philosophy}</p> */}
+                          {classes.teaching_philosophy
+                            .split("\n")
+                            .map((paragraph, index) => (
+                              <p key={index} className="description">
+                                {paragraph}
+                              </p>
+                            ))}
+                        </div>
                       </div>
-                    </div>
-                  </>
-                )}
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          </>
-        ))}
+            </>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
