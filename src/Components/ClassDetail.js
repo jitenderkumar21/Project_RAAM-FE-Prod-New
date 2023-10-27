@@ -258,10 +258,8 @@ const ClassDetail = (props) => {
       if (timeslot === "Want another slot") {
         timeslot = moreslots[classid];
       }
-      console.log(classid,"classid")
-      const classInfo = data.find(
-        (classInfo) => classInfo.id === classid
-      );
+      console.log(classid, "classid");
+      const classInfo = data.find((classInfo) => classInfo.id === classid);
       const className = classInfo ? classInfo.title : "";
 
       return {
@@ -301,10 +299,16 @@ const ClassDetail = (props) => {
                 id={props.scroll > 800 ? "animation" : ""}
               >
                 <div className="class_card">
-                  <div className="class_card1" onClick={() => toggleDescription(classes.id)}>
+                  <div
+                    className="class_card1"
+                    onClick={() => toggleDescription(classes.id)}
+                  >
                     <img src={classes.link}></img>
                   </div>
-                  <div className="class_card2" onClick={() => toggleDescription(classes.id)}>
+                  <div
+                    className="class_card2"
+                    onClick={() => toggleDescription(classes.id)}
+                  >
                     <h3>{classes.title}</h3>
                     <p>
                       <img src={age} alt="ageIcon" className="icon" />
@@ -327,7 +331,9 @@ const ClassDetail = (props) => {
                         name={classes.title}
                         classid={classes.id}
                         timeslot={timeslot}
-                        registrationClosed = {classes.isSlotOpen[index].toUpperCase() === 'NO'}
+                        registrationClosed={
+                          classes.isSlotOpen[index].toUpperCase() === "NO"
+                        }
                         full={
                           newfulldata[classes.id]
                             ? newfulldata[classes.id].includes(timeslot)
@@ -339,7 +345,7 @@ const ClassDetail = (props) => {
                     ))}
                     {classes.id in moreslots && (
                       <div className="text1">
-                        <p id="prefer">Enter Preffered Timing</p>
+                        <p id="prefer">Enter Preferred Timing</p>
                         <input
                           className="textInput"
                           value={
@@ -356,7 +362,10 @@ const ClassDetail = (props) => {
                     )}
                   </div>
                 </div>
-                <div className="class_footer" onClick={() => toggleDescription(classes.id)}>
+                <div
+                  className="class_footer"
+                  onClick={() => toggleDescription(classes.id)}
+                >
                   <p className="description">
                     More Details
                     {expandedClassId != classes.id && (
