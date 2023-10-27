@@ -252,11 +252,12 @@ const ClassDetail = (props) => {
     }
   };
 
-  console.log(moreslots);
-
   useEffect(() => {
     const resultArray = Object.keys(selectedTimeslots).map((classid) => {
-      const timeslot = selectedTimeslots[classid];
+      let timeslot = selectedTimeslots[classid];
+      if (timeslot === "Want another slot") {
+        timeslot = moreslots[classid];
+      }
       const classInfo = data.find(
         (classInfo) => classInfo.id === parseInt(classid)
       );
@@ -269,9 +270,23 @@ const ClassDetail = (props) => {
       };
     });
     props.onSendData(resultArray);
+    console.log(resultArray, "selcted");
     props.onSelectTimeSlot(Object.keys(selectedTimeslots).length);
-  }, [selectedTimeslots]);
-  console.log(selectedTimeslots, "selcted");
+  }, [selectedTimeslots, moreslots]);
+
+  const requiredTimeslotHandler = (classid, event) => {
+    setMoreSlots((moreslot) => {
+      const newslot = { ...moreslot };
+      newslot[classid] = "Want another slot" + ":" + event.target.value;
+      return newslot;
+    });
+
+    // setSelectedTimeslots((timeslot) => {
+    //   const newtimeslot = { ...timeslot };
+    //   newtimeslot[classid] = "Want Another Slot :" + event.target.value;
+    //   return newtimeslot;
+    // });
+  };
 
   return (
     <div className="sub-cards-grid">
@@ -321,7 +336,18 @@ const ClassDetail = (props) => {
                         onSelect={handleTimeslotSelection}
                       />
                     ))}
-                    {classes.id in moreslots && <input></input>}
+                    {classes.id in moreslots && (
+                      <input
+                        value={
+                          moreslots[classes.id]
+                            ? moreslots[classes.id].slice(18)
+                            : ""
+                        }
+                        onChange={(event) =>
+                          requiredTimeslotHandler(classes.id, event)
+                        }
+                      ></input>
+                    )}
                   </div>
                 </div>
                 <div className="class_footer">
