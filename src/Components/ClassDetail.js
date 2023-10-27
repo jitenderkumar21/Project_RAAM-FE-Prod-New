@@ -258,8 +258,9 @@ const ClassDetail = (props) => {
       if (timeslot === "Want another slot"){
         timeslot = moreslots[classid]
       }
+      console.log(classid,"classid")
       const classInfo = data.find(
-        (classInfo) => classInfo.id === parseInt(classid)
+        (classInfo) => classInfo.id === classid
       );
       const className = classInfo ? classInfo.title : "";
 
@@ -273,6 +274,8 @@ const ClassDetail = (props) => {
     console.log(resultArray, "selcted");
     props.onSelectTimeSlot(Object.keys(selectedTimeslots).length);
   }, [selectedTimeslots, moreslots]);
+
+
  
 
   const requiredTimeslotHandler = (classid, event) => {
@@ -325,11 +328,12 @@ const ClassDetail = (props) => {
                   <div class="separator"></div>
                   <div className="class_card3">
                     <h3>Select Time Slots</h3>
-                    {classes.timeslots.map((timeslot) => (
+                    {classes.timeslots.map((timeslot, index) => (
                       <Timeslot
                         name={classes.title}
                         classid={classes.id}
                         timeslot={timeslot}
+                        registrationClosed = {classes.isSlotOpen[index].toUpperCase() === 'NO'}
                         full={
                           newfulldata[classes.id]
                             ? newfulldata[classes.id].includes(timeslot)

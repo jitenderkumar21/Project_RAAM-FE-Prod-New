@@ -39,7 +39,7 @@ const MainPage = () => {
 
   const backPageHandler = () => {
     setRegister(false);
-    setScrollPosition(1090);
+    setScrollPosition(1000);
   };
 
   const homePageHandler = () => {
