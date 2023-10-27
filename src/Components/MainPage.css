@@ -40,7 +40,7 @@
   height: 40px;
   width: 150px;
   font-size: 18px;
-  background-color: #0896c2;
+  background-color: #07779A;
   color: white;
 }
 
@@ -96,7 +96,6 @@
   width: 50%;
   height: min-content;
   text-align: left;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-decoration: none solid rgb(222, 114, 71);
 }
 
@@ -120,7 +119,6 @@
   height: 270px;
   text-align: left;
   margin-left: 20%;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
   text-decoration: none solid rgb(222, 114, 71);
 }
@@ -138,13 +136,13 @@
   margin-left: 0px;
   padding-bottom: 50px;
   border-radius: 10px;
-  background-color: rgb(110, 191, 215);
+  background-color: #25A5B5
 }
 .sub-cards-grid h1 {
   color: #fff;
-  font-family: "Franklin Gothic Medium";
   font-size: 40px;
   margin-bottom: 0px;
+  font-family: "Poppins";
 }
 
 .sub-card {
@@ -161,20 +159,21 @@
 }
 
 .sub-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.015);
 }
 
 .sub-card h3 {
   font-size: 25px;
-  color: rgb(222, 114, 71);
+  color: rgb(228, 92, 37);
   margin-top: 0px;
   text-align: left;
   /* margin-bottom: 5px; */
 }
 .sub-card p {
   font-size: 18px;
-  color: rgb(110, 191, 215);
+  color: #07779A;
   margin-top: 0px;
+  font-family: "Manrope";
 }
 
 .sub-card1 {
@@ -191,7 +190,7 @@
 }
 
 .sub-card1:hover {
-  transform: scale(1.03);
+  transform: scale(1.015);
 }
 
 .sub-card1 h3 {
@@ -203,8 +202,10 @@
 }
 .sub-card1 p {
   font-size: 18px;
-  color: rgb(110, 191, 215);
+  color: #07779A;
   margin-top: 0px;
+  font-family: "Manrope";
+
 }
 
 .button {
@@ -212,10 +213,9 @@
 }
 
 h1 {
-  color: rgb(222, 114, 71);
-  font-weight: 900;
+  color: #DE7247;
+  font-weight: 700;
   font-size: 50px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   /* margin-top: 5px; */
 }
 .p1 {
@@ -244,7 +244,7 @@ h4 {
   height: 58px;
   width: 272px;
   font-size: 18px;
-  background-color: #0896c2;
+  background-color: #07779A;
   color: white;
 }
 
@@ -257,7 +257,6 @@ h4 {
 .submitpage p {
   font-size: 70px;
   color: #de7247;
-  font-family: helvetica;
 }
 
 .subcard .description {
@@ -302,7 +301,7 @@ h4 {
 
 .sub-card button {
   font-size: 14px;
-  background-color: #0896c2;
+  background-color: #07779A;
   color: white;
 }
 
@@ -328,7 +327,7 @@ h4 {
 }
 
 .footer_content a {
-  color: #0896c2;
+  color: #07779A;
 }
 
 .footer_content p {
@@ -383,7 +382,7 @@ h4 {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #0896c2;
+  background: #07779A;
 }
 
 /* Handle on hover */
@@ -468,7 +467,7 @@ h4 {
 
 h2 {
   font-size: 30px;
-  color: #0297c4;
+  color: #07779A;
   margin-bottom: 15px;
 }
 

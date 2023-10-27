@@ -23,6 +23,7 @@
 
 .form-group {
   margin-bottom: 15px;
+  font-family: "Manrope";
 }
 
 .buttondisplay {
@@ -84,4 +85,5 @@ button:hover {
 .form_meta {
   font-size: 35px;
   color: #0896c2;
+  font-weight: 600;
 }
