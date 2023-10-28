@@ -195,7 +195,7 @@
 
 .sub-card1 h3 {
   font-size: 25px;
-  color: rgb(222, 114, 71);
+  color: rgb(228, 92, 37);
   margin-top: 0px;
   text-align: left;
   /* margin-bottom: 5px; */
@@ -355,6 +355,53 @@ h4 {
 }
 
 
+
+#scrollClass1::-webkit-scrollbar {
+  width: 3px;
+}
+
+
+/* Track */
+#scrollClass1::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+
+/* Handle */
+#scrollClass1::-webkit-scrollbar-thumb {
+  background: rgb(239, 148, 111);
+}
+
+
+/* Handle on hover */
+#scrollClass1::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} 
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #07779A;
+}
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #4d4b4b;
+}
+
+
+
 .separator {
   flex: 0 0 1px;
   width: 8px; /* Width of the vertical line */
@@ -419,9 +466,10 @@ h4 {
 }
 
 .message {
-  color:black;
-  font-size: 16px;
+  color:#07779A;;
+  font-size: 20px;
   width: 80%;
+  margin: 10px auto 30px auto;
 }
 
 .thin_line {

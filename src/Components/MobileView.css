@@ -41,8 +41,7 @@
 
   .about_img img {
     width: 90%;
-    margin-left: 55%;
-    margin-top: 4%;
+   margin: 15% auto 0px auto;
   }
   .about_img1 {
     width: 40%;
@@ -293,8 +292,11 @@
   .footer {
     display: flex;
     align-items: center;
+    flex-direction: column-reverse;
+    justify-content: space-around;
     padding-bottom: 5%;
     margin-top: 0 auto;
+    gap: 1px;
   }
 
   .footer img {
@@ -303,7 +305,7 @@
 
   .footer_content {
     text-align: center;
-    font-size: 18px;
+    font-size: 14px;
     margin: 0 auto;
     width: 100%;
   }
@@ -316,6 +318,7 @@
     margin-bottom: 3px;
   }
 
+  
   .loaderClass {
     position: fixed;
     top: 0;
@@ -333,7 +336,55 @@
     margin: auto;
   }
 
-  
+  #scrollClass1::-webkit-scrollbar {
+    width: 0px;
+  }
+
+
+  /* Track */
+  #scrollClass1::-webkit-scrollbar-track {
+    background: #fff;
+  }
+
+
+  /* Handle */
+  #scrollClass1::-webkit-scrollbar-thumb {
+    background: rgb(239, 148, 111);
+  }
+
+
+  /* Handle on hover */
+  #scrollClass1::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+  }
+
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+   
+    background: #0896c2;
+  }
+
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4d4b4b;
+  }
+
+
+
+
   .separator {
     flex: 0 0 1px;
     width: 0px; /* Width of the vertical line */
@@ -418,8 +469,10 @@
   }
 
   .message {
-    color: black;
+    color:#07779A;;
     font-size: 14px;
+    width: 90%;
+    margin: 10px auto 30px auto;
   }
 
   h2 {

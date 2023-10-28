@@ -139,6 +139,10 @@ const MainPage = () => {
             Welcome to Demo Classes!
           </h1>
 
+          <h5 className="message">
+          Register for each learner separately. You can select as many classes under one learner.
+          </h5>
+
           {/* <div className={scrollPosition >= 0 ? "enrollAnimation" : ""}>
             <h2>How To Enroll?</h2>
             <div className="thick_line"></div>

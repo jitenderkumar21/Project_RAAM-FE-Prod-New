@@ -297,9 +297,7 @@ const ClassDetail = (props) => {
     props.onSelectTimeSlot(Object.keys(selectedTimeslots).length);
   }, [selectedTimeslots, moreslots]);
 
-  const emptyfunction = (classid) => {
-    console.log(classid)
-  }
+
 
   const requiredTimeslotHandler = (classid, event) => {
     setMoreSlots((moreslot) => {
@@ -329,13 +327,13 @@ const ClassDetail = (props) => {
                 <div className="class_card">
                   <div
                     className="class_card1"
-                    onClick={window.innerWidth > 599 ? (() => toggleDescription(classes.id)) : (() => emptyfunction(classes.id))}
+                    onClick={() => toggleDescription(classes.id)}
                   >
                     <img src={classes.link}></img>
                   </div>
                   <div
                     className="class_card2"
-                    onClick={window.innerWidth > 599 ? (() => toggleDescription(classes.id)) : (() => emptyfunction(classes.id))}
+                    onClick={() => toggleDescription(classes.id)}
                   >
                     <h3>{classes.title}</h3>
                     <p>
