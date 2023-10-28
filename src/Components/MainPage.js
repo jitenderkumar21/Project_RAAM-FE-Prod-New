@@ -127,7 +127,20 @@ const MainPage = () => {
       <img className="title" src={Coral_Academy} alt="Title" />
 
       {!register && !submitted && (
+        
         <div className="card1">
+          <div className="bubbles">
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+            <div className="bubble"></div>
+          </div>
           <h1
             style={{
               marginBottom: "50px",
