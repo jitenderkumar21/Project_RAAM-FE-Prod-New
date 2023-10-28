@@ -350,7 +350,7 @@ h4 {
 
 .scrollClass {
   width: 92%;
-  max-height: 600px;
+  height: auto;
   overflow-y: auto;
   overflow-x: hidden;
   align-items: center;

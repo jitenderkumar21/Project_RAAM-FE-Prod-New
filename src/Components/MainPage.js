@@ -116,6 +116,7 @@ const MainPage = () => {
   }, {});
 
   return (
+    <div className="scrollClass" id="scrollClass1">
     <CardWrapper>
       {/* <h1> Coral Academy </h1>
       <h4> Demo Classes</h4> */}
@@ -124,7 +125,7 @@ const MainPage = () => {
           <Loader />
         </div>
       )} */}
-      <div className="scrollClass" id="scrollClass1">
+      
       <img className="title" src={Coral_Academy} alt="Title" />
 
       {!register && !submitted && (
@@ -275,8 +276,9 @@ const MainPage = () => {
           <img src={About_us} alt="About_US" />
         </div>
       </div>
-      </div>
+      
     </CardWrapper>
+    </div>
   );
 };
 
