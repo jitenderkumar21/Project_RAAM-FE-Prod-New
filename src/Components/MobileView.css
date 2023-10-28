@@ -641,15 +641,17 @@
     margin-left:4px;
     text-decoration:line-through;
   }
-}
 
-
+  
 .bubbles{
   position:absolute;
   width:100%;
-  height: 35%;
+  height: 42%;
   z-index:0;
   overflow:hidden;
   top:0;
   left:0;
 }
+
+}
+
