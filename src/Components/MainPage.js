@@ -132,7 +132,7 @@ const MainPage = () => {
       {!register && !submitted && (
         
         <div className="card1">
-          <div className="bubbles">
+          {/* <div className="bubbles">
             <div className="bubble"></div>
             <div className="bubble"></div>
             <div className="bubble"></div>
@@ -143,7 +143,7 @@ const MainPage = () => {
             <div className="bubble"></div>
             <div className="bubble"></div>
             <div className="bubble"></div>
-          </div>
+          </div> */}
           <h1
             style={{
               marginBottom: "50px",
