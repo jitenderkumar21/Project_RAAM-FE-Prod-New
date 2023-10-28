@@ -117,7 +117,7 @@ const MainPage = () => {
 
   return (
     <CardWrapper>
-      <div className="scrollClass" id="scrollClass1">
+      
       {/* <h1> Coral Academy </h1>
       <h4> Demo Classes</h4> */}
       {/* {loading && (
@@ -125,6 +125,7 @@ const MainPage = () => {
           <Loader />
         </div>
       )} */}
+      <div className="scrollClass" id="scrollClass1">
       
       <img className="title" src={Coral_Academy} alt="Title" />
 
