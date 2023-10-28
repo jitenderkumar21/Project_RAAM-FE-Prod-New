@@ -356,46 +356,35 @@ h4 {
 
 
 
-#scrollClass1::-webkit-scrollbar {
+/* #scrollClass1::-webkit-scrollbar {
   width: 3px;
 }
 
-
-/* Track */
 #scrollClass1::-webkit-scrollbar-track {
   background: #fff;
 }
 
-
-/* Handle */
 #scrollClass1::-webkit-scrollbar-thumb {
   background: rgb(239, 148, 111);
 }
 
-
-/* Handle on hover */
 #scrollClass1::-webkit-scrollbar-thumb:hover {
   background: #555;
-} 
+}  */
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 5px;
 }
 
-
-/* Track */
 ::-webkit-scrollbar-track {
   background: #fff;
 }
 
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #07779A;
 }
 
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #4d4b4b;
 }
