@@ -139,7 +139,7 @@ const MainPage = () => {
             Welcome to Demo Classes!
           </h1>
 
-          <div className={scrollPosition >= 0 ? "enrollAnimation" : ""}>
+          {/* <div className={scrollPosition >= 0 ? "enrollAnimation" : ""}>
             <h2>How To Enroll?</h2>
             <div className="thick_line"></div>
             <div className="guidance">
@@ -170,7 +170,7 @@ const MainPage = () => {
             <span className="message">
              *Register for each Learner separately. Multiple Classes can be selected under one registration.
             </span>
-          </div>
+          </div> */}
 
           <div>
             <ClassDetail
