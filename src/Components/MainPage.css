@@ -348,14 +348,14 @@ h4 {
 }
 
 
-.scrollClass {
+/* .scrollClass {
   width: 92%;
   max-height: 600px;
   overflow-y: auto;
   overflow-x: hidden;
   align-items: center;
   margin: auto;
-}
+} */
 
 
 
