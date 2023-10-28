@@ -124,6 +124,7 @@ const MainPage = () => {
           <Loader />
         </div>
       )} */}
+      <div className="scrollClass" id="scrollClass1">
       <img className="title" src={Coral_Academy} alt="Title" />
 
       {!register && !submitted && (
@@ -273,6 +274,7 @@ const MainPage = () => {
         <div className="about_img">
           <img src={About_us} alt="About_US" />
         </div>
+      </div>
       </div>
     </CardWrapper>
   );
