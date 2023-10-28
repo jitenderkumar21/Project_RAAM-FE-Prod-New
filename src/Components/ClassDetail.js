@@ -317,7 +317,7 @@ const ClassDetail = (props) => {
     <div className="sub-cards-grid">
       <h1>Happy Exploring!</h1>
       <div>
-        <div>
+        <div className="scrollClass" id="scrollClass1">
           {data.map((classes, index) => (
             <>
               <div

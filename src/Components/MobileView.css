@@ -330,15 +330,15 @@
     z-index: 999;
   }
 
-  /* .scrollClass {
+  .scrollClass {
     width: 99%;
     overflow-y: auto;
     overflow-x: hidden;
     align-items: center;
     margin: auto;
-  } */
+  }
 
-/* 
+
   #scrollClass1::-webkit-scrollbar {
     width: 0px;
   }
@@ -353,7 +353,7 @@
 
   #scrollClass1::-webkit-scrollbar-thumb:hover {
     background: #555;
-  } */
+  }
 
   /* ::-webkit-scrollbar {
     width: 5px;
