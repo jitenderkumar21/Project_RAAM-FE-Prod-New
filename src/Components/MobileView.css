@@ -139,7 +139,7 @@
   }
 
   .sub-card:hover {
-    transform: scale(1.01);
+    transform: scale(1);
   }
 
   .sub-card h3 {
@@ -170,7 +170,7 @@
   }
 
   .sub-card1:hover {
-    transform: scale(1.01);
+    transform: scale(1);
   }
 
   .sub-card1 h3 {
@@ -482,7 +482,7 @@
     margin-bottom: 20px;
     padding: 0 15px 0 15px;
     /* transform: scale(1.1); */
-    animation: translateFromNegative 1.5s ease-in-out;
+    animation: translateFromNegative 0s ease-in-out;
   }
 
   .card1 h1{

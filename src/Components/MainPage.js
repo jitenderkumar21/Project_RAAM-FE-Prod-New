@@ -220,7 +220,7 @@ const MainPage = () => {
         </div>
       )}
 
-      <div className="about">
+      {/* <div className="about">
         <div className="about_content">
           <h1> About Us!</h1>
           <p className="p1">
@@ -232,7 +232,7 @@ const MainPage = () => {
         <div className="about_img">
           <img src={About_us} alt="About_US" />
         </div>
-      </div>
+      </div> */}
 
       {/* <div className="demo">
         <div className="demo_content">
@@ -253,9 +253,9 @@ const MainPage = () => {
           <p> Contact us at:</p>
           <a href="mailto:support@coralacademy.com">support@coralacademy.com</a>
         </div>
-        {/* <div>
-          <img src={footer} alt="footer"></img>
-        </div> */}
+        <div className="about_img">
+          <img src={About_us} alt="About_US" />
+        </div>
       </div>
     </CardWrapper>
   );
