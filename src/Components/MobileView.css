@@ -333,9 +333,10 @@
   .scrollClass {
     width: 99%;
     overflow-y: auto;
+   max-height: 100%;
     overflow-x: hidden;
     align-items: center;
-    margin: auto;
+    margin: auto auto 0 auto;
   }
 
 
