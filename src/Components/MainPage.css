@@ -136,6 +136,7 @@
   margin-left: 0px;
   padding-bottom: 50px;
   border-radius: 10px;
+  -webkit-overflow-scrolling: touch;
   background-color: #25A5B5
 }
 .sub-cards-grid h1 {
@@ -345,14 +346,16 @@ h4 {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
-.scrollClass {
+
+
+/* .scrollClass {
   width: 92%;
-  max-height: 600px; /*595.8px if we wanted to show 2 class s */
+  max-height: 600px;
   overflow-y: auto;
   overflow-x: hidden;
   align-items: center;
   margin: auto;
-}
+} */
 
 
 
@@ -371,7 +374,7 @@ h4 {
 #scrollClass1::-webkit-scrollbar-thumb:hover {
   background: #555;
 }  */
-
+/* 
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -387,7 +390,7 @@ h4 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #4d4b4b;
-}
+} */
 
 
 
