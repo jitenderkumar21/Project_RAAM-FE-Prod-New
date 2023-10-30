@@ -8,7 +8,7 @@ const Timeslot = ({ timeslot, classid, isSelected, onSelect, full, registrationC
     return (
     <>
       {(full || registrationClosed) && (
-        <Tooltip id="custom_tooltip" title="Classes Full" hover arrow placement="top">
+        <Tooltip id="custom_tooltip" title="Class Full" hover arrow placement="top">
           <label className="container" id="full">
             <input
               type="checkbox"
