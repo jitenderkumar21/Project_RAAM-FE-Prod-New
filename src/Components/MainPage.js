@@ -236,7 +236,7 @@ const MainPage = () => {
           <p>
             Thanks for <br></br>submitting!
           </p>
-          <button onClick={homePageHandler}>Add More Learner!</button>
+          <button onClick={homePageHandler}>Add Learner!</button>
         </div>
       )}
 
