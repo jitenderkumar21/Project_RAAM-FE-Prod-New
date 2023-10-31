@@ -25,7 +25,7 @@
   width: 190px;
   height: 20px;
   border: none;
-  border-bottom: 2px solid rgb(222, 114, 71);
+  border-bottom: 2px solid #FF7F50;
   outline: none;
   margin-left: 1px;
 }
@@ -47,7 +47,7 @@
 .register_button button:hover {
   font-size: 18px; /* Font size on hover */
   color: white; /* Text color on hover */
-  background-color: #de7247; /* Background color on hover */
+  background-color: #FF7F50; /* Background color on hover */
 }
 
 .register_button button:disabled {
@@ -57,7 +57,9 @@
 }
 
 .title {
-  width: 75%;
+  width: 18%;
+  margin-top : 20px;
+  margin-bottom : 10px;
 }
 .about {
   display: flex;
@@ -96,7 +98,7 @@
   width: 50%;
   height: min-content;
   text-align: left;
-  text-decoration: none solid rgb(222, 114, 71);
+  text-decoration: none solid #FF7F50;
 }
 
 .about_content p {
@@ -120,7 +122,7 @@
   text-align: left;
   margin-left: 20%;
   font-weight: bold;
-  text-decoration: none solid rgb(222, 114, 71);
+  text-decoration: none solid #FF7F50;
 }
 
 .demo_content p {
@@ -149,7 +151,7 @@
 
 .sub-card {
   background-color: #fff;
-  border: 3px solid rgb(222, 114, 71);
+  border: 3px solid #FF7F50;
   border-radius: 20px;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -166,7 +168,7 @@
 
 .sub-card h3 {
   font-size: 25px;
-  color: rgb(228, 92, 37);
+  color: #FF7F50;
   margin-top: 0px;
   text-align: left;
   /* margin-bottom: 5px; */
@@ -180,7 +182,7 @@
 
 .sub-card1 {
   background-color: #fff;
-  border: 3px solid rgb(222, 114, 71);
+  border: 3px solid #FF7F50;
   border-radius: 20px;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -197,7 +199,7 @@
 
 .sub-card1 h3 {
   font-size: 25px;
-  color: rgb(228, 92, 37);
+  color: #FF7F50;
   margin-top: 0px;
   text-align: left;
   /* margin-bottom: 5px; */
@@ -215,7 +217,7 @@
 }
 
 h1 {
-  color: #DE7247;
+  color: #FF7F50;
   font-weight: 700;
   font-size: 50px;
   /* margin-top: 5px; */
@@ -230,7 +232,7 @@ h1 {
 }
 
 h4 {
-  color: rgb(222, 114, 71);
+  color: #FF7F50;
   font-weight: 500;
   font-size: 50px;
 }
@@ -253,12 +255,12 @@ h4 {
 .submitpage button:hover {
   font-size: 22px; /* Font size on hover */
   color: white; /* Text color on hover */
-  background-color: #de7247; /* Background color on hover */
+  background-color: #FF7F50; /* Background color on hover */
 }
 
 .submitpage p {
   font-size: 70px;
-  color: #de7247;
+  color: #FF7F50;
 }
 
 .subcard .description {
@@ -310,7 +312,7 @@ h4 {
 .sub-card button:hover {
   font-size: 12px; /* Font size on hover */
   color: white; /* Text color on hover */
-  background-color: #de7247; /* Background color on hover */
+  background-color: #FF7F50; /* Background color on hover */
 }
 
 .footer {

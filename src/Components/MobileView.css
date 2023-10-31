@@ -22,11 +22,11 @@
   .register_button button:hover {
     font-size: 18px; /* Font size on hover */
     color: white; /* Text color on hover */
-    background-color: #de7247; /* Background color on hover */
+    background-color: #FF7F50; /* Background color on hover */
   }
 
   .title {
-    width: 100%;
+    width: 50%;
   }
 
   .about {
@@ -56,7 +56,7 @@
   .about_content {
     width: 100%;
     text-align: center;
-    text-decoration: none solid rgb(222, 114, 71);
+    text-decoration: none solid #FF7F50;
   }
   .about_content h1 {
     font-size: 38px;
@@ -92,7 +92,7 @@
     margin: auto;
     text-align: center;
     font-weight: bold;
-    text-decoration: none solid rgb(222, 114, 71);
+    text-decoration: none solid #FF7F50;
   }
   .demo_content p {
     line-height: 1.8;
@@ -123,7 +123,7 @@
 
   .sub-card {
     background-color: #fff;
-    border: 3px solid rgb(222, 114, 71);
+    border: 3px solid #FF7F50;
     border-radius: 20px;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -144,7 +144,7 @@
 
   .sub-card h3 {
     font-size: 25px;
-    color: rgb(222, 114, 71);
+    color: #FF7F50;
     margin-top: 0px;
     text-align: left;
     /* margin-bottom: 5px; */
@@ -157,7 +157,7 @@
 
   .sub-card1 {
     background-color: #fff;
-    border: 3px solid rgb(222, 114, 71);
+    border: 3px solid #FF7F50;
     border-radius: 20px;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -175,7 +175,7 @@
 
   .sub-card1 h3 {
     font-size: 25px;
-    color: rgb(222, 114, 71);
+    color: #FF7F50;
     margin-top: 0px;
     text-align: left;
     /* margin-bottom: 5px; */
@@ -191,14 +191,14 @@
   }
 
   h1 {
-    color: rgb(222, 114, 71);
+    color: #FF7F50;
     font-weight: 900;
     font-size: 50px;
     /* margin-top: 5px; */
   }
 
   h4 {
-    color: rgb(222, 114, 71);
+    color: #FF7F50;
     font-weight: 500;
     font-size: 50px;
   }
@@ -445,13 +445,13 @@
   }
   
   .thick_line {
-    border-top: 5px solid rgb(239, 119, 72);
+    border-top: 5px solid #FF7F50;
     width: 80%;
     margin: 0 auto -5px auto;
   }
 
   .thin_line {
-    border-top: 2px solid rgb(239, 119, 72);
+    border-top: 2px solid #FF7F50;
     width: 80%;
     margin: -5px auto 20px auto;
   }
