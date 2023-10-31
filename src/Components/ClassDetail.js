@@ -149,7 +149,7 @@ const ClassDetail = (props) => {
       const timezone  = Intl.DateTimeFormat().resolvedOptions().timeZone;
       console.log(timezone, "timezone")
       try {
-        const response = await fetch(`https://backend-timezone.onrender.com/info?timezone=${timezone}`);
+        const response = await fetch(`https://backend-z29v.onrender.com/info?timezone=${timezone}`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
