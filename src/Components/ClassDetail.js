@@ -316,7 +316,7 @@ const ClassDetail = (props) => {
 
   return (
     <div className="sub-cards-grid">
-      <h1>Happy Exploring!</h1>
+      <h1>Happy Exploring</h1>
       <div>
         <div >
           {data.map((classes, index) => (
