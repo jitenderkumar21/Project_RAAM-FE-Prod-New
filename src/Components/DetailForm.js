@@ -14,11 +14,12 @@ const DetailForm = (props) => {
       phoneNumber: "",
       childAge: "",
       classDetails: "",
+      knowabout:""
     };
   }
   const [formData, setFormData] = useState(initial_state);
 
-  const YOUR_GOOGLE_APPS_SCRIPT_URL = "https://backend-z29v.onrender.com/save/";
+  const YOUR_GOOGLE_APPS_SCRIPT_URL = "https://backend-z29v.onrenr.com/save/";
 
   const submitForm = async (data) => {
     const options = {
@@ -131,6 +132,17 @@ const DetailForm = (props) => {
             name="phoneNumber"
             placeholder="Optional"
             value={formData.phoneNumber}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="knowabout">How did you get to know about us ?</label>
+          <input
+            type="text"
+            id="knowabout"
+            name="knowabout"
+            placeholder="Optional"
+            value={'knowabout' in formData ? formData.knowabout : ''}
             onChange={handleInputChange}
           />
         </div>

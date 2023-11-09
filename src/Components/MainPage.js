@@ -272,6 +272,9 @@ const MainPage = () => {
         <div className="footer_content">
           <p> Contact us at:</p>
           <a href="mailto:support@coralacademy.com">support@coralacademy.com</a>
+          <p> Please share in detail how we can improve your overall experience <a href="https://docs.google.com/forms/d/e/1FAIpQLSflsLJJuG74V1jjS29B-R1TVPbD74e9H5CkKVQMX6CzM87AZQ/viewform?usp=sf_link" target="_blank">here</a>.
+          </p>
+          
         </div>
         <div className="about_img">
           <img src={About_us} alt="About_US" />
