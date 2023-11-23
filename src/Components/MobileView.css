@@ -257,6 +257,8 @@
   .class_card2 h3 {
     font-size: 20px;
     text-align: center;
+    height: min-content;
+    margin-bottom: 20px;
   }
 
   .class_card2 p {

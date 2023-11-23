@@ -290,8 +290,9 @@ h4 {
   font-weight: 600;
 }
 .class_card2 h3 {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   font-size: 24px;
+  height: 30px;
 }
 .class_card3 {
   width: 28%;
