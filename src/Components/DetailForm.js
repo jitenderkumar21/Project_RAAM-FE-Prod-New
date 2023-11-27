@@ -148,7 +148,7 @@ const DetailForm = (props) => {
         </div>
         <div className="buttondisplay">
          
-          <button type="submit">Submit</button>
+          <button id="submitId" type="submit">Submit</button>
       </div>
       </form>
       <div className="buttondisplay1">
