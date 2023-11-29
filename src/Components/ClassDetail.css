@@ -1,0 +1,31 @@
+.underlined-text {
+    border-bottom: 3px solid rgb(239, 119, 72);
+    display: inline-block;
+    padding-bottom: 5px;
+    
+  }
+
+.text {
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+.tab-style {
+    align-items: end;
+    margin-left: 75%;
+    display: flex;
+    gap: 25%;
+    font-size: 18px;
+    color: white;
+  }
+
+  @media (max-width: 599px){
+    .tab-style {
+        align-items: end;
+        margin: auto;
+        display: flex;
+        gap: 25%;
+        font-size: 18px;
+        color: white;
+      }
+  }

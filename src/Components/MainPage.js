@@ -7,13 +7,6 @@ import ClassDetail from "./ClassDetail";
 import DetailForm from "./DetailForm";
 import Coral_Academy from "../assets/Coral_Academy.png";
 import About_us from "../assets/About_us.png";
-import Demo from "../assets/Demo.png";
-import footer from "../assets/footer.png";
-import icon1 from "../assets/icon1.png";
-import icon2 from "../assets/icon2.png";
-import icon3 from "../assets/icon3.png";
-import icon4 from "../assets/icon4.png";
-import click from "../assets/click.png";
 
 const MainPage = () => {
   const [register, setRegister] = useState(false);
@@ -117,14 +110,6 @@ const MainPage = () => {
 
   return (
     <CardWrapper>
-      
-      {/* <h1> Coral Academy </h1>
-      <h4> Demo Classes</h4> */}
-      {/* {loading && (
-        <div className="loaderClass">
-          <Loader />
-        </div>
-      )} */}
       <div className="scrollClass" id="scrollClass1">
       
       <img className="title" src={Coral_Academy} alt="Title" />
@@ -132,18 +117,6 @@ const MainPage = () => {
       {!register && !submitted && (
         
         <div className="card1">
-          {/* <div className="bubbles">
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-            <div className="bubble"></div>
-          </div> */}
           <h1
             style={{
               marginBottom: "50px",
@@ -159,38 +132,6 @@ const MainPage = () => {
           Register for each learner separately. You can select as many classes under one learner.
           </h5>
 
-          {/* <div className={scrollPosition >= 0 ? "enrollAnimation" : ""}>
-            <h2>How To Enroll?</h2>
-            <div className="thick_line"></div>
-            <div className="guidance">
-              <img src={icon1} alt="search"></img>
-              <p>
-                Explore
-                <br /> Classes
-              </p>
-              <img src={icon2} id="next" alt="next"></img>
-              <img src={icon3} alt="select"></img>
-              <p>
-                Select Time <br /> Slots*
-              </p>
-              <img src={icon2} id="next" alt="next"></img>
-              <img src={click} alt="Click Continue" />
-              <p>
-                Click
-                <br />
-                Continue
-              </p>
-              <img src={icon2} id="next" alt="next"></img>
-              <img src={icon4} alt="details"></img>
-              <p>
-                Fill <br /> Details!
-              </p>
-            </div>
-            <div className="thin_line"></div>
-            <span className="message">
-             *Register for each Learner separately. Multiple Classes can be selected under one registration.
-            </span>
-          </div> */}
 
           <div>
             <ClassDetail
