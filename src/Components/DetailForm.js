@@ -14,7 +14,8 @@ const DetailForm = (props) => {
       phoneNumber: "",
       childAge: "",
       classDetails: "",
-      knowabout:""
+      knowabout: "",
+      additionalInfo: "",
     };
   }
   const [formData, setFormData] = useState(initial_state);
@@ -44,12 +45,18 @@ const DetailForm = (props) => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    // if (name === 'childAge' && parseFloat(value) < 0) {
-    //   alert("Age must be a positive integer")
-    // }
     setFormData({
       ...formData,
       [name]: value,
+    });
+  };
+
+  const handleSelectChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+      additionalInfo: "", // Reset additionalInfo when the dropdown changes
     });
   };
 
@@ -63,13 +70,13 @@ const DetailForm = (props) => {
   };
 
   const backHandler = () => {
-    console.log("in the back function")
+    console.log("in the back function");
     localStorage.setItem("selectedform", JSON.stringify(formData));
     props.onBack();
   };
 
   const handleEnterKey = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       event.preventDefault(); // Prevent the default form submission
     }
   };
@@ -117,7 +124,7 @@ const DetailForm = (props) => {
             type="number"
             id="childAge"
             name="childAge"
-            min = "1"
+            min="1"
             required
             value={formData.childAge}
             onChange={handleInputChange}
@@ -135,21 +142,62 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="knowabout">How did you get to know about us ?</label>
-          <input
-            type="text"
+          <select
             id="knowabout"
             name="knowabout"
-            placeholder="Optional"
-            value={'knowabout' in formData ? formData.knowabout : ''}
-            onChange={handleInputChange}
-          />
+            value={
+              [
+                "Facebook",
+                "Friends and Family",
+                "Referred by Teacher",
+                "Other",
+              ].includes(formData.knowabout)
+                ? formData.knowabout
+                : ""
+            }
+            onChange={handleSelectChange}
+          >
+            <option value="" disabled>
+              Select an option
+            </option>
+            <option value="Facebook">Facebook</option>
+            <option value="Friends and Family">Friends and Family</option>
+            <option value="Referred by Teacher">Referred by Teacher</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
+
+        {(formData.knowabout === "Facebook" ||
+          formData.knowabout === "Other") && (
+          <div className="form-group">
+            {formData.knowabout === "Facebook" && (
+              <label htmlFor="additionalInfo">
+                Which Facebook group referred you to us ?
+              </label>
+            )}
+            {formData.knowabout === "Other" && (
+              <label htmlFor="additionalInfo">
+                Could you please specify source ?
+              </label>
+            )}
+            <input
+              type="text"
+              id="additionalInfo"
+              name="additionalInfo"
+              value={formData.additionalInfo || ""}
+              onChange={handleInputChange}
+            />
+          </div>
+        )}
+
         <div className="buttondisplay">
-         
-          <button id="submitId" type="submit">Submit</button>
-      </div>
+          <button id="submitId" type="submit">
+            Submit
+          </button>
+        </div>
       </form>
       <div className="buttondisplay1">
         <button onClick={backHandler}> Back</button>

@@ -62,13 +62,24 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-input[type="number"] {
+input[type="number"]{
   width: 100%;
   padding: 5px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
   height: 35px;
+  font-size: 16px;
+  padding-left: 2.5%;
+}
+
+select {
+  width: 104%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 45px;
   font-size: 16px;
   padding-left: 2.5%;
 }
