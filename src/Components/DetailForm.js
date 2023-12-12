@@ -51,7 +51,7 @@ const DetailForm = (props) => {
     });
   };
 
-  const handleSelectChange = (event) => {
+  const handleCheckboxChange = (event) => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
@@ -144,30 +144,55 @@ const DetailForm = (props) => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="knowabout">How did you get to know about us ?</label>
-          <select
-            id="knowabout"
-            name="knowabout"
-            value={
-              [
-                "Facebook",
-                "Friends and Family",
-                "Referred by Teacher",
-                "Other",
-              ].includes(formData.knowabout)
-                ? formData.knowabout
-                : ""
-            }
-            onChange={handleSelectChange}
-          >
-            <option value="" disabled>
-              Select an option
-            </option>
-            <option value="Facebook">Facebook</option>
-            <option value="Friends and Family">Friends and Family</option>
-            <option value="Referred by Teacher">Referred by Teacher</option>
-            <option value="Other">Other</option>
-          </select>
+          <label htmlFor="knowabout">How did you get to know about us ? *</label>
+          <div className="check">
+            <input
+              type="checkbox"
+              id="knowabout-facebook"
+              name="knowabout"
+              value="Facebook"
+              checked={formData.knowabout === "Facebook"}
+              onChange={handleCheckboxChange}
+            />
+            <label htmlFor="knowabout-facebook">Facebook</label>
+          </div>
+
+          <div className="check" > 
+            <input
+              type="checkbox"
+              id="knowabout-friends-family"
+              name="knowabout"
+              value="Friends and Family"
+              checked={formData.knowabout === "Friends and Family"}
+              onChange={handleCheckboxChange}
+            />
+            <label htmlFor="knowabout-friends-family">Friends and Family</label>
+          </div>
+
+          <div className="check">
+            <input
+              type="checkbox"
+              id="knowabout-teacher"
+              name="knowabout"
+              value="Referred by Teacher"
+              checked={formData.knowabout === "Referred by Teacher"}
+              onChange={handleCheckboxChange}
+            />
+            <label htmlFor="knowabout-teacher">Referred by Teacher</label>
+          </div>
+
+          <div className="check">
+            <input
+              type="checkbox"
+              id="knowabout-other"
+              name="knowabout"
+              value="Other"
+              checked={formData.knowabout === "Other"}
+              onChange={handleCheckboxChange}
+            />
+            <label htmlFor="knowabout-other">Other</label>
+          </div>
+          
         </div>
 
         {(formData.knowabout === "Facebook" ||
