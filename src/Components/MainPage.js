@@ -144,6 +144,7 @@ const MainPage = () => {
           <div className="register_button">
             {isSelected ? (
               <Button
+                id="continue"
                 variant="contained"
                 color="primary"
                 className="button"

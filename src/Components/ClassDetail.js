@@ -195,8 +195,8 @@ const ClassDetail = (props) => {
     <div className="sub-cards-grid">
       <h1>Happy Exploring</h1>
       <div className='tab-style' >
-        <p className={isActive ? "underlined-text": "text"} onClick={liveClassHandler}> Live classes</p>
-        <p className={!isActive ? "underlined-text": "text"} onClick = {pastClassHandler}> Past classes</p>
+        <p id ='live_class' className={isActive ? "underlined-text": "text"} onClick={liveClassHandler}> Live classes</p>
+        <p id ='past_class' className={!isActive ? "underlined-text": "text"} onClick = {pastClassHandler}> Past classes</p>
       </div>
       <div>
         <div > 
@@ -206,7 +206,7 @@ const ClassDetail = (props) => {
                 className={index % 2 == 0 ? "sub-card" : "sub-card1"}
                 id={props.scroll > 800 ? "animation" : ""}
               >
-                <div className="class_card">
+                <div id ={classes.id} className="class_card">
                   <div
                     className="class_card1"
                     onClick={() => toggleDescription(classes.id)}
