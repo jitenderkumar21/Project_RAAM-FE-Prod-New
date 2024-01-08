@@ -19,7 +19,7 @@ const DetailForm = (props) => {
     };
   }
   const [formData, setFormData] = useState(initial_state);
-
+  
   const YOUR_GOOGLE_APPS_SCRIPT_URL = "https://backend-z29v.onrender.com/save/";
 
   const submitForm = async (data) => {
@@ -62,6 +62,15 @@ const DetailForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!formData.knowabout){
+      alert("Please fill out mandatory fields")
+      return
+    }
+
+    if (formData.knowabout !== "Friends and Family" && !formData.additionalInfo){
+      alert("Please fill out mandatory fields")
+      return
+    }
     const new_data = { ...formData, classDetails: props.timedata };
     console.log(new_data);
     submitForm(new_data);
@@ -196,16 +205,21 @@ const DetailForm = (props) => {
         </div>
 
         {(formData.knowabout === "Facebook" ||
-          formData.knowabout === "Other") && (
+          formData.knowabout === "Other" || formData.knowabout === "Referred by Teacher" )   && (
           <div className="form-group">
             {formData.knowabout === "Facebook" && (
               <label htmlFor="additionalInfo">
-                Which Facebook group referred you to us ?
+                Which Facebook group referred you to us ? *
               </label>
             )}
             {formData.knowabout === "Other" && (
               <label htmlFor="additionalInfo">
-                Could you please specify source ?
+                Could you please specify source ? *
+              </label>
+            )}
+            {formData.knowabout === "Referred by Teacher" && (
+              <label htmlFor="additionalInfo">
+                Could you please specify referral code ? *
               </label>
             )}
             <input
