@@ -6,6 +6,18 @@
   margin: 0px;
 }
 
+.header {
+  color : white;
+  background-color: #25A5B5;
+  
+}
+
+.header h3 {
+  height: 25px;
+  margin: 0px;
+  padding: 0.75%;
+}
+
 .card1 h1 {
   color: #415863;
 }

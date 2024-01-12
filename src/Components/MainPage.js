@@ -111,6 +111,10 @@ const MainPage = () => {
   return (
     <CardWrapper>
       <div className="scrollClass" id="scrollClass1">
+        <div className="header">
+          <h3>Free Classes! For Limited Time Only!</h3>
+        </div>
+      
       
       <img className="title" src={Coral_Academy} alt="Title" />
 
