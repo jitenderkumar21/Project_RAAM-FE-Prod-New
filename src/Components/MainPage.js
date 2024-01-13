@@ -129,7 +129,7 @@ const MainPage = () => {
             }}
           >
             {" "}
-            Welcome to Demo Classes!
+            Sparking a Love for Learning!
           </h1>
 
           <h5 className="message">
