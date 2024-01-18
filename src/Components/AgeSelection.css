@@ -1,0 +1,41 @@
+/* Add these styles to your existing CSS file or create a new one */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-menu {
+    margin-top: 10px;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .dropdown-menu div {
+    padding: 4px 0;
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+  }
+  
+  label input {
+    margin-right: 8px;
+  }
+  
+
+@media (max-width: 599px){
+    .dropdown-menu {
+        
+    }
+}

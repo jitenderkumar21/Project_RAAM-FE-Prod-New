@@ -8,15 +8,20 @@ import duration from "../assets/duration.png";
 import teacher from "../assets/teacher.png";
 import dropIcon from "../assets/dropdown.png";
 import closeDropDown from "../assets/closeDropdown.png";
+import AgeFilterDropdown from "./AgeSelection";
+import DownIcon from "../assets/down.png";
+import UpIcon from "../assets/up.png";
 const ClassDetail = (props) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchClassData = async () => {
-      const timezone  = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      console.log(timezone, "timezone")
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      console.log(timezone, "timezone");
       try {
-        const response = await fetch(`https://backend-z29v.onrender.com/info?timezone=${timezone}`);
+        const response = await fetch(
+          `https://backend-z29v.onrender.com/info?timezone=${timezone}`
+        );
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -68,9 +73,10 @@ const ClassDetail = (props) => {
   const [expandedClassId, setExpandedClassId] = useState(null);
   const [selectedTimeslots, setSelectedTimeslots] = useState(initial_state);
   const [moreslots, setMoreSlots] = useState(more_select_state);
-  const [isActive, setIsActive] = useState(true)
-  const [filteredData, setFilteredData] = useState([])
-  
+  const [isActive, setIsActive] = useState(true);
+  const [filteredData, setFilteredData] = useState([]);
+  const [selectedAges, setSelectedAges] = useState(null);
+  const [isDropDown, setIsDropDown] = useState(false);
 
   useEffect(() => {
     localStorage.setItem(
@@ -80,11 +86,9 @@ const ClassDetail = (props) => {
   }, [selectedTimeslots]);
 
   useEffect(() => {
-    if (data.length !=0) {
-    localStorage.setItem(
-      "data",
-      JSON.stringify(data)
-    );}
+    if (data.length != 0) {
+      localStorage.setItem("data", JSON.stringify(data));
+    }
   }, [data]);
 
   useEffect(() => {
@@ -134,39 +138,72 @@ const ClassDetail = (props) => {
     }
   };
 
-  const liveClassHandler = () =>{
-    setIsActive(true)
-    setFilteredData(data.filter((classitem) => !classitem.timeslots.includes('')))
-  }
+  const liveClassHandler = () => {
+    setIsActive(true);
+    // setFilteredData(data.filter((classitem) => !classitem.timeslots.includes('')))
+  };
 
-  const pastClassHandler = () =>{
-    setIsActive(false)
-    setFilteredData(data.filter((classitem) => classitem.timeslots.includes('')))
-  }
+  const pastClassHandler = () => {
+    setIsActive(false);
+    // setFilteredData(data.filter((classitem) => classitem.timeslots.includes('')))
+  };
 
   useEffect(() => {
-    setFilteredData(data.filter((classitem) => !classitem.timeslots.includes('')))
-  }, [data])
+    filterClasses();
+  }, [selectedAges, isActive]);
+
+  const filterClasses = () => {
+    const filtered = data.filter((cls) => {
+      const age_group = cls.age_group.replace(/ /g, "");
+      const age_range = age_group.split("year")[0];
+      const [startAge, endAge] = age_range.split("-").map(Number);
+      const selectedClasses =
+        selectedAges >= startAge && selectedAges <= endAge;
+      if (selectedAges) {
+        return selectedClasses;
+      } else {
+        return true;
+      }
+    });
+
+    const timeFiltered = isActive
+      ? filtered.filter((cls) => !cls.timeslots.includes(""))
+      : filtered.filter((cls) => cls.timeslots.includes(""));
+
+    setFilteredData(timeFiltered);
+  };
+
+  const handleAgeSelect = (age) => {
+    setSelectedAges(selectedAges === age ? null : age);
+    if (selectedAges !== age) {
+      setIsDropDown(false);
+    }
+  };
+
+  useEffect(() => {
+    setFilteredData(
+      data.filter((classitem) => !classitem.timeslots.includes(""))
+    );
+  }, [data]);
 
   useEffect(() => {
     const resultArray = Object.keys(selectedTimeslots).map((classid) => {
-      console.log(selectedTimeslots, "in the send data funtuon")
+      console.log(selectedTimeslots, "in the send data funtuon");
       let timeslot = selectedTimeslots[classid];
       if (timeslot === "Want another slot") {
         timeslot = moreslots[classid];
       }
-      
       let classInfo = data.find((classInfo) => classInfo.id === classid);
-      let final_data =[]
+      let final_data = [];
 
       if (!classInfo) {
-        const new_data = localStorage.getItem('data')
-        final_data = JSON.parse(new_data)
+        const new_data = localStorage.getItem("data");
+        final_data = JSON.parse(new_data);
         classInfo = final_data.find((classInfo) => classInfo.id === classid);
       }
-      
+
       const className = classInfo ? classInfo.title : "xyz";
-      console.log(className, "classname")
+      console.log(className, "classname");
 
       return {
         classid,
@@ -182,31 +219,90 @@ const ClassDetail = (props) => {
     props.onSelectTimeSlot(Object.keys(selectedTimeslots).length);
   }, [selectedTimeslots, moreslots]);
 
-
   const requiredTimeslotHandler = (classid, event) => {
     setMoreSlots((moreslot) => {
       const newslot = { ...moreslot };
-      newslot[classid] =  "Want another Slot:" + event.target.value;
+      newslot[classid] = "Want another Slot:" + event.target.value;
       return newslot;
     });
   };
- 
+
+  const dropdownHandler = () => {
+    setIsDropDown((prevstate) => !prevstate);
+  };
+
   return (
-    <div className="sub-cards-grid">
+    <div className="sub-cards-grid" >
       <h1>Happy Exploring</h1>
-      <div className='tab-style' >
-        <p id ='live_class' className={isActive ? "underlined-text": "text"} onClick={liveClassHandler}> Live classes</p>
-        <p id ='past_class' className={!isActive ? "underlined-text": "text"} onClick = {pastClassHandler}> Past classes</p>
+      <div className="filter-div">
+        <div className="firstfilter">
+          {selectedAges && (
+            <button
+              onClick={dropdownHandler}
+              className="dropdown-toggle"
+              type="button"
+              id="ageFilterDropdown"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Selected Age : {selectedAges}
+              
+            </button>
+          )}
+          
+          {!selectedAges && (
+            <button
+              onClick={dropdownHandler}
+              className="dropdown-toggle"
+              type="button"
+              id="ageFilterDropdown"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Learner's Age
+              
+              {isDropDown ? <img src={UpIcon} alt="upicon" className="icon" /> : <img src={DownIcon} alt="dropDown" className="icon" /> }
+            </button>
+          )}
+          
+          {isDropDown && (
+            <AgeFilterDropdown
+             
+              selected={selectedAges}
+              onSelect={handleAgeSelect}
+            />
+          )}
+        </div>
+        <div className="tab-style">
+          <p
+            id="live_class"
+            className={isActive ? "underlined-text" : "text"}
+            onClick={liveClassHandler}
+          >
+            {" "}
+            Live classes
+          </p>
+          <p
+            id="past_class"
+            className={!isActive ? "underlined-text" : "text"}
+            onClick={pastClassHandler}
+          >
+            {" "}
+            Past classes
+          </p>
+        </div>
       </div>
       <div>
-        <div > 
+        <div>
           {filteredData.map((classes, index) => (
             <>
               <div
                 className={index % 2 == 0 ? "sub-card" : "sub-card1"}
                 id={props.scroll > 800 ? "animation" : ""}
               >
-                <div id ={classes.id} className="class_card">
+                <div id={classes.id} className="class_card">
                   <div
                     className="class_card1"
                     onClick={() => toggleDescription(classes.id)}
@@ -297,13 +393,20 @@ const ClassDetail = (props) => {
                         .split("\n")
                         .map((paragraph, index) => (
                           <p key={index} className="description">
-                            {paragraph.split('*').map((text, index) => {
-                                if (index % 2 === 0) {
-                                   return <span key={index}>{text}</span>;
-                                } else {
-                                  return <strong style={{"textDecoration" : "underline"}} key={index}>{text}</strong>;
-                                }
-                              })}
+                            {paragraph.split("*").map((text, index) => {
+                              if (index % 2 === 0) {
+                                return <span key={index}>{text}</span>;
+                              } else {
+                                return (
+                                  <strong
+                                    style={{ textDecoration: "underline" }}
+                                    key={index}
+                                  >
+                                    {text}
+                                  </strong>
+                                );
+                              }
+                            })}
                             <br />
                           </p>
                         ))}

@@ -16,6 +16,7 @@ const MainPage = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isSelected, setIsSelected] = useState(0);
 
+
   useEffect(() => {
     const clearLocalStorageOnReload = () => {
       localStorage.clear();
