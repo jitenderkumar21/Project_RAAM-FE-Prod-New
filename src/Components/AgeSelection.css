@@ -7,10 +7,12 @@
   
   .dropdown-menu {
     margin-top: 10px;
+    margin-left: 12px;
     position: absolute;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 12px;
+    border: 1px black solid;
     border-radius: 4px;
     max-height: 200px;
     overflow-y: auto;
@@ -36,6 +38,8 @@
 
 @media (max-width: 599px){
     .dropdown-menu {
-        
+        position: relative;
+        margin: 10px auto;
+        width: 70%
     }
 }
