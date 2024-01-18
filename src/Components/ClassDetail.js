@@ -246,7 +246,7 @@ const ClassDetail = (props) => {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Selected Age : {selectedAges}
+              Selected Learner'sAge : {selectedAges}
               
             </button>
           )}

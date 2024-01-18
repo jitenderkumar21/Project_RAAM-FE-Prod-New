@@ -23,7 +23,7 @@
 .filter-div {
   display: flex;
   justify-content: normal;
-  gap: 70%;
+  gap: 60%;
   margin: 0 5% 0 5%;
   height : 60px;
   align-items: center;
@@ -31,6 +31,17 @@
 
 .firstfilter {
   display: block;
+  font-size: 12px;
+}
+
+.firstfilter button {
+  border: 1px black solid
+}
+
+.firstfilter button:hover{
+  background-color: #07779A; 
+  color: white;
+  border: 1px black solid
 }
 
 .firstfilter img{
@@ -45,6 +56,8 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: max-content;
+  font-size: 18px;
 }
 
   @media (max-width: 599px){
@@ -61,5 +74,14 @@
 
       .filter-div {
         display: block;
+      }
+
+      .firstfilter img {
+        margin: auto;
+        padding-left: 2px;
+      }
+      .dropdown-toggle {
+        font-size: 14px;
+        padding: 6px 10px;
       }
   }
