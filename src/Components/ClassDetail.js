@@ -261,8 +261,7 @@ const ClassDetail = (props) => {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Learner's Age
-              
+              Learner's Age 
               {isDropDown ? <img src={UpIcon} alt="upicon" className="icon" /> : <img src={DownIcon} alt="dropDown" className="icon" /> }
             </button>
           )}

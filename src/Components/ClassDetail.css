@@ -34,10 +34,6 @@
   font-size: 12px;
 }
 
-.firstfilter button {
-  border: 1px black solid
-}
-
 .firstfilter button:hover{
   background-color: #25A5B5; 
   color: white;
@@ -58,6 +54,7 @@
   cursor: pointer;
   width: 200px;
   font-size: 18px;
+  border: 1px black solid;
 }
 
   @media (max-width: 599px){
@@ -78,10 +75,14 @@
 
       .firstfilter img {
         margin: auto;
-        padding-left: 2px;
+        padding-left: 22px;
+        margin: -6px;
       }
+
       .dropdown-toggle {
         font-size: 14px;
-        padding: 6px 10px;
+        padding: auto;
+        text-align: center;
+        vertical-align: middle;
       }
   }
