@@ -19,8 +19,8 @@ const DetailForm = (props) => {
     };
   }
   const [formData, setFormData] = useState(initial_state);
-  
-  const YOUR_GOOGLE_APPS_SCRIPT_URL = "https://backend-z29v.onrender.com/save/";
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const YOUR_GOOGLE_APPS_SCRIPT_URL = `https://backend-z29v.onrender.com/save/?timezone=${timezone}`;
 
   const submitForm = async (data) => {
     const options = {

@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useRef,useState } from "react";
 import "./MainPage.css";
 import Timeslot from "./Timeslot";
 import "./ClassDetail.css";
@@ -13,11 +13,11 @@ import DownIcon from "../assets/down.png";
 import UpIcon from "../assets/up.png";
 const ClassDetail = (props) => {
   const [data, setData] = useState([]);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     const fetchClassData = async () => {
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      console.log(timezone, "timezone");
       try {
         const response = await fetch(
           `https://backend-z29v.onrender.com/info?timezone=${timezone}`
@@ -231,11 +231,24 @@ const ClassDetail = (props) => {
     setIsDropDown((prevstate) => !prevstate);
   };
 
+  const handleOutsideClick = (event) => {
+    if (buttonRef.current && !buttonRef.current.contains(event.target)) {
+      setIsDropDown(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
+
   return (
     <div className="sub-cards-grid" >
       <h1>Happy Exploring</h1>
       <div className="filter-div">
-        <div className="firstfilter">
+        <div className="firstfilter"  ref={buttonRef}>
           {selectedAges && (
             <button
               onClick={dropdownHandler}
