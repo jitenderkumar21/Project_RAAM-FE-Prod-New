@@ -134,7 +134,7 @@ const MainPage = () => {
           </h1>
 
           <h5 className="message">
-          Register for each learner separately. You can select as many classes under one learner.
+          Register for each learner separately. You can select multiple classes for each learner.
           </h5>
 
 

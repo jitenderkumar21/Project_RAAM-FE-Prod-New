@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./DetailForm.css";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const DetailForm = (props) => {
   const storedSelectedForm = localStorage.getItem("selectedform");
@@ -51,6 +53,13 @@ const DetailForm = (props) => {
     });
   };
 
+  const countryCodeHandler = (code) => {
+    setFormData({
+      ...formData,
+      phoneNumber: code,
+    });
+  };
+
   const handleCheckboxChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -62,16 +71,20 @@ const DetailForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!formData.knowabout){
-      alert("Please fill out mandatory fields")
-      return
+    if (!formData.knowabout) {
+      alert("Please fill out mandatory fields");
+      return;
     }
-
-    if (formData.knowabout !== "Friends and Family" && !formData.additionalInfo){
-      alert("Please fill out mandatory fields")
-      return
+    if (
+      formData.knowabout !== "Friends and Family" &&
+      !formData.additionalInfo
+    ) {
+      alert("Please fill out mandatory fields");
+      return;
     }
+    
     const new_data = { ...formData, classDetails: props.timedata };
+    new_data.phoneNumber = ( "+".concat(new_data.phoneNumber))
     console.log(new_data);
     submitForm(new_data);
     props.onSubmit();
@@ -140,20 +153,21 @@ const DetailForm = (props) => {
             onKeyDown={handleEnterKey}
           />
         </div>
-        <div className="form-group">
+
+        
           <label htmlFor="phoneNumber">Phone </label>
-          <input
-            type="tel"
-            id="phoneNumber"
-            name="phoneNumber"
-            placeholder="Optional"
+          <PhoneInput
+            className="contact"
+            country={"us"}
             value={formData.phoneNumber}
-            onChange={handleInputChange}
+            onChange={countryCodeHandler}
           />
-        </div>
+        
 
         <div className="form-group">
-          <label htmlFor="knowabout">How did you get to know about us ? *</label>
+          <label htmlFor="knowabout">
+            How did you get to know about us ? *
+          </label>
           <div className="check">
             <input
               type="checkbox"
@@ -166,7 +180,7 @@ const DetailForm = (props) => {
             <label htmlFor="knowabout-facebook">Facebook</label>
           </div>
 
-          <div className="check" > 
+          <div className="check">
             <input
               type="checkbox"
               id="knowabout-friends-family"
@@ -201,11 +215,11 @@ const DetailForm = (props) => {
             />
             <label htmlFor="knowabout-other">Other</label>
           </div>
-          
         </div>
 
         {(formData.knowabout === "Facebook" ||
-          formData.knowabout === "Other" || formData.knowabout === "Referred by Teacher" )   && (
+          formData.knowabout === "Other" ||
+          formData.knowabout === "Referred by Teacher") && (
           <div className="form-group">
             {formData.knowabout === "Facebook" && (
               <label htmlFor="additionalInfo">
@@ -239,7 +253,10 @@ const DetailForm = (props) => {
         </div>
       </form>
       <div className="buttondisplay1">
-        <button id="backbutton" onClick={backHandler}> Back</button>
+        <button id="backbutton" onClick={backHandler}>
+          {" "}
+          Back
+        </button>
       </div>
     </React.Fragment>
   );

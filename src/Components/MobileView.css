@@ -546,6 +546,17 @@
     font-family: "Manrope";
   }
 
+  .contact {
+  margin-bottom: 10px !important;
+  
+}
+.contact input {
+  width: 104% !important;
+  height: 50px !important;
+  font-size: 16px !important;
+  border-radius: 3px !important;
+}
+
   .buttondisplay {
     display: flex;
     flex-direction: column;
