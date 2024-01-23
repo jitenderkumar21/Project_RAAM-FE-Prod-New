@@ -261,7 +261,8 @@ h4 {
 
 .submitpage {
   display: flex;
-  gap: 275px;
+  gap: 100px;
+  margin-bottom: 8%;
   justify-content: center;
   align-items: center;
 }
@@ -281,7 +282,7 @@ h4 {
 }
 
 .submitpage p {
-  font-size: 70px;
+  font-size: 30px;
   color: #FF7F50;
 }
 

@@ -212,7 +212,7 @@
 
   .submitpage button {
     height: 58px;
-    width: 272px;
+    width: 220px;
     font-size: 18px;
     color: white;
   }
@@ -224,7 +224,7 @@
   }
 
   .submitpage p {
-    font-size: 50px;
+    font-size: 20px;
     color: #de7247;
     font-family: helvetica;
   }

@@ -181,39 +181,12 @@ const MainPage = () => {
       {!register && submitted && (
         <div className="submitpage">
           <p>
-            Thanks for <br></br>submitting!
+          Welcome aboard! We've sent you all the class details via email.
+          <br></br> Thanks for picking Coral Academy – let the learning adventure begin!
           </p>
           <button onClick={homePageHandler}>Add Learner!</button>
         </div>
       )}
-
-      {/* <div className="about">
-        <div className="about_content">
-          <h1> About Us!</h1>
-          <p className="p1">
-            Coral Academy is your partner in K-12 EdTech. We carefully select
-            top educators to ensure impactful and engaging learning experiences.
-            
-          </p>
-        </div>
-        <div className="about_img">
-          <img src={About_us} alt="About_US" />
-        </div>
-      </div> */}
-
-      {/* <div className="demo">
-        <div className="demo_content">
-          <h1> Demo Classes</h1>
-          <p className="p1">
-            We're offering free, fun, and engaging demo classes with amazing
-            teachers from various backgrounds. They'll be teaching a variety of
-            interesting topics for the next two months.
-          </p>
-        </div>
-        <div className="about_img1">
-          <img src={Demo} alt="Demo Classes" />
-        </div>
-      </div> */}
 
       <div className="footer">
         <div className="footer_content">
