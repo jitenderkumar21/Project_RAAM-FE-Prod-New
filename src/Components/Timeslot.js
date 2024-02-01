@@ -1,38 +1,54 @@
 import React from "react";
 import "./Timeslot.css";
-import "./MobileView.css"
+import "./MobileView.css";
 import { Tooltip } from "@mui/material";
 
-const Timeslot = ({ timeslot, classid, isSelected, onSelect, full, registrationClosed }) => {
-  // console.log(registrationClosed, "registration")
-    return (
+const Timeslot = (props) => {
+  console.log(props.classid, props.timeslot)
+  return (
     <>
-      {(full || registrationClosed) && (
-        <Tooltip id="custom_tooltip" title="Class Full" hover arrow placement="top">
+      {(props.full || props.registrationClosed) && (
+        <Tooltip
+          id="custom_tooltip"
+          title="Class Full"
+          hover
+          arrow
+          placement="top"
+        >
           <label className="container" id="full">
-            <input
-              type="checkbox"
-              checked={isSelected}
-              disabled
-              onChange={() => onSelect(classid, timeslot)}
-            />
-            <span className="light_text">{timeslot}</span>
-            <span className="checkmark"></span>
-            <span className="Hack" id="hack_ultra_pro_max">Class Full</span>
+            {((props.tag === "course" && props.index == 0) ||
+              props.tag !== "course") && (
+              <input
+                type="checkbox"
+                checked={props.isSelected}
+                disabled
+                onChange={() => props.onSelect(props.classid, props.timeslot)}
+              />
+            )}
+            <span className="light_text">{props.timeslot.timing}</span>
+            {((props.tag === "course" && props.index == 0) ||
+              props.tag !== "course") && <span className="checkmark"></span>}
+
+            <span className="Hack" id="hack_ultra_pro_max">
+              Class Full
+            </span>
           </label>
-          
         </Tooltip>
       )}
 
-      {(!full && !registrationClosed) && (
+      {!props.full && !props.registrationClosed && (
         <label className="container">
-          <input
-            type="checkbox"
-            checked={isSelected}
-            onChange={() => onSelect(classid, timeslot)}
-          />
-          <span className="light_text">{timeslot}</span>
-          <span class="checkmark"></span>
+          {((props.tag === "course" && props.index == 0) ||
+            props.tag !== "course") && (
+            <input
+              type="checkbox"
+              checked={props.isSelected}
+              onChange={() => props.onSelect(props.classid, props.timeslot)}
+            />
+          )}
+          <span className="light_text">{props.timeslot.timing}</span>
+          {((props.tag === "course" && props.index == 0) ||
+            props.tag !== "course") && <span className="checkmark"></span>}
         </label>
       )}
     </>

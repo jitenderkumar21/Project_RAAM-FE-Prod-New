@@ -57,6 +57,10 @@
   border: 1px black solid;
 }
 
+.tag{
+  align-content: left; 
+}
+
   @media (max-width: 599px){
     .tab-style {
         align-items: center;
