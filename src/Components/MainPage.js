@@ -109,6 +109,8 @@ const MainPage = () => {
     return acc;
   }, {});
 
+  console.log(fullclasses, "fullclasses")
+
   return (
     <CardWrapper>
       <div className="scrollClass" id="scrollClass1">

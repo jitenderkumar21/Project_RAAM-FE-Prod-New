@@ -61,7 +61,7 @@ const ClassCard = (props) => {
                             ? props.newfulldata[classes.id].includes(timeslot)
                             : false
                         }
-                        isSelected={JSON.stringify(props.selectedTimeslots[classes.id])== JSON.stringify(timeslot)}
+                        isSelected={props.selectedTimeslots[classes.id]?props.selectedTimeslots[classes.id].some(obj => obj.subClassId === timeslot.subClassId):false}
                         onSelect={props.onSelect}
                       />
                     ))}
