@@ -53,9 +53,7 @@ const ClassCard = (props) => {
                         timeslot={timeslot}
                         tag={classes.class_tag}
                         index={index}
-                        registrationClosed={
-                          classes.isSlotOpen[index].toUpperCase() === "NO"
-                        }
+                        registrationClosed={timeslot.isPast}
                         full={
                           props.newfulldata[classes.id]
                             ? props.newfulldata[classes.id].includes(timeslot)

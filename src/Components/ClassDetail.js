@@ -448,49 +448,14 @@ const ClassDetail = (props) => {
 
       return updatedSelection;
     });
-
-    // setSelectedTimeslots((prevSelectedTimeSlots) => {
-    //   const updatedSelection = { ...prevSelectedTimeSlots };
-    //   if (updatedSelection[classid] === timeslotname) {
-    //     delete updatedSelection[classid];
-    //   } else {
-    //     updatedSelection[classid] = timeslotname;
-    //   }
-    //   return updatedSelection;
-    // });
-
-    // if (timeslotname != "Want another slot") {
-    //   setMoreSlots((moreslots) => {
-    //     const updatedSelection = { ...moreslots };
-    //     if (classid in updatedSelection) {
-    //       delete updatedSelection[classid];
-    //     }
-
-    //     return updatedSelection;
-    //   });
-    // }
-
-    // if (timeslotname == "Want another slot") {
-    //   setMoreSlots((moreslots) => {
-    //     const updatedSelection = { ...moreslots };
-    //     if (classid in updatedSelection) {
-    //       delete updatedSelection[classid];
-    //     } else {
-    //       updatedSelection[classid] = "Want another slot:";
-    //     }
-    //     return updatedSelection;
-    //   });
-    // }
   };
 
   const liveClassHandler = () => {
     setIsActive(true);
-    // setFilteredData(data.filter((classitem) => !classitem.timeslots.includes('')))
   };
 
   const pastClassHandler = () => {
     setIsActive(false);
-    // setFilteredData(data.filter((classitem) => classitem.timeslots.includes('')))
   };
 
   useEffect(() => {
@@ -527,7 +492,7 @@ const ClassDetail = (props) => {
 
   useEffect(() => {
     setFilteredData(
-      data.filter((classitem) => !classitem.timeslots.includes(""))
+      data.filter((cls) => !cls.isMoveToPast)
     );
   }, [data]);
 
