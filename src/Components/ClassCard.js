@@ -30,6 +30,7 @@ const ClassCard = (props) => {
                     onClick={()=>props.onToggle(classes.id)}
                   >
                     <h3>{classes.title}</h3>
+                    <p className='ramen'><div className='dot'></div>{classes.class_tag}</p>
                     <p>
                       <img src={age} alt="ageIcon" className="icon" />
                       Age Group : {classes.age_group}

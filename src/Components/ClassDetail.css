@@ -56,11 +56,29 @@
   font-size: 18px;
   border: 1px black solid;
 }
+.abc{
+  display: flex;
+  gap: 10px;
 
+}
 .tag{
   align-content: left; 
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 5px 6px;
+  border-radius: 12px;
+  font-size: 24px;
+  width: 5%;
+  height: 27%;
+  margin-left: 185px;
+  font-weight: 900;
 }
-
+.data{
+  margin: auto 0;
+  font-weight: 900;
+  font-size: 24px;
+}
   @media (max-width: 599px){
     .tab-style {
         align-items: center;

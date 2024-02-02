@@ -622,49 +622,47 @@ const ClassDetail = (props) => {
         </div>
       </div>
 
-      {isActive && (
-        <>
-          <p className="tag">Courses</p>
-          <ClassCard
-            filteredData={filteredData.filter(
-              (cls) => cls.class_tag === "course"
-            )}
-            newfulldata={newfulldata}
-            onToggle={toggleDescription}
-            selectedTimeslots={selectedTimeslots}
-            onSelect={handleTimeslotSelection}
-            moreslots={moreslots}
-            onTimeslotHandler={requiredTimeslotHandler}
-            expandedClassId={expandedClassId}
-          ></ClassCard>
-          <p className="tag">Ongoing</p>
-          <ClassCard
-            filteredData={filteredData.filter(
-              (cls) => cls.class_tag === "ongoing"
-            )}
-            newfulldata={newfulldata}
-            onToggle={toggleDescription}
-            selectedTimeslots={selectedTimeslots}
-            onSelect={handleTimeslotSelection}
-            moreslots={moreslots}
-            onTimeslotHandler={requiredTimeslotHandler}
-            expandedClassId={expandedClassId}
-          ></ClassCard>
-          <p className="tag">Onetime</p>
-          <ClassCard
-            filteredData={filteredData.filter(
-              (cls) => cls.class_tag === "onetime"
-            )}
-            newfulldata={newfulldata}
-            onToggle={toggleDescription}
-            selectedTimeslots={selectedTimeslots}
-            onSelect={handleTimeslotSelection}
-            moreslots={moreslots}
-            onTimeslotHandler={requiredTimeslotHandler}
-            expandedClassId={expandedClassId}
-          ></ClassCard>
-        </>
-      )}
+      {isActive && (<>
+        <div className="abc"><p className="tag">Courses</p><p className="data">The old man sat on the park bench, watching the children play. He smiled as he remembered a time when he was young and carefree. He had been through a lot in his life</p></div>
+        <ClassCard
+          filteredData={filteredData.filter(
+            (cls) => cls.class_tag === "course"
+          )}
+          newfulldata={newfulldata}
+          onToggle={toggleDescription}
+          selectedTimeslots={selectedTimeslots}
+          onSelect={handleTimeslotSelection}
+          moreslots={moreslots}
+          onTimeslotHandler={requiredTimeslotHandler}
+          expandedClassId={expandedClassId}
+        ></ClassCard>
+        <p className="tag">Ongoing</p>
+        <ClassCard
+          filteredData={filteredData.filter(
+            (cls) => cls.class_tag === "ongoing"
+          )}
+          newfulldata={newfulldata}
+          onToggle={toggleDescription}
+          selectedTimeslots={selectedTimeslots}
+          onSelect={handleTimeslotSelection}
+          moreslots={moreslots}
+          onTimeslotHandler={requiredTimeslotHandler}
+          expandedClassId={expandedClassId}
+        ></ClassCard>
+        <p className="tag">Onetime</p>
+        <ClassCard
+          filteredData={filteredData.filter(
+            (cls) => cls.class_tag === "onetime"
+          )}
+          newfulldata={newfulldata}
+          onToggle={toggleDescription}
+          selectedTimeslots={selectedTimeslots}
+          onSelect={handleTimeslotSelection}
+          moreslots={moreslots}
+          onTimeslotHandler={requiredTimeslotHandler}
+          expandedClassId={expandedClassId}
+        ></ClassCard>
+      </>)}
 
       {!isActive && (
         <ClassCard
@@ -678,6 +676,7 @@ const ClassDetail = (props) => {
           expandedClassId={expandedClassId}
         ></ClassCard>
       )}
+      <textarea className="editable-textbox"></textarea>
     </div>
   );
 };
