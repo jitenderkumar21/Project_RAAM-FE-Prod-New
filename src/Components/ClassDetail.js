@@ -265,7 +265,7 @@ const ClassDetail = (props) => {
       ],
       isMoveToPast: false,
       isSlotOpen: ["", "yes"],
-      class_tag: "ongoing",
+      class_tag: "Ongoing",
     },
     {
       id: "75",
@@ -623,10 +623,13 @@ const ClassDetail = (props) => {
       </div>
 
       {isActive && (<>
-        <div className="abc"><p className="tag">Courses</p><p className="data">The old man sat on the park bench, watching the children play. He smiled as he remembered a time when he was young and carefree. He had been through a lot in his life</p></div>
+        <div className="abc">
+          <p className="tag">Courses</p>
+          <p className="data">Multiple sessions organized into a structured curriculum. Learners are expected to attend all classes throughout the course, as each class builds on the last one.</p>
+        </div>
         <ClassCard
           filteredData={filteredData.filter(
-            (cls) => cls.class_tag === "course"
+            (cls) => cls.class_tag.toLowerCase() === "course"
           )}
           newfulldata={newfulldata}
           onToggle={toggleDescription}
@@ -636,10 +639,13 @@ const ClassDetail = (props) => {
           onTimeslotHandler={requiredTimeslotHandler}
           expandedClassId={expandedClassId}
         ></ClassCard>
-        <p className="tag">Ongoing</p>
+        <div className="abc">
+          <p className="tag" style={{backgroundColor:'rgba(175,88,174,255)'}}>Ongoing</p>
+          <p className="data">Versatile classes that follow a theme, but do not build on one another. Each class stands alone, providing the opportunity for learners to join at any time.</p>
+        </div>
         <ClassCard
           filteredData={filteredData.filter(
-            (cls) => cls.class_tag === "ongoing"
+            (cls) => cls.class_tag.toLowerCase() === "ongoing"
           )}
           newfulldata={newfulldata}
           onToggle={toggleDescription}
@@ -649,10 +655,14 @@ const ClassDetail = (props) => {
           onTimeslotHandler={requiredTimeslotHandler}
           expandedClassId={expandedClassId}
         ></ClassCard>
-        <p className="tag">Onetime</p>
+        <div className="abc">
+          <p className="tag" style={{backgroundColor:'rgba(249,98,115,255)'}}>Onetime</p>
+          <p className="data">Standalone classes that cover specific topics or skills in one session.</p>
+        </div>
+        
         <ClassCard
           filteredData={filteredData.filter(
-            (cls) => cls.class_tag === "onetime"
+            (cls) => cls.class_tag.toLowerCase() === "onetime"
           )}
           newfulldata={newfulldata}
           onToggle={toggleDescription}

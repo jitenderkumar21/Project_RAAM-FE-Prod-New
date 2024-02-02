@@ -317,16 +317,26 @@ h4 {
   font-size: 24px;
   height: 0px;
 }
+
 .ramen{
   align-content: left; 
   display: inline-flex;
-  background-color: #007bff;
+  background-color: rgba(0,97,177,255);
   color: white !important;
-  padding: 4px 14px 4px 4px;
+  padding: 3px 15px 3px 5px;
   border-radius: 12px;
   width: auto;
   height: 30px;
+  font-weight: 300;
 }
+.background-tag1 {
+  background-color: rgba(175,88,174,255);
+}
+
+.background-tag2 {
+  background-color: rgba(249,98,115,255);
+}
+
 .dot::before{
   content:'\2022';
   font-size: 50px;
@@ -334,8 +344,8 @@ h4 {
 
 }
 .class_card3 {
-  width: 28%;
-  margin: auto 20px auto 10px;
+  width: 22%;
+  margin: auto 20px auto 45px;
   color: black;
   font-weight: 500;
 }
