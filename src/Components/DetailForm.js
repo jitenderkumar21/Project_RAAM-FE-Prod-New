@@ -83,7 +83,7 @@ const DetailForm = (props) => {
       return;
     }
     
-    const new_data = { ...formData, classDetails: props.timedata };
+    const new_data = { ...formData, classDetails: props.timedata, want_another_slot: props.anotherSlot };
     new_data.phoneNumber = ( "+".concat(new_data.phoneNumber))
     console.log(new_data);
     submitForm(new_data);

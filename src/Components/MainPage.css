@@ -365,14 +365,19 @@ h4 {
   color: white; /* Text color on hover */
   background-color: #FF7F50; /* Background color on hover */
 }
+.textbox{
+  margin-left: 61%;
+}
 .editable-textbox{
   border: none;
   border-bottom: 2px solid #FF7F50;
   outline: none;
   margin-left: 1px;
-  width: 25%;
-  height: 20px;
-  background-color: rgb(222, 222, 251);
+  width: 68%;
+  height: 28px;
+  background-color: white;
+  border-radius: 6px;
+  font-size: 20px;
 }
 .footer {
   display: flex;

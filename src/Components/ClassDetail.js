@@ -8,6 +8,7 @@ import UpIcon from "../assets/up.png";
 import ClassCard from "./ClassCard";
 const ClassDetail = (props) => {
   const [data, setData] = useState([]);
+  const [value, setValue] = useState("");
   const buttonRef = useRef(null);
 
   const class_data = [
@@ -338,6 +339,17 @@ const ClassDetail = (props) => {
       class_tag: "ongoing",
     },
   ];
+  const handleWantnewslot=(e)=>{
+    setValue(e.target.value);
+    localStorage.setItem("wantMore",value)
+  };
+  useEffect(() => {
+    const storedValue = localStorage.getItem("wantMore");
+  if(storedValue){
+    setValue(storedValue); 
+  };
+  },[]);
+  
 
   useEffect(() => {
     const fetchClassData = async () => {
@@ -498,7 +510,7 @@ const ClassDetail = (props) => {
 
   useEffect(() => {
     const resultArray = Object.keys(selectedTimeslots).map((classid) => {
-      console.log(selectedTimeslots, "in the send data funtuon");
+      // console.log(selectedTimeslots, "in the send data funtuon");
       let timeslot = selectedTimeslots[classid];
       if (timeslot === "Want another slot") {
         timeslot = moreslots[classid];
@@ -517,7 +529,6 @@ const ClassDetail = (props) => {
       if (classTag.toLowerCase() === "course" && classInfo){
         timeslot = classInfo.timeslots
       }
-      console.log(className, "classname");
 
       return {
         classid,
@@ -529,10 +540,10 @@ const ClassDetail = (props) => {
 
     // const newArray = resultArray.map((obj) => obj[className] = data.find[cla])
 
-    props.onSendData(resultArray);
-    console.log(resultArray, "selcted");
+    props.onSendData(resultArray, value);
+    // console.log(resultArray, "selcted");
     props.onSelectTimeSlot(Object.keys(selectedTimeslots).length);
-  }, [selectedTimeslots, moreslots]);
+  }, [selectedTimeslots, moreslots, value]);
 
   const requiredTimeslotHandler = (classid, event) => {
     setMoreSlots((moreslot) => {
@@ -686,7 +697,13 @@ const ClassDetail = (props) => {
           expandedClassId={expandedClassId}
         ></ClassCard>
       )}
-      <textarea className="editable-textbox"></textarea>
+      <div className="textbox">
+        <textarea className="editable-textbox" value={value} onChange={handleWantnewslot} placeholder=" Logic Club - Weekend evenings, Game theory - Wednesdays 6-8 PM EST"></textarea>
+        <p>Dont see what  you're looking for? No worries! 
+        Let us know your Preferred classes &<br></br> time slots, 
+        and we will do our best to create classes that 
+        fit for your schedule.</p>
+      </div>
     </div>
   );
 };

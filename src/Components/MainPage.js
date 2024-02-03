@@ -12,6 +12,7 @@ const MainPage = () => {
   const [register, setRegister] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [timedata, setTimedata] = useState({});
+  const [anotherSlot, setAnotherSlot] = useState({});
   const [fulldata, setFullData] = useState([]);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isSelected, setIsSelected] = useState(0);
@@ -39,9 +40,10 @@ const MainPage = () => {
     setSubmitted(true);
   };
 
-  const sendDataHandler = (data) => {
-    console.log(data);
+  const sendDataHandler = (data ,value) => {
+    console.log(data, value, "kfkfkfkkdk");
     setTimedata(data);
+    setAnotherSlot(value);
   };
 
   const backPageHandler = () => {
@@ -109,7 +111,7 @@ const MainPage = () => {
     return acc;
   }, {});
 
-  console.log(fullclasses, "fullclasses")
+  // console.log(fullclasses, "fullclasses")
 
   return (
     <CardWrapper>
@@ -178,6 +180,7 @@ const MainPage = () => {
           onSubmit={submitHandler}
           onBack={backPageHandler}
           timedata={timedata}
+          anotherSlot={anotherSlot}
         />
       )}
       {!register && submitted && (

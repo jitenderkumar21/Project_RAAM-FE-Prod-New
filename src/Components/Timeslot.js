@@ -4,7 +4,7 @@ import "./MobileView.css";
 import { Tooltip } from "@mui/material";
 
 const Timeslot = (props) => {
-  console.log(props.classid, props.timeslot)
+  // console.log(props.classid, props.timeslot)
   return (
     <>
       {(props.full || props.registrationClosed) && (
