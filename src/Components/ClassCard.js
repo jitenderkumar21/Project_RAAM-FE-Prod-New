@@ -42,10 +42,10 @@ const ClassCard = (props) => {
                     <img src={age} alt="ageIcon" className="icon" />
                     Age Group : {classes.age_group}
                   </p>
-                  <p>
+                  { window.innerWidth > '599px' ? <p>
                     <img src={duration} alt="durationIcon" className="icon" />
                     Duration : {classes.duration}
-                  </p>
+                  </p> : ""}
                   <p>
                     <img src={teacher} alt="teacherIcon" className="icon" />
                     Teacher : {classes.tutor}
@@ -77,24 +77,6 @@ const ClassCard = (props) => {
                       onSelect={props.onSelect}
                     />
                   ))}
-
-                  {classes.id in props.moreslots && (
-                    <div className="text1">
-                      <p id="prefer">Enter Preferred Timing</p>
-                      <input
-                        className="textInput"
-                        value={
-                          props.moreslots[classes.id]
-                            ? props.moreslots[classes.id].slice(18)
-                            : ""
-                        }
-                        onChange={(event) =>
-                          props.onTimeslotHandler(classes.id, event)
-                        }
-                        placeholder="E.g.- 20 Nov,5-6PM PST"
-                      ></input>
-                    </div>
-                  )}
                 </div>
               </div>
               <div
