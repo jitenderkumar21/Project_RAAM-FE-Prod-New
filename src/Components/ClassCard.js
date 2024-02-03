@@ -43,7 +43,7 @@ const ClassCard = (props) => {
                     <img src={age} alt="ageIcon" className="icon" />
                     Age Group : {classes.age_group}
                   </p>
-                  { window.innerWidth > '599px' ? <p>
+                  { window.innerWidth > 599 ? <p>
                     <img src={duration} alt="durationIcon" className="icon" />
                     Duration : {classes.duration}
                   </p> : ""}
@@ -60,7 +60,7 @@ const ClassCard = (props) => {
                       name={classes.title}
                       classid={classes.id}
                       timeslot={timeslot}
-                      tag={classes.class_tag}
+                      tag={classes.class_tag.toLowerCase()}
                       isPast={classes.isMoveToPast}
                       index={index}
                       registrationClosed={timeslot.isPast}
@@ -79,7 +79,7 @@ const ClassCard = (props) => {
                       onSelect={props.onSelect}
                     />
                   ))}
-                   {/* {window.innerWidth >599 ? "" :<p>Classes</p>} */}
+                   {window.innerWidth >599 ? "" :<p className="strip">Classes</p>}
                   
                 </div>
                

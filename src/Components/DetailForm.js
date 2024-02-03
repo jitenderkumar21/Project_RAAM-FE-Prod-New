@@ -22,7 +22,7 @@ const DetailForm = (props) => {
   }
   const [formData, setFormData] = useState(initial_state);
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const YOUR_GOOGLE_APPS_SCRIPT_URL = `https://backend-z29v.onrender.com/sae/?timezone=${timezone}`;
+  const YOUR_GOOGLE_APPS_SCRIPT_URL = `https://coral-staging.onrender.com/save/?timezone=${timezone}`;
 
   const submitForm = async (data) => {
     const options = {

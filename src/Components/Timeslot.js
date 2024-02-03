@@ -21,7 +21,7 @@ const Timeslot = (props) => {
               <input
                 type="checkbox"
                 checked={props.isSelected}
-                disabled
+                disabled={props.tag === 'course' ? props.isPast : true}
                 onChange={() => props.onSelect(props.classid, props.timeslot)}
               />
             )}
