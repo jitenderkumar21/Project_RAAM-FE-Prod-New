@@ -79,7 +79,7 @@ const ClassCard = (props) => {
                       onSelect={props.onSelect}
                     />
                   ))}
-                   {window.innerWidth >599 ? "" :<p className="strip">Classes</p>}
+                   {/* {window.innerWidth >599 ? "" :<p className="strip">Classes</p>} */}
                   
                 </div>
                

@@ -210,7 +210,7 @@ const ClassDetail = (props) => {
         classid,
         className,
         classTag,
-        timeslot: timeslot || "",
+        timeslots: timeslot || "",
       };
     });
 
