@@ -7,7 +7,7 @@ const Timeslot = (props) => {
   // console.log(props.classid, props.timeslot)
   return (
     <>
-      {(props.full || props.registrationClosed) && (
+      {(props.full || props.registrationClosed || props.isPast) && (
         <Tooltip
           id="custom_tooltip"
           title="Class Full"
@@ -36,7 +36,7 @@ const Timeslot = (props) => {
         </Tooltip>
       )}
 
-      {!props.full && !props.registrationClosed && (
+      {!props.full && !props.registrationClosed && !props.isPast && (
         <label className="container">
           {((props.tag === "course" && props.index == 0) ||
             props.tag !== "course") && (

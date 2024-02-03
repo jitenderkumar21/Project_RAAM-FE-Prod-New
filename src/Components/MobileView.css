@@ -257,7 +257,6 @@
   .class_card2 h3 {
     font-size: 20px;
     text-align: center;
-    height: min-content;
     margin-bottom: 20px;
   }
 
@@ -332,6 +331,33 @@
     z-index: 999;
   }
 
+  .dot::before{
+    line-height: 16px;
+  }
+
+  .ramen{
+    padding: 3px 15px 0px 5px;
+  }
+
+  .textbox{
+    margin-left: 0%;
+  }
+  .textbox p {
+    font-size: 8px;
+    text-align: left;
+    margin-left: 5%;
+  }
+
+  .editable-textbox{
+    width: 98%;
+    border: 1px solid black;
+    height: 24px;
+    line-height: 25px;
+    font-size: 8px;
+  }
+
+
+  
   .scrollClass {
     width: 99%;
     overflow-y: auto;

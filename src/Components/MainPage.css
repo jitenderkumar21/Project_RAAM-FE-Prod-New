@@ -315,7 +315,7 @@ h4 {
 .class_card2 h3 {
   margin-bottom: 50px;
   font-size: 24px;
-  height: 0px;
+  height: fit-content;
 }
 
 .ramen{
@@ -325,7 +325,7 @@ h4 {
   color: white !important;
   padding: 3px 15px 3px 5px;
   border-radius: 12px;
-  width: auto;
+  width: fit-content;
   height: 30px;
   font-weight: 300;
 }
@@ -341,8 +341,8 @@ h4 {
   content:'\2022';
   font-size: 50px;
   line-height: 24px;
-
 }
+
 .class_card3 {
   width: 22%;
   margin: auto 20px auto 45px;
@@ -351,7 +351,7 @@ h4 {
 }
 
 .class_card3 h3 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .sub-card button {
@@ -366,18 +366,24 @@ h4 {
   background-color: #FF7F50; /* Background color on hover */
 }
 .textbox{
-  margin-left: 61%;
+  margin-left: 50%;
+}
+
+.textbox p{
+  text-align: left;
+  margin-left: 10%;
 }
 .editable-textbox{
   border: none;
   border-bottom: 2px solid #FF7F50;
   outline: none;
   margin-left: 1px;
-  width: 68%;
-  height: 28px;
+  width: 80%;
+  height: 30px;
   background-color: white;
   border-radius: 6px;
-  font-size: 20px;
+  font-size: 15px;
+  line-height: 30px;
 }
 .footer {
   display: flex;
@@ -601,114 +607,4 @@ h2 {
 
 
 
-.bubbles{
-  position:absolute;
-  width:100%;
-  height: 84%;
-  z-index:0;
-  overflow:hidden;
-  top:0;
-  left:0;
-}
-.bubble{
-  position: absolute;
-  z-index: -1;
-  bottom:-100px;
-  width:40px;
-  height: 40px;
-  background:#c3e2ec;
-  border-radius:50%;
-  border-color: white;
-  opacity:0.5;
-  animation: rise 10s infinite ease-in;
-  /* -webkit-box-shadow: 0 20px 30px #c3e2ec, inset 0px 10px 30px 5px #07779A;
-	-moz-box-shadow: 0 20px 30px #c3e2ec, inset 0px 10px 30px 5px #07779A;
-	box-shadow: 0 20px 30px #c3e2ec, inset 0px 10px 30px 5px #07779A; */
 
-  -webkit-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), inset 0px 2px 6px 20px #07779A;
-	-moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0px 2px 6px 10px #07779A;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0px 2px 6px 1px #07779A;
-
-}
-.bubble:nth-child(1){
-  width:40px;
-  height:40px;
-  left:10%;
-  animation-duration:8s;
-}
-.bubble:nth-child(2){
-  width:20px;
-  height:20px;
-  left:20%;
-  animation-duration:5s;
-  animation-delay:1s;
-}
-.bubble:nth-child(3){
-  width:50px;
-  height:50px;
-  left:35%;
-  animation-duration:7s;
-  animation-delay:2s;
-}
-.bubble:nth-child(4){
-  width:40px;
-  height:40px;
-  left:50%;
-  animation-duration:11s;
-  animation-delay:0s;
-}
-.bubble:nth-child(5){
-  width:35px;
-  height:35px;
-  left:55%;
-  animation-duration:6s;
-  animation-delay:1s;
-}
-.bubble:nth-child(6){
-  width:35px;
-  height:35px;
-  left:65%;
-  animation-duration:8s;
-  animation-delay:3s;
-}
-.bubble:nth-child(7){
-  width:38px;
-  height:38px;
-  left:70%;
-  animation-duration:12s;
-  animation-delay:2s;
-}
-.bubble:nth-child(8){
-  width:25px;
-  height:25px;
-  left:80%;
-  animation-duration:6s;
-  animation-delay:2s;
-}
-.bubble:nth-child(9){
-  width:15px;
-  height:15px;
-  left:70%;
-  animation-duration:5s;
-  animation-delay:1s;
-}
-.bubble:nth-child(10){
-  width:50px;
-  height:50px;
-  left:25%;
-  animation-duration:10s;
-  animation-delay:4s;
-}
-@keyframes rise{
-  0%{
-    bottom:-100px;
-    transform:translateX(0);
-  }
-  50%{
-    transform:translate(100px);
-  }
-  100%{
-    bottom:1080px;
-    transform:translateX(-200px);
-  }
-}

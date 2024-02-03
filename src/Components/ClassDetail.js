@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import "./MainPage.css";
-import "./ClassDetail.css";
 import "./MobileView.css";
+import "./ClassDetail.css";
 import AgeFilterDropdown from "./AgeSelection";
 import DownIcon from "../assets/down.png";
 import UpIcon from "../assets/up.png";
@@ -199,7 +199,7 @@ const ClassDetail = (props) => {
     },
     {
       id: "72",
-      title: "The Week In News: A Current Events Discussion Class",
+      title: "The Week In News: A Current Events Discussion Classajbehwfdkbsdjf kjsdfvkjsf vjkf bkjdfkjv fdjkkjdfb kjdf kvbjdf vjks",
       class_details:
         "Learners will practice their public speaking skills while discussing and debating news. This is a great chance for them to learn more about the news of the world and turn that knowledge into peer discussions. We will prompt learners with questions and games, but this is a peer-led conversation-style class. The goal is for the students to get more comfortable sharing their own thoughts and opinions while listening and responding to others in a respectful way. \n\nWe will post links to the articles that we will be discussing in class for review prior to class. These articles will come from credible news sources on a level appropriate for kids.  We will be discussing current events, discoveries in science, and some overall fun news.  We will do our absolute best to make sure the articles and sources are unbiased.  During class, we will guide the learners through the key points of those articles and provide opportunities to share ideas, opinions, debate with each other, etc. We will wrap up the class by playing a game of Kahoot for a final review of that week’s news. ",
       prerequisite:

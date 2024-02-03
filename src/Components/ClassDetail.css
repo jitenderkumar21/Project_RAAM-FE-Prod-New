@@ -80,6 +80,18 @@
   font-size: 15px;
 }
   @media (max-width: 599px){
+    .abc{
+      margin-top: 0px;
+    }
+    .tag {
+      font-size: 12px;
+      padding: 4px 6px;
+      margin-left: 3%;
+    }
+    .data{
+      font-size: 11px;
+      text-align: left;
+    }
     .tab-style {
         align-items: center;
         margin: auto;
@@ -93,6 +105,7 @@
 
       .filter-div {
         display: block;
+        margin-bottom: 20px;
       }
 
       .firstfilter img {

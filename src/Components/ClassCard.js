@@ -9,6 +9,7 @@ import Timeslot from "./Timeslot";
 
 const ClassCard = (props) => {
   console.log(props.selectedTimeslots, "selected");
+  console.log(window.innerWidth >599)
   const backgroundColorMap = {
     'ongoing': 'background-tag1',
     'onetime': 'background-tag2',
@@ -60,6 +61,7 @@ const ClassCard = (props) => {
                       classid={classes.id}
                       timeslot={timeslot}
                       tag={classes.class_tag}
+                      isPast={classes.isMoveToPast}
                       index={index}
                       registrationClosed={timeslot.isPast}
                       full={
@@ -77,8 +79,12 @@ const ClassCard = (props) => {
                       onSelect={props.onSelect}
                     />
                   ))}
+                   {/* {window.innerWidth >599 ? "" :<p>Classes</p>} */}
+                  
                 </div>
+               
               </div>
+             
               <div
                 className="class_footer"
                 onClick={() => props.onToggle(classes.id)}
