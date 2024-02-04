@@ -61,9 +61,9 @@ const ClassCard = (props) => {
                       classid={classes.id}
                       timeslot={timeslot}
                       tag={classes.class_tag.toLowerCase()}
-                      isPast={classes.isMoveToPast}
+                      isPastClass={classes.isMoveToPast}
                       index={index}
-                      registrationClosed={timeslot.isPast}
+                      datePassed ={timeslot.isPast}
                       full={
                         props.newfulldata[classes.id]
                           ? props.newfulldata[classes.id].includes(timeslot)

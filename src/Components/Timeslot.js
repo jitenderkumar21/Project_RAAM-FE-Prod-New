@@ -7,21 +7,21 @@ const Timeslot = (props) => {
   // console.log(props.classid, props.timeslot)
   return (
     <>
-      {(props.full || props.registrationClosed || props.isPast) && (
-        <Tooltip
-          id="custom_tooltip"
-          title="Class Full"
-          hover
-          arrow
-          placement="top"
-        >
+      {(props.full || props.datePassed || props.isPastClass) && (
+          <Tooltip
+            id="custom_tooltip"
+            title={props.datePassed ? "" :"Class Full" }
+            hover
+            arrow
+            placement="top"
+          >
           <label className="container" id="full">
             {((props.tag === "course" && props.index == 0) ||
               props.tag !== "course") && (
               <input
                 type="checkbox"
                 checked={props.isSelected}
-                disabled={props.tag === 'course' ? props.isPast : true}
+                disabled={props.tag === 'course' ? props.isPastClass : true}
                 onChange={() => props.onSelect(props.classid, props.timeslot)}
               />
             )}
@@ -33,10 +33,10 @@ const Timeslot = (props) => {
               Class Full
             </span>
           </label>
-        </Tooltip>
+          </Tooltip>
       )}
 
-      {!props.full && !props.registrationClosed && !props.isPast && (
+      {!props.full && !props.datePassed && !props.isPastClass && (
         <label className="container">
           {((props.tag === "course" && props.index == 0) ||
             props.tag !== "course") && (
