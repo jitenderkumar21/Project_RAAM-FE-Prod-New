@@ -4,13 +4,13 @@ import "./MobileView.css";
 import { Tooltip } from "@mui/material";
 
 const Timeslot = (props) => {
-  // console.log(props.classid, props.timeslot)
+  // console.log(props.classid, props.datePassed, props.full, props.isPastClass)
   return (
     <>
       {(props.full || props.datePassed || props.isPastClass) && (
           <Tooltip
             id="custom_tooltip"
-            title={props.datePassed ? "" :"Class Full" }
+            title={(props.full && !props.isPastClass) ? "Class Full" :"" }
             hover
             arrow
             placement="top"
@@ -29,9 +29,9 @@ const Timeslot = (props) => {
             {((props.tag === "course" && props.index == 0) ||
               props.tag !== "course") && <span className="checkmark"></span>}
 
-            <span className="Hack" id="hack_ultra_pro_max">
+            {(props.full && !props.isPastClass) &&<span className="Hack" id="hack_ultra_pro_max">
               Class Full
-            </span>
+            </span>}
           </label>
           </Tooltip>
       )}

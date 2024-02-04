@@ -22,7 +22,6 @@ const MainPage = () => {
     const clearLocalStorageOnReload = () => {
       localStorage.clear();
     };
-
     window.addEventListener('beforeunload', clearLocalStorageOnReload);
 
     return () => {
@@ -95,28 +94,17 @@ const MainPage = () => {
     fetchData();
   }, [submitted]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollPosition(window.scrollY);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
 
-    window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  let fullclasses = fulldata.reduce((acc, item) => {
-    if (item.slots.some((slot) => slot.isFull)) {
-      acc[item.class_id] = item.slots
-        .filter((slot) => slot.isFull)
-        .map((slot) => slot.slot);
-    }
-    return acc;
-  }, {});
-
-  // console.log(fullclasses, "fullclasses")
 
   return (
     <CardWrapper>
@@ -152,8 +140,8 @@ const MainPage = () => {
               onSendData={sendDataHandler}
               onSelectTimeSlot={continueButtonHandler}
               onWantAnotherSlot = {continueHandler}
-              fullclass={fullclasses}
-              scroll={scrollPosition}
+              fullclass={fulldata}
+              // scroll={scrollPosition}
             />
           </div>
           <div className="register_button">

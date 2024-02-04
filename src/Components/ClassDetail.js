@@ -51,12 +51,7 @@ const ClassDetail = (props) => {
     return result;
   }, {});
 
-  const transformedfullClasses = data.reduce((result, classItem) => {
-    result[classItem.id] = [];
-    return result;
-  }, {});
-
-  const [newfulldata, setNewFullData] = useState(transformedfullClasses);
+  const [newfulldata, setNewFullData] = useState({});
 
   useEffect(() => {
     if (Object.keys(props.fullclass).length > 0) {

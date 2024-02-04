@@ -8,8 +8,6 @@ import closeDropDown from "../assets/closeDropdown.png";
 import Timeslot from "./Timeslot";
 
 const ClassCard = (props) => {
-  console.log(props.selectedTimeslots, "selected");
-  console.log(window.innerWidth >599)
   const backgroundColorMap = {
     'ongoing': 'background-tag1',
     'onetime': 'background-tag2',
@@ -66,7 +64,7 @@ const ClassCard = (props) => {
                       datePassed ={timeslot.isPast}
                       full={
                         props.newfulldata[classes.id]
-                          ? props.newfulldata[classes.id].includes(timeslot)
+                          ? props.newfulldata[classes.id].includes(timeslot.subClassId)
                           : false
                       }
                       isSelected={
