@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./MainPage.css";
 import "./MobileView.css";
 import "./ClassDetail.css";
@@ -7,7 +7,6 @@ import DownIcon from "../assets/down.png";
 import UpIcon from "../assets/up.png";
 import ClassCard from "./ClassCard";
 const ClassDetail = (props) => {
-
   const wantmore = localStorage.getItem("wantMore");
   let want_more_state = "";
   if (wantmore) {
@@ -17,14 +16,12 @@ const ClassDetail = (props) => {
   const [value, setValue] = useState(want_more_state);
   const buttonRef = useRef(null);
 
-  
-
-  const handleWantnewslot=(e)=>{
+  const handleWantnewslot = (e) => {
     setValue(e.target.value);
   };
 
   useEffect(() => {
-    localStorage.setItem("wantMore",value);
+    localStorage.setItem("wantMore", value);
   }, [value]);
 
   useEffect(() => {
@@ -179,9 +176,7 @@ const ClassDetail = (props) => {
   };
 
   useEffect(() => {
-    setFilteredData(
-      data.filter((cls) => !cls.isMoveToPast)
-    );
+    setFilteredData(data.filter((cls) => !cls.isMoveToPast));
   }, [data]);
 
   useEffect(() => {
@@ -202,8 +197,8 @@ const ClassDetail = (props) => {
 
       const className = classInfo ? classInfo.title : "ClassName";
       const classTag = classInfo ? classInfo.class_tag : "onetime";
-      if (classTag.toLowerCase() === "course" && classInfo){
-        timeslot = classInfo.timeslots
+      if (classTag.toLowerCase() === "course" && classInfo) {
+        timeslot = classInfo.timeslots;
       }
 
       return {
@@ -219,6 +214,7 @@ const ClassDetail = (props) => {
     props.onSendData(resultArray, value);
     // console.log(resultArray, "selcted");
     props.onSelectTimeSlot(Object.keys(selectedTimeslots).length);
+    props.onWantAnotherSlot(value)
   }, [selectedTimeslots, moreslots, value]);
 
   const requiredTimeslotHandler = (classid, event) => {
@@ -309,57 +305,95 @@ const ClassDetail = (props) => {
         </div>
       </div>
 
-      {isActive && (<>
-        <div className="abc">
-          <p className="tag">Courses</p>
-          <p className="data">Multiple sessions organized into a structured curriculum. Learners are expected to attend all classes throughout the course, as each class builds on the last one.</p>
-        </div>
-        <ClassCard
-          filteredData={filteredData.filter(
+      {isActive && (
+        <>
+          {filteredData.filter(
             (cls) => cls.class_tag.toLowerCase() === "course"
-          )}
-          newfulldata={newfulldata}
-          onToggle={toggleDescription}
-          selectedTimeslots={selectedTimeslots}
-          onSelect={handleTimeslotSelection}
-          moreslots={moreslots}
-          onTimeslotHandler={requiredTimeslotHandler}
-          expandedClassId={expandedClassId}
-        ></ClassCard>
-        <div className="abc">
-          <p className="tag" style={{backgroundColor:'rgba(175,88,174,255)'}}>Ongoing</p>
-          <p className="data">Versatile classes that follow a theme, but do not build on one another. Each class stands alone, providing the opportunity for learners to join at any time.</p>
-        </div>
-        <ClassCard
-          filteredData={filteredData.filter(
+          ).length ? (
+            <div className="abc">
+              <p className="tag">Courses</p>
+              <p className="data">
+                Multiple sessions organized into a structured curriculum.
+                Learners are expected to attend all classes throughout the
+                course, as each class builds on the last one.
+              </p>
+            </div>
+          ):<></>}
+          <ClassCard
+            filteredData={filteredData.filter(
+              (cls) => cls.class_tag.toLowerCase() === "course"
+            )}
+            newfulldata={newfulldata}
+            onToggle={toggleDescription}
+            selectedTimeslots={selectedTimeslots}
+            onSelect={handleTimeslotSelection}
+            moreslots={moreslots}
+            onTimeslotHandler={requiredTimeslotHandler}
+            expandedClassId={expandedClassId}
+          ></ClassCard>
+
+          
+          {filteredData.filter(
             (cls) => cls.class_tag.toLowerCase() === "ongoing"
-          )}
-          newfulldata={newfulldata}
-          onToggle={toggleDescription}
-          selectedTimeslots={selectedTimeslots}
-          onSelect={handleTimeslotSelection}
-          moreslots={moreslots}
-          onTimeslotHandler={requiredTimeslotHandler}
-          expandedClassId={expandedClassId}
-        ></ClassCard>
-        <div className="abc">
-          <p className="tag" style={{backgroundColor:'rgba(249,98,115,255)'}}>Onetime</p>
-          <p className="data">Standalone classes that cover specific topics or skills in one session.</p>
-        </div>
-        
-        <ClassCard
-          filteredData={filteredData.filter(
+          ).length ? (
+            <div className="abc">
+              <p
+                className="tag"
+                style={{ backgroundColor: "rgba(175,88,174,255)" }}
+              >
+                Ongoing
+              </p>
+              <p className="data">
+                Versatile classes that follow a theme, but do not build on one
+                another. Each class stands alone, providing the opportunity for
+                learners to join at any time.
+              </p>
+            </div>
+          ):<></>}
+          <ClassCard
+            filteredData={filteredData.filter(
+              (cls) => cls.class_tag.toLowerCase() === "ongoing"
+            )}
+            newfulldata={newfulldata}
+            onToggle={toggleDescription}
+            selectedTimeslots={selectedTimeslots}
+            onSelect={handleTimeslotSelection}
+            moreslots={moreslots}
+            onTimeslotHandler={requiredTimeslotHandler}
+            expandedClassId={expandedClassId}
+          ></ClassCard>
+
+
+          {filteredData.filter(
             (cls) => cls.class_tag.toLowerCase() === "onetime"
-          )}
-          newfulldata={newfulldata}
-          onToggle={toggleDescription}
-          selectedTimeslots={selectedTimeslots}
-          onSelect={handleTimeslotSelection}
-          moreslots={moreslots}
-          onTimeslotHandler={requiredTimeslotHandler}
-          expandedClassId={expandedClassId}
-        ></ClassCard>
-      </>)}
+          ).length ? (
+            <div className="abc">
+              <p
+                className="tag"
+                style={{ backgroundColor: "rgba(249,98,115,255)" }}
+              >
+                Onetime
+              </p>
+              <p className="data">
+                Standalone classes that cover specific topics or skills in one
+                session.
+              </p>
+            </div>
+          ):<></>}
+          <ClassCard
+            filteredData={filteredData.filter(
+              (cls) => cls.class_tag.toLowerCase() === "onetime"
+            )}
+            newfulldata={newfulldata}
+            onToggle={toggleDescription}
+            selectedTimeslots={selectedTimeslots}
+            onSelect={handleTimeslotSelection}
+            moreslots={moreslots}
+            onTimeslotHandler={requiredTimeslotHandler}
+            expandedClassId={expandedClassId}
+          ></ClassCard>
+        </>
+      )}
 
       {!isActive && (
         <ClassCard
@@ -374,11 +408,15 @@ const ClassDetail = (props) => {
         ></ClassCard>
       )}
       <div className="textbox">
-        <textarea className="editable-textbox" value={value} onChange={handleWantnewslot} placeholder=" Logic Club - Weekend evenings, Game theory - Wednesdays 6-8 PM EST"></textarea>
-        <p>Dont see what  you're looking for? No worries! 
-        Let us know your Preferred classes &<br></br> time slots, 
-        and we will do our best to create classes that 
-        fit for your schedule.</p>
+        <textarea
+          className="editable-textbox"
+          value={value}
+          onChange={handleWantnewslot}
+          placeholder=" Logic Club - Weekend evenings, Game theory - Wednesdays 6-8 PM EST"
+        ></textarea>
+        <p>
+          Don't see what you're looking for? Request for another time slot here :
+        </p>
       </div>
     </div>
   );

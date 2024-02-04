@@ -341,11 +341,15 @@
 
   .textbox{
     margin-left: 0%;
+    display:block;
+    gap: 0px;
   }
   .textbox p {
-    font-size: 8px;
+    font-size: 10px;
     text-align: left;
     margin-left: 5%;
+    white-space: normal;
+
   }
 
   .editable-textbox{

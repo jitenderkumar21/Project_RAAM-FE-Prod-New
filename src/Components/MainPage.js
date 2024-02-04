@@ -62,6 +62,11 @@ const MainPage = () => {
       setIsSelected(len);
     }
   };
+  const continueHandler = (slot_value) => {
+    if (slot_value) {
+      setIsSelected(slot_value)
+    }
+  }
 
   useEffect(() => {
     window.scrollTo(0, scrollPosition);
@@ -146,6 +151,7 @@ const MainPage = () => {
             <ClassDetail
               onSendData={sendDataHandler}
               onSelectTimeSlot={continueButtonHandler}
+              onWantAnotherSlot = {continueHandler}
               fullclass={fullclasses}
               scroll={scrollPosition}
             />
