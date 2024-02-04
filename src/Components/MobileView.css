@@ -253,11 +253,13 @@
     width: 100%;
     margin: 20px auto 0 auto;
     font-weight: 600;
+    overflow-x: hidden;
   }
   .class_card2 h3 {
     font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
+    width: 300px;
   }
 
   .class_card2 p {
@@ -336,24 +338,24 @@
   }
 
   .ramen{
-    padding: 3px 15px 0px 5px;
+    padding: 6px 15px 0px 5px;
   }
 
   .textbox{
-    margin-left: 0%;
+    margin: 0% 0%;
     display:block;
     gap: 0px;
   }
   .textbox p {
-    font-size: 10px;
-    text-align: left;
-    margin-left: 5%;
+    font-size: 8px;
+    text-align: center;
+    margin-left: 0%;
     white-space: normal;
 
   }
 
   .editable-textbox{
-    width: 98%;
+    width: 95%;
     border: 1px solid black;
     height: 24px;
     line-height: 25px;
