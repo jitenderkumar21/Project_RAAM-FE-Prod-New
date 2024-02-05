@@ -407,10 +407,10 @@ const ClassDetail = (props) => {
           className="editable-textbox"
           value={value}
           onChange={handleWantnewslot}
-          placeholder=" Logic Club - Weekend evenings, Game theory - Wednesdays 6-8 PM EST"
+          placeholder="Eg: Logic Club-Weekend evenings, Game theory-Wed 6-8 PM EST"
         ></textarea>
         <p>
-          Don't see what you're looking for? Request for preferred classes & time slots here:
+          Don't see what you're looking for? Request for preferred classes & time slots here
         </p>
       </div>
     </div>
