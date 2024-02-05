@@ -47,7 +47,7 @@ const ClassDetail = (props) => {
   // console.log(data,"after api call")
 
   const transformedClasses = data.reduce((result, classItem) => {
-    result[classItem.id] = "";
+    result[classItem.id] = [];
     return result;
   }, {});
 
