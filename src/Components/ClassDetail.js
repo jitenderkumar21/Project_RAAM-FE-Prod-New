@@ -62,13 +62,14 @@ const ClassDetail = (props) => {
   const storedSelections = localStorage.getItem("selectedTimeSlots");
   let initial_state = [];
   if (storedSelections) {
-    
     initial_state = JSON.parse(storedSelections);
+    
     for (const key in initial_state) {
       const value = initial_state[key];
       console.log(typeof(value), value)
       if (typeof(value) !== "object"){
         localStorage.clear()
+        initial_state = transformedClasses
       } 
     }
   } else {
