@@ -9,9 +9,9 @@ import Timeslot from "./Timeslot";
 
 const ClassCard = (props) => {
   const backgroundColorMap = {
-    'ongoing': 'background-tag1',
-    'onetime': 'background-tag2',
-};
+    ongoing: "background-tag1",
+    onetime: "background-tag2",
+  };
   return (
     <div>
       <div>
@@ -36,7 +36,11 @@ const ClassCard = (props) => {
                   <div>
                     <h3>{classes.title}</h3>
                   </div>
-                  <p className={`ramen ${backgroundColorMap[classes.class_tag?.toLowerCase()] || ''}`}>
+                  <p
+                    className={`ramen ${
+                      backgroundColorMap[classes.class_tag?.toLowerCase()] || ""
+                    }`}
+                  >
                     <div className="dot"></div>
                     {classes.class_tag}
                   </p>
@@ -44,10 +48,14 @@ const ClassCard = (props) => {
                     <img src={age} alt="ageIcon" className="icon" />
                     Age Group : {classes.age_group}
                   </p>
-                  { window.innerWidth > 599 ? <p>
-                    <img src={duration} alt="durationIcon" className="icon" />
-                    Duration : {classes.duration}
-                  </p> : ""}
+                  {window.innerWidth > 599 ? (
+                    <p>
+                      <img src={duration} alt="durationIcon" className="icon" />
+                      Duration : {classes.duration}
+                    </p>
+                  ) : (
+                    ""
+                  )}
                   <p>
                     <img src={teacher} alt="teacherIcon" className="icon" />
                     Teacher : {classes.tutor}
@@ -55,39 +63,41 @@ const ClassCard = (props) => {
                 </div>
                 <div class="separator"></div>
                 <div className="class_card3">
-                  <h3 style={{color:'black'}}>{classes.display_timing}</h3>
-                  {classes.timeslots.map((timeslot, index) => {
-                    if (typeof(timeslot) === 'object'){
-                    <Timeslot
-                      name={classes.title}
-                      classid={classes.id}
-                      timeslot={timeslot}
-                      tag={classes.class_tag.toLowerCase()}
-                      isPastClass={classes.isMoveToPast}
-                      index={index}
-                      datePassed ={timeslot.isPast}
-                      full={
-                        props.newfulldata[classes.id]
-                          ? props.newfulldata[classes.id].includes(timeslot.subClassId)
-                          : false
-                      }
-                      isSelected={
-                        props.selectedTimeslots[classes.id]
-                          ? props.selectedTimeslots[classes.id].some(
-                              (obj) => obj.subClassId === timeslot.subClassId
-                            )
-                          : false
-                      }
-                      onSelect={props.onSelect}
-                    />
-                    }
-                  })}
-                   {/* {window.innerWidth >599 ? "" :<p className="strip">Classes</p>} */}
-                  
+                  <h3 style={{ color: "black" }}>{classes.display_timing}</h3>
+                  {classes.timeslots.map((timeslot, index) =>
+                    typeof timeslot === "object" ? (
+                      <Timeslot
+                        name={classes.title}
+                        classid={classes.id}
+                        timeslot={timeslot}
+                        tag={classes.class_tag.toLowerCase()}
+                        isPastClass={classes.isMoveToPast}
+                        index={index}
+                        datePassed={timeslot.isPast}
+                        full={
+                          props.newfulldata[classes.id]
+                            ? props.newfulldata[classes.id].includes(
+                                timeslot.subClassId
+                              )
+                            : false
+                        }
+                        isSelected={
+                          props.selectedTimeslots[classes.id]
+                            ? props.selectedTimeslots[classes.id].some(
+                                (obj) => obj.subClassId === timeslot.subClassId
+                              )
+                            : false
+                        }
+                        onSelect={props.onSelect}
+                      />
+                    ) : (
+                      ""
+                    )
+                  )}
+                  {/* {window.innerWidth >599 ? "" :<p className="strip">Classes</p>} */}
                 </div>
-               
               </div>
-             
+
               <div
                 className="class_footer"
                 onClick={() => props.onToggle(classes.id)}
