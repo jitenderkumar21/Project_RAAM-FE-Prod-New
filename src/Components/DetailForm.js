@@ -71,24 +71,29 @@ const DetailForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!formData.knowabout) {
-      alert("Please fill out mandatory fields");
-      return;
+    try{
+      if (!formData.knowabout) {
+        alert("Please fill out mandatory fields");
+        return;
+      }
+      if (
+        formData.knowabout !== "Friends and Family" &&
+        !formData.additionalInfo
+      ) {
+        alert("Please fill out mandatory fields");
+        return;
+      }
+      
+      const new_data = { ...formData, classDetails: props.timedata, want_another_slot: props.anotherSlot };
+      new_data.phoneNumber = ( "+".concat(new_data.phoneNumber))
+      console.log(new_data);
+      submitForm(new_data);
+      props.onSubmit();
+      localStorage.clear();
     }
-    if (
-      formData.knowabout !== "Friends and Family" &&
-      !formData.additionalInfo
-    ) {
-      alert("Please fill out mandatory fields");
-      return;
+    catch(error) {
+      localStorage.clear();
     }
-    
-    const new_data = { ...formData, classDetails: props.timedata, want_another_slot: props.anotherSlot };
-    new_data.phoneNumber = ( "+".concat(new_data.phoneNumber))
-    console.log(new_data);
-    submitForm(new_data);
-    props.onSubmit();
-    localStorage.clear();
   };
 
   const backHandler = () => {

@@ -17,7 +17,6 @@ const MainPage = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isSelected, setIsSelected] = useState(0);
 
-
   useEffect(() => {
     const clearLocalStorageOnReload = () => {
       localStorage.clear();
@@ -40,7 +39,7 @@ const MainPage = () => {
   };
 
   const sendDataHandler = (data ,value) => {
-    console.log(data, value, "kfkfkfkkdk");
+    // console.log(data, value, "kfkfkfkkdk");
     setTimedata(data);
     setAnotherSlot(value);
   };

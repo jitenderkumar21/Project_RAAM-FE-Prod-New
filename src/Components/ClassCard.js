@@ -36,7 +36,7 @@ const ClassCard = (props) => {
                   <div>
                     <h3>{classes.title}</h3>
                   </div>
-                  <p className={`ramen ${backgroundColorMap[classes.class_tag.toLowerCase()] || ''}`}>
+                  <p className={`ramen ${backgroundColorMap[classes.class_tag?.toLowerCase()] || ''}`}>
                     <div className="dot"></div>
                     {classes.class_tag}
                   </p>
@@ -56,7 +56,8 @@ const ClassCard = (props) => {
                 <div class="separator"></div>
                 <div className="class_card3">
                   <h3 style={{color:'black'}}>{classes.display_timing}</h3>
-                  {classes.timeslots.map((timeslot, index) => (
+                  {classes.timeslots.map((timeslot, index) => {
+                    if (typeof(timeslot) === 'object'){
                     <Timeslot
                       name={classes.title}
                       classid={classes.id}
@@ -79,7 +80,8 @@ const ClassCard = (props) => {
                       }
                       onSelect={props.onSelect}
                     />
-                  ))}
+                    }
+                  })}
                    {/* {window.innerWidth >599 ? "" :<p className="strip">Classes</p>} */}
                   
                 </div>

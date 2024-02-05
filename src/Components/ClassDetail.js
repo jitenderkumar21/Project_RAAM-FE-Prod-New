@@ -16,7 +16,7 @@ const ClassDetail = (props) => {
   const [value, setValue] = useState(want_more_state);
   const buttonRef = useRef(null);
 
-  const handleWantnewslot = (e) => {
+   const handleWantnewslot = (e) => {
     setValue(e.target.value);
   };
 
@@ -192,7 +192,7 @@ const ClassDetail = (props) => {
 
       const className = classInfo ? classInfo.title : "ClassName";
       const classTag = classInfo ? classInfo.class_tag : "onetime";
-      if (classTag.toLowerCase() === "course" && classInfo) {
+      if (classTag?.toLowerCase() === "course" && classInfo) {
         timeslot = classInfo.timeslots;
       }
 
@@ -303,7 +303,7 @@ const ClassDetail = (props) => {
       {isActive && (
         <>
           {filteredData.filter(
-            (cls) => cls.class_tag.toLowerCase() === "course"
+            (cls) => cls.class_tag?.toLowerCase() === "course"
           ).length ? (
             <div className="abc">
               <p className="tag">Courses</p>
@@ -316,7 +316,7 @@ const ClassDetail = (props) => {
           ):<></>}
           <ClassCard
             filteredData={filteredData.filter(
-              (cls) => cls.class_tag.toLowerCase() === "course"
+              (cls) => cls.class_tag?.toLowerCase() === "course"
             )}
             newfulldata={newfulldata}
             onToggle={toggleDescription}
@@ -329,7 +329,7 @@ const ClassDetail = (props) => {
 
           
           {filteredData.filter(
-            (cls) => cls.class_tag.toLowerCase() === "ongoing"
+            (cls) => cls.class_tag?.toLowerCase() === "ongoing"
           ).length ? (
             <div className="abc">
               <p
@@ -347,7 +347,7 @@ const ClassDetail = (props) => {
           ):<></>}
           <ClassCard
             filteredData={filteredData.filter(
-              (cls) => cls.class_tag.toLowerCase() === "ongoing"
+              (cls) => cls.class_tag?.toLowerCase() === "ongoing"
             )}
             newfulldata={newfulldata}
             onToggle={toggleDescription}
@@ -360,7 +360,7 @@ const ClassDetail = (props) => {
 
 
           {filteredData.filter(
-            (cls) => cls.class_tag.toLowerCase() === "onetime"
+            (cls) => cls.class_tag?.toLowerCase() === "onetime"
           ).length ? (
             <div className="abc">
               <p
@@ -377,7 +377,7 @@ const ClassDetail = (props) => {
           ):<></>}
           <ClassCard
             filteredData={filteredData.filter(
-              (cls) => cls.class_tag.toLowerCase() === "onetime"
+              (cls) => cls.class_tag?.toLowerCase() === "onetime"
             )}
             newfulldata={newfulldata}
             onToggle={toggleDescription}
