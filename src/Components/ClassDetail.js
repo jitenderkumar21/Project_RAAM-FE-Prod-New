@@ -410,7 +410,7 @@ const ClassDetail = (props) => {
           placeholder=" Logic Club - Weekend evenings, Game theory - Wednesdays 6-8 PM EST"
         ></textarea>
         <p>
-        Don't see what you're looking for? Request for preferred classes & time slots here:
+          Don't see what you're looking for? Request for preferred classes & time slots here:
         </p>
       </div>
     </div>
