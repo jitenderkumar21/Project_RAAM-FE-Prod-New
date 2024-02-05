@@ -28,11 +28,14 @@ const ClassCard = (props) => {
                 >
                   <img src={classes.link}></img>
                 </div>
+
                 <div
                   className="class_card2"
                   onClick={() => props.onToggle(classes.id)}
                 >
-                  <h3>{classes.title}</h3>
+                  <div>
+                    <h3>{classes.title}</h3>
+                  </div>
                   <p className={`ramen ${backgroundColorMap[classes.class_tag.toLowerCase()] || ''}`}>
                     <div className="dot"></div>
                     {classes.class_tag}

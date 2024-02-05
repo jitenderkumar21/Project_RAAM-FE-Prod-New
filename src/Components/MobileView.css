@@ -259,7 +259,7 @@
     font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
-    width: 300px;
+    width: 95%;
   }
 
   .class_card2 p {
@@ -339,11 +339,13 @@
 
   .ramen{
     padding: 6px 15px 0px 5px;
+   
   }
 
   .textbox{
     margin: 0% 0%;
     display:block;
+   
     gap: 0px;
   }
   .textbox p {
