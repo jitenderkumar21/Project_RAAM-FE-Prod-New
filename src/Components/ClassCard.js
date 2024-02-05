@@ -81,9 +81,9 @@ const ClassCard = (props) => {
                               )
                             : false
                         }
-                        isSelected={
-                          props.selectedTimeslots[classes.id]
-                            ? props.selectedTimeslots[classes.id].some(
+                        isSelected={ 
+                          props.selectedTimeslots[classes.id] && (typeof(props.selectedTimeslots[classes.id]) === 'object')
+                            ?  props.selectedTimeslots[classes.id].some(
                                 (obj) => obj.subClassId === timeslot.subClassId
                               )
                             : false
