@@ -18,6 +18,7 @@ const DetailForm = (props) => {
       classDetails: "",
       knowabout: "",
       additionalInfo: "",
+      commPref: [],
     };
   }
   const [formData, setFormData] = useState(initial_state);
@@ -45,6 +46,24 @@ const DetailForm = (props) => {
     }
   };
 
+  const fetchFormData = async (email) => {
+    console.log(email);
+    try {
+      const response = await fetch(
+        `https://coral-staging.onrender.com/parent/info?email=${email}`
+      );
+      const jsonData = await response.json();
+      console.log(jsonData);
+      if ("email" in jsonData) {
+        delete jsonData.email;
+        console.log(jsonData, "after deleteing");
+        setFormData(jsonData);
+      }
+    } catch (err) {
+      console.log("Error");
+    }
+  };
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -69,10 +88,26 @@ const DetailForm = (props) => {
     });
   };
 
+  const handlePrefChange = (event) => {
+    const prefValue = event.target.value;
+    const isAlreadySelected = formData.commPref.includes(prefValue);
+    if (isAlreadySelected) {
+      setFormData((prevState) => ({
+        ...prevState,
+        commPref: formData.commPref.filter((pref) => pref !== prefValue), // Remove the preference value from commPref array
+      }));
+    } else {
+      setFormData((prevState) => ({
+        ...prevState,
+        commPref: [...prevState.commPref, prefValue], // Add the new preference value to the commPref array
+      }));
+    }
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    try{
-      if (!formData.knowabout) {
+    try {
+      if (!formData.knowabout || !formData.commPref) {
         alert("Please fill out mandatory fields");
         return;
       }
@@ -83,18 +118,23 @@ const DetailForm = (props) => {
         alert("Please fill out mandatory fields");
         return;
       }
-      
-      const new_data = { ...formData, classDetails: props.timedata, want_another_slot: props.anotherSlot };
-      new_data.phoneNumber = ( "+".concat(new_data.phoneNumber))
+
+      const new_data = {
+        ...formData,
+        classDetails: props.timedata,
+        want_another_slot: props.anotherSlot,
+      };
+      new_data.phoneNumber = "+".concat(new_data.phoneNumber);
       console.log(new_data);
       submitForm(new_data);
       props.onSubmit();
       localStorage.clear();
-    }
-    catch(error) {
+    } catch (error) {
       localStorage.clear();
     }
   };
+
+  console.log(formData);
 
   const backHandler = () => {
     console.log("in the back function");
@@ -104,14 +144,31 @@ const DetailForm = (props) => {
 
   const handleEnterKey = (event) => {
     if (event.key === "Enter") {
-      event.preventDefault(); // Prevent the default form submission
+      event.preventDefault();
     }
+  };
+
+  const autofillHandler = (event) => {
+    console.log(event.target.value, "email");
+    fetchFormData(event.target.value);
   };
 
   return (
     <React.Fragment>
       <div className="form_meta"> Add Contact Details!</div>
       <form onSubmit={handleSubmit} className="my-form">
+        <div className="form-group">
+          <label htmlFor="email">Email *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            value={formData.email}
+            onChange={handleInputChange}
+            onBlur={autofillHandler}
+          />
+        </div>
         <div className="form-group">
           <label htmlFor="parentName"> Parent Name *</label>
           <input
@@ -123,17 +180,7 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="email">Email *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-        </div>
+
         <div className="form-group">
           <label htmlFor="childName"> Learner's Name *</label>
           <input
@@ -159,15 +206,57 @@ const DetailForm = (props) => {
           />
         </div>
 
-        
-          <label htmlFor="phoneNumber">Phone </label>
-          <PhoneInput
-            className="contact"
-            country={"us"}
-            value={formData.phoneNumber}
-            onChange={countryCodeHandler}
-          />
-        
+        <div className="form-group">
+          <label htmlFor="commPref">Communication Preferences ? *</label>
+          <div className="check">
+            <input
+              type="checkbox"
+              id="commPref-email"
+              name="commPref"
+              value="Email"
+              checked={formData.commPref?.includes("Email")}
+              onChange={handlePrefChange}
+            />
+            <label htmlFor="commPref-email">Email</label>
+          </div>
+
+          <div className="check">
+            <input
+              type="checkbox"
+              id="commPref-Whatsapp"
+              name="commPref"
+              value="WhatsApp"
+              checked={formData.commPref?.includes("WhatsApp")}
+              onChange={handlePrefChange}
+            />
+            <label htmlFor="commPref-Whatsapp">WhatsApp</label>
+          </div>
+
+          <div className="check">
+            <input
+              type="checkbox"
+              id="commPref-text"
+              name="commPref"
+              value="Text"
+              checked={formData.commPref?.includes("Text")}
+              onChange={handlePrefChange}
+            />
+            <label htmlFor="commPref-text">Text</label>
+          </div>
+        </div>
+
+        {(formData.commPref?.includes("Text") ||
+          formData.commPref?.includes("WhatsApp")) && (
+          <>
+            <label htmlFor="phoneNumber">Phone </label>
+            <PhoneInput
+              className="contact"
+              country={"us"}
+              value={formData.phoneNumber}
+              onChange={countryCodeHandler}
+            />
+          </>
+        )}
 
         <div className="form-group">
           <label htmlFor="knowabout">

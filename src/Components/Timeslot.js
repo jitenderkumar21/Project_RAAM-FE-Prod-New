@@ -16,7 +16,7 @@ const Timeslot = (props) => {
             placement="top"
           >
           <label className="container" id="full">
-            {((props.tag === "course" && props.index == 0) ||
+            {((props.tag === "course" && props.index === 0) ||
               props.tag !== "course") && (
               <input
                 type="checkbox"
@@ -26,7 +26,7 @@ const Timeslot = (props) => {
               />
             )}
             <span className="light_text">{props.timeslot.timing}</span>
-            {((props.tag === "course" && props.index == 0) ||
+            {((props.tag === "course" && props.index === 0) ||
               props.tag !== "course") && <span className="checkmark"></span>}
 
             {(props.full && !props.isPastClass) &&<span className="Hack" id="hack_ultra_pro_max">
@@ -38,7 +38,7 @@ const Timeslot = (props) => {
 
       {!props.full && !props.datePassed && !props.isPastClass && (
         <label className="container">
-          {((props.tag === "course" && props.index == 0) ||
+          {((props.tag === "course" && props.index === 0) ||
             props.tag !== "course") && (
             <input
               type="checkbox"
@@ -47,7 +47,7 @@ const Timeslot = (props) => {
             />
           )}
           <span className="light_text">{props.timeslot.timing}</span>
-          {((props.tag === "course" && props.index == 0) ||
+          {((props.tag === "course" && props.index === 0) ||
             props.tag !== "course") && <span className="checkmark"></span>}
         </label>
       )}
