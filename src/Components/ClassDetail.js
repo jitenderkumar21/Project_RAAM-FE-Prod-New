@@ -29,7 +29,7 @@ const ClassDetail = (props) => {
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       try {
         const response = await fetch(
-          `https://backend-z29v.onrender.com/info?timezone=${timezone}`
+          `https://coral-staging.onrender.com/info?timezone=${timezone}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -63,7 +63,7 @@ const ClassDetail = (props) => {
   let initial_state = [];
   if (storedSelections) {
     initial_state = JSON.parse(storedSelections);
-    
+
     for (const key in initial_state) {
       const value = initial_state[key];
       console.log(typeof(value), value)
