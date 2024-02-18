@@ -55,8 +55,6 @@ const DetailForm = (props) => {
       const jsonData = await response.json();
       console.log(jsonData);
       if ("email" in jsonData) {
-        delete jsonData.email;
-        console.log(jsonData, "after deleteing");
         setFormData(jsonData);
       }
     } catch (err) {
@@ -107,7 +105,7 @@ const DetailForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     try {
-      if (!formData.knowabout || !formData.commPref) {
+      if (!formData.knowabout || !formData.commPref || !formData.phoneNumber) {
         alert("Please fill out mandatory fields");
         return;
       }
@@ -248,10 +246,16 @@ const DetailForm = (props) => {
         {(formData.commPref?.includes("Text") ||
           formData.commPref?.includes("WhatsApp")) && (
           <>
-            <label htmlFor="phoneNumber">Phone </label>
+            <div style={{display:"flex"}}>
+              <label htmlFor="phoneNumber">Phone * </label>
+              <label htmlFor="phoneNumber" style={{ fontSize: "12px" }}>
+                will be used to send important alerts
+              </label>
+            </div>
             <PhoneInput
               className="contact"
               country={"us"}
+              required
               value={formData.phoneNumber}
               onChange={countryCodeHandler}
             />
