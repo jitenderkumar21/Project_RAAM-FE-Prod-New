@@ -105,8 +105,16 @@ const DetailForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     try {
-      if (!formData.knowabout || !formData.commPref || !formData.phoneNumber) {
+      if (!formData.knowabout || !formData.commPref?.length) {
         alert("Please fill out mandatory fields");
+        return;
+      }
+      if (
+        (formData.commPref?.includes("Text") ||
+          formData.commPref?.includes("WhatsApp")) &&
+        (!formData.phoneNumber || formData.phoneNumber.length <7)
+      ) {
+        alert("Please Enter Phone Number");
         return;
       }
       if (
@@ -122,7 +130,6 @@ const DetailForm = (props) => {
         classDetails: props.timedata,
         want_another_slot: props.anotherSlot,
       };
-      new_data.phoneNumber = "+".concat(new_data.phoneNumber);
       console.log(new_data);
       submitForm(new_data);
       props.onSubmit();
