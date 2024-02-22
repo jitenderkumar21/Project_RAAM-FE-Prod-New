@@ -23,6 +23,7 @@ const Timeslot = (props) => {
                 checked={props.isSelected}
                 disabled={props.tag === 'course' ? (props.isPastClass || props.full) : true}
                 onChange={() => props.onSelect(props.classid, props.timeslot)}
+                id= {props.timeslot.subClassId}
               />
             )}
             <span className="light_text">{props.timeslot.timing}</span>
@@ -44,6 +45,7 @@ const Timeslot = (props) => {
               type="checkbox"
               checked={props.isSelected}
               onChange={() => props.onSelect(props.classid, props.timeslot)}
+              id= {props.timeslot.subClassId}
             />
           )}
           <span className="light_text">{props.timeslot.timing}</span>

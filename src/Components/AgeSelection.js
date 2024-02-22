@@ -9,6 +9,7 @@ const AgeFilterDropdown = ({ selected, onSelect }) => {
                 <input
                   type="checkbox"
                   value={option}
+                  id={option}
                   checked={selected === option}
                   onChange={() => onSelect(option)}
                 />

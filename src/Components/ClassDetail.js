@@ -417,6 +417,7 @@ const ClassDetail = (props) => {
           value={value}
           onChange={handleWantnewslot}
           placeholder="Eg: Logic Club-Weekend evenings, Game theory-Wed 6-8 PM EST"
+          id="want_new_slot"
         ></textarea>
         <p>
           Don't see what you're looking for? Request for preferred classes & time slots here
