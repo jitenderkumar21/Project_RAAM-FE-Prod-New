@@ -23,12 +23,11 @@ const Timeslot = (props) => {
                 checked={props.isSelected}
                 disabled={props.tag === 'course' ? (props.isPastClass || props.full) : true}
                 onChange={() => props.onSelect(props.classid, props.timeslot)}
-                id= {props.timeslot.subClassId}
               />
             )}
             <span className="light_text">{props.timeslot.timing}</span>
             {((props.tag === "course" && props.index === 0) ||
-              props.tag !== "course") && <span className="checkmark"></span>}
+              props.tag !== "course") && <span className="checkmark" id= {props.timeslot.subClassId}></span>}
 
             {(props.full && !props.isPastClass) &&<span className="Hack" id="hack_ultra_pro_max">
               Class Full
@@ -45,12 +44,11 @@ const Timeslot = (props) => {
               type="checkbox"
               checked={props.isSelected}
               onChange={() => props.onSelect(props.classid, props.timeslot)}
-              id= {props.timeslot.subClassId}
             />
           )}
           <span className="light_text">{props.timeslot.timing}</span>
           {((props.tag === "course" && props.index === 0) ||
-            props.tag !== "course") && <span className="checkmark"></span>}
+            props.tag !== "course") && <span className="checkmark" id= {props.timeslot.subClassId}></span>}
         </label>
       )}
     </>
