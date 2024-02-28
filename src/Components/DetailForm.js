@@ -224,19 +224,6 @@ const DetailForm = (props) => {
             />
             <label htmlFor="commPref-email">Email</label>
           </div>
-
-          <div className="check">
-            <input
-              type="checkbox"
-              id="commPref-Whatsapp"
-              name="commPref"
-              value="WhatsApp"
-              checked={formData.commPref?.includes("WhatsApp")}
-              onChange={handlePrefChange}
-            />
-            <label htmlFor="commPref-Whatsapp">WhatsApp</label>
-          </div>
-
           <div className="check">
             <input
               type="checkbox"
