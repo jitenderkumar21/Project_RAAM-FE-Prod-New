@@ -1,0 +1,29 @@
+
+.custom-table{
+    background-color: white !important;
+}
+.custom-table-header{
+   font-weight: bold !important;
+}
+
+.custom-table-cell{
+    line-height: 0.75px !important;
+
+}
+.custom-table-row{
+    height: 10px !important;
+}
+.btn {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.btn button {
+    margin: 5px !important;
+    padding: 5px !important;
+    border-radius: 5px !important;
+    background-color: #1976d2 !important;
+    color: white !important;
+    border: none !important;
+    cursor: pointer !important;
+}
