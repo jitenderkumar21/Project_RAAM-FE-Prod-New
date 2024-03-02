@@ -61,7 +61,7 @@
   height: 40px;
   width: 150px;
   font-size: 18px;
-  background-color: #07779A;
+  background-color: #0897c3;;
   color: white;
 }
 
@@ -261,7 +261,7 @@ h4 {
 
 .submitpage { 
   gap: 100px; 
-  margin-bottom: 8%; 
+  margin-bottom: 11%; 
   justify-content: center; 
   font-family: Poppins; 
 } 
@@ -274,7 +274,7 @@ h4 {
   height: 40px; 
   width: 150px; 
   font-size: 18px; 
-  background-color: #07779A; 
+  background-color: #0897c3;
   color: white; 
 } 
  
@@ -287,14 +287,14 @@ h4 {
 } 
  
 .quickcall button { 
-  background-color: #0897c3;; 
+  background-color: #0897c3;
   color:white; 
   font-weight: 700; 
   font-size: 17px; 
 } 
  
 .submitpage button:hover { 
-  font-size: 18px; /* Font size on hover */ 
+  font-size: 17.5px; /* Font size on hover */ 
 } 
  
 .final_page_header { 
@@ -396,7 +396,7 @@ h4 {
 
 .sub-card button {
   font-size: 14px;
-  background-color: #07779A;
+  background-color: #0897c3;
   color: white;
 }
 
@@ -505,7 +505,7 @@ h4 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #07779A;
+  background: #0897c3;
 }
 
 

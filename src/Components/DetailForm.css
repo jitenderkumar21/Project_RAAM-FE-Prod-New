@@ -18,7 +18,8 @@
   height: 40px;
   width: 120px;
   font-size: 18px;
-  background-color: #07779A;
+  background-color: #0897c3;
+;
   color: white;
   border-radius: 4px;
   /* margin: 30px; */
@@ -47,7 +48,7 @@
   height: 40px;
   width: 120px;
   font-size: 18px;
-  background-color: #07779A;
+  background-color: #0897c3;;
   color: white;
   border-radius: 4px;
 }
@@ -101,7 +102,7 @@ option {
 }
 
 button {
-  background-color: #07779A;
+  background-color: #0897c3;;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -110,7 +111,7 @@ button {
 }
 
 button:hover {
-  background-color: #07779A;
+  background-color: #0897c3;;
 }
 
 .submitted-data {
