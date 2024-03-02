@@ -7,6 +7,8 @@ import ClassDetail from "./ClassDetail";
 import DetailForm from "./DetailForm";
 import Coral_Academy from "../assets/Coral_Academy.png";
 import About_us from "../assets/About_us.png";
+import thank_you from "../assets/thank_you.png"; 
+import final_page from "../assets/final_page.png";
 
 const MainPage = () => {
   const [register, setRegister] = useState(false);
@@ -21,14 +23,16 @@ const MainPage = () => {
     const clearLocalStorageOnReload = () => {
       localStorage.clear();
     };
-    window.addEventListener('beforeunload', clearLocalStorageOnReload);
+    window.addEventListener("beforeunload", clearLocalStorageOnReload);
 
     return () => {
       // Clean up the event listener when the component unmounts
-      window.removeEventListener('beforeunload', clearLocalStorageOnReload);
+      window.removeEventListener("beforeunload", clearLocalStorageOnReload);
     };
   }, []);
-
+  const quickCallHandler = () => {
+    window.open("https://google.com", "_blank");
+  };
   const registerHandler = () => {
     setRegister(true);
     setScrollPosition(0);
@@ -38,7 +42,7 @@ const MainPage = () => {
     setSubmitted(true);
   };
 
-  const sendDataHandler = (data ,value) => {
+  const sendDataHandler = (data, value) => {
     // console.log(data, value, "kfkfkfkkdk");
     setTimedata(data);
     setAnotherSlot(value);
@@ -62,9 +66,9 @@ const MainPage = () => {
   };
   const continueHandler = (slot_value) => {
     if (slot_value) {
-      setIsSelected(slot_value)
+      setIsSelected(slot_value);
     }
-  }
+  };
 
   useEffect(() => {
     window.scrollTo(0, scrollPosition);
@@ -104,100 +108,130 @@ const MainPage = () => {
   //   };
   // }, []);
 
-
   return (
     <CardWrapper>
       <div className="scrollClass" id="scrollClass1">
         <div className="header">
           <h3>Free Classes! For Limited Time Only!</h3>
         </div>
-      
-      
-      <img className="title" src={Coral_Academy} alt="Title" />
 
-      {!register && !submitted && (
-        
-        <div className="card1">
-          <h1
-            style={{
-              marginBottom: "50px",
-              marginTop: "20px",
-              fontFamily: "urbanist",
-            }}
-          >
-            {" "}
-            Sparking a Love for Learning!
-          </h1>
+        {!register && !submitted && (
+          <img className="title" src={Coral_Academy} alt="Title" />
+        )}
 
-          <h5 className="message">
-          Register for each learner separately. You can select multiple classes for each learner.
-          </h5>
+        {!register && !submitted && (
+          <div className="card1">
+            <h1
+              style={{
+                marginBottom: "50px",
+                marginTop: "20px",
+                fontFamily: "urbanist",
+              }}
+            >
+              {" "}
+              Sparking a Love for Learning!
+            </h1>
 
+            <h5 className="message">
+              Register for each learner separately. You can select multiple
+              classes for each learner.
+            </h5>
 
-          <div>
-            <ClassDetail
-              onSendData={sendDataHandler}
-              onSelectTimeSlot={continueButtonHandler}
-              onWantAnotherSlot = {continueHandler}
-              fullclass={fulldata}
-              // scroll={scrollPosition}
-            />
+            <div>
+              <ClassDetail
+                onSendData={sendDataHandler}
+                onSelectTimeSlot={continueButtonHandler}
+                onWantAnotherSlot={continueHandler}
+                fullclass={fulldata}
+                // scroll={scrollPosition}
+              />
+            </div>
+            <div className="register_button">
+              {isSelected ? (
+                <Button
+                  id="continue"
+                  variant="contained"
+                  color="primary"
+                  className="button"
+                  onClick={registerHandler}
+                >
+                  Continue
+                </Button>
+              ) : (
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className="button"
+                  disabled
+                  onClick={registerHandler}
+                >
+                  Continue
+                </Button>
+              )}
+            </div>
           </div>
-          <div className="register_button">
-            {isSelected ? (
-              <Button
-                id="continue"
-                variant="contained"
-                color="primary"
-                className="button"
-                onClick={registerHandler}
-              >
-                Continue
-              </Button>
+        )}
+        {register && !submitted && (
+          <DetailForm
+            onSubmit={submitHandler}
+            onBack={backPageHandler}
+            timedata={timedata}
+            anotherSlot={anotherSlot}
+          />
+        )}
+        {!register && submitted && (
+          <div className="submitpage">
+            {window.innerWidth > 599 ? (
+              <img alt="image" src={thank_you}></img>
             ) : (
-              <Button
-                variant="contained"
-                color="primary"
-                className="button"
-                disabled
-                onClick={registerHandler}
-              >
-                Continue
-              </Button>
+              <img alt="image" src={final_page}></img>
             )}
+            <p className="final_page_header">Welcome Aboard!</p>
+            <p className="final_page_description">
+              We've sent you all the class details via email.
+            </p>
+            <div className="submitpage_content">
+              <div className="add_learner">
+                <p>
+                  Want to add another child ? <br></br>
+                  Register again!
+                </p>
+                <button onClick={homePageHandler}>Add Learner</button>
+              </div>
+
+              <div className="quickcall">
+                <p>
+                  Got a moment? Let us know <br></br> how we're doing!
+                </p>
+                <button onClick={quickCallHandler}>Quick Call</button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="footer">
+          <div className="footer_content">
+            <p> Contact us at:</p>
+            <a href="mailto:support@coralacademy.com" id="coral_email">
+              support@coralacademy.com
+            </a>
+            <p>
+              {" "}
+              Please share in detail how we can improve your overall experience{" "}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSflsLJJuG74V1jjS29B-R1TVPbD74e9H5CkKVQMX6CzM87AZQ/viewform?usp=sf_link"
+                target="_blank"
+                id="coral_feedback_form"
+              >
+                here
+              </a>
+              .
+            </p>
+          </div>
+          <div className="about_img">
+            <img src={About_us} alt="About_US" />
           </div>
         </div>
-      )}
-      {register && !submitted && (
-        <DetailForm
-          onSubmit={submitHandler}
-          onBack={backPageHandler}
-          timedata={timedata}
-          anotherSlot={anotherSlot}
-        />
-      )}
-      {!register && submitted && (
-        <div className="submitpage">
-          <p>
-          Welcome aboard! We've sent you all the class details via email.
-          <br></br> Thanks for picking Coral Academy – let the learning adventure begin!
-          </p>
-          <button onClick={homePageHandler}>Add Learner!</button>
-        </div>
-      )}
-
-      <div className="footer">
-        <div className="footer_content">
-          <p> Contact us at:</p>
-          <a href="mailto:support@coralacademy.com" id="coral_email">support@coralacademy.com</a>
-          <p> Please share in detail how we can improve your overall experience <a href="https://docs.google.com/forms/d/e/1FAIpQLSflsLJJuG74V1jjS29B-R1TVPbD74e9H5CkKVQMX6CzM87AZQ/viewform?usp=sf_link" target="_blank" id="coral_feedback_form">here</a>.
-          </p>
-          
-        </div>
-        <div className="about_img">
-          <img src={About_us} alt="About_US" />
-        </div>
-      </div>
       </div>
     </CardWrapper>
   );

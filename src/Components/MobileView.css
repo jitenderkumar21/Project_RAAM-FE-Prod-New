@@ -203,30 +203,39 @@
     font-size: 50px;
   }
 
-  .submitpage {
-    display: block;
-    gap: 275px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .submitpage button {
-    height: 58px;
-    width: 220px;
-    font-size: 18px;
-    color: white;
-  }
-
-  .submitpage button:hover {
-    font-size: 22px; /* Font size on hover */
-    color: white; /* Text color on hover */
-    background-color: #de7247; /* Background color on hover */
-  }
-
-  .submitpage p {
-    font-size: 20px;
-    color: #de7247;
-    font-family: helvetica;
+  .submitpage_content { 
+    display: block; 
+    margin-bottom: 8px; 
+  } 
+   
+  .submitpage button:hover { 
+    font-size: 18px; /* Font size on hover */ 
+  } 
+  .add_learner { 
+    margin-bottom: 50px; 
+  } 
+   
+  .final_page_header { 
+    font-size: 24px; 
+    line-height: 0px; 
+    margin-top: 8%; 
+    font-weight: 700; 
+  } 
+   
+  .final_page_description { 
+    font-size: 13px; 
+    font-stretch: expanded; 
+    margin-bottom: 40px; 
+  } 
+   
+  .final_page_description p { 
+    color: grey; 
+  } 
+   
+ 
+  .submitpage p { 
+    color: black; 
+    font-family: Poppins; 
   }
 
   .subcard .description {

@@ -19,11 +19,12 @@ const DetailForm = (props) => {
       knowabout: "",
       additionalInfo: "",
       commPref: [],
+      comments: ""
     };
   }
   const [formData, setFormData] = useState(initial_state);
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const YOUR_GOOGLE_APPS_SCRIPT_URL = `https://backend-z29v.onrender.com/save/?timezone=${timezone}`;
+  const YOUR_GOOGLE_APPS_SCRIPT_URL = `https:///backen-z29v.onrender.com/save/?timezone=${timezone}`;
 
   const submitForm = async (data) => {
     const options = {
@@ -337,6 +338,16 @@ const DetailForm = (props) => {
             />
           </div>
         )}
+        <div className="form-group"> 
+          <label htmlFor="comments"> Drop us your questions or comments!</label> 
+          <input 
+            type="text" 
+            id="comments" 
+            name="comments" 
+            value={formData.comments} 
+            onChange={handleInputChange} 
+          /> 
+        </div>
 
         <div className="buttondisplay">
           <button id="submitId" type="submit">
