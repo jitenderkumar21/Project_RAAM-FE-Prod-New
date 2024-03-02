@@ -208,10 +208,7 @@
     margin-bottom: 8px; 
   } 
    
-  .submitpage button:hover { 
-    font-size: 18px; /* Font size on hover */ 
-    background-color: #0896c2;
-  } 
+  
   .add_learner { 
     margin-bottom: 50px; 
   } 
