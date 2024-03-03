@@ -9,6 +9,7 @@ import Coral_Academy from "../assets/Coral_Academy.png";
 import About_us from "../assets/About_us.png";
 import thank_you from "../assets/thank_you.png"; 
 import final_page from "../assets/final_page.png";
+import scrollToTop from "./utils/scrollToTop";
 
 const MainPage = () => {
   const [register, setRegister] = useState(false);
@@ -35,11 +36,14 @@ const MainPage = () => {
   };
   const registerHandler = () => {
     setRegister(true);
-    setScrollPosition(0);
+    scrollToTop();
+
   };
   const submitHandler = () => {
     setRegister(false);
     setSubmitted(true);
+    scrollToTop();
+
   };
 
   const sendDataHandler = (data, value) => {
@@ -50,7 +54,7 @@ const MainPage = () => {
 
   const backPageHandler = () => {
     setRegister(false);
-    setScrollPosition(1000);
+    scrollToTop();
   };
 
   const homePageHandler = () => {
