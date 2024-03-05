@@ -272,8 +272,8 @@ h4 {
   height: 30%; 
 } 
 .submitpage button { 
-  height: 40px; 
-  width: 150px; 
+  padding: 10px auto;
+  width: 150px;
   font-size: 18px; 
   background-color: #0897c3;
   color: white; 
