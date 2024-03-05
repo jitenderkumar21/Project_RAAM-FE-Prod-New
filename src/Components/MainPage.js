@@ -47,7 +47,6 @@ const MainPage = () => {
   };
 
   const sendDataHandler = (data, value) => {
-    // console.log(data, value, "kfkfkfkkdk");
     setTimedata(data);
     setAnotherSlot(value);
   };

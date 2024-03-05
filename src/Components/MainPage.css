@@ -16,6 +16,7 @@
   height: 25px;
   margin: 0px;
   padding: 0.75%;
+  background-color: #0897c3;
 }
 
 .card1 h1 {
@@ -293,8 +294,13 @@ h4 {
   font-size: 17px; 
 } 
  
+.quickcall button :hover {
+  background-color: #0897c3;
+}
+
 .submitpage button:hover { 
-  font-size: 17.5px; /* Font size on hover */ 
+  font-size: 17.5px; 
+  /* Font size on hover */ 
 } 
  
 .final_page_header { 
