@@ -32,7 +32,7 @@ const MainPage = () => {
     };
   }, []);
   const quickCallHandler = () => {
-    window.open("https://google.com", "_blank");
+    window.open("https://calendly.com/coral-academy/15min", "_blank");
   };
   const registerHandler = () => {
     setRegister(true);
@@ -196,7 +196,7 @@ const MainPage = () => {
             <div className="submitpage_content">
               <div className="add_learner">
                 <p>
-                  Want to add another child ? <br></br>
+                  Want to add another child? <br></br>
                   Register again!
                 </p>
                 <button onClick={homePageHandler}>Add Learner</button>
@@ -204,7 +204,7 @@ const MainPage = () => {
 
               <div className="quickcall">
                 <p>
-                  Got a moment? Let us know <br></br> how we're doing!
+                  Help us personalize your <br></br> child's learning!
                 </p>
                 <button onClick={quickCallHandler}>Quick Call</button>
               </div>
