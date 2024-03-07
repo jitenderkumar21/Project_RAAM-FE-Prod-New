@@ -1,6 +1,6 @@
 import './AgeSelection.css'
 const AgeFilterDropdown = ({ selected, onSelect }) => {
-    const options = [...Array(9).keys()].map((age) => age + 6)
+    const options = [...Array(13).keys()].map((age) => age + 4)
     return (
         <div className="dropdown-menu" aria-labelledby="ageFilterDropdown">
           {options.map(option => (
