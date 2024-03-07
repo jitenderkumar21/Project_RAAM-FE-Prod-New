@@ -311,6 +311,33 @@ const ClassDetail = (props) => {
 
       {isActive && (
         <>
+        {filteredData.filter(
+            (cls) => cls.class_tag?.toLowerCase() === "playlist"
+          ).length ? (
+            <div className="abc">
+              <p
+                className="tag"
+                style={{ backgroundColor: "rgba(175,88,174,255)" }}
+              >
+                Playlist
+              </p>
+              <p className="data">
+                Versatile classes that follow a theme
+              </p>
+            </div>
+          ):<></>}
+          <ClassCard
+            filteredData={filteredData.filter(
+              (cls) => cls.class_tag?.toLowerCase() === "playlist"
+            )}
+            newfulldata={newfulldata}
+            onToggle={toggleDescription}
+            selectedTimeslots={selectedTimeslots}
+            onSelect={handleTimeslotSelection}
+            moreslots={moreslots}
+            onTimeslotHandler={requiredTimeslotHandler}
+            expandedClassId={expandedClassId}
+          ></ClassCard>
           {filteredData.filter(
             (cls) => cls.class_tag?.toLowerCase() === "course"
           ).length ? (

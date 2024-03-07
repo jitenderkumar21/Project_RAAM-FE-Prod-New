@@ -5,6 +5,7 @@ import { Tooltip } from "@mui/material";
 
 const Timeslot = (props) => {
   // console.log(props.classid, props.datePassed, props.full, props.isPastClass)
+  const course_type_list = ['course', 'playlist']
   return (
     <>
       {(props.full || props.datePassed || props.isPastClass) && (
@@ -16,18 +17,19 @@ const Timeslot = (props) => {
             placement="top"
           >
           <label className="container" id="full">
-            {((props.tag === "course" && props.index === 0) ||
-              props.tag !== "course") && (
+            {((course_type_list.includes(props.tag) && props.index === 0) ||
+              !course_type_list.includes(props.tag)
+              ) && (
               <input
                 type="checkbox"
                 checked={props.isSelected}
-                disabled={props.tag === 'course' ? (props.isPastClass || props.full) : true}
+                disabled={course_type_list.includes(props.tag) ? (props.isPastClass || props.full) : true}
                 onChange={() => props.onSelect(props.classid, props.timeslot)}
               />
             )}
             <span className="light_text">{props.timeslot.timing}</span>
-            {((props.tag === "course" && props.index === 0) ||
-              props.tag !== "course") && <span className="checkmark" id= {props.timeslot.subClassId}></span>}
+            {((course_type_list.includes(props.tag) && props.index === 0) ||
+              !course_type_list.includes(props.tag)) && <span className="checkmark" id= {props.timeslot.subClassId}></span>}
 
             {(props.full && !props.isPastClass) &&<span className="Hack" id="hack_ultra_pro_max">
               Class Full
@@ -38,8 +40,8 @@ const Timeslot = (props) => {
 
       {!props.full && !props.datePassed && !props.isPastClass && (
         <label className="container">
-          {((props.tag === "course" && props.index === 0) ||
-            props.tag !== "course") && (
+          {((course_type_list.includes(props.tag) && props.index === 0) ||
+            !course_type_list.includes(props.tag)) && (
             <input
               type="checkbox"
               checked={props.isSelected}
@@ -47,8 +49,8 @@ const Timeslot = (props) => {
             />
           )}
           <span className="light_text">{props.timeslot.timing}</span>
-          {((props.tag === "course" && props.index === 0) ||
-            props.tag !== "course") && <span className="checkmark" id= {props.timeslot.subClassId}></span>}
+          {((course_type_list.includes(props.tag) && props.index === 0) ||
+            !course_type_list.includes(props.tag)) && <span className="checkmark" id= {props.timeslot.subClassId}></span>}
         </label>
       )}
     </>
