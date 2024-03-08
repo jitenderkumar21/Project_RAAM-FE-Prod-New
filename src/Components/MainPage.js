@@ -83,7 +83,7 @@ const MainPage = () => {
       console.log("shd");
       try {
         const response = await fetch(
-          "https://backend-z29v.onrender.com/classes/"
+          "https://coral-staging.onrender.coms/classes/"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
