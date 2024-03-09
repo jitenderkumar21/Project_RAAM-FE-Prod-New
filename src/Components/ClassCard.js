@@ -42,7 +42,7 @@ const ClassCard = (props) => {
                     }`}
                   >
                     <div className="dot"></div>
-                    {classes.class_tag}
+                    {( classes.class_tag.toLowerCase() === 'playlist-1' || classes.class_tag.toLowerCase() === 'playlist-2' ) ? 'Playlist' : classes.class_tag}
                   </p>
                   <p>
                     <img src={age} alt="ageIcon" className="icon" />

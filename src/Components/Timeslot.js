@@ -5,7 +5,7 @@ import { Tooltip } from "@mui/material";
 
 const Timeslot = (props) => {
   // console.log(props.classid, props.datePassed, props.full, props.isPastClass)
-  const course_type_list = ['course', 'playlist']
+  const course_type_list = ['course', 'playlist-1',"playlist-2"]
   return (
     <>
       {(props.full || props.datePassed || props.isPastClass) && (

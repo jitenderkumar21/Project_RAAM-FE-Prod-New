@@ -201,7 +201,7 @@ const ClassDetail = (props) => {
 
       const className = classInfo ? classInfo.title : "ClassName";
       const classTag = classInfo ? classInfo.class_tag : "onetime";
-      if (classTag?.toLowerCase() === "course" && classInfo) {
+      if ( (classTag?.toLowerCase() === "course" || classTag?.toLowerCase() === 'playlist-1' || classTag?.toLowerCase() === 'playlist-2' ) && classInfo) {
         timeslot = classInfo.timeslots;
       }
 
@@ -312,7 +312,7 @@ const ClassDetail = (props) => {
       {isActive && (
         <>
         {filteredData.filter(
-            (cls) => cls.class_tag?.toLowerCase() === "playlist"
+            (cls) => (cls.class_tag?.toLowerCase() === "playlist-1" || cls.class_tag?.toLowerCase() === "playlist-2")
           ).length ? (
             <div className="abc">
               <p
@@ -322,13 +322,13 @@ const ClassDetail = (props) => {
                 Playlist
               </p>
               <p className="data">
-                Versatile classes that follow a theme
+              Unwrap the joy in learning: 4 weeks, 4 handpicked topics and a new surprise every week!
               </p>
             </div>
           ):<></>}
           <ClassCard
             filteredData={filteredData.filter(
-              (cls) => cls.class_tag?.toLowerCase() === "playlist"
+              (cls) => ( cls.class_tag?.toLowerCase() === "playlist-1" || cls.class_tag?.toLowerCase() === "playlist-2")
             )}
             newfulldata={newfulldata}
             onToggle={toggleDescription}

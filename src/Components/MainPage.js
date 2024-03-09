@@ -20,6 +20,7 @@ const MainPage = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isSelected, setIsSelected] = useState(0);
 
+  console.log('timeData',timedata);
   useEffect(() => {
     const clearLocalStorageOnReload = () => {
       localStorage.clear();
@@ -83,7 +84,7 @@ const MainPage = () => {
       console.log("shd");
       try {
         const response = await fetch(
-          "https://coral-staging.onrender.coms/classes/"
+          "https://coral-staging.onrender.com/classes/"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
