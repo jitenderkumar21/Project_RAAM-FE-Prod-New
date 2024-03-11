@@ -383,6 +383,10 @@ h4 {
   background-color: rgba(249,98,115,255);
 }
 
+.background-tag3 {
+  background-color: #00b147;
+}
+
 .dot::before{
   content:'\2022';
   font-size: 50px;

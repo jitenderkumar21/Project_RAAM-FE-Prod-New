@@ -11,6 +11,9 @@ const ClassCard = (props) => {
   const backgroundColorMap = {
     ongoing: "background-tag1",
     onetime: "background-tag2",
+    'playlist-1': "background-tag3",
+    'playlist-2': "background-tag3",
+
   };
   return (
     <div>

@@ -200,14 +200,14 @@ const MainPage = () => {
                   Want to add another child? <br></br>
                   Register again!
                 </p>
-                <button onClick={homePageHandler}>Add Learner</button>
+                <button onClick={homePageHandler} id = "add_learner">Add Learner</button>
               </div>
 
               <div className="quickcall">
                 <p>
                   Help us personalize your <br></br> child's learning!
                 </p>
-                <button onClick={quickCallHandler}>Quick Call</button>
+                <button onClick={quickCallHandler} id = 'quick_call'>Quick Call</button>
               </div>
             </div>
           </div>
