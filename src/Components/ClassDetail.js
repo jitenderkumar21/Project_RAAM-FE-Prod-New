@@ -317,7 +317,7 @@ const ClassDetail = (props) => {
             <div className="abc">
               <p
                 className="tag"
-                style={{ backgroundColor: "rgba(175,88,174,255)" }}
+                style={{ backgroundColor: "#ede000" }}
               >
                 Playlist
               </p>
