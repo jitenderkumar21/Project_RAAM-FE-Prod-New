@@ -51,7 +51,7 @@ const DetailForm = (props) => {
     console.log(email);
     try {
       const response = await fetch(
-        `https://coral-staging.onrender.com/parent/info?email=${email}`
+        `https://backend-z29v.onrender.com/parent/info?email=${email}`
       );
       const jsonData = await response.json();
       console.log(jsonData);
