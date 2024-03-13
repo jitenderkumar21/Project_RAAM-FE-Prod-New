@@ -317,12 +317,12 @@ const ClassDetail = (props) => {
             <div className="abc">
               <p
                 className="tag"
-                style={{ backgroundColor: "#ede000" }}
+                style={{ backgroundColor: "#E875BA" }}
               >
                 Playlist
               </p>
               <p className="data">
-              Unwrap the joy in learning: 4 weeks, 4 handpicked topics and a new surprise every week!
+              Unwrap the joy in learning: 4 weeks, 4 handpicked topics, and a new surprise every week!
               </p>
             </div>
           ):<></>}
