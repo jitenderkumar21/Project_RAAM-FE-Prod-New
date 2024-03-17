@@ -47,6 +47,7 @@ const DetailForm = (props) => {
     }
   };
 
+  
   const fetchFormData = async (email) => {
     console.log(email);
     try {
