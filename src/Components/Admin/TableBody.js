@@ -37,7 +37,7 @@ export default function EnhancedTable(props) {
     console.log(page);
     try {
       const response = await fetch(
-        `https://coral-staging.onrender.com/cms/${props.tab}?pageNumber=${page + 1}${queryString}`
+        `https://coral-demo-backend.onrender.com/cms/${props.tab}?pageNumber=${page + 1}${queryString}`
       );
       const jsonData = await response.json();
       setRows(jsonData[props.tab]);
