@@ -2,17 +2,16 @@
 .custom-table{
     background-color: white !important;
 }
+
 .custom-table-header{
-   font-weight: bold !important;
-}
+    font-weight: bold !important;
+ }
 
 .custom-table-cell{
-    line-height: 0.75px !important;
+    line-height: 25px !important;
 
 }
-.custom-table-row{
-    height: 10px !important;
-}
+
 .btn {
    display: flex;
    justify-content: flex-end;

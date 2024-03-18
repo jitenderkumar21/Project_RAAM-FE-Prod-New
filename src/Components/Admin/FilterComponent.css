@@ -1,0 +1,51 @@
+/* Form.css */
+.form-type {
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    margin: 20px 0 10px 5px;
+  }
+  
+  .form-field {
+    margin-bottom: 5px;
+    font-family: "Manrope";
+    display: flex;
+    gap: 20px;
+    width: auto;
+  }
+
+  .form-field [type="text"]{
+    padding: 5px;
+    flex:1;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 23px;
+    margin-right: 20px;
+  }
+
+   .form-field select{
+    flex:1;
+    font-size: 16px;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 35px;
+    margin-right: 20px;
+  }
+
+
+  
+  .form-field h3 {
+    line-height: 12px;
+    font-weight: 100;
+  }
+
+  .form-type button {
+    margin-left: 40px;
+    padding: 0px 20px;
+    width: fit-content;
+    height: 35px;
+    margin-top: 4px;
+  }
