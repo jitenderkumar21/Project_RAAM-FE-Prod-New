@@ -1,9 +1,8 @@
-import { BrowserRouter as Router,Routes } from 'react-router-dom';
-import { Route } from 'react-router-dom';
+
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import LoginPage from './Components/Admin/LoginPage';
-import { useState, useEffect } from 'react';
-
 import MainPage from './Components/MainPage';
 import CmsReport from './Components/Admin/CmsReport';
 function App() {
@@ -14,14 +13,15 @@ function App() {
       setIsLoggedIn(true);
     }
   }, []);
-  const login = () => {
+  const handleLogin= () => {
+    localStorage.setItem('isLoggedIn', 'true');
     setIsLoggedIn(true);
   };
   return (
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/admin" element={isLoggedIn ? <CmsReport /> : <LoginPage login={login} />} />
+        <Route path="/admin" element={isLoggedIn ? <CmsReport /> : <LoginPage login={handleLogin} />} />
       </Routes>
     </Router>
     
