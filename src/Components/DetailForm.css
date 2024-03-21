@@ -69,7 +69,7 @@ label {
   margin-left: 3px;
 }
 
-input[type="text"],
+.form-group input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="number"]{
