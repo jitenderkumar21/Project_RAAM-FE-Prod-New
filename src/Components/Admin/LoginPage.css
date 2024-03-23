@@ -1,0 +1,50 @@
+.login-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-card {
+    background-color: white;
+    padding: 25px 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow */
+  }
+  
+  .login-card h2 {
+    margin-bottom: 25px;
+  }
+  .login-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    height:25px;
+  }
+
+  .login-card button {
+    padding: 15px 52px;
+    background-color: #0897c3; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .login-card button:hover {
+    background-color: #0897c3; /* Darker blue on hover */
+  } 
+  .btn-submit{
+    margin-left: 100px;
+  }
+  .navigate-link{
+    margin-top: 25px;
+    margin-left: 63%;
+  }
+  .error-text{
+    color: red;
+    margin-left:19% ;
+  }
