@@ -28,7 +28,7 @@ const LoginPage = ({ login }) => {
         <div className="login-container">
           <div className="overlay"></div>
           <div className="login-card">
-            <h2>Login</h2>
+            <h1>Login</h1>
             <form onSubmit={handleLogin}>
               <input type="text" placeholder="Username" className="login-input" value={username} onChange={(e) => setUsername(e.target.value)} />
               <input type="password" placeholder="Password" className="login-input" value={password} onChange={(e) => setPassword(e.target.value)} />
