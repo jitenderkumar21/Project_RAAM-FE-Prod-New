@@ -49,9 +49,9 @@ function CmsReport() {
       label: "Parent_Email",
     },
     {
-      id: "reminder_id",
+      id: "child_name",
       disablePadding: false,
-      label: "Reminder_ID",
+      label: "Child Name",
     },
   ];
   const EnrollmentheadCells = [
