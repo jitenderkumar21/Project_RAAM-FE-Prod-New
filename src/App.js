@@ -20,8 +20,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/admin" element={isLoggedIn ? <CmsReport /> : <LoginPage login={handleLogin} />} />
+        <Route exact path="/" element={<MainPage />} />
+        <Route exact path="/admin/report" element={<CmsReport />} />
       </Routes>
     </Router>
     

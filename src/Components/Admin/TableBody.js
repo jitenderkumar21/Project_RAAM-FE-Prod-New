@@ -19,6 +19,7 @@ export default function EnhancedTable(props) {
   const [page, setPage] = React.useState(0);
   const [rows, setRows] = React.useState([]);
   const [total, setTotal] = React.useState(0);
+  const [unenrolList, setUnenrolList] = React.useState([]);
 
   const headCells = props.headCells;
   const rowsPerPage = 10;
@@ -31,13 +32,15 @@ export default function EnhancedTable(props) {
     }
   });
 
-  console.log(queryString)
+  console.log(queryString);
 
   const fetchPageData = async (page) => {
     console.log(page);
     try {
       const response = await fetch(
-        `https://coral-demo-backend.onrender.com/cms/${props.tab}?pageNumber=${page + 1}${queryString}`
+        `https://coral-demo-backend.onrender.com/cms/${props.tab}?pageNumber=${
+          page + 1
+        }${queryString}`
       );
       const jsonData = await response.json();
       setRows(jsonData[props.tab]);
@@ -97,6 +100,27 @@ export default function EnhancedTable(props) {
     [order, orderBy, rows]
   );
 
+  const unenrollHandler = (newObj) => {
+    const index = unenrolList.findIndex((obj) => obj.id === newObj.id);
+    if (index === -1) {
+      setUnenrolList((prevUnenroll) => [...prevUnenroll, newObj]);
+    } else {
+      setUnenrolList((prevUnenroll) =>
+        prevUnenroll.filter((obj) => obj.id !== newObj.id)
+      );
+    }
+  };
+
+
+  if (props.tab === "enrollments") {
+    console.log(unenrolList, "list of unenrollments in the table body ");
+
+    props.OnClickUneroll(unenrolList);
+  }
+
+  useEffect(() => {
+    setUnenrolList([]);
+  }, [props.tab]);
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -117,6 +141,7 @@ export default function EnhancedTable(props) {
               onRequestSort={handleRequestSort}
               rowCount={rows.length}
               headCells={headCells}
+              tab={props.tab}
             />
             <TableBody>
               {visibleRows?.map((row, index) => {
@@ -134,7 +159,20 @@ export default function EnhancedTable(props) {
                   >
                     {headCells?.map((obj) => (
                       <TableCell align="left" className="custom-table-cell">
-                        {row[obj.id] ? row[obj.id] : "-"}
+                        {obj.id == "unenroll" ? (
+                          <input
+                            type="checkbox"
+                            checked={unenrolList.some(
+                              (unenroll) => unenroll.id === row.id
+                            )}
+                            disabled = {row.is_enrolled === "FALSE" ? true : false}
+                            onClick={() => unenrollHandler(row)}
+                          ></input>
+                        ) : row[obj.id] ? (
+                          row[obj.id]
+                        ) : (
+                          "-"
+                        )}
                       </TableCell>
                     ))}
                   </TableRow>

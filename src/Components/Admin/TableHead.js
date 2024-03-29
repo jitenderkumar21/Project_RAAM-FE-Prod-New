@@ -29,7 +29,7 @@ export function EnhancedTableToolbar() {
   );
 }
 export default function EnhancedTableHead(props) {
-  const { order, orderBy, headCells, onRequestSort } = props;
+  const { order, orderBy, headCells, onRequestSort, tab } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
@@ -58,6 +58,7 @@ export default function EnhancedTableHead(props) {
             </TableSortLabel>
           </TableCell>
         ))}
+        {/* {tab === "enrollments" && <Ta/bleCell> Unenroll</TableCell>} */}
       </TableRow>
     </TableHead>
   );
