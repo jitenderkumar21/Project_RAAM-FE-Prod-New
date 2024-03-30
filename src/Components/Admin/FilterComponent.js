@@ -73,10 +73,10 @@ const FilterComponent = (props) => {
               <option value=""> Select an option</option>
               <option value="Save Enrollments">Save Enrollments</option>
               <option value="Parent Confimation">Parent Confimation</option>
-              <option value="Parent Calender Block">Parent Confimation</option>
+              <option value="Parent Calender Block">Parent Calender Block</option>
               <option value="Parent Reminder">Parent Reminder</option>
               <option value="Coral Confimation">Coral Confimation</option>
-              <option value="Teacher Reminder">Coral Confimation</option>
+              <option value="Teacher Reminder">Teacher Reminder</option>
               <option value="Teacher Calender Block">
                 Teacher Calender Block
               </option>
