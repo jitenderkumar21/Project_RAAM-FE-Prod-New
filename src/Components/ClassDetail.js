@@ -29,7 +29,7 @@ const ClassDetail = (props) => {
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       try {
         const response = await fetch(
-          `https://coral-demo-backend.onrender.com/info?timezone=${timezone}`
+          `${process.env.REACT_APP_BACKENDURL}info?timezone=${timezone}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

@@ -10,7 +10,7 @@ const StudentUnenroll = async (data) => {
     };
 
     try {
-      const response = await fetch( `https://coral-demo-backend.onrender.com/cms/unenroll/`
+      const response = await fetch(`${process.env.REACT_APP_BACKENDURL}cms/unenroll/`
       , options);
       if (response.ok) {
         console.log("unenrolled registration successfully");

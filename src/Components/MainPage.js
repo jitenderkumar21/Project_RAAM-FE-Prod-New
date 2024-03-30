@@ -80,7 +80,7 @@ const MainPage = () => {
       // setLoading(true);
       try {
         const response = await fetch(
-          "https://coral-demo-backend.onrender.com/classes/"
+          `${process.env.REACT_APP_BACKENDURL}classes/`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

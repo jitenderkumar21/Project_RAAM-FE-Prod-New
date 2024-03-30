@@ -38,7 +38,7 @@ export default function EnhancedTable(props) {
   const fetchPageData = async (page) => {
     try {
       const response = await fetch(
-        `https://coral-demo-backend.onrender.com/cms/${props.tab}?pageNumber=${
+        `${process.env.REACT_APP_BACKENDURL}cms/${props.tab}?pageNumber=${
           page + 1
         }${queryString}`
       );
