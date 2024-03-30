@@ -38,24 +38,22 @@ const DetailForm = (props) => {
     try {
       const response = await fetch(YOUR_GOOGLE_APPS_SCRIPT_URL, options);
       if (response.ok) {
-        console.log("Data sent successfully");
+        // console.log("Data sent successfully");
       } else {
-        console.error("Failed to send data to Google Sheet");
+        // console.error("Failed to send data to Google Sheet");
       }
     } catch (error) {
-      console.error("Error:", error);
+      // console.error("Error:", error);
     }
   };
 
   
   const fetchFormData = async (email) => {
-    console.log(email);
     try {
       const response = await fetch(
         `https://coral-demo-backend.onrender.com/parent/info?email=${email}`
       );
       const jsonData = await response.json();
-      console.log(jsonData);
       if ("email" in jsonData) {
         setFormData(jsonData);
       }
@@ -132,7 +130,6 @@ const DetailForm = (props) => {
         classDetails: props.timedata,
         want_another_slot: props.anotherSlot,
       };
-      console.log(new_data);
       submitForm(new_data);
       props.onSubmit();
       localStorage.clear();
