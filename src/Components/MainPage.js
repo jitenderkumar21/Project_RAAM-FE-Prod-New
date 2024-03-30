@@ -7,7 +7,7 @@ import ClassDetail from "./ClassDetail";
 import DetailForm from "./DetailForm";
 import Coral_Academy from "../assets/Coral_Academy.png";
 import About_us from "../assets/About_us.png";
-import thank_you from "../assets/thank_you.png"; 
+import thank_you from "../assets/thank_you.png";
 import final_page from "../assets/final_page.png";
 import scrollToTop from "./utils/scrollToTop";
 
@@ -32,18 +32,16 @@ const MainPage = () => {
     };
   }, []);
   const quickCallHandler = () => {
-    window.open("https://calendly.com/coral-academy/15min", "_blank");
+    window.open("https://tinyurl.com/CoralAcademy-15min", "_blank");
   };
   const registerHandler = () => {
     setRegister(true);
     scrollToTop();
-
   };
   const submitHandler = () => {
     setRegister(false);
     setSubmitted(true);
     scrollToTop();
-
   };
 
   const sendDataHandler = (data, value) => {
@@ -197,14 +195,18 @@ const MainPage = () => {
                   Want to add another child? <br></br>
                   Register again!
                 </p>
-                <button onClick={homePageHandler} id = "add_learner">Add Learner</button>
+                <button onClick={homePageHandler} id="add_learner">
+                  Add Learner
+                </button>
               </div>
 
               <div className="quickcall">
                 <p>
                   Help us personalize your <br></br> child's learning!
                 </p>
-                <button onClick={quickCallHandler} id = 'quick_call'>Quick Call</button>
+                <button onClick={quickCallHandler} id="quick_call">
+                  Quick Call
+                </button>
               </div>
             </div>
           </div>
