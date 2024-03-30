@@ -7,6 +7,7 @@ function CmsReport() {
   const [activeTab, setActiveTab] = useState("tab1");
   const [filtervalue, setFilterValue] = useState({ tab1: {}, tab2: {} });
   const [tobeUnenrolled, setTobeUnenrolled] = useState([]);
+  const [reload, setReload] = useState();
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -94,7 +95,7 @@ function CmsReport() {
       id: "is_enrolled",
       disablePadding: false,
       label: "Is Enrolled",
-    }
+    },
   ];
 
   const filterDataHandler = (tab, filterArr) => {
@@ -104,8 +105,13 @@ function CmsReport() {
     }));
   };
   const unenrolledListhandler = (obj_list) => {
-    console.log(obj_list, "in the cms report")
-    setTobeUnenrolled(obj_list)
+    console.log(obj_list, "in the cms report");
+    setTobeUnenrolled(obj_list);
+  };
+
+  const clickUnEnrollHandler = (reload) => {
+    console.log(reload, "in the cms report");
+    setReload(reload);
   };
 
   return (
@@ -129,13 +135,24 @@ function CmsReport() {
         <FilterComponent
           activeTab={activeTab}
           onFilterData={filterDataHandler}
-          tobeunenrolled = {tobeUnenrolled}
+          tobeunenrolled={tobeUnenrolled}
+          onClickUnEnroll={clickUnEnrollHandler}
         />
         {activeTab === "tab1" && (
-          <EnhancedTable headCells={ReportheadCells} tab="report" filtervalue={filtervalue[activeTab]} />
+          <EnhancedTable
+            headCells={ReportheadCells}
+            tab="report"
+            filtervalue={filtervalue[activeTab]}
+          />
         )}
         {activeTab === "tab2" && (
-          <EnhancedTable headCells={EnrollmentheadCells} tab="enrollments" filtervalue={filtervalue[activeTab]} OnClickUneroll={unenrolledListhandler} />
+          <EnhancedTable
+            headCells={EnrollmentheadCells}
+            tab="enrollments"
+            filtervalue={filtervalue[activeTab]}
+            OnClickUneroll={unenrolledListhandler}
+            reload={reload}
+          />
         )}
       </div>
     </div>

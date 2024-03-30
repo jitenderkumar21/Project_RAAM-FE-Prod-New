@@ -1,4 +1,5 @@
 
+import { toast } from 'react-toastify';
 const StudentUnenroll = async (data) => {
     const options = {
       method: "POST",
@@ -13,6 +14,8 @@ const StudentUnenroll = async (data) => {
       , options);
       if (response.ok) {
         console.log("unenrolled registration successfully");
+        toast.success('Registration unenrolled successfully');
+
       } else {
         console.error("Failed to send data to Google Sheet");
       }

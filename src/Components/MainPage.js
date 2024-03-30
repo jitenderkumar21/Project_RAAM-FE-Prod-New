@@ -20,7 +20,6 @@ const MainPage = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isSelected, setIsSelected] = useState(0);
 
-  console.log('timeData',timedata);
   useEffect(() => {
     const clearLocalStorageOnReload = () => {
       localStorage.clear();
@@ -81,7 +80,6 @@ const MainPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       // setLoading(true);
-      console.log("shd");
       try {
         const response = await fetch(
           "https://coral-demo-backend.onrender.com/classes/"
@@ -93,7 +91,6 @@ const MainPage = () => {
         setFullData(jsonData);
         // setLoading(false);
       } catch (err) {
-        console.log("Error");
         // setLoading(false);
       }
     };

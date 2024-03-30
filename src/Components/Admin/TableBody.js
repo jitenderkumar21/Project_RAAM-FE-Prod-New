@@ -11,6 +11,7 @@ import Paper from "@mui/material/Paper";
 import "./TableBody.css";
 import EnhancedTableHead from "./TableHead";
 import { getComparator, stableSort } from "./utils";
+import StudentUnenroll from "../services/api";
 
 export default function EnhancedTable(props) {
   const [order, setOrder] = React.useState("asc");
@@ -35,7 +36,6 @@ export default function EnhancedTable(props) {
   console.log(queryString);
 
   const fetchPageData = async (page) => {
-    console.log(page);
     try {
       const response = await fetch(
         `https://coral-demo-backend.onrender.com/cms/${props.tab}?pageNumber=${
@@ -51,8 +51,12 @@ export default function EnhancedTable(props) {
   };
 
   useEffect(() => {
+    setPage(0);
+  }, [queryString, props.reload]);
+
+  useEffect(() => {
     fetchPageData(page);
-  }, [queryString]);
+  }, [queryString, props.reload]);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -111,9 +115,7 @@ export default function EnhancedTable(props) {
     }
   };
 
-
   if (props.tab === "enrollments") {
-    console.log(unenrolList, "list of unenrollments in the table body ");
 
     props.OnClickUneroll(unenrolList);
   }
@@ -165,7 +167,9 @@ export default function EnhancedTable(props) {
                             checked={unenrolList.some(
                               (unenroll) => unenroll.id === row.id
                             )}
-                            disabled = {row.is_enrolled === "FALSE" ? true : false}
+                            disabled={
+                              row.is_enrolled === "FALSE" ? true : false
+                            }
                             onClick={() => unenrollHandler(row)}
                           ></input>
                         ) : row[obj.id] ? (

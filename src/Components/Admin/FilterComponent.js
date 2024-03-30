@@ -3,13 +3,12 @@ import { useState } from "react";
 import "./FilterComponent.css";
 import StudentUnenroll from "../services/api";
 
-
 const FilterComponent = (props) => {
   const [formData, setFormData] = useState({
     tab1: { classId: "", channel: "", type: "", status: "" },
     tab2: { classId: "" },
   });
-  
+  const [reload, setReload] = useState(false);
 
   const handleInputChange = (tab, field, value) => {
     setFormData((prevState) => ({
@@ -25,9 +24,16 @@ const FilterComponent = (props) => {
     event.preventDefault();
     props.onFilterData(props.activeTab, formData[props.activeTab]);
   };
+
   const unenrollHandler = () => {
-    console.log(props.tobeunenrolled, "in the filter component")
-    StudentUnenroll(props.tobeunenrolled);
+    setReload(!reload);
+    StudentUnenroll(props.tobeunenrolled)
+      .then((response) => {
+        props.onClickUnEnroll(reload);
+      })
+      .catch((error) => {
+        console.error("Error occurred during unenrollment:", error);
+      });
   };
 
   return (
@@ -106,7 +112,9 @@ const FilterComponent = (props) => {
         <button type="submit">Apply Filters</button>
       </form>
       {props.activeTab === "tab2" && (
-        <button onClick={unenrollHandler} className="unenroll-btn">UnEnroll</button>
+        <button onClick={unenrollHandler} className="unenroll-btn">
+          UnEnroll
+        </button>
       )}
     </div>
   );
