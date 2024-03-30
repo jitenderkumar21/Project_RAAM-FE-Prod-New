@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -23,8 +22,8 @@ function App() {
     <Router>
       <ToastContainer />
       <Routes>
-        <Route exact path="/" element={<MainPage />} />
-        <Route exact path="/admin/report" element={<CmsReport />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path='/admin' element={isLoggedIn ? <CmsReport /> : <LoginPage login={handleLogin} />} />
       </Routes>
     </Router>
     
