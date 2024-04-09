@@ -97,7 +97,6 @@ const ClassCard = (props) => {
                       ""
                     )
                   )}
-                  {/* {window.innerWidth >599 ? "" :<p className="strip">Classes</p>} */}
                 </div>
               </div>
 

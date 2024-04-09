@@ -115,7 +115,12 @@ const ClassDetail = (props) => {
     }
   };
 
-  const handleTimeslotSelection = (classid, timeslotObj) => {
+  const handleTimeslotSelection = (classid, timeslotObj, isfull) => {
+    if (isfull){
+      timeslotObj["isWaitlist"] = true
+    } else {
+      timeslotObj["isWaitlist"] = false
+    }
     setSelectedTimeslots((prevSelectedTimeSlots) => {
       const updatedSelection = { ...prevSelectedTimeSlots };
       if (updatedSelection[classid]) {
@@ -204,6 +209,9 @@ const ClassDetail = (props) => {
       if ( (classTag?.toLowerCase() === "course" || classTag?.toLowerCase() === 'playlist-1' || classTag?.toLowerCase() === 'playlist-2' ) && classInfo) {
         timeslot = classInfo.timeslots;
       }
+
+
+
 
       return {
         classid,

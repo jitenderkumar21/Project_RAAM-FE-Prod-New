@@ -47,6 +47,7 @@ const MainPage = () => {
   const sendDataHandler = (data, value) => {
     setTimedata(data);
     setAnotherSlot(value);
+    console.log(data, "timedata")
   };
 
   const backPageHandler = () => {
