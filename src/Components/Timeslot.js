@@ -16,20 +16,24 @@ const Timeslot = (props) => {
               checked={props.isSelected}
               disabled={
                 course_type_list.includes(props.tag)
-                  ? props.isPastClass 
-                  : props.full 
+                  ? props.isPastClass
+                  : props.full
                   ? false
                   : true
               }
-              onChange={() => props.onSelect(props.classid, props.timeslot, props.full)}
+              onChange={() =>
+                props.onSelect(props.classid, props.timeslot, props.full)
+              }
             />
           )}
           <span className="light_text">{props.timeslot.timing}</span>
-          {props.full && <p> Class Full! Join the waitlist </p>}
 
           {((course_type_list.includes(props.tag) && props.index === 0) ||
             !course_type_list.includes(props.tag)) && (
-            <span className="checkmark" id={props.timeslot.subClassId}></span>
+            <>
+              <span className="checkmark" id={props.timeslot.subClassId}></span>
+              {props.full && <p> Class Full! Join the waitlist </p>}
+            </>
           )}
         </label>
       )}
