@@ -16,7 +16,7 @@ const ClassDetail = (props) => {
   const [value, setValue] = useState(want_more_state);
   const buttonRef = useRef(null);
 
-   const handleWantnewslot = (e) => {
+  const handleWantnewslot = (e) => {
     setValue(e.target.value);
   };
 
@@ -66,11 +66,11 @@ const ClassDetail = (props) => {
 
     for (const key in initial_state) {
       const value = initial_state[key];
-      console.log(typeof(value), value)
-      if (typeof(value) !== "object"){
-        localStorage.clear()
-        initial_state = transformedClasses
-      } 
+      console.log(typeof value, value);
+      if (typeof value !== "object") {
+        localStorage.clear();
+        initial_state = transformedClasses;
+      }
     }
   } else {
     initial_state = transformedClasses;
@@ -116,10 +116,10 @@ const ClassDetail = (props) => {
   };
 
   const handleTimeslotSelection = (classid, timeslotObj, isfull) => {
-    if (isfull){
-      timeslotObj["isWaitlist"] = true
+    if (isfull) {
+      timeslotObj["isWaitlist"] = true;
     } else {
-      timeslotObj["isWaitlist"] = false
+      timeslotObj["isWaitlist"] = false;
     }
     setSelectedTimeslots((prevSelectedTimeSlots) => {
       const updatedSelection = { ...prevSelectedTimeSlots };
@@ -190,7 +190,6 @@ const ClassDetail = (props) => {
 
   useEffect(() => {
     const resultArray = Object.keys(selectedTimeslots).map((classid) => {
-      // console.log(selectedTimeslots, "in the send data funtuon");
       let timeslot = selectedTimeslots[classid];
       if (timeslot === "Want another slot") {
         timeslot = moreslots[classid];
@@ -203,16 +202,23 @@ const ClassDetail = (props) => {
         final_data = JSON.parse(new_data);
         classInfo = final_data.find((classInfo) => classInfo.id === classid);
       }
-
       const className = classInfo ? classInfo.title : "ClassName";
       const classTag = classInfo ? classInfo.class_tag : "onetime";
-      if ( (classTag?.toLowerCase() === "course" || classTag?.toLowerCase() === 'playlist-1' || classTag?.toLowerCase() === 'playlist-2' ) && classInfo) {
+
+      if (
+        (classTag?.toLowerCase() === "course" ||
+          classTag?.toLowerCase() === "playlist-1" ||
+          classTag?.toLowerCase() === "playlist-2") &&
+        classInfo
+      ) {
+        const waitlist = timeslot.isWaitlist ? true : false;
+        console.log(timeslot);
+        classInfo.timeslots = classInfo.timeslots.map((obj) => {
+          return { ...obj, isWaitlist: waitlist };
+        });
+        console.log(classInfo.timeslots, "qsjdijbij");
         timeslot = classInfo.timeslots;
       }
-
-
-
-
       return {
         classid,
         className,
@@ -221,12 +227,9 @@ const ClassDetail = (props) => {
       };
     });
 
-    // const newArray = resultArray.map((obj) => obj[className] = data.find[cla])
-
     props.onSendData(resultArray, value);
-    // console.log(resultArray, "selcted");
     props.onSelectTimeSlot(Object.keys(selectedTimeslots).length);
-    props.onWantAnotherSlot(value)
+    props.onWantAnotherSlot(value);
   }, [selectedTimeslots, moreslots, value]);
 
   const requiredTimeslotHandler = (classid, event) => {
@@ -319,24 +322,28 @@ const ClassDetail = (props) => {
 
       {isActive && (
         <>
-        {filteredData.filter(
-            (cls) => (cls.class_tag?.toLowerCase() === "playlist-1" || cls.class_tag?.toLowerCase() === "playlist-2")
+          {filteredData.filter(
+            (cls) =>
+              cls.class_tag?.toLowerCase() === "playlist-1" ||
+              cls.class_tag?.toLowerCase() === "playlist-2"
           ).length ? (
             <div className="abc">
-              <p
-                className="tag"
-                style={{ backgroundColor: "#E875BA" }}
-              >
+              <p className="tag" style={{ backgroundColor: "#E875BA" }}>
                 Playlist
               </p>
               <p className="data">
-              Unwrap the joy in learning: 4 weeks, 4 handpicked topics, and a new surprise every week!
+                Unwrap the joy in learning: 4 weeks, 4 handpicked topics, and a
+                new surprise every week!
               </p>
             </div>
-          ):<></>}
+          ) : (
+            <></>
+          )}
           <ClassCard
             filteredData={filteredData.filter(
-              (cls) => ( cls.class_tag?.toLowerCase() === "playlist-1" || cls.class_tag?.toLowerCase() === "playlist-2")
+              (cls) =>
+                cls.class_tag?.toLowerCase() === "playlist-1" ||
+                cls.class_tag?.toLowerCase() === "playlist-2"
             )}
             newfulldata={newfulldata}
             onToggle={toggleDescription}
@@ -357,7 +364,9 @@ const ClassDetail = (props) => {
                 course, as each class builds on the last one.
               </p>
             </div>
-          ):<></>}
+          ) : (
+            <></>
+          )}
           <ClassCard
             filteredData={filteredData.filter(
               (cls) => cls.class_tag?.toLowerCase() === "course"
@@ -371,7 +380,6 @@ const ClassDetail = (props) => {
             expandedClassId={expandedClassId}
           ></ClassCard>
 
-          
           {filteredData.filter(
             (cls) => cls.class_tag?.toLowerCase() === "ongoing"
           ).length ? (
@@ -388,7 +396,9 @@ const ClassDetail = (props) => {
                 learners to join at any time.
               </p>
             </div>
-          ):<></>}
+          ) : (
+            <></>
+          )}
           <ClassCard
             filteredData={filteredData.filter(
               (cls) => cls.class_tag?.toLowerCase() === "ongoing"
@@ -401,7 +411,6 @@ const ClassDetail = (props) => {
             onTimeslotHandler={requiredTimeslotHandler}
             expandedClassId={expandedClassId}
           ></ClassCard>
-
 
           {filteredData.filter(
             (cls) => cls.class_tag?.toLowerCase() === "onetime"
@@ -418,7 +427,9 @@ const ClassDetail = (props) => {
                 session.
               </p>
             </div>
-          ):<></>}
+          ) : (
+            <></>
+          )}
           <ClassCard
             filteredData={filteredData.filter(
               (cls) => cls.class_tag?.toLowerCase() === "onetime"
@@ -455,7 +466,8 @@ const ClassDetail = (props) => {
           id="want_new_slot"
         ></textarea>
         <p>
-          Don't see what you're looking for? Request for preferred classes & time slots here
+          Don't see what you're looking for? Request for preferred classes &
+          time slots here
         </p>
       </div>
     </div>
