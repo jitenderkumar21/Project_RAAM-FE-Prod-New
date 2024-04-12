@@ -44,7 +44,7 @@ const ClassDetail = (props) => {
     fetchClassData();
   }, []);
 
-  // console.log(data,"after api call")
+ 
 
   const transformedClasses = data.reduce((result, classItem) => {
     result[classItem.id] = [];
@@ -66,7 +66,6 @@ const ClassDetail = (props) => {
 
     for (const key in initial_state) {
       const value = initial_state[key];
-      console.log(typeof value, value);
       if (typeof value !== "object") {
         localStorage.clear();
         initial_state = transformedClasses;
@@ -116,6 +115,7 @@ const ClassDetail = (props) => {
   };
 
   const handleTimeslotSelection = (classid, timeslotObj, isfull) => {
+    console.log(isfull, "isfu;;")
     if (isfull) {
       timeslotObj["isWaitlist"] = true;
     } else {
@@ -211,8 +211,9 @@ const ClassDetail = (props) => {
           classTag?.toLowerCase() === "playlist-2") &&
         classInfo
       ) {
-        const waitlist = timeslot.isWaitlist ? true : false;
+        const waitlist = timeslot[0].isWaitlist;
         console.log(timeslot);
+        console.log(waitlist, "waitlist")
         classInfo.timeslots = classInfo.timeslots.map((obj) => {
           return { ...obj, isWaitlist: waitlist };
         });

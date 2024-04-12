@@ -6,15 +6,16 @@ import teacher from "../assets/teacher.png";
 import dropIcon from "../assets/dropdown.png";
 import closeDropDown from "../assets/closeDropdown.png";
 import Timeslot from "./Timeslot";
+import "./Timeslot.css";
 
 const ClassCard = (props) => {
   const backgroundColorMap = {
     ongoing: "background-tag1",
     onetime: "background-tag2",
-    'playlist-1': "background-tag3",
-    'playlist-2': "background-tag3",
-
+    "playlist-1": "background-tag3",
+    "playlist-2": "background-tag3",
   };
+  const course_type_list = ["course", "playlist-1", "playlist-2"];
   return (
     <div>
       <div>
@@ -45,7 +46,10 @@ const ClassCard = (props) => {
                     }`}
                   >
                     <div className="dot"></div>
-                    {( classes.class_tag.toLowerCase() === 'playlist-1' || classes.class_tag.toLowerCase() === 'playlist-2' ) ? 'Playlist' : classes.class_tag}
+                    {classes.class_tag.toLowerCase() === "playlist-1" ||
+                    classes.class_tag.toLowerCase() === "playlist-2"
+                      ? "Playlist"
+                      : classes.class_tag}
                   </p>
                   <p>
                     <img src={age} alt="ageIcon" className="icon" />
@@ -84,9 +88,11 @@ const ClassCard = (props) => {
                               )
                             : false
                         }
-                        isSelected={ 
-                          props.selectedTimeslots[classes.id] && (typeof(props.selectedTimeslots[classes.id]) === 'object')
-                            ?  props.selectedTimeslots[classes.id].some(
+                        isSelected={
+                          props.selectedTimeslots[classes.id] &&
+                          typeof props.selectedTimeslots[classes.id] ===
+                            "object"
+                            ? props.selectedTimeslots[classes.id].some(
                                 (obj) => obj.subClassId === timeslot.subClassId
                               )
                             : false
@@ -96,6 +102,28 @@ const ClassCard = (props) => {
                     ) : (
                       ""
                     )
+                  )}
+
+                  {(props.newfulldata[classes.id]
+                    ? props.newfulldata[classes.id].includes(
+                        classes.timeslots[0].subClassId
+                      )
+                    : false) &&
+                  course_type_list.includes(classes.class_tag.toLowerCase()) ? (
+                    <div className="course-class-full">
+                      <input
+                        type="checkbox"
+                        className="checkbox-harsh"
+                        checked={props.isSelected}
+                        onChange={() =>
+                          props.onSelect(classes.id, classes.timeslots[0], true)
+                        }
+                      />
+                      
+                      <span className="class-full"> Class Full - Join the waitlist </span>
+                    </div>
+                  ) : (
+                    ""
                   )}
                 </div>
               </div>

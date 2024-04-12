@@ -16,6 +16,33 @@
   color:#fff
 }
 
+.checkbox-harsh {
+ 
+    height: 20px;
+    width: 20px;
+    border: 1px solid black !important;
+    border-radius: 0% !important;
+    background-color: #eee !important;
+}
+
+.checkbox-harsh:checked {
+  background-color: #2196f3 !important;
+}
+
+.class-full {
+  font-size: 14.5px !important;
+  display: inline;
+  font-weight: 500;
+  color: #07779A;
+  margin-left: 10px;
+}
+
+.course-class-full {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 5px;
+}
 
 #full {
   color: #928e8e;

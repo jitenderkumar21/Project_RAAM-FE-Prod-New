@@ -28,12 +28,16 @@ const Timeslot = (props) => {
           )}
           <span className="light_text">{props.timeslot.timing}</span>
 
-          {((course_type_list.includes(props.tag) && props.index === 0) ||
-            !course_type_list.includes(props.tag)) && (
+          {!course_type_list.includes(props.tag) && (
             <>
               <span className="checkmark" id={props.timeslot.subClassId}></span>
-              {props.full && <p> Class Full! Join the waitlist </p>}
+              {props.full && (
+                <p className="class-full"> Class Full - Join the waitlist </p>
+              )}
             </>
+          )}
+          {(course_type_list.includes(props.tag) && props.index === 0 && !props.full) && (
+            <span className="checkmark" id={props.timeslot.subClassId}></span>
           )}
         </label>
       )}
