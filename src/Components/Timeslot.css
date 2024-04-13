@@ -4,7 +4,7 @@
   padding-left: 30px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 14.5px;
+  font-size: 16px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -12,36 +12,49 @@
   color: #0c0c0c;
   font-weight: lighter;
 }
-.Hack{
-  color:#fff
+.Hack {
+  color: #fff;
 }
 
 .checkbox-harsh {
- 
-    height: 20px;
-    width: 20px;
-    border: 1px solid black !important;
-    border-radius: 0% !important;
-    background-color: #eee !important;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+  border-radius: 0%;
+  background-color: #eee;
 }
 
 .checkbox-harsh:checked {
-  background-color: #2196f3 !important;
+  background-color: #2196f3;
 }
 
+.checkbox-harsh:checked::before {
+  content: '\2713';
+  display: block;
+  text-align: center;
+  line-height: 20px;
+  color: white; /* Set color of the checkmark */
+}
+
+
+
+
 .class-full {
-  font-size: 14.5px !important;
+  font-size: 15px !important;
   display: inline;
   font-weight: 500;
-  color: #07779A;
-  margin-left: 10px;
+  color: #07779a;
+  margin-left: 4px;
 }
 
 .course-class-full {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  column-gap: 5px;
+  column-gap: 2px;
 }
 
 #full {
@@ -51,7 +64,7 @@
   padding-left: 30px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 14.5px;
+  font-size: 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -97,12 +110,11 @@
   border: 1px solid black;
 }
 
-/* On mouse-over, add a grey background color */
+
 .container:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
-/* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
   background-color: #2196f3;
 }

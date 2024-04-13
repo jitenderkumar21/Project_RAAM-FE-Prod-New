@@ -177,7 +177,7 @@
   border-radius: 20px;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 93%;
   height: min-content;
   margin: 10px auto 15px auto;
   transition: transform 0.3s;
@@ -208,7 +208,7 @@
   border-radius: 20px;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 93%;
   height: min-content;
   margin: 10px auto 15px auto;
   transition: transform 0.3s;
@@ -354,8 +354,8 @@ h4 {
 }
 .class_card2 {
   text-align: left;
-  width: 55%;
-  margin: 20px 20px;
+  width: 45%;
+  margin: 20px 10px;
   font-weight: 600;
 }
 .class_card2 h3 {
@@ -394,8 +394,8 @@ h4 {
 }
 
 .class_card3 {
-  width: 25%;
-  margin: auto 20px auto 25px;
+  width: 30%;
+  margin: auto 10px auto 15px;
   color: black;
   font-weight: 500;
 }
