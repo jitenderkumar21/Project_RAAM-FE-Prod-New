@@ -39,15 +39,13 @@
   color: white; /* Set color of the checkmark */
 }
 
-
-
-
 .class-full {
   font-size: 15px !important;
   display: inline;
   font-weight: 500;
   color: #07779a;
   margin-left: 4px;
+  font-weight: bold;
 }
 
 .course-class-full {
