@@ -286,6 +286,10 @@ h4 {
   font-weight: 700; 
   font-size: 17px; 
 } 
+
+.add_learner button:hover {
+  background-color: white;
+}
  
 .quickcall button { 
   background-color: #0897c3;
