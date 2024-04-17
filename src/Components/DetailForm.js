@@ -19,12 +19,15 @@ const DetailForm = (props) => {
       knowabout: "",
       additionalInfo: "",
       commPref: [],
-      comments: ""
+      comments: "",
+      platform: "",
+      enrichment: "",
     };
   }
   const [formData, setFormData] = useState(initial_state);
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const YOUR_GOOGLE_APPS_SCRIPT_URL = `${process.env.REACT_APP_BACKENDURL}save/?timezone=${timezone}`;
+  const info_source = ["Facebook", "Other", "Referred by Teacher"];
 
   const submitForm = async (data) => {
     const options = {
@@ -38,16 +41,15 @@ const DetailForm = (props) => {
     try {
       const response = await fetch(YOUR_GOOGLE_APPS_SCRIPT_URL, options);
       if (response.ok) {
-        // console.log("Data sent successfully");
+        console.log("Data sent successfully");
       } else {
-        // console.error("Failed to send data to Google Sheet");
+        console.error("Failed to send data to Google Sheet");
       }
     } catch (error) {
-      // console.error("Error:", error);
+      console.error("Error:", error);
     }
   };
 
-  
   const fetchFormData = async (email) => {
     try {
       const response = await fetch(
@@ -82,7 +84,7 @@ const DetailForm = (props) => {
     setFormData({
       ...formData,
       [name]: value,
-      additionalInfo: "", // Reset additionalInfo when the dropdown changes
+      additionalInfo: "",
     });
   };
 
@@ -92,12 +94,12 @@ const DetailForm = (props) => {
     if (isAlreadySelected) {
       setFormData((prevState) => ({
         ...prevState,
-        commPref: formData.commPref.filter((pref) => pref !== prefValue), // Remove the preference value from commPref array
+        commPref: formData.commPref.filter((pref) => pref !== prefValue),
       }));
     } else {
       setFormData((prevState) => ({
         ...prevState,
-        commPref: [...prevState.commPref, prefValue], // Add the new preference value to the commPref array
+        commPref: [...prevState.commPref, prefValue],
       }));
     }
   };
@@ -112,7 +114,7 @@ const DetailForm = (props) => {
       if (
         (formData.commPref?.includes("Text") ||
           formData.commPref?.includes("WhatsApp")) &&
-        (!formData.phoneNumber || formData.phoneNumber.length <7)
+        (!formData.phoneNumber || formData.phoneNumber.length < 7)
       ) {
         alert("Please Enter Phone Number");
         return;
@@ -130,6 +132,7 @@ const DetailForm = (props) => {
         classDetails: props.timedata,
         want_another_slot: props.anotherSlot,
       };
+
       submitForm(new_data);
       props.onSubmit();
       localStorage.clear();
@@ -239,7 +242,7 @@ const DetailForm = (props) => {
         {(formData.commPref?.includes("Text") ||
           formData.commPref?.includes("WhatsApp")) && (
           <>
-            <div style={{display:"flex"}}>
+            <div style={{ display: "flex" }}>
               <label htmlFor="phoneNumber">Phone * </label>
               <label htmlFor="phoneNumber" style={{ fontSize: "12px" }}>
                 will be used to send important alerts
@@ -254,6 +257,37 @@ const DetailForm = (props) => {
             />
           </>
         )}
+
+        <div className="form-group">
+          <label htmlFor="enrichment">
+            How much are you willing to spend on enrichment per child ? *
+          </label>
+          <input
+            type="number"
+            id="enrichment"
+            name="enrichment"
+            min="1"
+            required
+            value={formData.enrichment}
+            onChange={handleInputChange}
+            onKeyDown={handleEnterKey}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="platform">
+            Which platform do you currently use ? *
+          </label>
+          <input
+            type="text"
+            id="platform"
+            name="platform"
+            required
+            value={formData.platform}
+            onChange={handleInputChange}
+            onKeyDown={handleEnterKey}
+          />
+        </div>
 
         <div className="form-group">
           <label htmlFor="knowabout">
@@ -308,9 +342,7 @@ const DetailForm = (props) => {
           </div>
         </div>
 
-        {(formData.knowabout === "Facebook" ||
-          formData.knowabout === "Other" ||
-          formData.knowabout === "Referred by Teacher") && (
+        {info_source.includes(formData.knowabout) && (
           <div className="form-group">
             {formData.knowabout === "Facebook" && (
               <label htmlFor="additionalInfo">
@@ -336,15 +368,15 @@ const DetailForm = (props) => {
             />
           </div>
         )}
-        <div className="form-group"> 
-          <label htmlFor="comments"> Drop us your questions or comments!</label> 
-          <input 
-            type="text" 
-            id="comments" 
-            name="comments" 
-            value={formData.comments} 
-            onChange={handleInputChange} 
-          /> 
+        <div className="form-group">
+          <label htmlFor="comments"> Drop us your questions or comments!</label>
+          <input
+            type="text"
+            id="comments"
+            name="comments"
+            value={formData.comments}
+            onChange={handleInputChange}
+          />
         </div>
 
         <div className="buttondisplay">
@@ -355,7 +387,6 @@ const DetailForm = (props) => {
       </form>
       <div className="buttondisplay1">
         <button id="backbutton" onClick={backHandler}>
-          {" "}
           Back
         </button>
       </div>
