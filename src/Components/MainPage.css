@@ -94,26 +94,7 @@
   justify-items: flex-start;
 }
 
-.about_img {
-  width: 10%;
-  
-}
 
-.about_img img {
-  width: 25%;
-  margin: 3% auto;
-  margin-bottom: 0px;
-}
-.about_img1 {
-  width: 40%;
-  height: 50%;
-  margin-right: 13%;
-}
-
-.about_img1 img {
-  width: 52%;
-  padding-right: 100%;
-}
 .about_content {
   line-height: 10px;
   margin: 0 auto;
@@ -286,6 +267,10 @@ h4 {
   font-weight: 700; 
   font-size: 17px; 
 } 
+
+.add_learner button:hover {
+  background-color: white;
+}
  
 .quickcall button { 
   background-color: #0897c3;
@@ -441,30 +426,7 @@ h4 {
   font-size: 13px;
   line-height: 30px;
 }
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 800px;
-}
 
-.footer img {
-  width: 100%;
-}
-
-.footer_content {
-  text-align: left;
-  font-size: 14px;
-  margin: 0px 0 2% 5.5%;
-}
-
-.footer_content a {
-  color: #07779A;
-}
-
-.footer_content p {
-  margin-bottom: 3px;
-}
 
 .loaderClass {
   position: fixed;
@@ -503,25 +465,6 @@ h4 {
 #scrollClass1::-webkit-scrollbar-thumb:hover {
   background: #555;
 } 
-
-
-/* 
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: #fff;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #0897c3;
-}
-
-
-::-webkit-scrollbar-thumb:hover {
-  background: #4d4b4b;
-} */
 
 
 

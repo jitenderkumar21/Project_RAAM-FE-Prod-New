@@ -6,10 +6,10 @@ import "./MobileView.css";
 import ClassDetail from "./ClassDetail";
 import DetailForm from "./DetailForm";
 import Coral_Academy from "../assets/Coral_Academy.png";
-import About_us from "../assets/About_us.png";
 import thank_you from "../assets/thank_you.png";
 import final_page from "../assets/final_page.png";
 import scrollToTop from "./utils/scrollToTop";
+import Footer from "./Footer";
 
 const MainPage = () => {
   const [register, setRegister] = useState(false);
@@ -27,7 +27,6 @@ const MainPage = () => {
     window.addEventListener("beforeunload", clearLocalStorageOnReload);
 
     return () => {
-      // Clean up the event listener when the component unmounts
       window.removeEventListener("beforeunload", clearLocalStorageOnReload);
     };
   }, []);
@@ -47,7 +46,7 @@ const MainPage = () => {
   const sendDataHandler = (data, value) => {
     setTimedata(data);
     setAnotherSlot(value);
-    console.log(data, "timedata")
+    console.log(data, "timedata");
   };
 
   const backPageHandler = () => {
@@ -97,17 +96,6 @@ const MainPage = () => {
     fetchData();
   }, [submitted]);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrollPosition(window.scrollY);
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
   return (
     <CardWrapper>
       <div className="scrollClass" id="scrollClass1">
@@ -128,7 +116,6 @@ const MainPage = () => {
                 fontFamily: "urbanist",
               }}
             >
-              {" "}
               Sparking a Love for Learning!
             </h1>
 
@@ -143,7 +130,6 @@ const MainPage = () => {
                 onSelectTimeSlot={continueButtonHandler}
                 onWantAnotherSlot={continueHandler}
                 fullclass={fulldata}
-                // scroll={scrollPosition}
               />
             </div>
             <div className="register_button">
@@ -179,6 +165,7 @@ const MainPage = () => {
             anotherSlot={anotherSlot}
           />
         )}
+
         {!register && submitted && (
           <div className="submitpage">
             {window.innerWidth > 599 ? (
@@ -213,29 +200,7 @@ const MainPage = () => {
           </div>
         )}
 
-        <div className="footer">
-          <div className="footer_content">
-            <p> Contact us at:</p>
-            <a href="mailto:support@coralacademy.com" id="coral_email">
-              support@coralacademy.com
-            </a>
-            <p>
-              {" "}
-              Please share in detail how we can improve your overall experience{" "}
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSflsLJJuG74V1jjS29B-R1TVPbD74e9H5CkKVQMX6CzM87AZQ/viewform?usp=sf_link"
-                target="_blank"
-                id="coral_feedback_form"
-              >
-                here
-              </a>
-              .
-            </p>
-          </div>
-          <div className="about_img">
-            <img src={About_us} alt="About_US" />
-          </div>
-        </div>
+        <Footer />
       </div>
     </CardWrapper>
   );

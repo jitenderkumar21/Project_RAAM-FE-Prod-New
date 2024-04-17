@@ -192,7 +192,7 @@ const ClassCard = (props) => {
                     <div className="about_teacher">
                       <img src={classes.teacher_pic} alt="teacher_pic"></img>
                       <div>
-                        {/* <p className="description">{classes.about_teacher}</p> */}
+                     
                         {classes.about_teacher
                           .split("\n")
                           .map((paragraph, index) => (
@@ -202,7 +202,7 @@ const ClassCard = (props) => {
                             </p>
                           ))}
                         <h5>Teaching Philosophy</h5>
-                        {/* <p className="description">{classes.teaching_philosophy}</p> */}
+                       
                         {classes.teaching_philosophy
                           .split("\n")
                           .map((paragraph, index) => (

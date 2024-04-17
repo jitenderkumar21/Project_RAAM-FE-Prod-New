@@ -1,0 +1,10 @@
+export const CORAL_FEEDBACK_FORM = "https://www.figma.com/proto/daiGcL4YqBMvgRddC6GU0Z/Demo?type=design&node-id=1069-688&t=xJKCiLMgFuMhEoUj-0&scaling=scale-down-width&page-id=0%3A1";
+export const support_mail = "support@coralacademy.com"
+export const safety_mail = "safety@coralacademy.com"
+export const code_of_conduct = "https://coralacademy-1.gitbook.io/untitled/parents/code-of-conduct"
+export const content_guidelines = "https://coralacademy-1.gitbook.io/untitled/parents/content-guidelines"
+export const privacy = "https://coralacademy-1.gitbook.io/untitled/support/privacy"
+export const safety = "https://coralacademy-1.gitbook.io/untitled/support/safety"
+export const parents = "https://coralacademy-1.gitbook.io/untitled/parents-and-learners"
+export const suppport = "https://coralacademy-1.gitbook.io/untitled/support"
+export const about_us = "https://coralacademy-1.gitbook.io/untitled"
