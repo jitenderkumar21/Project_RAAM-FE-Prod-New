@@ -276,13 +276,12 @@ const DetailForm = (props) => {
 
         <div className="form-group">
           <label htmlFor="platform">
-            Which platform do you currently use ? *
+            Which platform do you currently use ?
           </label>
           <input
             type="text"
             id="platform"
             name="platform"
-            required
             value={formData.platform}
             onChange={handleInputChange}
             onKeyDown={handleEnterKey}
