@@ -22,7 +22,7 @@ const ClassCard = (props) => {
         {props.filteredData.map((classes, index) => (
           <>
             <div
-              className={index % 2 == 0 ? "sub-card" : "sub-card1"}
+              className="sub-card"
               id={props.scroll > 800 ? "animation" : ""}
             >
               <div id={classes.id} className="class_card">
@@ -30,7 +30,7 @@ const ClassCard = (props) => {
                   className="class_card1"
                   onClick={() => props.onToggle(classes.id)}
                 >
-                  <img src={classes.link}></img>
+                  <img src={classes.link} alt="class_link"></img>
                 </div>
 
                 <div
@@ -51,7 +51,7 @@ const ClassCard = (props) => {
                       ? "Playlist"
                       : classes.class_tag}
                   </p>
-                  <p>
+                  <p> 
                     <img src={age} alt="ageIcon" className="icon" />
                     Age Group : {classes.age_group}
                   </p>

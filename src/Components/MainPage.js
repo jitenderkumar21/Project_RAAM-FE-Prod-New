@@ -8,6 +8,7 @@ import DetailForm from "./DetailForm";
 import Coral_Academy from "../assets/Coral_Academy.png";
 import thank_you from "../assets/thank_you.png";
 import final_page from "../assets/final_page.png";
+import header_guide from "../assets/guide_pic.png"
 import scrollToTop from "./utils/scrollToTop";
 import Footer from "./Footer";
 
@@ -77,7 +78,6 @@ const MainPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // setLoading(true);
       try {
         const response = await fetch(
           `${process.env.REACT_APP_BACKENDURL}classes/`
@@ -87,9 +87,7 @@ const MainPage = () => {
         }
         const jsonData = await response.json();
         setFullData(jsonData);
-        // setLoading(false);
       } catch (err) {
-        // setLoading(false);
       }
     };
 
@@ -104,25 +102,12 @@ const MainPage = () => {
         </div>
 
         {!register && !submitted && (
-          <img className="title" src={Coral_Academy} alt="Title" />
-        )}
-
-        {!register && !submitted && (
           <div className="card1">
-            <h1
-              style={{
-                marginBottom: "50px",
-                marginTop: "20px",
-                fontFamily: "urbanist",
-              }}
-            >
-              Sparking a Love for Learning!
-            </h1>
-
-            <h5 className="message">
-              Register for each learner separately. You can select multiple
-              classes for each learner.
-            </h5>
+            <div className="header_container">
+              <img className="title" src={Coral_Academy} alt="Title" />
+              <h1 className="header_text">Sparking a Love for Learning!</h1>
+              <img className="header_guide" src={header_guide} alt="Title" />
+            </div>
 
             <div>
               <ClassDetail

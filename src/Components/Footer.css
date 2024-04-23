@@ -1,11 +1,11 @@
 .footer_content {
   text-align: left;
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   padding: 20px 50px;
-  gap: 80px;
-  background-color: white;
-  margin-top: 100px;
+  gap: 65px;
+  margin-top: 40px;
+  background-color: #C5F1FF;
 }
 
 .footer_content a {
@@ -38,7 +38,7 @@
 }
 .footer_logo img {
   width: 50%;
-  margin: -25px 0px 10px 10px;
+  margin: -10px 0px 10px 10px;
 }
 
 .footer_logo p {

@@ -1,32 +1,42 @@
 .underlined-text {
-    border-bottom: 3px solid rgb(239, 119, 72);
-    display: inline-block;
-    padding-bottom: 5px;
-    border-radius: 1px;
-   
-  }
+  border-bottom: 2px solid rgb(239, 119, 72);
+  display: inline-block;
+  padding-bottom: 5px;
+}
 
 .text {
-    display: inline-block;
-    padding-bottom: 5px;
-  }
+  display: inline-block;
+  padding-bottom: 5px;
+}
 
 .tab-style {
-   white-space: nowrap;
-    display: flex;
-    gap: 20%;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-  }
+  white-space: nowrap;
+  display: flex;
+  gap: 20%;
+  margin-top: 2px;
+  color: white;
+  cursor: pointer;
+}
+
+.continue_button {
+  color: black;
+  height: 0px;
+  background-color: white;
+  border-radius: 34px;
+  width: 115px;
+  padding-bottom: 24px;
+  margin-left: 50%;
+}
 
 .filter-div {
   display: flex;
   justify-content: normal;
-  gap: 60%;
-  margin: 0 5% 0 5%;
-  height : 60px;
+  gap: 3%;
+  height: 45px;
   align-items: center;
+  background-color: #0897c3;
+  width: 100%;
+  font-size: 16px;
 }
 
 .firstfilter {
@@ -34,13 +44,13 @@
   font-size: 12px;
 }
 
-.firstfilter button:hover{
-  background-color: #25A5B5; 
-  color: white;
-  border: 1px white solid
+.firstfilter button:hover {
+  background-color: white;
+  color: black;
+  border: 1px black solid;
 }
 
-.firstfilter img{
+.firstfilter img {
   width: 20px;
   height: 20px;
 }
@@ -48,76 +58,72 @@
 .dropdown-toggle {
   background-color: #fff;
   color: black;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
+  padding: 4px 0px;
+  border-radius: 2px;
   cursor: pointer;
-  width: 200px;
-  font-size: 18px;
+  width: 160px;
+  margin-left: 30px;
+  font-size: 16px;
   border: 1px black solid;
 }
-.abc{
+.abc {
   display: flex;
   gap: 10px;
-
+  margin-top: 25px;
 }
-.tag{
-  align-content: left; 
+.tag {
   display: inline-block;
-  background-color: rgba(0,97,177,255);
+  background-color: rgba(0, 97, 177, 255);
   color: white;
-  padding: 4px 18px;
-  border-radius: 16px;
-  font-size: 20px;
+  padding: 2.5px 18px;
+  border-radius: 20px;
+  font-size: 16px;
   width: fit-content;
-  height: 30%;
-  margin-left: 6%;
-  font-weight: 500;
+  margin-left: 3%;
 }
-.data{
+.data {
   margin: auto 0;
-  font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
 }
-  @media (max-width: 599px){
-    .abc{
-      margin-top: 0px;
-    }
-    .tag {
-      font-size: 12px;
-      padding: 4px 6px;
-      margin-left: 3%;
-    }
-    .data{
-      font-size: 11px;
-      text-align: left;
-    }
-    .tab-style {
-        align-items: center;
-        margin: auto;
-        display: flex;
-        gap: 25%;
-        font-size: 14px;
-        color: white;
-        white-space: nowrap;
-        justify-content: center;
-      }
-
-      .filter-div {
-        display: block;
-        margin-bottom: 20px;
-      }
-
-      .firstfilter img {
-        margin: auto;
-        padding-left: 22px;
-        margin: -6px;
-      }
-
-      .dropdown-toggle {
-        font-size: 14px;
-        padding: auto;
-        text-align: center;
-        vertical-align: middle;
-      }
+@media (max-width: 599px) {
+  .abc {
+    margin-top: 0px;
   }
+  .tag {
+    font-size: 12px;
+    padding: 4px 6px;
+    margin-left: 3%;
+  }
+  .data {
+    font-size: 11px;
+    text-align: left;
+  }
+  .tab-style {
+    align-items: center;
+    margin: auto;
+    display: flex;
+    gap: 25%;
+    font-size: 14px;
+    color: white;
+    white-space: nowrap;
+    justify-content: center;
+  }
+
+  .filter-div {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .firstfilter img {
+    margin: auto;
+    padding-left: 22px;
+    margin: -6px;
+  }
+
+  .dropdown-toggle {
+    font-size: 14px;
+    padding: auto;
+    text-align: center;
+    vertical-align: middle;
+  }
+}

@@ -44,8 +44,6 @@ const ClassDetail = (props) => {
     fetchClassData();
   }, []);
 
- 
-
   const transformedClasses = data.reduce((result, classItem) => {
     result[classItem.id] = [];
     return result;
@@ -259,8 +257,7 @@ const ClassDetail = (props) => {
   }, []);
 
   return (
-    <div className="sub-cards-grid">
-      <h1>Happy Exploring</h1>
+    <div className="classcard">
       <div className="filter-div">
         <div className="firstfilter" ref={buttonRef}>
           {selectedAges && (
@@ -319,122 +316,143 @@ const ClassDetail = (props) => {
             Past classes
           </p>
         </div>
+        <button className="continue_button"> Continue</button>
       </div>
 
-      {isActive && (
-        <>
-          {filteredData.filter(
-            (cls) =>
-              cls.class_tag?.toLowerCase() === "playlist-1" ||
-              cls.class_tag?.toLowerCase() === "playlist-2"
-          ).length ? (
-            <div className="abc">
-              <p className="tag" style={{ backgroundColor: "#E875BA" }}>
-                Playlist
-              </p>
-              <p className="data">
-                Unwrap the joy in learning: 4 weeks, 4 handpicked topics, and a
-                new surprise every week!
-              </p>
-            </div>
-          ) : (
-            <></>
-          )}
-          <ClassCard
-            filteredData={filteredData.filter(
+      <div className="sub-cards-grid">
+        <h5 className="message">
+          Register for each learner separately. You can select multiple
+          classes for each learner.
+        </h5>
+
+        {isActive && (
+          <>
+            {filteredData.filter(
               (cls) =>
                 cls.class_tag?.toLowerCase() === "playlist-1" ||
                 cls.class_tag?.toLowerCase() === "playlist-2"
+            ).length ? (
+              <div className="abc">
+                <p className="tag" style={{ backgroundColor: "#E875BA" }}>
+                  Playlist
+                </p>
+                <p className="data">
+                  Unwrap the joy in learning: 4 weeks, 4 handpicked topics, and a
+                  new surprise every week!
+                </p>
+              </div>
+            ) : (
+              <></>
             )}
-            newfulldata={newfulldata}
-            onToggle={toggleDescription}
-            selectedTimeslots={selectedTimeslots}
-            onSelect={handleTimeslotSelection}
-            moreslots={moreslots}
-            onTimeslotHandler={requiredTimeslotHandler}
-            expandedClassId={expandedClassId}
-          ></ClassCard>
-          {filteredData.filter(
-            (cls) => cls.class_tag?.toLowerCase() === "course"
-          ).length ? (
-            <div className="abc">
-              <p className="tag">Courses</p>
-              <p className="data">
-                Multiple sessions organized into a structured curriculum.
-                Learners are expected to attend all classes throughout the
-                course, as each class builds on the last one.
-              </p>
-            </div>
-          ) : (
-            <></>
-          )}
-          <ClassCard
-            filteredData={filteredData.filter(
+            <ClassCard
+              filteredData={filteredData.filter(
+                (cls) =>
+                  cls.class_tag?.toLowerCase() === "playlist-1" ||
+                  cls.class_tag?.toLowerCase() === "playlist-2"
+              )}
+              newfulldata={newfulldata}
+              onToggle={toggleDescription}
+              selectedTimeslots={selectedTimeslots}
+              onSelect={handleTimeslotSelection}
+              moreslots={moreslots}
+              onTimeslotHandler={requiredTimeslotHandler}
+              expandedClassId={expandedClassId}
+            ></ClassCard>
+            {filteredData.filter(
               (cls) => cls.class_tag?.toLowerCase() === "course"
+            ).length ? (
+              <div className="abc">
+                <p className="tag">Courses</p>
+                <p className="data">
+                  Multiple sessions organized into a structured curriculum.
+                  Learners are expected to attend all classes throughout the
+                  course, as each class builds on the last one.
+                </p>
+              </div>
+            ) : (
+              <></>
             )}
-            newfulldata={newfulldata}
-            onToggle={toggleDescription}
-            selectedTimeslots={selectedTimeslots}
-            onSelect={handleTimeslotSelection}
-            moreslots={moreslots}
-            onTimeslotHandler={requiredTimeslotHandler}
-            expandedClassId={expandedClassId}
-          ></ClassCard>
+            <ClassCard
+              filteredData={filteredData.filter(
+                (cls) => cls.class_tag?.toLowerCase() === "course"
+              )}
+              newfulldata={newfulldata}
+              onToggle={toggleDescription}
+              selectedTimeslots={selectedTimeslots}
+              onSelect={handleTimeslotSelection}
+              moreslots={moreslots}
+              onTimeslotHandler={requiredTimeslotHandler}
+              expandedClassId={expandedClassId}
+            ></ClassCard>
 
-          {filteredData.filter(
-            (cls) => cls.class_tag?.toLowerCase() === "ongoing"
-          ).length ? (
-            <div className="abc">
-              <p
-                className="tag"
-                style={{ backgroundColor: "rgba(175,88,174,255)" }}
-              >
-                Ongoing
-              </p>
-              <p className="data">
-                Versatile classes that follow a theme, but do not build on one
-                another. Each class stands alone, providing the opportunity for
-                learners to join at any time.
-              </p>
-            </div>
-          ) : (
-            <></>
-          )}
-          <ClassCard
-            filteredData={filteredData.filter(
+            {filteredData.filter(
               (cls) => cls.class_tag?.toLowerCase() === "ongoing"
+            ).length ? (
+              <div className="abc">
+                <p
+                  className="tag"
+                  style={{ backgroundColor: "rgba(175,88,174,255)" }}
+                >
+                  Ongoing
+                </p>
+                <p className="data">
+                  Versatile classes that follow a theme, but do not build on one
+                  another. Each class stands alone, providing the opportunity for
+                  learners to join at any time.
+                </p>
+              </div>
+            ) : (
+              <></>
             )}
-            newfulldata={newfulldata}
-            onToggle={toggleDescription}
-            selectedTimeslots={selectedTimeslots}
-            onSelect={handleTimeslotSelection}
-            moreslots={moreslots}
-            onTimeslotHandler={requiredTimeslotHandler}
-            expandedClassId={expandedClassId}
-          ></ClassCard>
+            <ClassCard
+              filteredData={filteredData.filter(
+                (cls) => cls.class_tag?.toLowerCase() === "ongoing"
+              )}
+              newfulldata={newfulldata}
+              onToggle={toggleDescription}
+              selectedTimeslots={selectedTimeslots}
+              onSelect={handleTimeslotSelection}
+              moreslots={moreslots}
+              onTimeslotHandler={requiredTimeslotHandler}
+              expandedClassId={expandedClassId}
+            ></ClassCard>
 
-          {filteredData.filter(
-            (cls) => cls.class_tag?.toLowerCase() === "onetime"
-          ).length ? (
-            <div className="abc">
-              <p
-                className="tag"
-                style={{ backgroundColor: "rgba(249,98,115,255)" }}
-              >
-                Onetime
-              </p>
-              <p className="data">
-                Standalone classes that cover specific topics or skills in one
-                session.
-              </p>
-            </div>
-          ) : (
-            <></>
-          )}
-          <ClassCard
-            filteredData={filteredData.filter(
+            {filteredData.filter(
               (cls) => cls.class_tag?.toLowerCase() === "onetime"
+            ).length ? (
+              <div className="abc">
+                <p
+                  className="tag"
+                  style={{ backgroundColor: "rgba(249,98,115,255)" }}
+                >
+                  Onetime
+                </p>
+                <p className="data">
+                  Standalone classes that cover specific topics or skills in one
+                  session.
+                </p>
+              </div>
+            ) : (
+              <></>
             )}
+            <ClassCard
+              filteredData={filteredData.filter(
+                (cls) => cls.class_tag?.toLowerCase() === "onetime"
+              )}
+              newfulldata={newfulldata}
+              onToggle={toggleDescription}
+              selectedTimeslots={selectedTimeslots}
+              onSelect={handleTimeslotSelection}
+              moreslots={moreslots}
+              onTimeslotHandler={requiredTimeslotHandler}
+              expandedClassId={expandedClassId}
+            ></ClassCard>
+          </>
+        )}
+
+        {!isActive && (
+          <ClassCard
+            filteredData={filteredData}
             newfulldata={newfulldata}
             onToggle={toggleDescription}
             selectedTimeslots={selectedTimeslots}
@@ -443,33 +461,20 @@ const ClassDetail = (props) => {
             onTimeslotHandler={requiredTimeslotHandler}
             expandedClassId={expandedClassId}
           ></ClassCard>
-        </>
-      )}
-
-      {!isActive && (
-        <ClassCard
-          filteredData={filteredData}
-          newfulldata={newfulldata}
-          onToggle={toggleDescription}
-          selectedTimeslots={selectedTimeslots}
-          onSelect={handleTimeslotSelection}
-          moreslots={moreslots}
-          onTimeslotHandler={requiredTimeslotHandler}
-          expandedClassId={expandedClassId}
-        ></ClassCard>
-      )}
-      <div className="textbox">
-        <textarea
-          className="editable-textbox"
-          value={value}
-          onChange={handleWantnewslot}
-          placeholder="Eg: Logic Club-Weekend evenings, Game theory-Wed 6-8 PM EST"
-          id="want_new_slot"
-        ></textarea>
-        <p>
-          Don't see what you're looking for? Request for preferred classes &
-          time slots here
-        </p>
+        )}
+        <div className="textbox">
+          <input
+            className="editable-textbox"
+            value={value}
+            onChange={handleWantnewslot}
+            placeholder="Eg: Logic Club-Weekend evenings, Game theory-Wed 6-8 PM EST"
+            id="want_new_slot"
+          ></input>
+          <p>
+            Don't see what you're looking for? Request for preferred classes &
+            time slots here
+          </p>
+        </div>
       </div>
     </div>
   );
