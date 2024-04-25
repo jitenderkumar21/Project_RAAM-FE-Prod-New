@@ -16,6 +16,7 @@ const ClassDetail = (props) => {
   const [value, setValue] = useState(want_more_state);
   const buttonRef = useRef(null);
 
+  const isMobile = window.innerWidth < 599;
   const handleWantnewslot = (e) => {
     setValue(e.target.value);
   };
@@ -256,6 +257,9 @@ const ClassDetail = (props) => {
     };
   }, []);
 
+
+  const selecteditems = Object.keys(selectedTimeslots).length
+
   return (
     <div className="classcard">
       <div className="filter-div">
@@ -316,7 +320,7 @@ const ClassDetail = (props) => {
             Past classes
           </p>
         </div>
-        <button className="continue_button"> Continue</button>
+        {!isMobile && <button className="continue_button" disabled={!selecteditems} onClick={props.OnContinue}> Continue ({selecteditems})</button>}
       </div>
 
       <div className="sub-cards-grid">

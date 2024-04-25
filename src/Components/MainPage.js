@@ -115,6 +115,7 @@ const MainPage = () => {
                 onSelectTimeSlot={continueButtonHandler}
                 onWantAnotherSlot={continueHandler}
                 fullclass={fulldata}
+                OnContinue = {registerHandler}
               />
             </div>
             <div className="register_button">
@@ -126,7 +127,7 @@ const MainPage = () => {
                   className="button"
                   onClick={registerHandler}
                 >
-                  Continue
+                  Continue ({timedata.length})
                 </Button>
               ) : (
                 <Button
@@ -136,7 +137,7 @@ const MainPage = () => {
                   disabled
                   onClick={registerHandler}
                 >
-                  Continue
+                  Continue ({timedata.length})
                 </Button>
               )}
             </div>

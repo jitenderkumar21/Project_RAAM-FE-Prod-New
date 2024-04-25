@@ -67,7 +67,8 @@
     flex-direction: column-reverse;
     padding : 5px 20px;
     font-size: 12px;
-    gap: 20px
+    gap: 20px;
+    background-color: white;
   }
 
   .footer_block{
@@ -78,34 +79,40 @@
   .footer_heading{
     width: 80%;
     display: flex;
-    margin-bottom: -10px;
+    margin-bottom: -25px;
     justify-content: space-between;
   }
 
   .footer_heading p {
-    margin-top: 3px;
+    margin-top: 5px;
   }
 
   .drop-down-icon {
     width: 25px;
     height: 25px
   }
+
   .footer_logo img {
     padding-top: 15px;
-    width: 30%;
+    width: 32%;
+    margin-left: 0px;
   }
 
   .footer_logo {
     width: 80%;
-    padding-left: 20px;
+    padding-left: 0px;
   }
   .footer_logo p {
     width: 100%;
-    font-size: 9px;
+    font-size: 10.5px;
   }
 
 
   .footer_content a {
     margin-bottom: 8px;
+  }
+
+  .footer_link {
+    margin-top: 20px;
   }
 }

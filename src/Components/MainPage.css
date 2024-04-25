@@ -22,7 +22,6 @@
   background-image: url("../assets/Header_pic.png");
   background-size: cover;
   background-position: center;
-  height: 500px;
 }
 
 .header_guide {
@@ -82,8 +81,8 @@
 
 .register_button button {
   height: 34px;
-  width: 120px;
-  font-size: 14px;
+  width: 130px;
+  font-size: 13px;
   background-color: #0897c3;
   color: white;
   border: 1px solid transparent;
@@ -91,15 +90,15 @@
 }
 
 .register_button button:hover {
-  font-size: 14.5px; /* Font size on hover */
-  color: white; /* Text color on hover */
-  background-color: #ff7f50; /* Background color on hover */
+  font-size: 13.5px;
+  color: white;
+  background-color: #ff7f50;
 }
 
 .register_button button:disabled {
-  background-color: #ccc; /* Change to a grayish color */
-  color: #888; /* Change the text color to a lighter shade */
-  cursor: not-allowed; /* Change the cursor to not-allowed */
+  background-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
 }
 
 .about {

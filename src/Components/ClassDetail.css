@@ -28,6 +28,15 @@
   margin-left: 50%;
 }
 
+.continue_button:hover {
+  background-color: white !important;
+}
+
+.continue_button:disabled{
+  background-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
 .filter-div {
   display: flex;
   justify-content: normal;
@@ -91,7 +100,7 @@
   }
   .tag {
     font-size: 12px;
-    padding: 4px 6px;
+    padding: 7px 14px;
     margin-left: 3%;
   }
   .data {
@@ -104,7 +113,7 @@
     display: flex;
     gap: 25%;
     font-size: 14px;
-    color: white;
+    color: #0897c3;
     white-space: nowrap;
     justify-content: center;
   }
@@ -116,14 +125,22 @@
 
   .firstfilter img {
     margin: auto;
-    padding-left: 22px;
+    padding-left: 8px;
     margin: -6px;
+  }
+
+  .firstfilter{
+    margin-left: -6%;
+    margin-bottom: 10px;
   }
 
   .dropdown-toggle {
     font-size: 14px;
-    padding: auto;
     text-align: center;
     vertical-align: middle;
+    width: 125px;
+    border-radius: 7px;
+    height: 30px;
+    margin-top: 8px;
   }
 }

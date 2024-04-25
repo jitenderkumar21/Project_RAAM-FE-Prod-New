@@ -65,7 +65,7 @@ label {
   font-weight: 600;
   color: #de7247;
   text-align: left;
-  font-size: 18px;
+  font-size: 15px;
   margin-left: 3px;
 }
 
@@ -78,7 +78,7 @@ input[type="number"]{
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  height: 35px;
+  height: 25px;
   font-size: 16px;
   padding-left: 2.5%;
 }
@@ -128,9 +128,8 @@ button:hover {
 }
 
 .form_meta {
-  font-size: 35px;
+  font-size: 30px;
   color:#0897c3;
-  ;
   font-weight: 600;
   margin-top: 20px;
 }

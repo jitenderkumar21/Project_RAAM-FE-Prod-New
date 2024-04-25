@@ -59,7 +59,7 @@ const Footer = () => {
           )}
         </div>
         {(!isMobile || dropdownStates.about) && (
-          <div>
+          <div className="footer_link">
             <a href={about_us}> About Coral Academy </a>
             <a href={privacy}> Privacy Policy </a>
             <a href={safety}> Safety </a>
@@ -91,7 +91,7 @@ const Footer = () => {
           )}
         </div>
         {(!isMobile || dropdownStates.parents) && (
-          <div>
+          <div className="footer_link"> 
             <a href={code_of_conduct}> Code of Conduct </a>
             <a href={content_guidelines}> Content Guidelines </a>
           </div>
@@ -122,7 +122,7 @@ const Footer = () => {
           )}
         </div>
         {(!isMobile || dropdownStates.contact) && (
-          <div>
+          <div className="footer_link">
             <a
               href="mailto:support@coralacademy.com"
               id="coral_email"
