@@ -143,12 +143,14 @@ const Footer = () => {
       </div>
 
       <div className="footer_logo">
+        {isMobile && <div className="blue_line"></div>}
         <img src={coral_logo} alt="coral_logo" />
         <p>
           Please share in detail how we can improve your overall experience
           &nbsp;
           <a href={CORAL_FEEDBACK_FORM}>here</a>.
         </p>
+        {isMobile && <div className="blue_line"></div>}
       </div>
     </div>
   );

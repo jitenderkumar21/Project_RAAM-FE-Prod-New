@@ -328,17 +328,18 @@
   }
   
   .textbox p {
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
     margin-left: 0%;
+    margin-top: -20px;
     white-space: normal;
-    line-height: 10px;
+    line-height: 16px;
   }
 
   .editable-textbox {
     width: 96%;
     border: 1px solid black;
-    height: 85px;
+    height: 65px;
     line-height: 25px;
     font-size: 10px;
     margin: 10px auto;
