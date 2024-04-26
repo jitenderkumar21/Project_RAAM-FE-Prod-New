@@ -114,7 +114,7 @@ const ClassCard = (props) => {
                       <input
                         type="checkbox"
                         className="checkbox-harsh"
-                        checked={props.isSelected}
+                        checked={Object.keys(props.selectedTimeslots).includes(classes.id)}
                         onChange={() =>
                           props.onSelect(classes.id, classes.timeslots[0], true)
                         }
@@ -134,10 +134,10 @@ const ClassCard = (props) => {
               >
                 <p className="description">
                   More Details
-                  {props.expandedClassId != classes.id && (
+                  {props.expandedClassId !== classes.id && (
                     <img src={dropIcon} alt="dropDown" className="icon" />
                   )}
-                  {props.expandedClassId == classes.id && (
+                  {props.expandedClassId === classes.id && (
                     <img src={closeDropDown} alt="dropDown" className="icon" />
                   )}
                 </p>

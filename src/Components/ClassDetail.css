@@ -32,7 +32,7 @@
   background-color: white !important;
 }
 
-.continue_button:disabled{
+.continue_button:disabled {
   background-color: #ccc;
   color: #888;
   cursor: not-allowed;
@@ -94,6 +94,17 @@
   margin: auto 0;
   font-size: 14px;
 }
+
+.textbox img {
+  width: 5%;
+  position: relative;
+  top: -60px;
+  left: 8%;
+}
+
+.textbox img:hover{
+  cursor: pointer;
+}
 @media (max-width: 599px) {
   .abc {
     margin-top: 0px;
@@ -129,7 +140,7 @@
     margin: -6px;
   }
 
-  .firstfilter{
+  .firstfilter {
     margin-left: -6%;
     margin-bottom: 10px;
   }

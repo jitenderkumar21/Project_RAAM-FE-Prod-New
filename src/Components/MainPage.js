@@ -72,6 +72,10 @@ const MainPage = () => {
     }
   };
 
+  const scrollupHandler = () => {
+    window.scrollTo(0,530)
+  }
+
   useEffect(() => {
     window.scrollTo(0, scrollPosition);
   }, [scrollPosition]);
@@ -116,6 +120,7 @@ const MainPage = () => {
                 onWantAnotherSlot={continueHandler}
                 fullclass={fulldata}
                 OnContinue = {registerHandler}
+                OnScrollUp = {scrollupHandler}
               />
             </div>
             <div className="register_button">
@@ -155,9 +160,9 @@ const MainPage = () => {
         {!register && submitted && (
           <div className="submitpage">
             {window.innerWidth > 599 ? (
-              <img alt="image" src={thank_you}></img>
+              <img alt="thankyou_image" src={thank_you}></img>
             ) : (
-              <img alt="image" src={final_page}></img>
+              <img alt="final_image" src={final_page}></img>
             )}
             <p className="final_page_header">Welcome Aboard!</p>
             <p className="final_page_description">

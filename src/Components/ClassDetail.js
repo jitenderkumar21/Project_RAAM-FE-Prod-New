@@ -6,6 +6,7 @@ import AgeFilterDropdown from "./AgeSelection";
 import DownIcon from "../assets/down.png";
 import UpIcon from "../assets/up.png";
 import ClassCard from "./ClassCard";
+import ScrollUp from "../assets/ScrollUp.png"
 const ClassDetail = (props) => {
   const wantmore = localStorage.getItem("wantMore");
   let want_more_state = "";
@@ -467,6 +468,7 @@ const ClassDetail = (props) => {
           ></ClassCard>
         )}
         <div className="textbox">
+          {!isMobile && <img src={ScrollUp} alt="scroll" onClick={props.OnScrollUp}></img>}
           <input
             className="editable-textbox"
             value={value}
