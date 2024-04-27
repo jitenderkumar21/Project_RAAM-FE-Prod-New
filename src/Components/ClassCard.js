@@ -104,7 +104,7 @@ const ClassCard = (props) => {
                     )
                   )}
 
-                  {(props.newfulldata[classes.id]
+                  {!classes.isMoveToPast && (props.newfulldata[classes.id]
                     ? props.newfulldata[classes.id].includes(
                         classes.timeslots[0].subClassId
                       )

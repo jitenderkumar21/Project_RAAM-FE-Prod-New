@@ -15,11 +15,7 @@ const Timeslot = (props) => {
               type="checkbox"
               checked={props.isSelected}
               disabled={
-                course_type_list.includes(props.tag)
-                  ? props.isPastClass
-                  : props.full
-                  ? false
-                  : true
+                props.isPastClass
               }
               onChange={() =>
                 props.onSelect(props.classid, props.timeslot, props.full)
@@ -31,12 +27,12 @@ const Timeslot = (props) => {
           {!course_type_list.includes(props.tag) && (
             <>
               <span className="checkmark" id={props.timeslot.subClassId}></span>
-              {props.full && (
+              {!props.isPastClass && props.full && (
                 <p className="class-full"> Class Full - Join the waitlist </p>
               )}
             </>
           )}
-          {(course_type_list.includes(props.tag) && props.index === 0 && !props.full) && (
+          {(course_type_list.includes(props.tag) && props.index === 0 && (!props.full || props.isPastClass)) && (
             <span className="checkmark" id={props.timeslot.subClassId}></span>
           )}
         </label>

@@ -60,9 +60,9 @@ const Footer = () => {
         </div>
         {(!isMobile || dropdownStates.about) && (
           <div className="footer_link">
-            <a href={about_us}> About Coral Academy </a>
-            <a href={privacy}> Privacy Policy </a>
-            <a href={safety}> Safety </a>
+            <a target="_blank" href={about_us}> About Coral Academy </a>
+            <a target="_blank" href={privacy}> Privacy Policy </a>
+            <a target="_blank" href={safety}> Safety </a>
           </div>
         )}
       </div>
@@ -92,8 +92,8 @@ const Footer = () => {
         </div>
         {(!isMobile || dropdownStates.parents) && (
           <div className="footer_link"> 
-            <a href={code_of_conduct}> Code of Conduct </a>
-            <a href={content_guidelines}> Content Guidelines </a>
+            <a target="_blank" href={code_of_conduct}> Code of Conduct </a>
+            <a target="_blank" href={content_guidelines}> Content Guidelines </a>
           </div>
         )}
       </div>
@@ -148,7 +148,7 @@ const Footer = () => {
         <p>
           Please share in detail how we can improve your overall experience
           &nbsp;
-          <a href={CORAL_FEEDBACK_FORM}>here</a>.
+          <a target="_blank" href={CORAL_FEEDBACK_FORM}>here</a>.
         </p>
         {isMobile && <div className="blue_line"></div>}
       </div>

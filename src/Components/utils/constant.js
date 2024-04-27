@@ -1,4 +1,4 @@
-export const CORAL_FEEDBACK_FORM = "https://www.figma.com/proto/daiGcL4YqBMvgRddC6GU0Z/Demo?type=design&node-id=1069-688&t=xJKCiLMgFuMhEoUj-0&scaling=scale-down-width&page-id=0%3A1";
+export const CORAL_FEEDBACK_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSflsLJJuG74V1jjS29B-R1TVPbD74e9H5CkKVQMX6CzM87AZQ/viewform";
 export const support_mail = "support@coralacademy.com"
 export const safety_mail = "safety@coralacademy.com"
 export const code_of_conduct = "https://coralacademy-1.gitbook.io/untitled/parents/code-of-conduct"
