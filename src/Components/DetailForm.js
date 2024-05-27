@@ -267,7 +267,6 @@ const DetailForm = (props) => {
             id="enrichment"
             name="enrichment"
             min="1"
-            required
             value={formData.enrichment}
             onChange={handleInputChange}
             onKeyDown={handleEnterKey}
