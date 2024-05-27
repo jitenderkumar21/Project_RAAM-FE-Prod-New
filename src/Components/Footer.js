@@ -137,7 +137,6 @@ const Footer = () => {
             >
               {safety_mail}
             </a>
-            <a> +91 9988776655</a>
           </div>
         )}
       </div>
