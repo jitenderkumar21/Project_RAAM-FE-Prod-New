@@ -113,6 +113,7 @@ const ClassCard = (props) => {
                     <div className="course-class-full">
                       <input
                         type="checkbox"
+                        id={classes.id}
                         className="checkbox-harsh"
                         checked={Object.keys(props.selectedTimeslots).includes(classes.id)}
                         onChange={() =>
