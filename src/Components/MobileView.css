@@ -517,7 +517,7 @@
 
 @media (max-width: 599px) {
   .my-form {
-    width: 80%;
+    width: 80% !important;
     margin: 0 auto;
     padding: 20px;
   }
@@ -573,7 +573,7 @@
     flex-direction: column;
     width: 100%;
     margin-top: 0px;
-    margin-left: 28%;
+    margin-left: 32% !important;
     padding-top: 0px;
     gap: 0px;
   }
