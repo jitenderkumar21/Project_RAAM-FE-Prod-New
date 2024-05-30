@@ -544,13 +544,13 @@
     color: white;
     border-radius: 10px;
     margin-top: 10px;
-    margin-left: 4%;
+    margin-left: 0%;
   }
 
   .buttondisplay1 button:hover {
-    font-size: 18px; /* Font size on hover */
-    color: white; /* Text color on hover */
-    background-color: #de7247; /* Background color on hover */
+    font-size: 18px; 
+    color: white; 
+    background-color: #de7247; 
   }
 
   .form-group {
@@ -573,9 +573,13 @@
     flex-direction: column;
     width: 100%;
     margin-top: 0px;
-    margin-left: 32% !important;
+    margin-left: 0% !important;
     padding-top: 0px;
     gap: 0px;
+  }
+
+  .buttondisplay button{
+    margin:0 auto;
   }
 
   label {
