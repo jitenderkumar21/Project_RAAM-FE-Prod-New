@@ -260,13 +260,14 @@ const DetailForm = (props) => {
 
         <div className="form-group">
           <label htmlFor="enrichment">
-            How much are you willing to spend on enrichment per child ? *
+            How much do you usually spend each month on enrichment classes per child? *
           </label>
           <input
             type="number"
             id="enrichment"
             name="enrichment"
             min="1"
+            required
             value={formData.enrichment}
             onChange={handleInputChange}
             onKeyDown={handleEnterKey}
@@ -275,7 +276,7 @@ const DetailForm = (props) => {
 
         <div className="form-group">
           <label htmlFor="platform">
-            Which platform do you currently use ?
+            Which platforms do you use for enrichment classes?
           </label>
           <input
             type="text"
