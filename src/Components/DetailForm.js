@@ -259,6 +259,20 @@ const DetailForm = (props) => {
         )}
 
         <div className="form-group">
+          <label htmlFor="platform">
+            Which platforms do you use for enrichment classes?
+          </label>
+          <input
+            type="text"
+            id="platform"
+            name="platform"
+            value={formData.platform}
+            onChange={handleInputChange}
+            onKeyDown={handleEnterKey}
+          />
+        </div>
+
+        <div className="form-group">
           <label htmlFor="enrichment">
             How much do you usually spend each month on enrichment classes per child? *
           </label>
@@ -274,19 +288,6 @@ const DetailForm = (props) => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="platform">
-            Which platforms do you use for enrichment classes?
-          </label>
-          <input
-            type="text"
-            id="platform"
-            name="platform"
-            value={formData.platform}
-            onChange={handleInputChange}
-            onKeyDown={handleEnterKey}
-          />
-        </div>
 
         <div className="form-group">
           <label htmlFor="knowabout">
