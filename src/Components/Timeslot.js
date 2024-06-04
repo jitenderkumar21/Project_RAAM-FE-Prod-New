@@ -26,7 +26,7 @@ const Timeslot = (props) => {
 
           {!course_type_list.includes(props.tag) && (
             <>
-              <span className="checkmark" id={props.timeslot.subClassId}></span>
+              <span className="checkmark" id={!props.isPastClass && props.full ? `waitlist-${props.timeslot.subClassId}` : props.timeslot.subClassId}></span>
               {!props.isPastClass && props.full && (
                 <p className="class-full"> Class Full - Join the waitlist </p>
               )}
