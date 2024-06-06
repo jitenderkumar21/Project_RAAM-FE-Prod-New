@@ -283,6 +283,7 @@ const DetailForm = (props) => {
             min="1"
             required
             value={formData.enrichment}
+            placeholder="Enter amount in dollars"
             onChange={handleInputChange}
             onKeyDown={handleEnterKey}
           />
