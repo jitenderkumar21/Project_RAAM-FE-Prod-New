@@ -11,6 +11,7 @@ import final_page from "../assets/final_page.png";
 import header_guide from "../assets/guide_pic.png"
 import scrollToTop from "./utils/scrollToTop";
 import Footer from "./Footer";
+import TrustpilotReview from "./TrustpilotReview";
 
 const MainPage = () => {
   const [register, setRegister] = useState(false);
@@ -181,12 +182,13 @@ const MainPage = () => {
 
               <div className="quickcall">
                 <p>
-                  Help us personalize your <br></br> child's learning!
+                  Help us improve with your <br></br> feedback!
                 </p>
-                <button onClick={quickCallHandler} id="quick_call">
-                  Quick Call
-                </button>
+                <div className="trustpilot-content">
+                  <TrustpilotReview />
+                </div>
               </div>
+
             </div>
           </div>
         )}

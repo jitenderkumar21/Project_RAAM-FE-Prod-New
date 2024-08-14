@@ -241,8 +241,8 @@ h4 {
 
 .add_learner button {
   background-color: white;
-  border: 2px solid #0897c3;
-  color: #0897c3;
+  border: 2px solid black;
+  color: black;
   font-weight: 700;
   font-size: 17px;
 }
@@ -541,6 +541,14 @@ h2 {
 
   /* transform: scale(1.1); */
   animation: translateFromNegative 1s ease-in-out;
+}
+.trustpilot-content {
+  padding-left: 18%;
+  margin-top: -10px;
+}
+
+.add_learner button:hover {
+  background-color: white;
 }
 
 @keyframes translateFromNegative {
