@@ -245,6 +245,7 @@ h4 {
   color: black;
   font-weight: 700;
   font-size: 17px;
+  font-family: Poppins;
 }
 
 .add_learner button:hover {
@@ -543,7 +544,7 @@ h2 {
   animation: translateFromNegative 1s ease-in-out;
 }
 .trustpilot-content {
-  padding-left: 18%;
+  padding-left: 17%;
   margin-top: -10px;
 }
 
