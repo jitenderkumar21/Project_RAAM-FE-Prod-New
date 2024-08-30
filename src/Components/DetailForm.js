@@ -26,7 +26,7 @@ const DetailForm = (props) => {
   }
   const [formData, setFormData] = useState(initial_state);
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const YOUR_GOOGLE_APPS_SCRIPT_URL = `${process.env.REACT_APP_BACKENDURL}save1/?timezone=${timezone}`;
+  const YOUR_GOOGLE_APPS_SCRIPT_URL = `${process.env.REACT_APP_BACKENDURL}save/?timezone=${timezone}`;
   const info_source = ["Facebook", "Other", "Referred by Teacher"];
 
   const submitForm = async (data) => {
