@@ -4,7 +4,7 @@ import "./Trustpilot.css";
 
 const TrustpilotReview = () => {
   return (
-    <div className="trustpilot-container">
+    <div id="trustpilotButton" className="trustpilot-container">
       <a
         href="https://www.trustpilot.com/review/coralacademy.com"
         target="_blank"
