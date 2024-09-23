@@ -1,7 +1,7 @@
 .trustpilot-container {
     position: relative;
-    margin: 14.5% -20%;
-    width: 115%;
+    margin: 14.5% auto;
+    width: 240px;
     padding: 0px 0px;
     flex-direction: column;
     align-items: flex-start;
@@ -37,7 +37,7 @@
     }
     @media (max-width: 599px) {
         .trustpilot-container {
-          margin: 14.5% 2%;
+          margin: 14.5% auto;
           width: fit-content;
           }
 
