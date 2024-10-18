@@ -184,8 +184,8 @@ const MainPage = () => {
                 <p>
                   Help us improve with your <br></br> feedback!
                 </p>
-                <div className="trustpilot-content">
-                  <TrustpilotReview />
+                <div className="trustpilot-content" id="trustpilot_content">
+                  <TrustpilotReview id="trustpilot_feedback"/>
                 </div>
               </div>
 
