@@ -12,7 +12,7 @@
 }
 
 .title {
-  width: 20%;
+  width: 30%;
   margin-top: 40px;
   margin-bottom: 10px;
 }
@@ -36,9 +36,17 @@
   background-color: #0897c3;
 }
 
-.card1 .header_text {
+.card1 {
   color: #415863;
   font-size: 38px;
+  margin-bottom: "50px";
+  margin-top: "20px";
+  font-family: "urbanist";
+}
+
+.header_text {
+  color: #415863;
+  font-size: 32px;
   margin-bottom: "50px";
   margin-top: "20px";
   font-family: "urbanist";

@@ -5,9 +5,9 @@ import "./MainPage.css";
 import "./MobileView.css";
 import ClassDetail from "./ClassDetail";
 import DetailForm from "./DetailForm";
-import Coral_Academy from "../assets/Coral_Academy.png";
-import thank_you from "../assets/thank_you.png";
-import final_page from "../assets/final_page.png";
+import Coral_Academy from "../assets/coral_logo-wb.png";
+import thank_you from "../assets/thankyou_page_bg.png";
+import final_page from "../assets/thankyou_page_bg_mobile2.png";
 import header_guide from "../assets/guide_pic.png"
 import scrollToTop from "./utils/scrollToTop";
 import Footer from "./Footer";
@@ -110,7 +110,7 @@ const MainPage = () => {
           <div className="card1">
             <div className="header_container">
               <img className="title" src={Coral_Academy} alt="Title" />
-              <h1 className="header_text">Sparking a Love for Learning!</h1>
+              <h1 className="header_text">Shaping tomorrow's innovators, one class at a time</h1>
               <img className="header_guide" src={header_guide} alt="Title" />
             </div>
 

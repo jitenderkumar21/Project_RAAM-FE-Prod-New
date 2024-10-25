@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import coral_logo from "../assets/Coral_Academy.png";
+import coral_logo from "../assets/coral_logo-wb.png";
 import "./Footer.css";
 import DownIcon from "../assets/down.png";
 import UpIcon from "../assets/up.png";
