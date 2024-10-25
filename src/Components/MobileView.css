@@ -103,8 +103,8 @@
     width: 90%;  /* Adjust width to control wrapping */
     margin: 0 auto; /* Center the text block */
     word-break: break-word; /* Break long words if necessary */
-    height: 45px;
-    font-size: 1.12em;
+    height: 40px;
+    font-size: 1em;
   }
   .first-part::after {
     content: '\A'; /* Inserts a line break */
