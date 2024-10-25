@@ -103,7 +103,10 @@ const MainPage = () => {
     <CardWrapper>
       <div className="scrollClass" id="scrollClass1">
         <div className="header">
-          <h3>Free Classes! For Limited Time Only!</h3>
+        <h3>
+          <span className="first-part">Beta Testing in Progress! </span>
+          Enjoy free classes for now - launching soon!
+        </h3>
         </div>
 
         {!register && !submitted && (
