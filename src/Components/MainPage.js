@@ -104,10 +104,13 @@ const MainPage = () => {
       <div className="scrollClass" id="scrollClass1">
         <div className="header">
         <h3>
-          <span className="first-part">Beta Testing in Progress! </span>
-          Enjoy free classes for now - launching soon!
-        </h3>
-        </div>
+        <span className="first-part">Free classes for a limited time! Beta Testing in Progress -&nbsp; </span>
+        <a href="https://tinyurl.com/33v8seex" target="_blank" className="button-oval">
+          Join the waitlist
+        </a>&nbsp; 
+                to avail Launch offers!
+      </h3>
+      </div>
 
         {!register && !submitted && (
           <div className="card1">
