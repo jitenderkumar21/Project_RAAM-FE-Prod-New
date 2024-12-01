@@ -22,6 +22,7 @@ const DetailForm = (props) => {
       comments: "",
       platform: "",
       enrichment: "",
+      enroll_amount: "",
     };
   }
   const [formData, setFormData] = useState(initial_state);
@@ -258,7 +259,7 @@ const DetailForm = (props) => {
           </>
         )}
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label htmlFor="platform">
             Which platforms do you use for enrichment classes?
           </label>
@@ -270,7 +271,8 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
             onKeyDown={handleEnterKey}
           />
-        </div>
+        </div> */}
+        
 
         <div className="form-group">
           <label htmlFor="enrichment">
@@ -369,6 +371,39 @@ const DetailForm = (props) => {
             />
           </div>
         )}
+
+
+        <div className="form-group">
+          <label htmlFor="enroll_amount">
+            Would you like to enroll in our classes for <strike>$120</strike> $10/weel once we launch? (Early bird offer)
+          </label>
+          <label style={{color: "black", fontWeight: "200", fontSize: "12px", marginTop: "7px"}}>
+            Experience a wider range of topics and an upgraded experience. <a href="/">Click here</a> to learn more!
+          </label>
+          <div className="check">
+            <input
+              type="checkbox"
+              id="enroll_amount_yes"
+              name="enroll_amount"
+              value="Yes, sign me up!"
+              checked={formData.enroll_amount?.includes("Yes, sign me up!")}
+              onChange={handleCheckboxChange}
+            />
+            <label htmlFor="enroll_amount_yes">Yes, sign me up!</label>
+          </div>
+          <div className="check">
+            <input
+              type="checkbox"
+              id="enroll_amount_maybe"
+              name="enroll_amount"
+              value="Maybe Later"
+              checked={formData.enroll_amount?.includes("Maybe Later")}
+              onChange={handleCheckboxChange}
+            />
+            <label htmlFor="enroll_amount_maybe">Maybe Later</label>
+          </div>
+        </div>
+
         <div className="form-group">
           <label htmlFor="comments"> Drop us your questions or comments!</label>
           <input
