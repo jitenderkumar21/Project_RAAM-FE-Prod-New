@@ -108,7 +108,7 @@ const DetailForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     try {
-      if (!formData.knowabout || !formData.commPref?.length) {
+      if (!formData.knowabout || !formData.commPref?.length || !formData.enroll_amount) {
         alert("Please fill out mandatory fields");
         return;
       }
@@ -274,7 +274,7 @@ const DetailForm = (props) => {
         </div> */}
         
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label htmlFor="enrichment">
             How much do you usually spend each month on enrichment classes per child? *
           </label>
@@ -289,7 +289,7 @@ const DetailForm = (props) => {
             onChange={handleInputChange}
             onKeyDown={handleEnterKey}
           />
-        </div>
+        </div> */}
 
 
         <div className="form-group">
@@ -375,7 +375,7 @@ const DetailForm = (props) => {
 
         <div className="form-group">
           <label htmlFor="enroll_amount">
-            Would you like to enroll in our classes for <strike>$120</strike> $10/week once we launch? (Early bird offer)
+            Would you like to enroll in our classes for <strike>$120</strike> $10/week once we launch? (Early bird offer) *
           </label>
           <label style={{color: "black", fontWeight: "200", fontSize: "12px", marginTop: "7px"}}>
             Experience a wider range of topics and an upgraded experience. <a href="https://tinyurl.com/33v8seex">Click here</a> to learn more!
