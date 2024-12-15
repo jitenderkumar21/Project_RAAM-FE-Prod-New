@@ -89,6 +89,14 @@ const DetailForm = (props) => {
     });
   };
 
+  const handleSignupCheckboxChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
   const handlePrefChange = (event) => {
     const prefValue = event.target.value;
     const isAlreadySelected = formData.commPref.includes(prefValue);
@@ -387,7 +395,7 @@ const DetailForm = (props) => {
               name="enroll_amount"
               value="Yes, sign me up!"
               checked={formData.enroll_amount?.includes("Yes, sign me up!")}
-              onChange={handleCheckboxChange}
+              onChange={handleSignupCheckboxChange}
             />
             <label htmlFor="enroll_amount_yes">Yes, sign me up!</label>
           </div>
@@ -398,7 +406,7 @@ const DetailForm = (props) => {
               name="enroll_amount"
               value="Maybe Later"
               checked={formData.enroll_amount?.includes("Maybe Later")}
-              onChange={handleCheckboxChange}
+              onChange={handleSignupCheckboxChange}
             />
             <label htmlFor="enroll_amount_maybe">Maybe Later</label>
           </div>
